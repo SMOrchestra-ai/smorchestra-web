@@ -1,0 +1,25 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Claude Code local state
+.claude/
+
+# Env + secrets (defensive)
+.env
+.env.*
+*.key
+*.pem
+
+# Dependencies (defensive — static site but future-proof)
+node_modules/
+
+# Stale React source — superseded by *-ghl.html
+smorchestra-home.jsx
+the-engine.jsx
+the-expansion.jsx
+
+# Editor scratch
+*.swp
+.vscode/
+.idea/

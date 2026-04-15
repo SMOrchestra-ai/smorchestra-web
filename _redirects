@@ -1,0 +1,29 @@
+# SMOrchestra — fallback redirects (netlify.toml is source of truth)
+# Keeping a plain _redirects file as a safety net for Netlify + for any
+# static host that reads _redirects but not netlify.toml.
+
+# Pretty URLs
+/layers/ops                 /layers/ops.html                 200
+/layers/gtm                 /layers/gtm.html                 200
+/layers/dev                 /layers/dev.html                 200
+/solutions/ai-revenue-os    /solutions/ai-revenue-os.html    200
+/solutions/signal-sales-engine  /solutions/signal-sales-engine.html  200
+/solutions/mena-expansion   /solutions/mena-expansion.html   200
+/cohorts/gtm-founders       /cohorts/gtm-founders.html       200
+/cohorts/ai-revenue-ops     /cohorts/ai-revenue-ops.html     200
+
+# Legacy GHL slugs → new URLs
+/smorchestra-home-ghl       /layers/gtm                      301
+/the-engine-ghl             /solutions/signal-sales-engine   301
+/the-expansion-ghl          /solutions/mena-expansion        301
+/ai-revenue-os-landing-page /solutions/ai-revenue-os         301
+/gtmfoundercohort           /cohorts/gtm-founders            301
+/AI-GTM-B2B-Cohort          /cohorts/ai-revenue-ops          301
+
+# External targets
+/book                       https://api.leadconnectorhq.com/widget/bookings/core-calendar-sales-calls  302!
+/tools/gtm-fitness          https://score.smorchestra.ai/gtm-fitness           302!
+/tools/digital-revenue-score https://score.smorchestra.ai/digital-revenue-score 302!
+
+# Canonical host
+https://www.smorchestra.ai/*  https://smorchestra.ai/:splat  301!

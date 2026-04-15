@@ -1,0 +1,27 @@
+# SMOrchestra — AI-Native Business OS
+# Robots policy: open to all reputable crawlers.
+
+User-agent: *
+Allow: /
+Disallow: /assets/tmp/
+Disallow: /drafts/
+
+# Block AI training crawlers we don't want indexing proprietary copy.
+# Remove any of these if you change your mind on training consent.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemaps
+Sitemap: https://smorchestra.ai/sitemap.xml
