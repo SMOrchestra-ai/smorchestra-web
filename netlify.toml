@@ -103,6 +103,54 @@
   status = 200
 
 # ------------------------------------------------------------
+# Arabic mirror — Phase A pretty-URL rewrites
+# ------------------------------------------------------------
+
+[[redirects]]
+  from = "/ar/layers/ops"
+  to = "/ar/layers/ops.html"
+  status = 200
+
+[[redirects]]
+  from = "/ar/layers/gtm"
+  to = "/ar/layers/gtm.html"
+  status = 200
+
+[[redirects]]
+  from = "/ar/layers/dev"
+  to = "/ar/layers/dev.html"
+  status = 200
+
+# ------------------------------------------------------------
+# Arabic mirror — Phase B pretty-URL rewrites (solutions + cohorts)
+# ------------------------------------------------------------
+
+[[redirects]]
+  from = "/ar/solutions/ai-revenue-os"
+  to = "/ar/solutions/ai-revenue-os.html"
+  status = 200
+
+[[redirects]]
+  from = "/ar/solutions/signal-sales-engine"
+  to = "/ar/solutions/signal-sales-engine.html"
+  status = 200
+
+[[redirects]]
+  from = "/ar/solutions/mena-expansion"
+  to = "/ar/solutions/mena-expansion.html"
+  status = 200
+
+[[redirects]]
+  from = "/ar/cohorts/gtm-founders"
+  to = "/ar/cohorts/gtm-founders.html"
+  status = 200
+
+[[redirects]]
+  from = "/ar/cohorts/ai-revenue-ops"
+  to = "/ar/cohorts/ai-revenue-ops.html"
+  status = 200
+
+# ------------------------------------------------------------
 # Legacy GHL slugs → new hub-and-spoke URLs (301 permanent)
 # ------------------------------------------------------------
 # Anyone still linking to the old GHL-hosted landing pages is carried
@@ -161,6 +209,19 @@
 
 [[redirects]]
   from = "/tools/digital-revenue-score"
+  to = "https://score.smorchestra.ai/digital-revenue-score"
+  status = 302
+  force = true
+
+# Arabic mirror — scorecards live on the same English subdomain (no /ar variant yet).
+[[redirects]]
+  from = "/ar/tools/gtm-fitness"
+  to = "https://score.smorchestra.ai/gtm-fitness"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/ar/tools/digital-revenue-score"
   to = "https://score.smorchestra.ai/digital-revenue-score"
   status = 302
   force = true

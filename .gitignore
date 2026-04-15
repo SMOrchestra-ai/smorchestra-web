@@ -23,3 +23,6 @@ the-expansion.jsx
 *.swp
 .vscode/
 .idea/
+
+# Local dev-review screenshots (never deploy)
+website-changes/

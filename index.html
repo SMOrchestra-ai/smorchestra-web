@@ -13,8 +13,9 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <link rel="canonical" href="https://smorchestra.ai/" />
 
-<!-- Language alternates (Arabic arrives in Phase 2) -->
+<!-- Language alternates -->
 <link rel="alternate" hreflang="en" href="https://smorchestra.ai/" />
+<link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/" />
 <link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/" />
 
 <!-- Open Graph -->
@@ -406,10 +407,10 @@ h4{font-size:20px;font-weight:700}
 .cases{display:grid;gap:20px;grid-template-columns:repeat(2,1fr);margin-top:32px}
 .case{background:var(--card-dark);padding:0;box-shadow:var(--shadow-hard);position:relative;transition:transform .25s;border-top:4px solid var(--cc,var(--orange));display:flex;flex-direction:column}
 .case .c-body{padding:32px 32px 36px}
-.case .proof-vis{position:relative;height:140px;background:linear-gradient(180deg,#0a0a0a 0%,#0f0f0f 100%);border-bottom:1px solid #1f1f1f;overflow:hidden}
+.case .proof-vis{position:relative;height:160px;background:linear-gradient(180deg,#0a0a0a 0%,#0f0f0f 100%);border-bottom:1px solid #1f1f1f;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .case .proof-vis svg{position:absolute;inset:0;width:100%;height:100%}
-.case .proof-vis .pv-label{position:absolute;top:16px;left:24px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--cc);z-index:2}
-.case .proof-vis .pv-tag{position:absolute;bottom:16px;right:24px;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--text-dim);z-index:2}
+.case .proof-vis .pv-label{position:absolute;top:14px;left:50%;transform:translateX(-50%);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--cc);z-index:2;text-align:center;white-space:nowrap}
+.case .proof-vis .pv-tag{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--text-dim);z-index:2;text-align:center;white-space:nowrap}
 .case:hover{transform:translateY(-6px)}
 .case .ck{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cc);margin-bottom:14px}
 .case h3{font-size:26px;font-weight:800;color:#fff;line-height:1.2;letter-spacing:-0.02em;margin-bottom:14px}
@@ -500,6 +501,7 @@ h4{font-size:20px;font-weight:700}
 .founder-grid{display:grid;grid-template-columns:minmax(280px,340px) 1fr;gap:56px;max-width:1100px;margin:0 auto;align-items:start}
 .founder-photo{aspect-ratio:4/5;background:linear-gradient(135deg,#1a1a1a 0%,#262626 55%,#1a1a1a 100%);position:relative;overflow:hidden;border:1px solid #262626}
 .founder-photo::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 30% 30%,rgba(255,107,53,.18) 0%,transparent 60%),radial-gradient(circle at 70% 70%,rgba(56,189,248,.15) 0%,transparent 60%)}
+.founder-photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.42) 55%,transparent 100%);z-index:1;pointer-events:none}
 .founder-photo .ph-mark{position:absolute;bottom:18px;left:18px;right:18px;display:flex;justify-content:space-between;align-items:flex-end;z-index:2}
 .founder-photo .ph-name{color:#fff;font-weight:700;font-size:18px;letter-spacing:-0.01em;line-height:1.2}
 .founder-photo .ph-sub{color:#bdbdbd;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:4px;font-weight:600}
@@ -525,6 +527,9 @@ h4{font-size:20px;font-weight:700}
 .gate-col ul{display:flex;flex-direction:column;gap:11px;list-style:none}
 .gate-col li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:15px;color:#e5e5e5;line-height:1.55}
 .gate-col li i{color:var(--gc,#bef264);padding-top:5px;font-size:12px}
+/* When the list uses .flist (no icon children), let text flow naturally. */
+.gate-col ul.flist li{display:block;grid-template-columns:none;font-size:15.5px;color:#e5e5e5;line-height:1.6}
+.gate-col ul.flist li::before{content:"";display:inline-block;width:8px;height:8px;background:var(--gc,#bef264);margin-right:12px;vertical-align:middle;transform:translateY(-1px)}
 @media (max-width:820px){.gate-grid{grid-template-columns:1fr}}
 
 .antiframe{margin-top:56px;max-width:1040px;margin-left:auto;margin-right:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -581,7 +586,7 @@ svg.i.arr{width:0.9em;height:0.9em;margin-left:6px}
       <div class="eyebrow reveal">AI-Native Business OS · Built for MENA</div>
       <h1 class="reveal">Your business has <span class="accent">five open roles</span>. They're all you.</h1>
       <p class="hero-kicker reveal">Stop renting your team. Install an operating system that runs the business — and own it at the end.</p>
-      <p class="sub reveal">You didn't start a company to live in fourteen browser tabs. But here you are — drafting proposals at midnight, chasing follow-ups you forgot, paying for tools you barely operate, hiring for roles you can't retain. The AI-Native Business OS installs the team you can't build: a <strong style="color:#fff">2nd brain</strong> that never forgets, an <strong style="color:#fff">AI coworker</strong> that does the work, autonomous engines for <strong style="color:#fff">ops, GTM, and dev</strong>. Built for you. Run with you. Then handed to you — keys, code, and all.</p>
+      <p class="sub reveal">You didn't start a company to live in fourteen browser tabs. But here you are — drafting proposals at midnight, chasing follow-ups you forgot, paying for tools you barely operate, hiring for roles you can't retain. The AI-Native Business OS installs the team you can't build: a <strong style="color:#fff">Claude-powered 2nd brain</strong> that never forgets, <strong style="color:#fff">Claude as your AI coworker</strong> doing the work, autonomous engines for <strong style="color:#fff">ops, GTM, and dev</strong> — all running on Claude. Built for you. Run with you. Then handed to you — keys, code, and all.</p>
       <div class="hero-cta reveal">
         <a href="/book" class="btn btn-primary">Book a Strategy Call <svg class="i arr" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
         <a href="#the-map" class="btn btn-outline">See the Map <svg class="i arr" aria-hidden="true"><use href="/assets/icons.svg#arrow-down"/></svg></a>
@@ -602,13 +607,13 @@ svg.i.arr{width:0.9em;height:0.9em;margin-left:6px}
   <div class="wrap">
     <div class="three-cards">
       <div class="tcard c1 reveal">
-        <div class="te">Layer 01 · The Foundation</div>
+        <div class="te">Layer 01 · The Foundation · <span style="color:#ff6b35">Claude-native</span></div>
         <h3>AI-Native Ops</h3>
         <ul>
-          <li>A 2nd brain that never forgets your business</li>
-          <li>An AI coworker that drafts, reviews, scores</li>
-          <li>One seat to run every tool you already pay for</li>
-          <li>A research analyst that reports while you sleep</li>
+          <li>A <strong>Claude-powered 2nd brain</strong> that never forgets your business</li>
+          <li><strong>Claude as your AI coworker</strong> — drafts, reviews, scores</li>
+          <li>One seat — Claude orchestrates every tool you already pay for</li>
+          <li>A Claude research analyst that reports while you sleep</li>
         </ul>
         <a href="/layers/ops" class="tbtn">Explore Ops <svg class="i" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
       </div>
@@ -676,19 +681,19 @@ svg.i.arr{width:0.9em;height:0.9em;margin-left:6px}
         <div class="ne">Brain + Engines + Ownership</div>
       </div>
 
-      <div class="node" style="--nc:#f97316;left:22%;top:25%" data-desc="Your 2nd brain, your AI coworker, and the one seat where every tool your business already pays for finally works together." data-list="2nd brain — never forgets context|AI coworker — drafts, reviews, scores your work|AI tool admin — all your apps, one operator|AI assistant — inbox, tasks, reminders, cleanup|AI research &amp; analyst — competitor, offer, news">
+      <div class="node" style="--nc:#f97316;left:22%;top:25%" data-desc="Your 2nd brain, your AI coworker, and the one seat where every tool your business already pays for finally works together." data-list="2nd brain — never forgets context|AI coworker — drafts, reviews, scores your work|AI tool admin — all your apps, one operator|AI assistant — inbox, tasks, reminders, cleanup|AI research &amp; analyst — competitor, offer, news" data-link="/layers/ops">
         <div class="nk">Layer · 01</div>
         <div class="nt">AI-Native Ops</div>
         <div class="ne">The Foundation</div>
       </div>
 
-      <div class="node" style="--nc:#bef264;left:78%;top:25%" data-desc="Autonomous engines that find demand, convert it, and optimize themselves — without you hiring a five-person GTM team." data-list="Autonomous campaign management|Autonomous webinar funnel|Autonomous signal sales engine|Autonomous content engine|Autonomous outreach operator (WhatsApp, email, LinkedIn)">
+      <div class="node" style="--nc:#bef264;left:78%;top:25%" data-desc="Autonomous engines that find demand, convert it, and optimize themselves — without you hiring a five-person GTM team." data-list="Autonomous campaign management|Autonomous webinar funnel|Autonomous signal sales engine|Autonomous content engine|Autonomous outreach operator (WhatsApp, email, LinkedIn)" data-link="/layers/gtm">
         <div class="nk">Layer · 02</div>
         <div class="nt">AI-Native GTM</div>
         <div class="ne">The Revenue Engine</div>
       </div>
 
-      <div class="node" style="--nc:#7dd3fc;left:50%;top:82%" data-desc="Your personal AI engineering team. Submit a request in plain language, get shipped software back — without hiring engineers." data-list="Autonomous engineering team on call|Submit BRD → shipped features|Autonomous QA, review, deploy|Your AI VP Engineering on Telegram|Founder velocity, zero headcount">
+      <div class="node" style="--nc:#7dd3fc;left:50%;top:82%" data-desc="Your personal AI engineering team. Submit a request in plain language, get shipped software back — without hiring engineers." data-list="Autonomous engineering team on call|Submit BRD → shipped features|Autonomous QA, review, deploy|Your AI VP Engineering on Telegram|Founder velocity, zero headcount" data-link="/layers/dev">
         <div class="nk">Layer · 03</div>
         <div class="nt">AI-Native Dev</div>
         <div class="ne">The Build Capability</div>
@@ -759,39 +764,39 @@ svg.i.arr{width:0.9em;height:0.9em;margin-left:6px}
         <div class="ne">The AI that runs the business</div>
       </div>
 
-      <div class="node" style="--nc:#38bdf8;left:18%;top:20%" data-desc="A memory that never loses your business. Your ICP, voice, pricing, objections, offers, and playbooks — loaded once, used forever." data-list="Remembers every decision you've made|Knows your ICP, pricing, positioning|Recalls client context instantly|Onboards every future AI the same way|No more re-explaining your business">
+      <div class="node" style="--nc:#38bdf8;left:18%;top:20%" data-desc="A memory that never loses your business. Your ICP, voice, pricing, objections, offers, and playbooks — loaded once, used forever." data-list="Remembers every decision you've made|Knows your ICP, pricing, positioning|Recalls client context instantly|Onboards every future AI the same way|No more re-explaining your business" data-link="/layers/ops">
         <div class="nk">Role · 01</div>
         <div class="nt">2nd Brain</div>
         <div class="ne">Your business, remembered</div>
       </div>
-      <div class="node" style="--nc:#7dd3fc;left:50%;top:14%" data-desc="An AI that drafts proposals, reviews slides, scores your copy, and builds campaign assets — then hands them back for your final review." data-list="Drafts proposals + SOWs|Reviews your slides, site, emails|Scores your work against benchmarks|Builds campaign bundles on demand|Create + score loop built in">
+      <div class="node" style="--nc:#7dd3fc;left:50%;top:14%" data-desc="An AI that drafts proposals, reviews slides, scores your copy, and builds campaign assets — then hands them back for your final review." data-list="Drafts proposals + SOWs|Reviews your slides, site, emails|Scores your work against benchmarks|Builds campaign bundles on demand|Create + score loop built in" data-link="/layers/ops">
         <div class="nk">Role · 02</div>
         <div class="nt">AI Coworker</div>
         <div class="ne">Drafts, reviews, scores</div>
       </div>
-      <div class="node" style="--nc:#bef264;left:82%;top:20%" data-desc="Every tool your business runs on — project management, CRM, campaigns, calendar, invoicing — operated from one seat by your AI." data-list="Runs your CRM (SalesMfast / GHL)|Runs your PM (ClickUp, Notion, Airtable)|Runs your campaigns (Instantly, HeyReach)|Runs your store (Shopify, Stripe)|200+ actions, one operator">
+      <div class="node" style="--nc:#bef264;left:82%;top:20%" data-desc="Every tool your business runs on — project management, CRM, campaigns, calendar, invoicing — operated from one seat by your AI." data-list="Runs your CRM (SalesMfast / GHL)|Runs your PM (ClickUp, Notion, Airtable)|Runs your campaigns (Instantly, HeyReach)|Runs your store (Shopify, Stripe)|200+ actions, one operator" data-link="/layers/ops">
         <div class="nk">Role · 03</div>
         <div class="nt">AI Tool Admin</div>
         <div class="ne">Every app, one seat</div>
       </div>
 
-      <div class="node" style="--nc:#ff6b35;left:14%;top:52%" data-desc="The tireless assistant that handles the small stuff: inbox, reminders, scheduling, task cleanup, follow-ups — so your week is already organized when you sit down." data-list="Inbox triage + draft replies|Schedules tasks + calendar reminders|Chases follow-ups you forgot|Weekly + monthly pipeline cleanup|The VA that doesn't sleep">
+      <div class="node" style="--nc:#ff6b35;left:14%;top:52%" data-desc="The tireless assistant that handles the small stuff: inbox, reminders, scheduling, task cleanup, follow-ups — so your week is already organized when you sit down." data-list="Inbox triage + draft replies|Schedules tasks + calendar reminders|Chases follow-ups you forgot|Weekly + monthly pipeline cleanup|The VA that doesn't sleep" data-link="/layers/ops">
         <div class="nk">Role · 04</div>
         <div class="nt">AI Assistant</div>
         <div class="ne">Inbox, tasks, reminders, cleanup</div>
       </div>
-      <div class="node" style="--nc:#ff6b35;left:86%;top:52%" data-desc="Scheduled intelligence. Competitive monitoring, offer refinement, news tracking, social signals — reports land in your inbox on a cadence you set." data-list="Weekly competitive analysis|Monthly offer + positioning tune-up|Daily news + industry signal scan|Content trend + angle research|Pipeline + performance reports on autopilot">
+      <div class="node" style="--nc:#ff6b35;left:86%;top:52%" data-desc="Scheduled intelligence. Competitive monitoring, offer refinement, news tracking, social signals — reports land in your inbox on a cadence you set." data-list="Weekly competitive analysis|Monthly offer + positioning tune-up|Daily news + industry signal scan|Content trend + angle research|Pipeline + performance reports on autopilot" data-link="/layers/ops">
         <div class="nk">Role · 05</div>
         <div class="nt">AI Research &amp; Analyst</div>
         <div class="ne">Scheduled intelligence</div>
       </div>
 
-      <div class="node" style="--nc:#f59e0b;left:28%;top:82%" data-desc="Direct hands into every tool you already pay for — not copy-paste, not no-code drag-and-drop. The brain executes, doesn't just suggest." data-list="Direct API control, 200+ actions|WhatsApp · SMS · email sent natively|Pipelines + invoices moved on your behalf|Calendar + bookings, auto|Work shipped, not drafted">
+      <div class="node" style="--nc:#f59e0b;left:28%;top:82%" data-desc="Direct hands into every tool you already pay for — not copy-paste, not no-code drag-and-drop. The brain executes, doesn't just suggest." data-list="Direct API control, 200+ actions|WhatsApp · SMS · email sent natively|Pipelines + invoices moved on your behalf|Calendar + bookings, auto|Work shipped, not drafted" data-link="/layers/ops">
         <div class="nk">Execution</div>
         <div class="nt">Direct Tool Hands</div>
         <div class="ne">Not suggestions — actions</div>
       </div>
-      <div class="node" style="--nc:#f59e0b;left:72%;top:82%" data-desc="Nothing bad leaves the system. Every output — copy, campaign, proposal, post — scored against your brand and benchmarks before it ships." data-list="Brand voice enforcement|Benchmark-scored copywriting|Offer + positioning check|Compliance + tone guardrails|Score-then-ship, every time">
+      <div class="node" style="--nc:#f59e0b;left:72%;top:82%" data-desc="Nothing bad leaves the system. Every output — copy, campaign, proposal, post — scored against your brand and benchmarks before it ships." data-list="Brand voice enforcement|Benchmark-scored copywriting|Offer + positioning check|Compliance + tone guardrails|Score-then-ship, every time" data-link="/layers/ops">
         <div class="nk">Quality</div>
         <div class="nt">The Quality Gate</div>
         <div class="ne">Scored before it ships</div>
@@ -838,30 +843,30 @@ svg.i.arr{width:0.9em;height:0.9em;margin-left:6px}
         <div class="ne">The AI that closes for you</div>
       </div>
 
-      <div class="node" style="--nc:#ff6b35;left:20%;top:20%" data-desc="Give it a campaign goal — 'fill 20 seats for the webinar,' 'push the Ramadan offer,' 'revive cold leads.' It builds the plan, ships the assets, runs the channels, and reports back weekly." data-list="Brief in → multi-channel campaign out|Audience, offer, message, sequence, follow-ups|Runs email, WhatsApp, LinkedIn, SMS in parallel|Weekly performance review + next-step recs|Nothing ships unscored">
+      <div class="node" style="--nc:#ff6b35;left:20%;top:20%" data-desc="Give it a campaign goal — 'fill 20 seats for the webinar,' 'push the Ramadan offer,' 'revive cold leads.' It builds the plan, ships the assets, runs the channels, and reports back weekly." data-list="Brief in → multi-channel campaign out|Audience, offer, message, sequence, follow-ups|Runs email, WhatsApp, LinkedIn, SMS in parallel|Weekly performance review + next-step recs|Nothing ships unscored" data-link="/layers/gtm">
         <div class="nk">Engine · 01</div>
         <div class="nt">Autonomous Campaign Management</div>
         <div class="ne">Brief in. Campaign out.</div>
       </div>
 
-      <div class="node" style="--nc:#38bdf8;left:80%;top:20%" data-desc="The full webinar funnel — built from one brief. Slides, scripts, registration page, nurture emails, LinkedIn DMs, follow-up flow — written in your voice, ready to go live." data-list="23-slide deck + speaker notes|Registration page + VSL|Pre-webinar nurture sequence|Post-webinar offer + follow-ups|LinkedIn DM + social launch bundle">
+      <div class="node" style="--nc:#38bdf8;left:80%;top:20%" data-desc="The full webinar funnel — built from one brief. Slides, scripts, registration page, nurture emails, LinkedIn DMs, follow-up flow — written in your voice, ready to go live." data-list="23-slide deck + speaker notes|Registration page + VSL|Pre-webinar nurture sequence|Post-webinar offer + follow-ups|LinkedIn DM + social launch bundle" data-link="/layers/gtm">
         <div class="nk">Engine · 02</div>
         <div class="nt">Autonomous Webinar Funnel</div>
         <div class="ne">One brief → full funnel</div>
       </div>
 
-      <div class="node" style="--nc:#bef264;left:50%;top:82%" data-desc="Outbound that reads the market for you. Finds who's hiring, raising, launching, hurting — then writes the message in your voice. Warm outreach at cold-outreach scale." data-list="Scrapes fit + intent + trigger signals|Stacks signals into buying urgency|Routes leads to the right channel + rep|Writes signal-derived messages, not templates|Scores composite 'ready now' vs 'nurture'">
+      <div class="node" style="--nc:#bef264;left:50%;top:82%" data-desc="Outbound that reads the market for you. Finds who's hiring, raising, launching, hurting — then writes the message in your voice. Warm outreach at cold-outreach scale." data-list="Scrapes fit + intent + trigger signals|Stacks signals into buying urgency|Routes leads to the right channel + rep|Writes signal-derived messages, not templates|Scores composite 'ready now' vs 'nurture'" data-link="/solutions/signal-sales-engine">
         <div class="nk">Engine · 03</div>
         <div class="nt">Autonomous Signal Sales Engine</div>
         <div class="ne">Know who's buying, first</div>
       </div>
 
-      <div class="node" style="--nc:#f59e0b;left:14%;top:52%" data-desc="The inbound side. One topic becomes a 90-day content calendar — LinkedIn posts, emails, newsletters, WhatsApp broadcasts — dual-track Arabic + English, scored and scheduled." data-list="1 brief → 50 LinkedIn angles|1 theme → 10 emails + newsletter|TOFU · MOFU · BOFU mix, balanced|Arabic (Khaleeji) + English, natively|Scored on brand voice before scheduled">
+      <div class="node" style="--nc:#f59e0b;left:14%;top:52%" data-desc="The inbound side. One topic becomes a 90-day content calendar — LinkedIn posts, emails, newsletters, WhatsApp broadcasts — dual-track Arabic + English, scored and scheduled." data-list="1 brief → 50 LinkedIn angles|1 theme → 10 emails + newsletter|TOFU · MOFU · BOFU mix, balanced|Arabic (Khaleeji) + English, natively|Scored on brand voice before scheduled" data-link="/layers/gtm">
         <div class="nk">Engine · 04</div>
         <div class="nt">Autonomous Content Engine</div>
         <div class="ne">Inbound that runs itself</div>
       </div>
-      <div class="node" style="--nc:#f59e0b;left:86%;top:52%" data-desc="The single operator that drives every GTM tool you already pay for — Instantly, HeyReach, Sales Navigator, WhatsApp, Clay. No more hiring one specialist per channel." data-list="Instantly.ai — cold email at scale|HeyReach — LinkedIn outreach|Sales Navigator — signal scraping|WhatsApp Business + SMS — warm follow-ups|Clay — waterfall enrichment, all channels">
+      <div class="node" style="--nc:#f59e0b;left:86%;top:52%" data-desc="The single operator that drives every GTM tool you already pay for — Instantly, HeyReach, Sales Navigator, WhatsApp, Clay. No more hiring one specialist per channel." data-list="Instantly.ai — cold email at scale|HeyReach — LinkedIn outreach|Sales Navigator — signal scraping|WhatsApp Business + SMS — warm follow-ups|Clay — waterfall enrichment, all channels" data-link="/layers/gtm">
         <div class="nk">Engine · 05</div>
         <div class="nt">Autonomous Outreach Operator</div>
         <div class="ne">Every channel, one seat</div>
@@ -908,27 +913,27 @@ svg.i.arr{width:0.9em;height:0.9em;margin-left:6px}
         <div class="ne">The engineering org</div>
       </div>
 
-      <div class="node" style="--nc:#38bdf8;left:18%;top:18%" data-desc="Your AI VP Engineering. Runs the org chart, assigns work, enforces the budget, wakes the right engineer for the right problem — and replies to you on Telegram like a real head of eng." data-list="Plans the sprint for you|Assigns tickets to the right agent|Enforces budget + timeline hard stops|Pings you on Telegram with updates|Owns the 'is it shipped yet?' question">
+      <div class="node" style="--nc:#38bdf8;left:18%;top:18%" data-desc="Your AI VP Engineering. Runs the org chart, assigns work, enforces the budget, wakes the right engineer for the right problem — and replies to you on Telegram like a real head of eng." data-list="Plans the sprint for you|Assigns tickets to the right agent|Enforces budget + timeline hard stops|Pings you on Telegram with updates|Owns the 'is it shipped yet?' question" data-link="/layers/dev">
         <div class="nk">Role · 01</div>
         <div class="nt">Your AI VP Engineering</div>
         <div class="ne">On Telegram, 24/7</div>
       </div>
-      <div class="node" style="--nc:#bef264;left:82%;top:18%" data-desc="The engineering team. Planners, senior engineers, production engineers — each persona specialized and routed by task type. One brain handles architecture; another ships the code at velocity." data-list="Architect + planner personas|Production engineer + executor personas|Routed by task complexity + risk|TDD-mandatory, defensive coding|PRs land with reviewer context attached">
+      <div class="node" style="--nc:#bef264;left:82%;top:18%" data-desc="The engineering team. Planners, senior engineers, production engineers — each persona specialized and routed by task type. One brain handles architecture; another ships the code at velocity." data-list="Architect + planner personas|Production engineer + executor personas|Routed by task complexity + risk|TDD-mandatory, defensive coding|PRs land with reviewer context attached" data-link="/layers/dev">
         <div class="nk">Role · 02</div>
         <div class="nt">Autonomous Engineering Team</div>
         <div class="ne">Submit ticket. Get code.</div>
       </div>
-      <div class="node" style="--nc:#22c55e;left:14%;top:70%" data-desc="Every PR reviewed against five quality hats — architecture, security, readability, performance, test coverage — before anything hits main. Bad code gets bounced, not merged." data-list="5-hat PR review (arch · sec · read · perf · test)|Dead-letter queue catches failures|Automated retry + escalation paths|Every merge has a test attached|No human-in-loop for clean PRs">
+      <div class="node" style="--nc:#22c55e;left:14%;top:70%" data-desc="Every PR reviewed against five quality hats — architecture, security, readability, performance, test coverage — before anything hits main. Bad code gets bounced, not merged." data-list="5-hat PR review (arch · sec · read · perf · test)|Dead-letter queue catches failures|Automated retry + escalation paths|Every merge has a test attached|No human-in-loop for clean PRs" data-link="/layers/dev">
         <div class="nk">Role · 03</div>
         <div class="nt">Autonomous QA &amp; Review</div>
         <div class="ne">Nothing bad hits main</div>
       </div>
-      <div class="node" style="--nc:#f59e0b;left:86%;top:70%" data-desc="CI, deployment, and post-ship monitoring handled by the system itself. When a feature ships, the system tells you. When it breaks, the system rolls back and files the bug." data-list="Auto-deploy from merged PRs|Post-ship monitoring + alerts|Automated rollback on failure|Bug tickets auto-filed with context|You stay out of the pipeline">
+      <div class="node" style="--nc:#f59e0b;left:86%;top:70%" data-desc="CI, deployment, and post-ship monitoring handled by the system itself. When a feature ships, the system tells you. When it breaks, the system rolls back and files the bug." data-list="Auto-deploy from merged PRs|Post-ship monitoring + alerts|Automated rollback on failure|Bug tickets auto-filed with context|You stay out of the pipeline" data-link="/layers/dev">
         <div class="nk">Role · 04</div>
         <div class="nt">Autonomous Build &amp; Deploy</div>
         <div class="ne">Ship. Monitor. Roll back.</div>
       </div>
-      <div class="node" style="--nc:#ff6b35;left:50%;top:85%" data-desc="Your own private infrastructure — three nodes, always on. Orchestration hub, build server, client window. Your code runs on your servers. Nobody else's laptop." data-list="Orchestration hub — always-on scheduler|Build + deploy server — velocity node|Client window — your operator seat|Tailscale-connected private mesh|Your IP, your servers, your control">
+      <div class="node" style="--nc:#ff6b35;left:50%;top:85%" data-desc="Your own private infrastructure — three nodes, always on. Orchestration hub, build server, client window. Your code runs on your servers. Nobody else's laptop." data-list="Orchestration hub — always-on scheduler|Build + deploy server — velocity node|Client window — your operator seat|Tailscale-connected private mesh|Your IP, your servers, your control" data-link="/layers/dev">
         <div class="nk">Role · 05</div>
         <div class="nt">Your Private Dev Infra</div>
         <div class="ne">Three nodes, always on</div>
@@ -1191,7 +1196,7 @@ svg.i.arr{width:0.9em;height:0.9em;margin-left:6px}
   <div class="wrap">
     <div class="founder-grid">
       <div class="founder-photo reveal" role="img" aria-label="Mamoun Alamouri — Founder of SMOrchestra">
-        <img src="/assets/mamoun.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;opacity:0" onload="this.style.opacity=1" onerror="this.remove()" loading="lazy"/>
+        <img src="/assets/mamoun.jpg" alt="Mamoun Alamouri portrait" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;opacity:0;transition:opacity .4s ease;z-index:1" onload="this.style.opacity=1" onerror="this.remove()" loading="lazy"/>
         <div class="ph-mark">
           <div>
             <div class="ph-name">Mamoun Alamouri</div>
@@ -1378,6 +1383,17 @@ function wireDiagram(diagramId, tipId){
     n.addEventListener('focus', () => showTip(n));
     n.addEventListener('blur', hideTip);
     n.setAttribute('tabindex','0');
+    // If the node has a data-link, make it navigable on click + Enter.
+    const link = n.dataset.link;
+    if (link) {
+      n.setAttribute('role','link');
+      n.setAttribute('aria-label', (n.querySelector('.nt')?.textContent || '') + ' — open');
+      n.style.cursor = 'pointer';
+      n.addEventListener('click', () => { window.location.href = link; });
+      n.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.location.href = link; }
+      });
+    }
   });
 }
 wireDiagram('d-map','tip-map');

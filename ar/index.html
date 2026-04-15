@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMOrchestra — نظام تشغيل الشركات</title>
+    <meta name="description" content="ثبّت نظام تشغيل يدير عملك بكامله. بنّي، شغّل، سلّم — حقق أهداف النمو مع Claude و Anthropic.">
+    <meta name="keywords" content="نظام تشغيل، تحويل رقمي، أتمتة العمل، الذكاء الاصطناعي، الشرق الأوسط، GTM، BOT">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href="https://smorchestra.ai/ar/">
+    <link rel="alternate" hreflang="en" href="https://smorchestra.ai/">
+    <link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/">
+    <link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smorchestra.ai/ar/">
+    <meta property="og:title" content="SMOrchestra — نظام تشغيل الشركات">
+    <meta property="og:description" content="ثبّت نظام تشغيل يدير عملك بكامله. بنّي، شغّل، سلّم.">
+    <meta property="og:image" content="https://smorchestra.ai/og-image.png">
+    <meta property="og:locale" content="ar_AE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://smorchestra.ai/ar/">
+    <meta name="twitter:title" content="SMOrchestra — نظام تشغيل الشركات">
+    <meta name="twitter:description" content="ثبّت نظام تشغيل يدير عملك بكامله.">
+    <meta name="twitter:image" content="https://smorchestra.ai/og-image.png">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SMOrchestra",
+        "description": "نظام تشغيل متكامل لإدارة الشركات والنمو السريع",
+        "url": "https://smorchestra.ai/ar/",
+        "inLanguage": "ar",
+        "logo": "https://smorchestra.ai/logo.png",
+        "sameAs": [
+            "https://linkedin.com/company/smorchestra",
+            "https://twitter.com/smorchestra"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "SMOrchestra",
+        "url": "https://smorchestra.ai/ar/",
+        "inLanguage": "ar",
+        "description": "نظام تشغيل الشركات — بنّي، شغّل، سلّم"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SMOrchestra",
+        "description": "نظام تشغيل متكامل يدمج الذكاء الاصطناعي مع عمليات الأعمال",
+        "inLanguage": "ar",
+        "applicationCategory": "BusinessApplication",
+        "url": "https://smorchestra.ai/ar/",
+        "operatingSystem": "Web"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "مأمون العموري",
+        "title": "الرئيس التنفيذي والمؤسس",
+        "inLanguage": "ar",
+        "organization": {
+            "@type": "Organization",
+            "name": "SMOrchestra"
+        }
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+    :root {
+        --f: 'IBM Plex Sans Arabic', sans-serif;
+        --fm: 'IBM Plex Mono', monospace;
+        --bg: #0a0a0a;
+        --fg: #ffffff;
+        --fg-muted: #999999;
+        --border: #1a1a1a;
+        --accent: #0066ff;
+        --accent-hover: #0052cc;
+        --success: #00aa00;
+        --warn: #ff9900;
+        --error: #ff3333;
+        --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+        --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
+        --shadow-lg: 0 16px 40px rgba(0,0,0,0.5);
+        --radius: 6px;
+        --radius-lg: 12px;
+        --transition: 150ms ease-out;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        font-family: var(--f);
+        background-color: var(--bg);
+        color: var(--fg);
+        line-height: 1.6;
+        scroll-behavior: smooth;
+    }
+
+    a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: color var(--transition);
+    }
+
+    a:hover {
+        color: var(--accent-hover);
+    }
+
+    button, input[type="submit"] {
+        font-family: var(--f);
+        cursor: pointer;
+        border: none;
+        transition: all var(--transition);
+    }
+
+    /* RTL Overrides */
+    [dir="rtl"] {
+        text-align: right;
+    }
+
+    [dir="rtl"] .nav-list {
+        flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .hero-content {
+        text-align: center;
+    }
+
+    [dir="rtl"] .card {
+        text-align: right;
+    }
+
+    [dir="rtl"] .button-group {
+        flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .footer-col {
+        text-align: right;
+    }
+
+    /* Navigation */
+    nav {
+        position: sticky;
+        top: 0;
+        background-color: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 2rem;
+        z-index: 999;
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--fg);
+        transition: color var(--transition);
+    }
+
+    .nav-brand:hover {
+        color: var(--accent);
+    }
+
+    .nav-list {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+    }
+
+    .nav-list a {
+        font-size: 0.95rem;
+        color: var(--fg-muted);
+        transition: color var(--transition);
+    }
+
+    .nav-list a:hover {
+        color: var(--fg);
+    }
+
+    .nav-lang-switch {
+        padding: 0.5rem 1rem;
+        background-color: var(--border);
+        color: var(--fg);
+        border-radius: var(--radius);
+        font-size: 0.85rem;
+        transition: background-color var(--transition);
+    }
+
+    .nav-lang-switch:hover {
+        background-color: var(--accent);
+        color: var(--bg);
+    }
+
+    /* Hero Section */
+    .hero {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 6rem 2rem;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        color: var(--fg);
+    }
+
+    .hero .subheading {
+        font-size: 1.5rem;
+        color: var(--fg-muted);
+        line-height: 1.5;
+        margin-bottom: 2rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .stat {
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--accent);
+        display: block;
+    }
+
+    .stat-label {
+        font-size: 0.95rem;
+        color: var(--fg-muted);
+        margin-top: 0.5rem;
+    }
+
+    /* Card Sections */
+    .cards-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 2rem;
+        transition: all var(--transition);
+    }
+
+    .card:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        border-color: var(--accent);
+        box-shadow: var(--shadow-md);
+    }
+
+    .card-eyebrow {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--fg);
+    }
+
+    .card p {
+        font-size: 1rem;
+        color: var(--fg-muted);
+        line-height: 1.6;
+    }
+
+    /* Button Styles */
+    .button {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background-color: var(--accent);
+        color: var(--bg);
+        border-radius: var(--radius);
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all var(--transition);
+    }
+
+    .button:hover {
+        background-color: var(--accent-hover);
+        box-shadow: var(--shadow-md);
+    }
+
+    .button-secondary {
+        background-color: transparent;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+    }
+
+    .button-secondary:hover {
+        background-color: var(--accent);
+        color: var(--bg);
+    }
+
+    /* Diagram Styles */
+    .diagram-section {
+        max-width: 1200px;
+        margin: 3rem auto;
+        padding: 2rem;
+    }
+
+    .diagram-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    svg {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .node {
+        cursor: pointer;
+        transition: all var(--transition);
+    }
+
+    .node:hover {
+        filter: brightness(1.2);
+    }
+
+    .node .nt {
+        font-family: var(--f);
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    /* Grid Sections */
+    .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    /* VS Grid */
+    .vs-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+    }
+
+    .vs-grid-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .vs-grid-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .vs-grid-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .vs-item {
+        background-color: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .vs-item h4 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .vs-item p {
+        font-size: 0.9rem;
+        color: var(--fg-muted);
+    }
+
+    /* Footer */
+    footer {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-top: 1px solid var(--border);
+        padding: 3rem 2rem;
+        margin-top: 4rem;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-col h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+        list-style: none;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-col ul li a {
+        color: var(--fg-muted);
+        transition: color var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+        color: var(--fg);
+    }
+
+    .footer-bottom {
+        border-top: 1px solid var(--border);
+        padding-top: 2rem;
+        text-align: center;
+        color: var(--fg-muted);
+        font-size: 0.9rem;
+    }
+
+    /* Utility Classes */
+    .center {
+        text-align: center;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .visible {
+        display: block;
+    }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity var(--transition), transform var(--transition);
+    }
+
+    .reveal.in-view {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero .subheading {
+            font-size: 1.2rem;
+        }
+
+        .hero-stats {
+            gap: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+        }
+
+        .nav-list {
+            gap: 1rem;
+        }
+
+        .diagram-title {
+            font-size: 1.5rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-brand">SMOrchestra</div>
+            <ul class="nav-list">
+                <li><a href="/ar/layers/ops">العمليات</a></li>
+                <li><a href="/ar/layers/gtm">الذهاب للسوق</a></li>
+                <li><a href="/ar/layers/dev">التطوير</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+                <li><a href="/" class="nav-lang-switch">EN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>شركتك بها خمس أدوار شاغرة. كلها أنت.</h1>
+        <p class="subheading">توقف عن استئجار فريقك. ثبّت نظام تشغيل يدير العمل — وامتلكه في النهاية.</p>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">10x</span>
+                <span class="stat-label">أسرع من الفرق التقليدية</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">5</span>
+                <span class="stat-label">أدوار رئيسية مؤتمتة</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">تحكم كامل في العمليات</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Concepts -->
+    <section class="cards-container">
+        <div class="card reveal">
+            <div class="card-eyebrow">المرحلة الأولى</div>
+            <h3>البناء</h3>
+            <p>استخدم Claude و Anthropic لتصميم وتطوير نظام التشغيل الخاص بك. ابدأ بالعمليات الأساسية واستكمل من هناك.</p>
+        </div>
+        <div class="card reveal">
+            <div class="card-eyebrow">المرحلة الثانية</div>
+            <h3>التشغيل</h3>
+            <p>شغّل النظام عبر فريقك أو بمساعدة فريقنا. راقب الأداء، قم بالتحسينات المستمرة، وسد الثغرات بسرعة.</p>
+        </div>
+        <div class="card reveal">
+            <div class="card-eyebrow">المرحلة الثالثة</div>
+            <h3>التسليم</h3>
+            <p>انتقل من التشغيل اليدوي إلى الأتمتة الكاملة. امتلك النظام بكامله وحقق الأهداف المالية بأسرع وقت.</p>
+        </div>
+    </section>
+
+    <!-- The Map Section -->
+    <section class="diagram-section">
+        <h2 class="diagram-title">خريطة النظام</h2>
+        <svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" aria-label="خريطة نظام التشغيل">
+            <!-- Placeholder diagram structure with Arabic labels -->
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0066ff;stop-opacity:0.3" />
+                    <stop offset="100%" style="stop-color:#0066ff;stop-opacity:0.1" />
+                </linearGradient>
+            </defs>
+
+            <!-- Central nodes -->
+            <circle cx="500" cy="300" r="60" fill="url(#grad1)" stroke="#0066ff" stroke-width="2"/>
+            <text x="500" y="305" text-anchor="middle" class="nt" fill="#ffffff" font-size="14" font-weight="600">نظام التشغيل</text>
+
+            <!-- Layer nodes -->
+            <g class="node" data-link="/ar/layers/ops">
+                <circle cx="250" cy="150" r="50" fill="rgba(0,170,0,0.2)" stroke="#00aa00" stroke-width="2"/>
+                <text x="250" y="155" text-anchor="middle" class="nt" fill="#00aa00">العمليات</text>
+            </g>
+
+            <g class="node" data-link="/ar/layers/gtm">
+                <circle cx="500" cy="100" r="50" fill="rgba(255,153,0,0.2)" stroke="#ff9900" stroke-width="2"/>
+                <text x="500" y="105" text-anchor="middle" class="nt" fill="#ff9900">GTM</text>
+            </g>
+
+            <g class="node" data-link="/ar/layers/dev">
+                <circle cx="750" cy="150" r="50" fill="rgba(102,153,255,0.2)" stroke="#6699ff" stroke-width="2"/>
+                <text x="750" y="155" text-anchor="middle" class="nt" fill="#6699ff">التطوير</text>
+            </g>
+
+            <!-- Connection lines -->
+            <line x1="300" y1="180" x2="470" y2="280" stroke="#333333" stroke-width="2" stroke-dasharray="5,5"/>
+            <line x1="500" y1="150" x2="500" y2="240" stroke="#333333" stroke-width="2" stroke-dasharray="5,5"/>
+            <line x1="700" y1="180" x2="530" y2="280" stroke="#333333" stroke-width="2" stroke-dasharray="5,5"/>
+        </svg>
+    </section>
+
+    <!-- Operations Layer -->
+    <section class="diagram-section">
+        <h2 class="diagram-title">طبقة العمليات</h2>
+        <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" aria-label="طبقة العمليات">
+            <!-- Ops nodes -->
+            <g class="node">
+                <rect x="50" y="50" width="150" height="100" fill="rgba(0,170,0,0.15)" stroke="#00aa00" stroke-width="2" rx="4"/>
+                <text x="125" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">إدارة الموارد</text>
+                <text x="125" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">البشرية والمالية</text>
+            </g>
+
+            <g class="node">
+                <rect x="250" y="50" width="150" height="100" fill="rgba(0,170,0,0.15)" stroke="#00aa00" stroke-width="2" rx="4"/>
+                <text x="325" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">المالية والحسابات</text>
+                <text x="325" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">التنبؤ والتحليل</text>
+            </g>
+
+            <g class="node">
+                <rect x="450" y="50" width="150" height="100" fill="rgba(0,170,0,0.15)" stroke="#00aa00" stroke-width="2" rx="4"/>
+                <text x="525" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">العمليات اليومية</text>
+                <text x="525" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">الجودة والامتثال</text>
+            </g>
+
+            <g class="node">
+                <rect x="650" y="50" width="150" height="100" fill="rgba(0,170,0,0.15)" stroke="#00aa00" stroke-width="2" rx="4"/>
+                <text x="725" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">إدارة المخاطر</text>
+                <text x="725" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">الرصد والتعافي</text>
+            </g>
+
+            <!-- Subcomponents -->
+            <g class="node">
+                <circle cx="125" cy="250" r="40" fill="rgba(0,170,0,0.2)" stroke="#00aa00" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="125" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الاستقطاب</text>
+            </g>
+
+            <g class="node">
+                <circle cx="200" cy="250" r="40" fill="rgba(0,170,0,0.2)" stroke="#00aa00" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="200" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الأداء</text>
+            </g>
+
+            <g class="node">
+                <circle cx="325" cy="250" r="40" fill="rgba(0,170,0,0.2)" stroke="#00aa00" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="325" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">المحاسبة</text>
+            </g>
+
+            <g class="node">
+                <circle cx="525" cy="250" r="40" fill="rgba(0,170,0,0.2)" stroke="#00aa00" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="525" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الجودة</text>
+            </g>
+
+            <g class="node">
+                <circle cx="725" cy="250" r="40" fill="rgba(0,170,0,0.2)" stroke="#00aa00" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="725" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">المراقبة</text>
+            </g>
+        </svg>
+    </section>
+
+    <!-- GTM Layer -->
+    <section class="diagram-section">
+        <h2 class="diagram-title">طبقة الذهاب للسوق</h2>
+        <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" aria-label="طبقة الذهاب للسوق">
+            <!-- GTM nodes -->
+            <g class="node">
+                <rect x="50" y="50" width="150" height="100" fill="rgba(255,153,0,0.15)" stroke="#ff9900" stroke-width="2" rx="4"/>
+                <text x="125" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">البحث والتحليل</text>
+                <text x="125" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">السوق والمنافسين</text>
+            </g>
+
+            <g class="node">
+                <rect x="250" y="50" width="150" height="100" fill="rgba(255,153,0,0.15)" stroke="#ff9900" stroke-width="2" rx="4"/>
+                <text x="325" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">استراتيجية المنتج</text>
+                <text x="325" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">التوضع والتميز</text>
+            </g>
+
+            <g class="node">
+                <rect x="450" y="50" width="150" height="100" fill="rgba(255,153,0,0.15)" stroke="#ff9900" stroke-width="2" rx="4"/>
+                <text x="525" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">المبيعات والشراكات</text>
+                <text x="525" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">القنوات والعملاء</text>
+            </g>
+
+            <g class="node">
+                <rect x="650" y="50" width="150" height="100" fill="rgba(255,153,0,0.15)" stroke="#ff9900" stroke-width="2" rx="4"/>
+                <text x="725" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">التسويق والاتصال</text>
+                <text x="725" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">الرسالة والوصول</text>
+            </g>
+
+            <!-- Subcomponents -->
+            <g class="node">
+                <circle cx="125" cy="250" r="40" fill="rgba(255,153,0,0.2)" stroke="#ff9900" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="125" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الفرص</text>
+            </g>
+
+            <g class="node">
+                <circle cx="325" cy="250" r="40" fill="rgba(255,153,0,0.2)" stroke="#ff9900" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="325" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">التوضع</text>
+            </g>
+
+            <g class="node">
+                <circle cx="400" cy="250" r="40" fill="rgba(255,153,0,0.2)" stroke="#ff9900" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="400" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الاتفاقات</text>
+            </g>
+
+            <g class="node">
+                <circle cx="525" cy="250" r="40" fill="rgba(255,153,0,0.2)" stroke="#ff9900" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="525" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الحملات</text>
+            </g>
+
+            <g class="node">
+                <circle cx="725" cy="250" r="40" fill="rgba(255,153,0,0.2)" stroke="#ff9900" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="725" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الارتباط</text>
+            </g>
+        </svg>
+    </section>
+
+    <!-- Development Layer -->
+    <section class="diagram-section">
+        <h2 class="diagram-title">طبقة التطوير</h2>
+        <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" aria-label="طبقة التطوير">
+            <!-- Dev nodes -->
+            <g class="node">
+                <rect x="50" y="50" width="150" height="100" fill="rgba(102,153,255,0.15)" stroke="#6699ff" stroke-width="2" rx="4"/>
+                <text x="125" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">العمارة والتصميم</text>
+                <text x="125" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">النظام والمستقبل</text>
+            </g>
+
+            <g class="node">
+                <rect x="250" y="50" width="150" height="100" fill="rgba(102,153,255,0.15)" stroke="#6699ff" stroke-width="2" rx="4"/>
+                <text x="325" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">التطوير والاختبار</text>
+                <text x="325" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">البناء والتحقق</text>
+            </g>
+
+            <g class="node">
+                <rect x="450" y="50" width="150" height="100" fill="rgba(102,153,255,0.15)" stroke="#6699ff" stroke-width="2" rx="4"/>
+                <text x="525" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">النشر والتسليم</text>
+                <text x="525" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">التجهيز والصيانة</text>
+            </g>
+
+            <g class="node">
+                <rect x="650" y="50" width="150" height="100" fill="rgba(102,153,255,0.15)" stroke="#6699ff" stroke-width="2" rx="4"/>
+                <text x="725" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">الدعم والتحسين</text>
+                <text x="725" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">المراقبة والتطور</text>
+            </g>
+
+            <!-- Subcomponents -->
+            <g class="node">
+                <circle cx="125" cy="250" r="40" fill="rgba(102,153,255,0.2)" stroke="#6699ff" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="125" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">المواصفات</text>
+            </g>
+
+            <g class="node">
+                <circle cx="325" cy="250" r="40" fill="rgba(102,153,255,0.2)" stroke="#6699ff" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="325" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الكود</text>
+            </g>
+
+            <g class="node">
+                <circle cx="400" cy="250" r="40" fill="rgba(102,153,255,0.2)" stroke="#6699ff" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="400" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الإصدار</text>
+            </g>
+
+            <g class="node">
+                <circle cx="525" cy="250" r="40" fill="rgba(102,153,255,0.2)" stroke="#6699ff" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="525" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الإطلاق</text>
+            </g>
+
+            <g class="node">
+                <circle cx="725" cy="250" r="40" fill="rgba(102,153,255,0.2)" stroke="#6699ff" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="725" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">التحسين</text>
+            </g>
+        </svg>
+    </section>
+
+    <!-- VS Grid Section -->
+    <section class="vs-grid">
+        <div class="vs-grid-header">
+            <h2>لماذا SMOrchestra بدلاً من...</h2>
+        </div>
+
+        <div class="vs-grid-row">
+            <div class="vs-item">
+                <h4>الوكالات</h4>
+                <p>نموذج يومي غالي، فريق خارجي، بلا ملكية</p>
+            </div>
+            <div class="vs-item">
+                <h4>الخدمات المرنة</h4>
+                <p>ساعات بشرية محدودة، تكاليف مستمرة، بدون نظام</p>
+            </div>
+            <div class="vs-item">
+                <h4>التوظيف الداخلي</h4>
+                <p>استثمار كبير، مخاطر عالية، وقت طويل للنتائج</p>
+            </div>
+            <div class="vs-item">
+                <h4>استشارات عامة</h4>
+                <p>توصيات عامة، بلا تنفيذ، بلا ملكية العملية</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section style="max-width: 1200px; margin: 4rem auto; padding: 2rem;">
+        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">التحديات الحالية في الشرق الأوسط</h2>
+        <div class="grid-3">
+            <div class="card reveal">
+                <h3 style="color: var(--error);">التكاليف غير المستدامة</h3>
+                <p>الفرق الكبيرة تستنزف الموارد دون مرونة في التكيف مع التغييرات السريعة.</p>
+            </div>
+            <div class="card reveal">
+                <h3 style="color: var(--error);">نقص المهارات والخبرات</h3>
+                <p>البحث عن موهوبين مؤهلين في السوق المحلية يستغرق وقتاً طويلاً وتكاليف عالية.</p>
+            </div>
+            <div class="card reveal">
+                <h3 style="color: var(--error);">المرونة المحدودة</h3>
+                <p>النماذج الثابتة لا تسمح بالسرعة والتكيف الذي تحتاجه الشركات سريعة النمو.</p>
+            </div>
+            <div class="card reveal">
+                <h3 style="color: var(--error);">الامتثال والمخاطر</h3>
+                <p>العمليات اليدوية عرضة للأخطاء، والامتثال التنظيمي معقد وضعيف التنظيم.</p>
+            </div>
+            <div class="card reveal">
+                <h3 style="color: var(--error);">الحد من الابتكار</h3>
+                <p>الفرق مشغولة بالعمل اليومي، ولا وقت للابتكار والنمو الاستراتيجي.</p>
+            </div>
+            <div class="card reveal">
+                <h3 style="color: var(--error);">عدم الملكية</h3>
+                <p>الاعتماد على فريق خارجي يعني خسارة الملكية والتحكم في العمليات الأساسية.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section style="max-width: 1000px; margin: 4rem auto; padding: 3rem 2rem; background-color: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+        <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 2rem;">مأمون العموري</h2>
+        <p style="font-size: 1.1rem; color: var(--fg-muted); margin-bottom: 1rem; line-height: 1.8;">
+            بنى مأمون عشرات الشركات والفريق الناجحة عبر أفريقيا والشرق الأوسط وآسيا. عمل مع Anthropic على صياغة استراتيجيات نمو الذكاء الاصطناعي. يؤمن بأن الشركات لا تحتاج إلى فرق ضخمة — بل إلى نظام تشغيل ذكي.
+        </p>
+        <p style="font-size: 1rem; color: var(--fg-muted);">
+            "SMOrchestra ولدت من سنوات من بناء الفرق ورؤية نفس المشاكل تتكرر. الحل بسيط: استبدل الفريق بنظام تشغيل. الملكية الكاملة، التحكم الكامل، النتائج الحقيقية."
+        </p>
+    </section>
+
+    <!-- Fit Gate Section -->
+    <section style="max-width: 1200px; margin: 4rem auto; padding: 3rem 2rem;">
+        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">هل أنت مؤهل لـ SMOrchestra؟</h2>
+        <div class="grid-2">
+            <div class="card" style="border: 2px solid #00aa00;">
+                <h3 style="color: #00aa00;">المؤهلون 🟢</h3>
+                <ul style="list-style: none; font-size: 0.95rem; color: var(--fg-muted); line-height: 1.8;">
+                    <li>✓ قيادة ملتزمة بالرؤية طويلة الأجل</li>
+                    <li>✓ تكوين تشغيلي يحتاج إلى تحسين</li>
+                    <li>✓ موازنة للاستثمار في النظام</li>
+                    <li>✓ جاهزية لتغيير طريقة التفكير</li>
+                    <li>✓ وضوح في مؤشرات النجاح</li>
+                </ul>
+            </div>
+            <div class="card" style="border: 2px solid #ff3333;">
+                <h3 style="color: #ff3333;">غير المؤهلين 🔴</h3>
+                <ul style="list-style: none; font-size: 0.95rem; color: var(--fg-muted); line-height: 1.8;">
+                    <li>✗ البحث عن حل سريع / رخيص</li>
+                    <li>✗ عدم الرغبة في تغيير العمليات</li>
+                    <li>✗ عدم التزام الإدارة العليا</li>
+                    <li>✗ بلا ميزانية للاستثمار</li>
+                    <li>✗ في مرحلة بقاء (ليس نمو)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section id="proof" style="max-width: 1200px; margin: 4rem auto; padding: 3rem 2rem;">
+        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">دراسات الحالات</h2>
+        <div class="grid-2">
+            <div class="card reveal" style="border-left: 4px solid var(--accent);">
+                <h3>سوق إلكترونية إقليمية</h3>
+                <p><strong>التحدي:</strong> نمو 3x مع فريق ثابت الحجم.</p>
+                <p><strong>الحل:</strong> بناء نظام GTM مؤتمت + عمليات محسّنة.</p>
+                <p><strong>النتيجة:</strong> 250% زيادة في الإيرادات، 40% تخفيض التكاليف.</p>
+            </div>
+            <div class="card reveal" style="border-left: 4px solid var(--accent);">
+                <h3>شركة خدمات مالية</h3>
+                <p><strong>التحدي:</strong> امتثال معقد، عمليات يدوية، عدم الملكية الكاملة.</p>
+                <p><strong>الحل:</strong> نظام عمليات موحد + أتمتة العمليات الأساسية.</p>
+                <p><strong>النتيجة:</strong> 99.8% امتثال، 60% توفير التكاليف.</p>
+            </div>
+            <div class="card reveal" style="border-left: 4px solid var(--accent);">
+                <h3>شركة ناشئة SaaS</h3>
+                <p><strong>التحدي:</strong> من فريق 5 أشخاص إلى شركة بـ 100 شخص دون فقدان الرؤية.</p>
+                <p><strong>الحل:</strong> نظام تشغيل موحد قابل للتوسع + إدارة تكاليف واضحة.</p>
+                <p><strong>النتيجة:</strong> نمو 10x بزيادة تكاليف 40% فقط.</p>
+            </div>
+            <div class="card reveal" style="border-left: 4px solid var(--accent);">
+                <h3>مجموعة استثمارية</h3>
+                <p><strong>التحدي:</strong> إدارة محفظة متعددة المستويات بفريق محدود.</p>
+                <p><strong>الحل:</strong> نظام مراقبة موحد + عمليات قياسية لكل الشركات التابعة.</p>
+                <p><strong>النتيجة:</strong> رؤية شاملة في الوقت الفعلي، 50% تحسن في الأداء.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Build-Operate-Transfer Model -->
+    <section style="max-width: 1200px; margin: 4rem auto; padding: 3rem 2rem;">
+        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">نموذج البناء — التشغيل — التسليم</h2>
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; margin-top: 2rem;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--accent);">
+                        <th style="padding: 1rem; text-align: right; font-weight: 700;">المرحلة</th>
+                        <th style="padding: 1rem; text-align: right; font-weight: 700;">المدة</th>
+                        <th style="padding: 1rem; text-align: right; font-weight: 700;">الأنشطة الرئيسية</th>
+                        <th style="padding: 1rem; text-align: right; font-weight: 700;">الملكية</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 1rem; font-weight: 600; color: var(--accent);">البناء</td>
+                        <td style="padding: 1rem;">8-12 أسبوع</td>
+                        <td style="padding: 1rem; color: var(--fg-muted);">تصميم النظام، البناء الأولي، التدريب الأساسي</td>
+                        <td style="padding: 1rem; color: var(--fg-muted);">Anthropic + الفريق</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 1rem; font-weight: 600; color: var(--accent);">التشغيل</td>
+                        <td style="padding: 1rem;">12-24 شهر</td>
+                        <td style="padding: 1rem; color: var(--fg-muted);">التشغيل اليومي، الرصد، التحسينات، التوسع</td>
+                        <td style="padding: 1rem; color: var(--fg-muted);">الفريق مع الدعم</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem; font-weight: 600; color: var(--accent);">التسليم</td>
+                        <td style="padding: 1rem;">مستمر</td>
+                        <td style="padding: 1rem; color: var(--fg-muted);">الأتمتة الكاملة، الملكية الكاملة، الدعم الذاتي</td>
+                        <td style="padding: 1rem; color: var(--fg-muted);">الفريق (بدون الاعتماد الخارجي)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="max-width: 1000px; margin: 4rem auto; padding: 4rem 2rem; text-align: center; background-color: rgba(0, 102, 255, 0.08); border: 1px solid var(--accent); border-radius: var(--radius-lg);">
+        <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem;">استعد لتغيير قواعد اللعبة</h2>
+        <p style="font-size: 1.2rem; color: var(--fg-muted); margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+            لا تقارن نفسك بمنافسك. بنّي نظام تشغيل أفضل من أي فريق يمكنك استئجاره.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <button class="button" id="cta-primary">حدد موعد استشارة</button>
+            <button class="button button-secondary">تعرّف على المزيد</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>نظام التشغيل</h4>
+                <ul>
+                    <li><a href="/ar/layers/ops">العمليات بالذكاء الاصطناعي</a></li>
+                    <li><a href="/ar/layers/gtm">الذهاب إلى السوق بالذكاء الاصطناعي</a></li>
+                    <li><a href="/ar/layers/dev">التطوير بالذكاء الاصطناعي</a></li>
+                    <li><a href="/ar/#proof">حالات الإثبات</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>اعمل معنا</h4>
+                <ul>
+                    <li><a href="/ar/solutions/ai-revenue-os">نظام تشغيل الإيرادات بالذكاء الاصطناعي</a></li>
+                    <li><a href="/ar/solutions/signal-sales-engine">محرك المبيعات بالإشارات</a></li>
+                    <li><a href="/ar/solutions/mena-expansion">التوسع في الشرق الأوسط وشمال أفريقيا</a></li>
+                    <li><a href="/ar/cohorts/">الدفعات</a></li>
+                    <li><a href="/ar/tools/">بطاقات التقييم المجانية</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>تواصل</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/mamounalamouri/" rel="noopener">لينكدإن · مأمون</a></li>
+                    <li><a href="https://www.linkedin.com/company/smorchestra/" rel="noopener">لينكدإن · الشركة</a></li>
+                    <li><a href="mailto:hello@smorchestra.ai">hello@smorchestra.ai</a></li>
+                    <li><a href="/book">احجز مكالمة</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SMOrchestra · مبني على نظام التشغيل الأصيل للذكاء الاصطناعي · بناء · تشغيل · تسليم</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Wire up diagram node clicks
+        function wireDiagram() {
+            const nodes = document.querySelectorAll('.node[data-link]');
+            nodes.forEach(node => {
+                node.addEventListener('click', function() {
+                    const link = this.getAttribute('data-link');
+                    if (link) {
+                        window.location.href = link;
+                    }
+                });
+            });
+        }
+
+        // Intersection Observer for reveal animations
+        function initRevealAnimation() {
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        }
+
+        // CTA Button Handler
+        document.getElementById('cta-primary').addEventListener('click', function() {
+            window.location.href = 'mailto:hello@smorchestra.ai?subject=استشارة%20SMOrchestra';
+        });
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            wireDiagram();
+            initRevealAnimation();
+        });
+    </script>
+</body>
+</html>

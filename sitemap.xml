@@ -32,6 +32,12 @@
 
   <!-- ======== SOLUTIONS (Phase 1B) ======== -->
   <url>
+    <loc>https://smorchestra.ai/solutions/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://smorchestra.ai/solutions/ai-revenue-os</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -52,6 +58,12 @@
 
   <!-- ======== COHORTS ======== -->
   <url>
+    <loc>https://smorchestra.ai/cohorts/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://smorchestra.ai/cohorts/ai-revenue-ops</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -70,6 +82,118 @@
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- ======== ARABIC MIRROR — Phase A (hub + 3 pillars) ======== -->
+  <url>
+    <loc>https://smorchestra.ai/ar/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/" />
+  </url>
+  <url>
+    <loc>https://smorchestra.ai/ar/layers/ops</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/layers/ops" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/layers/ops" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/layers/ops" />
+  </url>
+  <url>
+    <loc>https://smorchestra.ai/ar/layers/gtm</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/layers/gtm" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/layers/gtm" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/layers/gtm" />
+  </url>
+  <url>
+    <loc>https://smorchestra.ai/ar/layers/dev</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/layers/dev" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/layers/dev" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/layers/dev" />
+  </url>
+
+  <!-- ======== ARABIC MIRROR — Phase B (collections + spokes + tools) ======== -->
+  <url>
+    <loc>https://smorchestra.ai/ar/solutions/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/solutions/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/solutions/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/solutions/" />
+  </url>
+  <url>
+    <loc>https://smorchestra.ai/ar/solutions/ai-revenue-os</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/solutions/ai-revenue-os" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/solutions/ai-revenue-os" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/solutions/ai-revenue-os" />
+  </url>
+  <url>
+    <loc>https://smorchestra.ai/ar/solutions/signal-sales-engine</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/solutions/signal-sales-engine" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/solutions/signal-sales-engine" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/solutions/signal-sales-engine" />
+  </url>
+  <url>
+    <loc>https://smorchestra.ai/ar/solutions/mena-expansion</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/solutions/mena-expansion" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/solutions/mena-expansion" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/solutions/mena-expansion" />
+  </url>
+  <url>
+    <loc>https://smorchestra.ai/ar/cohorts/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/cohorts/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/cohorts/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/cohorts/" />
+  </url>
+  <url>
+    <loc>https://smorchestra.ai/ar/cohorts/gtm-founders</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/cohorts/gtm-founders" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/cohorts/gtm-founders" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/cohorts/gtm-founders" />
+  </url>
+  <url>
+    <loc>https://smorchestra.ai/ar/cohorts/ai-revenue-ops</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/cohorts/ai-revenue-ops" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/cohorts/ai-revenue-ops" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/cohorts/ai-revenue-ops" />
+  </url>
+  <url>
+    <loc>https://smorchestra.ai/ar/tools/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/tools/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/tools/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/tools/" />
   </url>
 
   <!-- ======== TOOLS / SCORECARDS (live on score.smorchestra.ai) ======== -->

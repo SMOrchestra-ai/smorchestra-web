@@ -13,6 +13,7 @@
 
 <link rel="canonical" href="https://smorchestra.ai/layers/gtm" />
 <link rel="alternate" hreflang="en" href="https://smorchestra.ai/layers/gtm" />
+<link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/layers/gtm" />
 <link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/layers/gtm" />
 
 <meta property="og:type" content="website" />
@@ -186,6 +187,23 @@ h4{font-size:18px;font-weight:700}
 .fit-col li{display:grid;grid-template-columns:20px 1fr;gap:8px;font-size:14.5px;color:#e5e5e5;line-height:1.55}
 .fit-col li i{color:var(--fc,var(--lime));padding-top:5px}
 @media (max-width:820px){.fit{grid-template-columns:1fr}}
+
+/* GTM methodology funnel — native dark-mode SVG */
+.funnel-wrap{max-width:1080px;margin:32px auto 0;background:#0a0a0a;border:1px solid #1a1a1a;padding:48px 36px}
+.funnel-svg{width:100%;height:auto;display:block;font-family:'Inter',sans-serif}
+.funnel-svg .stg-band{stroke-width:1;stroke:#262626}
+.funnel-svg .stg-name{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;fill:#fff}
+.funnel-svg .stg-num{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.funnel-svg .stg-headline{font-size:18px;font-weight:800;fill:#fff;letter-spacing:-0.01em}
+.funnel-svg .stg-engine{font-size:12px;font-weight:600;fill:#cfcfcf;letter-spacing:.04em}
+.funnel-svg .stg-metric{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;fill:#9ca3af}
+.funnel-svg .stg-divider{stroke:#1f1f1f;stroke-width:1}
+.funnel-legend{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;padding-top:28px;border-top:1px solid #1a1a1a}
+.fl-cell{padding:14px 16px;background:#000;border-left:3px solid var(--lc,var(--orange))}
+.fl-cell .flh{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lc,var(--orange));margin-bottom:6px}
+.fl-cell p{font-size:13px;color:#cfcfcf;line-height:1.5;margin:0}
+@media (max-width:820px){.funnel-legend{grid-template-columns:1fr 1fr}.funnel-wrap{padding:28px 18px}}
+@media (max-width:520px){.funnel-legend{grid-template-columns:1fr}}
 
 .faq{max-width:920px;margin:32px auto 0;display:flex;flex-direction:column;gap:14px}
 .faq-item{background:#0a0a0a;border-left:3px solid var(--orange);padding:24px 28px;cursor:pointer;transition:background .2s}
@@ -386,10 +404,74 @@ svg.i.arr{width:0.9em;height:0.9em;margin-left:6px}
       <p class="sub">The ICP behaves differently. The channels weigh differently. The buying cycle looks different. The RevOps talent pool is structurally different. Pretending otherwise burns two years of runway.</p>
     </div>
     <div class="prose reveal">
-      <p><strong>WhatsApp is the close channel.</strong> Every agency that arrives from London or Boston gets this wrong. In the Gulf, the deal happens on WhatsApp. The email is the bureaucracy. The LinkedIn post is the trust-builder. The WhatsApp thread is the close. AI-Native GTM treats WhatsApp as a first-class channel — with threading, auto-follow-up, team assignments, and CRM sync — not a novelty.</p>
-      <p><strong>Dialect, not MSA.</strong> MSA is the language of state television. Nobody closes in it. Khaleeji Arabic is the Gulf B2B register. Levantine Arabic is how relationships start in Amman and Beirut. Masri inflections land differently in Cairo. The content engine knows this. The signal sales engine knows this. Your messages arrive in the register the buyer actually speaks.</p>
       <p><strong>Trust compounds slower, then faster.</strong> A MENA B2B buyer needs 5–10 touches before the first meaningful reply. After the meeting, trust accelerates. This is the inverse of the US funnel. AI-Native GTM is tuned to the MENA shape — patient at the top, fast in the middle, relationship-heavy at close.</p>
+      <p><strong>Signal-based, not spray-based.</strong> Most MENA agencies still sell volume — more emails, more LinkedIn DMs, more list buys. We sell precision. Every message we ship is triggered by a real-world signal: a hire, a raise, a launch, a regulatory shift, a budget cycle, a competitor move. Tech is our superpower — we read the market in real time and write a one-to-one message in your voice before your competitors notice the signal exists.</p>
+      <p><strong>Dialect, not MSA.</strong> MSA is the language of state television. Nobody closes in it. Khaleeji Arabic is the Gulf B2B register. Levantine Arabic is how relationships start in Amman and Beirut. Masri inflections land differently in Cairo. The content engine knows this. The signal sales engine knows this. Your messages arrive in the register the buyer actually speaks.</p>
       <p><strong>English and Arabic, same engine, same calendar.</strong> Running two GTM motions in two languages is what kills most MENA marketing teams. The engine runs both from the same brain, same ICP, same content strategy — just two output streams. Ship in Arabic on Sunday, in English on Tuesday, and don't think about it again.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">The methodology · How the engines route the buyer journey</div>
+      <h2>One funnel. Four stages. <span class="accent">Five engines</span> doing the work.</h2>
+      <p class="sub">The engines aren't a feature list. They're a coordinated motion — each stage is tuned to MENA buyer behavior, narrowing patient at the top, accelerating in the middle, relationship-heavy at the close.</p>
+    </div>
+
+    <div class="funnel-wrap reveal">
+      <svg class="funnel-svg" viewBox="0 0 1080 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="funnelTitle funnelDesc">
+        <title id="funnelTitle">AI-Native GTM funnel — Attract, Capture, Nurture, Close</title>
+        <desc id="funnelDesc">A four-stage funnel showing how the five GTM engines route the MENA buyer journey from attract through close.</desc>
+
+        <!-- ATTRACT — orange -->
+        <g>
+          <polygon class="stg-band" points="20,20 1060,20 980,120 100,120" fill="#ff6b35" fill-opacity="0.14" stroke="#ff6b35"/>
+          <text class="stg-num" x="40" y="48" fill="#ff6b35">Stage 01</text>
+          <text class="stg-name" x="40" y="76" fill="#ff6b35">Attract</text>
+          <text class="stg-headline" x="540" y="62" text-anchor="middle">Be findable. Be repeatable. Be in the feed.</text>
+          <text class="stg-engine" x="540" y="88" text-anchor="middle">Content Engine · Campaign Management</text>
+          <text class="stg-metric" x="1040" y="76" text-anchor="end" fill="#ff6b35">Top of funnel</text>
+        </g>
+
+        <!-- CAPTURE — cyan -->
+        <g>
+          <polygon class="stg-band" points="100,128 980,128 880,228 200,228" fill="#38bdf8" fill-opacity="0.14" stroke="#38bdf8"/>
+          <text class="stg-num" x="220" y="156" fill="#38bdf8">Stage 02</text>
+          <text class="stg-name" x="220" y="184" fill="#38bdf8">Capture</text>
+          <text class="stg-headline" x="540" y="170" text-anchor="middle">Trade attention for permission. Catch the signal.</text>
+          <text class="stg-engine" x="540" y="196" text-anchor="middle">Webinar Funnel · Signal Sales Engine</text>
+          <text class="stg-metric" x="860" y="184" text-anchor="end" fill="#38bdf8">Intent forms</text>
+        </g>
+
+        <!-- NURTURE — lime -->
+        <g>
+          <polygon class="stg-band" points="200,236 880,236 760,336 320,336" fill="#bef264" fill-opacity="0.14" stroke="#bef264"/>
+          <text class="stg-num" x="340" y="264" fill="#bef264">Stage 03</text>
+          <text class="stg-name" x="340" y="292" fill="#bef264">Nurture</text>
+          <text class="stg-headline" x="540" y="278" text-anchor="middle">Compound trust. 5–10 touches. Patient cadence.</text>
+          <text class="stg-engine" x="540" y="304" text-anchor="middle">Outreach Operator · Campaign Management</text>
+          <text class="stg-metric" x="740" y="292" text-anchor="end" fill="#bef264">MENA-tuned</text>
+        </g>
+
+        <!-- CLOSE — violet -->
+        <g>
+          <polygon class="stg-band" points="320,344 760,344 660,440 420,440" fill="#a78bfa" fill-opacity="0.16" stroke="#a78bfa"/>
+          <text class="stg-num" x="440" y="372" fill="#a78bfa">Stage 04</text>
+          <text class="stg-name" x="440" y="400" fill="#a78bfa">Close</text>
+          <text class="stg-headline" x="540" y="386" text-anchor="middle">High-stakes 1:1. Warm. Augmented, not automated.</text>
+          <text class="stg-engine" x="540" y="412" text-anchor="middle">Outreach Operator · Control Room</text>
+          <text class="stg-metric" x="640" y="400" text-anchor="end" fill="#a78bfa">Human-grade</text>
+        </g>
+      </svg>
+
+      <div class="funnel-legend">
+        <div class="fl-cell" style="--lc:#ff6b35"><div class="flh">Attract</div><p>Always-on visibility in your ICP's feed. Twice-weekly content, always-on campaigns, both languages.</p></div>
+        <div class="fl-cell" style="--lc:#38bdf8"><div class="flh">Capture</div><p>Webinars build the list. Signal sales catches the moments — funding, hires, launches, regulatory shifts.</p></div>
+        <div class="fl-cell" style="--lc:#bef264"><div class="flh">Nurture</div><p>5–10 touches across email, LinkedIn, WhatsApp — patient at the top of the relationship, then accelerating.</p></div>
+        <div class="fl-cell" style="--lc:#a78bfa"><div class="flh">Close</div><p>Warm 1:1 outreach drafted in your voice. You send it. The engine writes, times, and tracks.</p></div>
+      </div>
     </div>
   </div>
 </section>
