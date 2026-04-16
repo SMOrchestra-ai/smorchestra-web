@@ -1,1075 +1,1416 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMOrchestra — نظام تشغيل الشركات</title>
-    <meta name="description" content="ثبّت نظام تشغيل يدير عملك بكامله. بنّي، شغّل، سلّم — حقق أهداف النمو مع Claude و Anthropic.">
-    <meta name="keywords" content="نظام تشغيل، تحويل رقمي، أتمتة العمل، الذكاء الاصطناعي، الشرق الأوسط، GTM، BOT">
-    <meta name="theme-color" content="#0a0a0a">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#000000" />
 
-    <!-- Canonical & hreflang -->
-    <link rel="canonical" href="https://smorchestra.ai/ar/">
-    <link rel="alternate" hreflang="en" href="https://smorchestra.ai/">
-    <link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/">
-    <link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/">
+<!-- Primary SEO -->
+<title>SMOrchestra — نظام تشغيل الشركات الذكي | Ops و GTM و Dev للشركات الخليجية</title>
+<meta name="description" content="توقف عن استئجار فريقك. SMOrchestra يثبّت أنظمة تشغيل ذكية — Ops و GTM و Dev — للمؤسسين في الخليج. مبني، مشغّل، مسلّم. ذكي بالعربية والإنجليزية." />
+<meta name="keywords" content="نظام تشغيل ذكي، إدارة عمليات الشركات، استراتيجية النمو MENA، بيع الإشارات، عمليات الإيرادات B2B، Claude الذكي، Build Operate Transfer، أتمتة عمليات الخليج" />
+<meta name="author" content="SMOrchestra" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://smorchestra.ai/ar/" />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://smorchestra.ai/ar/">
-    <meta property="og:title" content="SMOrchestra — نظام تشغيل الشركات">
-    <meta property="og:description" content="ثبّت نظام تشغيل يدير عملك بكامله. بنّي، شغّل، سلّم.">
-    <meta property="og:image" content="https://smorchestra.ai/og-image.png">
-    <meta property="og:locale" content="ar_AE">
+<!-- Language alternates -->
+<link rel="alternate" hreflang="en" href="https://smorchestra.ai/" />
+<link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/" />
+<link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://smorchestra.ai/ar/">
-    <meta name="twitter:title" content="SMOrchestra — نظام تشغيل الشركات">
-    <meta name="twitter:description" content="ثبّت نظام تشغيل يدير عملك بكامله.">
-    <meta name="twitter:image" content="https://smorchestra.ai/og-image.png">
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="SMOrchestra" />
+<meta property="og:locale" content="ar_AE" />
+<meta property="og:url" content="https://smorchestra.ai/ar/" />
+<meta property="og:title" content="SMOrchestra — نظام تشغيل الشركات الذكي للخليج" />
+<meta property="og:description" content="توقف عن استئجار فريقك. نثبّت أنظمة تشغيل ذكية — مبني لك، مشغّل معك، مملوك منك." />
+<meta property="og:image" content="https://smorchestra.ai/assets/og/smorchestra-og-default.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="SMOrchestra — نظام تشغيل الشركات الذكي" />
 
-    <!-- JSON-LD Schema -->
-    <script type="application/ld+json">
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@smorchestra" />
+<meta name="twitter:creator" content="@mamounalamouri" />
+<meta name="twitter:title" content="SMOrchestra — نظام تشغيل الشركات الذكي" />
+<meta name="twitter:description" content="توقف عن استئجار فريقك. ثبّت نظام تشغيل ذكي — ثم امتلكه." />
+<meta name="twitter:image" content="https://smorchestra.ai/assets/og/smorchestra-og-default.png" />
+
+<!-- Favicons -->
+<link rel="icon" type="image/png" href="/logo/logo3.png" />
+<link rel="apple-touch-icon" href="/logo/logo3.png" />
+<meta name="theme-color" content="#000000" />
+<link rel="manifest" href="/site.webmanifest" />
+
+<!-- Performance: font + CSS preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- JSON-LD: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://smorchestra.ai/#organization",
+  "name": "SMOrchestra",
+  "alternateName": "SMO",
+  "url": "https://smorchestra.ai/ar/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://smorchestra.ai/logo/logo3.png",
+    "width": 512,
+    "height": 512
+  },
+  "description": "SMOrchestra يثبّت أنظمة تشغيل ذكية — Ops و GTM و Dev — للمؤسسين في الخليج. مبني، مشغّل، مسلّم.",
+  "founder": {
+    "@type": "Person",
+    "name": "Mamoun Alamouri",
+    "jobTitle": "Founder",
+    "sameAs": ["https://www.linkedin.com/in/mamounalamouri/"]
+  },
+  "address": [
+    {"@type": "PostalAddress", "addressLocality": "Dubai", "addressCountry": "AE"},
+    {"@type": "PostalAddress", "addressLocality": "Riyadh", "addressCountry": "SA"}
+  ],
+  "areaServed": [
+    {"@type": "Country", "name": "United Arab Emirates"},
+    {"@type": "Country", "name": "Saudi Arabia"},
+    {"@type": "Place", "name": "MENA"}
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/smorchestra/",
+    "https://www.linkedin.com/in/mamounalamouri/",
+    "https://x.com/smorchestra"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@smorchestra.ai",
+    "contactType": "sales",
+    "availableLanguage": ["English", "Arabic"]
+  },
+  "inLanguage": "ar"
+}
+</script>
+
+<!-- JSON-LD: Website -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://smorchestra.ai/#website",
+  "url": "https://smorchestra.ai/ar/",
+  "name": "SMOrchestra",
+  "publisher": { "@id": "https://smorchestra.ai/#organization" },
+  "inLanguage": "ar"
+}
+</script>
+
+<!-- JSON-LD: Service catalog -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "نظام تشغيل الشركات الذكي",
+  "provider": { "@id": "https://smorchestra.ai/#organization" },
+  "areaServed": [{"@type":"Place","name":"MENA"}],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "ثلاث طبقات",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "نظام Ops الذكي",
+          "description": "الأساس — عقل ثاني، مساعد ذكي، مسؤول الأدوات، مساعد افتراضي، محلل ذكي، كلها في مقعد واحد."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "نظام GTM الذكي",
+          "description": "إدارة حملات مستقلة، قمع الويبينار، محرك المبيعات بالإشارات، محرك المحتوى، مشغّل الوصول."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "نظام Dev الذكي",
+          "description": "تنظيم برمجي مستقل. أرسل BRD بلغة عادية، واحصل على ميزات مشغّلة بالعودة."
+        }
+      }
+    ]
+  },
+  "inLanguage": "ar"
+}
+</script>
+
+<!-- JSON-LD: SoftwareApplication — Scorecards -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "SMOrchestra",
-        "description": "نظام تشغيل متكامل لإدارة الشركات والنمو السريع",
-        "url": "https://smorchestra.ai/ar/",
-        "inLanguage": "ar",
-        "logo": "https://smorchestra.ai/logo.png",
-        "sameAs": [
-            "https://linkedin.com/company/smorchestra",
-            "https://twitter.com/smorchestra"
-        ]
-    }
-    </script>
-
-    <script type="application/ld+json">
+      "@type": "SoftwareApplication",
+      "@id": "https://smorchestra.ai/#gtm-fitness",
+      "name": "GTM Fitness Scorecard",
+      "url": "https://score.smorchestra.ai/gtm-fitness",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "بطاقة تقييم تشخيصية تعين مسار GTM، وتقيّم خمس أبعاد للجاهزية، وترشدك إلى المسار المناسب.",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "publisher": { "@id": "https://smorchestra.ai/#organization" },
+      "inLanguage": ["en", "ar"]
+    },
     {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "SMOrchestra",
-        "url": "https://smorchestra.ai/ar/",
-        "inLanguage": "ar",
-        "description": "نظام تشغيل الشركات — بنّي، شغّل، سلّم"
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "SMOrchestra",
-        "description": "نظام تشغيل متكامل يدمج الذكاء الاصطناعي مع عمليات الأعمال",
-        "inLanguage": "ar",
-        "applicationCategory": "BusinessApplication",
-        "url": "https://smorchestra.ai/ar/",
-        "operatingSystem": "Web"
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "مأمون العموري",
-        "title": "الرئيس التنفيذي والمؤسس",
-        "inLanguage": "ar",
-        "organization": {
-            "@type": "Organization",
-            "name": "SMOrchestra"
-        }
-    }
-    </script>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-
-    <style>
-    :root {
-        --f: 'IBM Plex Sans Arabic', sans-serif;
-        --fm: 'IBM Plex Mono', monospace;
-        --bg: #0a0a0a;
-        --fg: #ffffff;
-        --fg-muted: #999999;
-        --border: #1a1a1a;
-        --accent: #0066ff;
-        --accent-hover: #0052cc;
-        --success: #00aa00;
-        --warn: #ff9900;
-        --error: #ff3333;
-        --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
-        --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
-        --shadow-lg: 0 16px 40px rgba(0,0,0,0.5);
-        --radius: 6px;
-        --radius-lg: 12px;
-        --transition: 150ms ease-out;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    html, body {
-        font-family: var(--f);
-        background-color: var(--bg);
-        color: var(--fg);
-        line-height: 1.6;
-        scroll-behavior: smooth;
-    }
-
-    a {
-        color: var(--accent);
-        text-decoration: none;
-        transition: color var(--transition);
-    }
-
-    a:hover {
-        color: var(--accent-hover);
-    }
-
-    button, input[type="submit"] {
-        font-family: var(--f);
-        cursor: pointer;
-        border: none;
-        transition: all var(--transition);
-    }
-
-    /* RTL Overrides */
-    [dir="rtl"] {
-        text-align: right;
-    }
-
-    [dir="rtl"] .nav-list {
-        flex-direction: row-reverse;
-    }
-
-    [dir="rtl"] .hero-content {
-        text-align: center;
-    }
-
-    [dir="rtl"] .card {
-        text-align: right;
-    }
-
-    [dir="rtl"] .button-group {
-        flex-direction: row-reverse;
-    }
-
-    [dir="rtl"] .footer-col {
-        text-align: right;
-    }
-
-    /* Navigation */
-    nav {
-        position: sticky;
-        top: 0;
-        background-color: rgba(10, 10, 10, 0.95);
-        backdrop-filter: blur(8px);
-        border-bottom: 1px solid var(--border);
-        padding: 1rem 2rem;
-        z-index: 999;
-    }
-
-    .nav-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .nav-brand {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--fg);
-        transition: color var(--transition);
-    }
-
-    .nav-brand:hover {
-        color: var(--accent);
-    }
-
-    .nav-list {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-    }
-
-    .nav-list a {
-        font-size: 0.95rem;
-        color: var(--fg-muted);
-        transition: color var(--transition);
-    }
-
-    .nav-list a:hover {
-        color: var(--fg);
-    }
-
-    .nav-lang-switch {
-        padding: 0.5rem 1rem;
-        background-color: var(--border);
-        color: var(--fg);
-        border-radius: var(--radius);
-        font-size: 0.85rem;
-        transition: background-color var(--transition);
-    }
-
-    .nav-lang-switch:hover {
-        background-color: var(--accent);
-        color: var(--bg);
-    }
-
-    /* Hero Section */
-    .hero {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 6rem 2rem;
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-        color: var(--fg);
-    }
-
-    .hero .subheading {
-        font-size: 1.5rem;
-        color: var(--fg-muted);
-        line-height: 1.5;
-        margin-bottom: 2rem;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-stats {
-        display: flex;
-        justify-content: center;
-        gap: 3rem;
-        margin-top: 3rem;
-        flex-wrap: wrap;
-    }
-
-    .stat {
-        text-align: center;
-    }
-
-    .stat-number {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--accent);
-        display: block;
-    }
-
-    .stat-label {
-        font-size: 0.95rem;
-        color: var(--fg-muted);
-        margin-top: 0.5rem;
-    }
-
-    /* Card Sections */
-    .cards-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 3rem 2rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-    }
-
-    .card {
-        background-color: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        padding: 2rem;
-        transition: all var(--transition);
-    }
-
-    .card:hover {
-        background-color: rgba(255, 255, 255, 0.08);
-        border-color: var(--accent);
-        box-shadow: var(--shadow-md);
-    }
-
-    .card-eyebrow {
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: var(--accent);
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-    }
-
-    .card h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        color: var(--fg);
-    }
-
-    .card p {
-        font-size: 1rem;
-        color: var(--fg-muted);
-        line-height: 1.6;
-    }
-
-    /* Button Styles */
-    .button {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        background-color: var(--accent);
-        color: var(--bg);
-        border-radius: var(--radius);
-        font-weight: 600;
-        font-size: 0.95rem;
-        transition: all var(--transition);
-    }
-
-    .button:hover {
-        background-color: var(--accent-hover);
-        box-shadow: var(--shadow-md);
-    }
-
-    .button-secondary {
-        background-color: transparent;
-        border: 1px solid var(--accent);
-        color: var(--accent);
-    }
-
-    .button-secondary:hover {
-        background-color: var(--accent);
-        color: var(--bg);
-    }
-
-    /* Diagram Styles */
-    .diagram-section {
-        max-width: 1200px;
-        margin: 3rem auto;
-        padding: 2rem;
-    }
-
-    .diagram-title {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 2rem;
-        text-align: center;
-    }
-
-    svg {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .node {
-        cursor: pointer;
-        transition: all var(--transition);
-    }
-
-    .node:hover {
-        filter: brightness(1.2);
-    }
-
-    .node .nt {
-        font-family: var(--f);
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-    /* Grid Sections */
-    .grid-2 {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem;
-    }
-
-    .grid-3 {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem;
-    }
-
-    /* VS Grid */
-    .vs-grid {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 3rem 2rem;
-    }
-
-    .vs-grid-header {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .vs-grid-header h2 {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-    }
-
-    .vs-grid-row {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .vs-item {
-        background-color: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 1.5rem;
-        text-align: center;
-    }
-
-    .vs-item h4 {
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-    }
-
-    .vs-item p {
-        font-size: 0.9rem;
-        color: var(--fg-muted);
-    }
-
-    /* Footer */
-    footer {
-        background-color: rgba(0, 0, 0, 0.5);
-        border-top: 1px solid var(--border);
-        padding: 3rem 2rem;
-        margin-top: 4rem;
-    }
-
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .footer-col h4 {
-        font-size: 1rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-    }
-
-    .footer-col ul {
-        list-style: none;
-    }
-
-    .footer-col ul li {
-        margin-bottom: 0.5rem;
-    }
-
-    .footer-col ul li a {
-        color: var(--fg-muted);
-        transition: color var(--transition);
-    }
-
-    .footer-col ul li a:hover {
-        color: var(--fg);
-    }
-
-    .footer-bottom {
-        border-top: 1px solid var(--border);
-        padding-top: 2rem;
-        text-align: center;
-        color: var(--fg-muted);
-        font-size: 0.9rem;
-    }
-
-    /* Utility Classes */
-    .center {
-        text-align: center;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .visible {
-        display: block;
-    }
-
-    .reveal {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity var(--transition), transform var(--transition);
-    }
-
-    .reveal.in-view {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-        .hero h1 {
-            font-size: 2.5rem;
-        }
-
-        .hero .subheading {
-            font-size: 1.2rem;
-        }
-
-        .hero-stats {
-            gap: 1.5rem;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-        }
-
-        .nav-list {
-            gap: 1rem;
-        }
-
-        .diagram-title {
-            font-size: 1.5rem;
-        }
-    }
-    </style>
+      "@type": "SoftwareApplication",
+      "@id": "https://smorchestra.ai/#digital-revenue-score",
+      "name": "Digital Revenue Scorecard",
+      "url": "https://score.smorchestra.ai/digital-revenue-score",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "تشخيص سريع يكشف أين تسرب الإيرادات عبر قمعك ويوصي بطبقة البداية الأمثل.",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "publisher": { "@id": "https://smorchestra.ai/#organization" },
+      "inLanguage": ["en", "ar"]
+    }
+  ]
+}
+</script>
+
+<!-- JSON-LD: Person — Founder -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://smorchestra.ai/#founder",
+  "name": "Mamoun Alamouri",
+  "jobTitle": "Founder",
+  "worksFor": { "@id": "https://smorchestra.ai/#organization" },
+  "description": "أكثر من 20 سنة في المبيعات الموسسية والعمليات والـ GTM وتوسع الخليج. يثبّت أنظمة تشغيل ذكية للمؤسسين.",
+  "sameAs": ["https://www.linkedin.com/in/mamounalamouri/"],
+  "knowsAbout": ["Revenue Operations","Go-to-Market Strategy","MENA Market Expansion","AI Agents","Claude","n8n","Supabase"],
+  "inLanguage": "ar"
+}
+</script>
+
+<style>
+:root{
+  --bg:#000000; --bg-light:#ffffff; --bg-deep:#0f0f0f; --bg-darker:#020617;
+  --card-dark:#262525; --card-deep:#020617;
+  --text-dark:#111827; --text-body:#374151; --text-light:#f9fafb; --text-muted:#e5e7eb; --text-dim:#9ca3af; --text-blue:#cbd5f5;
+  --orange:#ff6b35; --orange-alt:#f97316;
+  --cyan:#38bdf8; --cyan-soft:#7dd3fc;
+  --lime:#bef264;
+  --green:#22c55e;
+  --border-dark:#1f2937; --border-light:#e5e7eb;
+  --shadow-card:0 18px 45px rgba(15,23,42,0.72);
+  --shadow-hard:0 18px 45px rgba(15,23,42,0.8);
+  --f:"IBM Plex Sans Arabic", "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --w-max:1170px;
+  --gutter:clamp(20px, 4vw, 48px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--text-light);font-family:var(--f);-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{overflow-x:hidden;line-height:1.5}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--orange);color:#000}
+img{max-width:100%;display:block}
+
+.wrap{max-width:var(--w-max);margin-inline:auto;padding-inline:var(--gutter)}
+
+/* ============ NAV ============ */
+.nav{position:sticky;top:0;z-index:50;background:#000;border-bottom:1px solid #1a1a1a}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:20px;letter-spacing:-0.01em}
+.brand-mark{width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;background:transparent}
+.brand-mark img{width:100%;height:100%;object-fit:contain;display:block}
+.nav-links{display:flex;gap:32px;align-items:center;font-size:14px;font-weight:500;color:#fff}
+.nav-links a{transition:color .2s}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:var(--orange);color:#000;font-weight:700;font-size:14px;transition:transform .2s, filter .2s}
+.nav-cta:hover{filter:brightness(1.1);transform:translateY(-1px)}
+@media (max-width:880px){.nav-links{display:none}}
+
+/* ============ UNIVERSAL ============ */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:18px}
+.eyebrow.cy{color:var(--cyan)}
+.eyebrow.lm{color:var(--lime)}
+.eyebrow.dk{color:var(--orange-alt)}
+.eyebrow::after{content:"";width:24px;height:2px;background:currentColor}
+
+h1,h2,h3,h4{font-weight:800;letter-spacing:-0.025em;line-height:1.1}
+h1{font-size:clamp(36px,5.6vw,64px);font-weight:900}
+h1 .accent{color:var(--orange)}
+h2{font-size:clamp(30px,4.4vw,50px);font-weight:800}
+h2 .accent{color:var(--orange)}
+h3{font-size:clamp(22px,2.4vw,28px);font-weight:700}
+h4{font-size:20px;font-weight:700}
+
+.sub{font-size:clamp(15px,1.2vw,18px);line-height:1.65;color:var(--text-muted);max-width:64ch}
+.sub.light{color:var(--text-body)}
+
+/* ============ BUTTONS ============ */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;font-size:14px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;transition:all .2s;cursor:pointer;border:none}
+.btn-primary{background:var(--orange);color:#000}
+.btn-primary:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:#fff;border:2px solid #fff}
+.btn-outline:hover{background:#fff;color:#000}
+.btn-outline-dark{background:transparent;color:var(--text-dark);border:2px solid var(--text-dark)}
+.btn-outline-dark:hover{background:var(--text-dark);color:#fff}
+.btn .arr{transition:transform .2s}
+.btn:hover .arr{transform:translateX(-4px)}
+
+/* ============ SECTION RHYTHM ============ */
+.section{padding:80px 0}
+.section.dark{background:#000;color:#fff}
+.section.deep{background:var(--bg-deep);color:#fff}
+.section.light{background:#fff;color:var(--text-dark)}
+
+@media (max-width:700px){.section{padding:56px 0}}
+
+/* ============ HERO ============ */
+.hero{background:#000;padding:clamp(64px,9vh,120px) 0 72px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-200px;inset-inline-start:-200px;width:600px;height:600px;background:radial-gradient(circle, rgba(255,107,53,.12), transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:960px;margin-inline:auto}
+.hero h1{margin:0 auto 22px;max-width:22ch}
+.hero-kicker{font-size:18px;color:var(--cyan-soft);margin:0 auto 24px;font-weight:500;letter-spacing:-.01em;max-width:56ch}
+.hero .sub{margin:0 auto 36px;max-width:68ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:56px}
+
+/* Stats row under hero */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #1a1a1a;padding-top:40px;text-align:center}
+.stat{padding:0 24px;border-inline-end:1px solid #1a1a1a}
+.stat:last-child{border-inline-end:none}
+.stat .sv{font-size:32px;font-weight:900;color:#fff;letter-spacing:-0.02em;margin-bottom:4px}
+.stat .sv .accent{color:var(--orange)}
+.stat .sk{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim)}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr);gap:32px 0}.stat{border-inline-end:none;padding:0}}
+
+/* ============ THREE-CARD ROW ============ */
+.three-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.tcard{background:var(--card-deep);padding:28px 24px;box-shadow:var(--shadow-card);display:flex;flex-direction:column;gap:14px;transition:transform .2s}
+.tcard:hover{transform:translateY(-4px)}
+.tcard .te{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.tcard.c1 .te{color:var(--orange-alt)}
+.tcard.c2 .te{color:var(--lime)}
+.tcard.c3 .te{color:var(--cyan-soft)}
+.tcard h3{font-size:22px;font-weight:800;color:#fff;margin:0}
+.tcard ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.tcard li{font-size:14px;color:var(--text-muted);padding-inline-start:22px;position:relative;line-height:1.5}
+.tcard li::before{content:"\f054";font-family:"Font Awesome 6 Free";font-weight:900;color:var(--orange);position:absolute;inset-inline-start:0;top:3px;font-size:10px}
+.tcard .tbtn{margin-top:auto;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:2px solid #fff;color:#fff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;width:fit-content;transition:all .2s}
+.tcard .tbtn:hover{background:#fff;color:#000}
+@media (max-width:820px){.three-cards{grid-template-columns:1fr}}
+
+/* ============ SECTION HEADS ============ */
+.sec-head{margin:0 auto 56px;max-width:72ch;text-align:center}
+.sec-head h2{margin-bottom:18px}
+.sec-head .sub{max-width:64ch;margin-inline:auto}
+
+/* ============ DIAGRAM ============ */
+.diagram{
+  position:relative;
+  aspect-ratio: 16 / 11;
+  min-height:760px;
+  padding:32px 40px;
+  background:var(--card-deep);
+  box-shadow:var(--shadow-hard);
+  overflow:visible;
+  border-top:3px solid var(--orange);
+}
+.diagram svg.grid{position:absolute;inset:0;width:100%;height:100%;opacity:.06;pointer-events:none}
+.diagram svg.paths{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:1}
+
+.node{
+  position:absolute;transform:translate(50%,-50%);z-index:2;
+  display:flex;flex-direction:column;gap:6px;
+  padding:14px 18px;
+  background:#0f172a;border:1px solid #1f2937;
+  cursor:pointer;transition:all .25s;
+  min-width:180px;max-width:220px;
+}
+.node:hover{border-color:var(--nc,var(--orange));transform:translate(50%,-50%) scale(1.04);box-shadow:0 12px 30px -10px color-mix(in srgb, var(--nc,var(--orange)) 60%, transparent)}
+.node .nk{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--nc,var(--orange));display:flex;align-items:center;gap:8px}
+.node .nk::before{content:"";width:8px;height:8px;background:var(--nc,var(--orange))}
+.node .nt{font-size:16px;font-weight:800;color:#fff;line-height:1.2;letter-spacing:-0.01em}
+.node .ne{font-size:12px;color:var(--text-dim);font-weight:500}
+
+.node.center{
+  background:var(--orange);border:none;color:#000;padding:22px 26px;min-width:220px;max-width:260px;
+  box-shadow:0 20px 50px -12px rgba(255,107,53,.6), 0 0 0 6px rgba(255,107,53,.15);
+  animation:pulseCore 3.5s ease-in-out infinite;
+}
+@keyframes pulseCore{
+  0%,100%{box-shadow:0 20px 50px -12px rgba(255,107,53,.6), 0 0 0 6px rgba(255,107,53,.15)}
+  50%{box-shadow:0 28px 70px -12px rgba(255,107,53,.85), 0 0 0 14px rgba(255,107,53,.08)}
+}
+.node.center .nk{color:rgba(0,0,0,.6)}
+.node.center .nk::before{background:#000}
+.node.center .nt{color:#000;font-size:22px;font-weight:900}
+.node.center .ne{color:rgba(0,0,0,.7);font-weight:600}
+
+/* Tooltip */
+.tip{
+  position:absolute;z-index:10;pointer-events:none;
+  background:#000;border:2px solid var(--nc,var(--orange));
+  padding:14px 16px;max-width:280px;
+  box-shadow:var(--shadow-hard);
+  opacity:0;transform:translateY(4px);transition:opacity .2s, transform .2s;
+}
+.tip.on{opacity:1;transform:translateY(0)}
+.tip .tt{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--nc,var(--orange));margin-bottom:8px}
+.tip .td{font-size:13px;color:var(--text-muted);line-height:1.55;margin-bottom:8px}
+.tip ul{list-style:none}
+.tip li{font-size:12px;color:#fff;padding:3px 0;padding-inline-start:18px;position:relative;line-height:1.5;font-weight:500}
+.tip li::before{content:"\f054";font-family:"Font Awesome 6 Free";font-weight:900;color:var(--nc,var(--orange));position:absolute;inset-inline-start:0;top:5px;font-size:9px}
+
+/* Legend */
+.legend{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:28px}
+.lg{background:var(--card-dark);padding:20px 22px;border-inline-start:3px solid var(--lc,var(--orange))}
+.lg .lk{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lc,var(--orange));margin-bottom:8px}
+.lg .lt{font-size:16px;font-weight:800;color:#fff;margin-bottom:6px;letter-spacing:-0.01em}
+.lg .ld{font-size:13px;color:var(--text-muted);line-height:1.55}
+
+/* Mobile: flatten diagrams */
+@media (max-width: 880px){
+  .diagram{aspect-ratio:auto;min-height:0;padding:20px 16px;display:flex;flex-direction:column;gap:10px}
+  .diagram svg.paths, .diagram svg.grid{display:none}
+  .node{position:relative;transform:none;right:auto !important;top:auto !important;margin:0;width:100%;max-width:none}
+  .node.center{order:-1}
+  .node:hover{transform:none}
+}
+
+/* ============ VS GRID ============ */
+.vs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:32px;background:#000;border:1px solid #1a1a1a}
+.vs{padding:36px 28px;border-inline-end:1px solid #1a1a1a;background:#000;position:relative}
+.vs:last-child{border-inline-end:none}
+.vs::before{content:"";position:absolute;top:0;inset-inline-end:0;width:40px;height:4px;background:var(--vsc,var(--orange))}
+.vs .vk{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--vsc);margin-bottom:14px}
+.vs .vt{font-size:20px;font-weight:800;color:#fff;line-height:1.2;letter-spacing:-0.015em;margin-bottom:12px}
+.vs .vd{font-size:14px;color:var(--text-muted);line-height:1.6}
+@media (max-width:980px){.vs-grid{grid-template-columns:repeat(2,1fr)}.vs:nth-child(2){border-inline-end:none}.vs:nth-child(1),.vs:nth-child(2){border-bottom:1px solid #1a1a1a}}
+@media (max-width:560px){.vs-grid{grid-template-columns:1fr}.vs{border-inline-end:none;border-bottom:1px solid #1a1a1a}.vs:last-child{border-bottom:none}}
+
+/* ============ BOT TABLE ============ */
+.bot-wrap{background:var(--card-dark);box-shadow:var(--shadow-hard);overflow:hidden;margin-top:32px}
+.bot-wrap table{width:100%;border-collapse:collapse;font-size:14px}
+.bot-wrap th, .bot-wrap td{padding:18px 20px;text-align:start;border-bottom:1px solid #3a3a3a}
+.bot-wrap thead th{background:#000;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.bot-wrap tbody tr:last-child td{border-bottom:none}
+.bot-wrap td:first-child, .bot-wrap th:first-child{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+.bot-wrap td{color:var(--text-muted);font-weight:500}
+@media (max-width:700px){.bot-wrap{overflow-x:auto}.bot-wrap table{min-width:620px}}
+
+/* ============ CASE CARDS ============ */
+.cases{display:grid;gap:20px;grid-template-columns:repeat(2,1fr);margin-top:32px}
+.case{background:var(--card-dark);padding:0;box-shadow:var(--shadow-hard);position:relative;transition:transform .25s;border-top:4px solid var(--cc,var(--orange));display:flex;flex-direction:column}
+.case .c-body{padding:32px 32px 36px}
+.case .proof-vis{position:relative;height:200px;background:linear-gradient(180deg,#0a0a0a 0%,#0f0f0f 100%);border-bottom:1px solid #1f1f1f;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.case .proof-vis svg{position:absolute;inset-inline-start:0;inset-inline-end:0;top:38px;bottom:38px;width:100%;height:calc(100% - 76px)}
+.case .proof-vis .pv-label{position:absolute;top:14px;inset-inline-start:50%;transform:translateX(-50%);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--cc);z-index:2;text-align:center;white-space:nowrap}
+.case .proof-vis .pv-tag{position:absolute;bottom:14px;inset-inline-start:50%;transform:translateX(-50%);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--text-dim);z-index:2;text-align:center;white-space:nowrap}
+.case:hover{transform:translateY(-6px)}
+.case .ck{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cc);margin-bottom:14px}
+.case h3{font-size:26px;font-weight:800;color:#fff;line-height:1.2;letter-spacing:-0.02em;margin-bottom:14px}
+.case h3 .accent{color:var(--cc)}
+.case .c-sub{font-size:15px;color:var(--text-blue);line-height:1.6;margin-bottom:24px}
+.case .c-list{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
+.case .c-li{display:grid;grid-template-columns:100px 1fr;gap:14px;font-size:13.5px;color:#fff;line-height:1.5;padding:12px 14px;background:#000;border-inline-start:3px solid var(--cc)}
+.case .c-lab{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cc);padding-top:2px}
+.case .c-foot{display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid #3a3a3a;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim)}
+.case .c-foot span:last-child{color:var(--cc)}
+@media (max-width:820px){.cases{grid-template-columns:1fr}}
+
+/* ============ MENA GRID ============ */
+.mena-grid{display:grid;gap:20px;grid-template-columns:repeat(4,1fr);margin-top:32px}
+.mena{background:#fff;padding:32px 26px;border:1px solid var(--border-light);border-top:4px solid var(--orange);transition:transform .25s,box-shadow .25s}
+.mena:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08)}
+.mena .mk{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.mena h4{font-size:20px;font-weight:800;color:var(--text-dark);line-height:1.25;letter-spacing:-0.015em;margin-bottom:10px}
+.mena p{font-size:14px;color:var(--text-body);line-height:1.65;font-weight:500}
+@media (max-width:980px){.mena-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.mena-grid{grid-template-columns:1fr}}
+
+/* ============ PROBLEM (light section) ============ */
+.problem{background:#fff;color:var(--text-dark);padding:80px 0}
+.problem h2{color:var(--text-dark)}
+.problem h2 .accent{color:var(--orange)}
+.problem .sub{color:var(--text-body)}
+.problem-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;margin-top:48px}
+.problem-grid .pstat{background:#fff;padding:28px;border:1px solid var(--border-light);border-top:4px solid var(--cyan)}
+.problem-grid .pstat .pn{font-size:48px;font-weight:900;color:var(--text-dark);letter-spacing:-0.03em;line-height:1;margin-bottom:8px}
+.problem-grid .pstat .pn .accent{color:var(--orange)}
+.problem-grid .pstat .pl{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-body)}
+.problem-grid .pstat + .pstat{border-top-color:var(--lime)}
+@media (max-width:900px){.problem-grid{grid-template-columns:1fr}}
+
+/* ============ FINAL CTA ============ */
+.cta-band{background:#000;padding:100px 0;text-align:center;position:relative;overflow:hidden;border-top:4px solid var(--orange)}
+.cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 400px at 50% 50%, rgba(255,107,53,.18), transparent 70%);pointer-events:none}
+.cta-band .inner{position:relative;z-index:2}
+.cta-band h2{color:#fff;margin:0 auto 16px;max-width:20ch}
+.cta-band .cta-kicker{color:var(--cyan-soft);font-size:18px;margin-bottom:24px;font-weight:500;letter-spacing:-.01em}
+.cta-band .sub{color:var(--text-muted);margin:0 auto 36px}
+.cta-band .hero-cta{justify-content:center;display:flex;gap:14px;flex-wrap:wrap}
+
+/* ============ FOOTER ============ */
+.foot{background:#000;color:var(--text-dim);padding:56px 0 40px;border-top:1px solid #1a1a1a}
+.foot-in{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.foot-brand .brand{margin-bottom:14px}
+.foot-brand p{font-size:14px;color:var(--text-muted);line-height:1.6;margin-bottom:10px;max-width:38ch}
+.foot-brand .loc{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-top:10px}
+.foot-col .fh{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+.foot-col a{display:block;padding:6px 0;font-size:14px;color:#fff;transition:color .2s}
+.foot-col a:hover{color:var(--orange)}
+.foot-end{margin-top:48px;padding-top:24px;border-top:1px solid #1a1a1a;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim)}
+@media (max-width:760px){.foot-in{grid-template-columns:1fr 1fr}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s, transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+
+/* ============ HERO MOTION ============ */
+.hero::before{animation:heroGlow 14s ease-in-out infinite}
+@keyframes heroGlow{
+  0%,100%{transform:translate(0,0) scale(1);opacity:1}
+  50%{transform:translate(-40px,40px) scale(1.15);opacity:.82}
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.035;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size:240px 240px;
+}
+.hero h1, .hero-kicker, .hero .sub, .hero-cta, .stats{position:relative;z-index:2}
+
+/* ============ NARRATIVE BRIDGE ============ */
+.bridge{background:#000;padding:56px 0 8px;position:relative}
+.bridge-inner{max-width:780px;margin:0 auto;text-align:center;padding:0 32px}
+.bridge-inner .bmk{display:inline-block;width:42px;height:1px;background:var(--orange);margin-bottom:22px}
+.bridge-inner p{font-size:clamp(20px,2.2vw,26px);color:#fff;font-weight:600;letter-spacing:-0.01em;line-height:1.35}
+.bridge-inner p em{color:var(--orange);font-style:normal}
+.bridge.onlight{background:#f5f5f5}
+.bridge.onlight .bmk{background:var(--orange)}
+.bridge.onlight p{color:#0a0a0a}
+
+/* ============ ICP GATE + ANTI-FRAME ============ */
+.gate-sec{background:#0a0a0a;padding:110px 0;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a}
+.founder-sec{background:#0b0b0b;padding:120px 0;border-top:1px solid #1a1a1a}
+.founder-grid{display:grid;grid-template-columns:minmax(280px,340px) 1fr;gap:56px;max-width:1100px;margin:0 auto;align-items:start}
+.founder-photo{aspect-ratio:4/5;background:linear-gradient(135deg,#1a1a1a 0%,#262626 55%,#1a1a1a 100%);position:relative;overflow:hidden;border:1px solid #262626}
+.founder-photo::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 30% 30%,rgba(255,107,53,.18) 0%,transparent 60%),radial-gradient(circle at 70% 70%,rgba(56,189,248,.15) 0%,transparent 60%)}
+.founder-photo::after{content:"";position:absolute;inset-inline-start:0;inset-inline-end:0;bottom:0;height:42%;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.42) 55%,transparent 100%);z-index:1;pointer-events:none}
+.founder-photo .ph-mark{position:absolute;bottom:18px;inset-inline-start:18px;inset-inline-end:18px;display:flex;justify-content:space-between;align-items:flex-end;z-index:2}
+.founder-photo .ph-name{color:#fff;font-weight:700;font-size:18px;letter-spacing:-0.01em;line-height:1.2}
+.founder-photo .ph-sub{color:#bdbdbd;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:4px;font-weight:600}
+.founder-photo .ph-tick{width:44px;height:2px;background:var(--orange)}
+.founder-copy .eyebrow{margin-bottom:18px}
+.founder-copy h2{font-size:clamp(28px,3vw,40px);color:#fff;font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin:0 0 26px}
+.founder-copy p{color:#d4d4d4;font-size:17px;line-height:1.7;margin:0 0 18px}
+.founder-copy p.emph{color:#fff;font-weight:600}
+.founder-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;padding-top:30px;border-top:1px solid #1a1a1a}
+.founder-stat .fsn{font-family:'SF Mono',ui-monospace,monospace;font-size:26px;color:var(--orange);font-weight:700;letter-spacing:-0.02em}
+.founder-stat .fsl{color:#a3a3a3;font-size:12.5px;letter-spacing:.03em;margin-top:4px;line-height:1.4}
+.founder-sig{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.founder-sig a{color:#d4d4d4;font-size:13px;text-decoration:none;padding:8px 14px;background:#141414;border:1px solid #262626;display:inline-flex;align-items:center;gap:8px;transition:.15s}
+.founder-sig a:hover{color:#fff;border-color:var(--orange);background:#1a1a1a}
+@media(max-width:860px){.founder-grid{grid-template-columns:1fr;gap:36px}.founder-photo{max-width:320px}.founder-stats{grid-template-columns:1fr 1fr}}
+.gate-head{text-align:center;max-width:820px;margin:0 auto 56px}
+.gate-head h2{margin-bottom:14px}
+.gate-head .sub{color:var(--text-muted);font-size:18px;line-height:1.6}
+.gate-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1040px;margin:0 auto}
+.gate-col{background:#141414;padding:44px 36px;border-top:4px solid var(--gc,#bef264)}
+.gate-col .gh{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gc,#bef264);margin-bottom:12px}
+.gate-col h3{font-size:22px;color:#fff;margin-bottom:18px;letter-spacing:-0.01em}
+.gate-col ul{display:flex;flex-direction:column;gap:11px;list-style:none}
+.gate-col li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:15px;color:#e5e5e5;line-height:1.55}
+.gate-col li i{color:var(--gc,#bef264);padding-top:5px;font-size:12px}
+.gate-col ul.flist li{display:block;grid-template-columns:none;font-size:15.5px;color:#e5e5e5;line-height:1.6}
+.gate-col ul.flist li::before{content:"";display:inline-block;width:8px;height:8px;background:var(--gc,#bef264);margin-inline-end:12px;vertical-align:middle;transform:translateY(-1px)}
+@media (max-width:820px){.gate-grid{grid-template-columns:1fr}}
+
+.antiframe{margin-top:56px;max-width:1040px;margin-inline:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.af{background:#141414;padding:32px 26px;border-inline-start:3px solid var(--af,var(--orange))}
+.af .ah{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--af,var(--orange));margin-bottom:10px}
+.af h4{font-size:17px;color:#fff;margin-bottom:10px;line-height:1.3}
+.af p{font-size:14px;color:var(--text-muted);line-height:1.6}
+.af.diff{border-inline-start-color:var(--lime)}
+.af.diff .ah{color:var(--lime)}
+@media (max-width:880px){.antiframe{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.antiframe{grid-template-columns:1fr}}
+.antiframe-head{max-width:780px;margin:0 auto 28px;text-align:center}
+.antiframe-head h3{color:#fff;font-size:26px;margin-bottom:8px}
+.antiframe-head p{color:var(--text-muted);font-size:15px}
+
+/* Icon system */
+svg.i{width:1em;height:1em;display:inline-block;vertical-align:-0.125em;fill:none;stroke:currentColor;flex-shrink:0}
+svg.i.arr{width:0.9em;height:0.9em;margin-inline-start:6px}
+
+/* Section transition flourishes */
+.sec-head .eyebrow{position:relative}
+.sec-head.reveal .eyebrow::after,.eyebrow.reveal::after{content:"";position:absolute;inset-inline-end:-42px;top:50%;width:0;height:1px;background:currentColor;opacity:.4;transition:width .9s ease .15s}
+.sec-head.reveal.shown .eyebrow::after,.eyebrow.reveal.shown::after{width:32px}
+@media(max-width:860px){.sec-head.reveal.shown .eyebrow::after,.eyebrow.reveal.shown::after{display:none}}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}
+.reveal.shown{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal.shown{opacity:1;transform:none;transition:none}.hero::before,.bridge-inner .bmk{animation:none !important}}
+</style>
+<script defer data-domain="smorchestra.ai" src="https://plausible.io/js/script.outbound-links.js"></script>
+<script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="nav-brand">SMOrchestra</div>
-            <ul class="nav-list">
-                <li><a href="/ar/layers/ops">العمليات</a></li>
-                <li><a href="/ar/layers/gtm">الذهاب للسوق</a></li>
-                <li><a href="/ar/layers/dev">التطوير</a></li>
-                <li><a href="#contact">اتصل بنا</a></li>
-                <li><a href="/" class="nav-lang-switch">EN</a></li>
-            </ul>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="/ar/" class="brand"><span class="brand-mark"><img src="/logo/logo3.png" alt="SMOrchestra mark" width="34" height="34" /></span>SMOrchestra</a>
+    <div class="nav-links">
+      <a href="/ar/layers/ops">Ops</a>
+      <a href="/ar/layers/gtm">GTM</a>
+      <a href="/ar/layers/dev">Dev</a>
+      <a href="/ar/solutions/">الحلول</a>
+      <a href="/ar/cohorts/">المجموعات</a>
+      <a href="/ar/tools/">الأدوات</a>
+    </div>
+    <a href="/" class="nav-lang" hreflang="en" lang="en" aria-label="English" style="display:inline-flex;align-items:center;padding:8px 12px;margin-inline-start:10px;color:#cbd5e1;font-size:.88rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.14);border-radius:8px;letter-spacing:.02em;transition:color .2s,border-color .2s,background .2s">EN</a>
+    <a href="/ar/book" class="nav-cta">احجز استشارة <svg class="i arr" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="eyebrow reveal">نظام تشغيل ذكي · مبني للخليج</div>
+      <h1 class="reveal">شركتك فيها <span class="accent">خمس أدوار مفتوحة</span>. كلهم أنت.</h1>
+      <p class="hero-kicker reveal">توقف عن استئجار فريقك. ثبّت نظام تشغيل يشتغل — وامتلكه في الآخر.</p>
+      <p class="sub reveal">ما بدأت شركة عشان تعيش في أربعتاشر تاب مفتوح. بس أنت هسع — تكتب عروض منتصف الليل، تتابع متابعات نسيتها، تدفع لأدوات ما تقدر تشغّلها، تستأجر لأدوار ما تقدر تحافظ عليها. نظام التشغيل الذكي يثبّت الفريق اللي ما تقدر تبنيه: <strong style="color:#fff"><span dir="ltr">Claude</span> — عقل ثاني</strong> ما ينسى، <strong style="color:#fff"><span dir="ltr">Claude</span> كمساعد ذكي</strong> يشتغل الشغل، محركات مستقلة ل<strong style="color:#fff">Ops و GTM و Dev</strong> — كلها تشتغل على <span dir="ltr">Claude</span>. مبني لك. مشغّل معك. بعدين مسلّم — المفاتيح والكود والكل.</p>
+      <div class="hero-cta reveal">
+        <a href="/ar/book" class="btn btn-primary">احجز استشارة استراتيجية <svg class="i arr" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
+        <a href="#the-map" class="btn btn-outline">شوف الخريطة <svg class="i arr" aria-hidden="true"><use href="/assets/icons.svg#arrow-down"/></svg></a>
+      </div>
+
+      <div class="stats reveal">
+        <div class="stat"><div class="sv"><span class="accent">٥</span> أدوار</div><div class="sk">مطويّة في مقعد واحد</div></div>
+        <div class="stat"><div class="sv"><span class="accent">١٠٠٪</span> حقك</div><div class="sk">الملكية تنتقل عند التسليم</div></div>
+        <div class="stat"><div class="sv"><span class="accent">٢٤/٧</span> شغّال</div><div class="sk">الشغل يشتغل وأنت نايم</div></div>
+        <div class="stat"><div class="sv"><span class="accent">&lt;١٣٠</span> درهم</div><div class="sk">لتشغيل كل شي بعدين</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ THREE-CARD INTRO ============ -->
+<section class="section dark" style="padding-top:40px">
+  <div class="wrap">
+    <div class="three-cards">
+      <div class="tcard c1 reveal">
+        <div class="te">الطبقة 01 · الأساس · <span style="color:#ff6b35"><span dir="ltr">Claude</span>-أولى</span></div>
+        <h3>Ops الذكي</h3>
+        <ul>
+          <li><strong>عقل ثاني <span dir="ltr">Claude</span></strong> ما ينسى شركتك</li>
+          <li><strong><span dir="ltr">Claude</span> كمساعد ذكي</strong> — يكتب، يراجع، يسجل</li>
+          <li>مقعد واحد — <span dir="ltr">Claude</span> يسيطر على كل الأدوات اللي تدفع لها</li>
+          <li>محلل <span dir="ltr">Claude</span> ذكي يكتب التقارير وأنت نايم</li>
+        </ul>
+        <a href="/ar/layers/ops" class="tbtn">استكشف Ops <svg class="i" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
+      </div>
+      <div class="tcard c2 reveal">
+        <div class="te">الطبقة 02 · محرك الإيرادات</div>
+        <h3>GTM الذكي</h3>
+        <ul>
+          <li>إدارة حملات مستقلة من البداية لآخر</li>
+          <li>قمع ويبينار مستقل — سلايدات وايميلات وصفحة</li>
+          <li>مبيعات الإشارات المستقلة — اعرف من يشتري قبلهم</li>
+          <li>الوصول الخارجي والداخلي و<span dir="ltr">WhatsApp</span>، مشغّل واحد</li>
+        </ul>
+        <a href="/ar/layers/gtm" class="tbtn">استكشف GTM <svg class="i" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
+      </div>
+      <div class="tcard c3 reveal">
+        <div class="te">الطبقة 03 · القدرة على البناء</div>
+        <h3>Dev الذكي</h3>
+        <ul>
+          <li>أرسل طلب. احصل على برمجيات مشغّلة</li>
+          <li>فريق هندسة ذكي عند الحاجة</li>
+          <li><span dir="ltr">QA</span>، انشر، راجع — يشتغل بروحه</li>
+          <li>سرعة مؤسس بدون استأجار مهندسين</li>
+        </ul>
+        <a href="/ar/layers/dev" class="tbtn">استكشف Dev <svg class="i" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bridge 1 → The Map -->
+<div class="bridge">
+  <div class="bridge-inner reveal">
+    <div class="bmk"></div>
+    <p>ثلاث طبقات. عقل واحد. <em>شوف كيف يتقافلون.</em></p>
+  </div>
+</div>
+
+<!-- ============ THE MAP (TOP-LEVEL DIAGRAM) ============ -->
+<section id="the-map" class="section dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">الخريطة · 01</div>
+      <h2>عقل واحد. ثلاث <span class="accent">أنظمة تشغيل</span>. اسمك على الملكية.</h2>
+      <p class="sub">كل شركة ذكية نثبتها تشتغل زي بعضها تحت السطح: عقل واحد يعرف الشركة برد، محركات مستقلة تشتغل الشغل المكرر، وأيدين مباشرة في كل أداة الشركة تستأجرها. نثبّتها في ثلاث طبقات — <strong style="color:#fff">Ops</strong> (الأساس)، <strong style="color:#fff">GTM</strong> (محرك الإيرادات)، <strong style="color:#fff">Dev</strong> (قدرة البناء). ابدأ بواحدة. خزّن بعدين. بآخر الحال تملك كلها.</p>
+    </div>
+
+    <div class="diagram reveal" id="d-map">
+      <svg class="grid" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs><pattern id="g-map" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M5 0 L0 0 L0 5" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="0.1"/></pattern></defs>
+        <rect width="100" height="100" fill="url(#g-map)"/>
+      </svg>
+      <svg class="paths" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs><filter id="glow-map" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="0.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <path d="M 50 50 Q 62 35 78 25" stroke="#f97316" stroke-width="0.4" fill="none" stroke-dasharray="1.5 1" opacity=".65" filter="url(#glow-map)"/>
+        <path d="M 50 50 Q 38 35 22 25" stroke="#bef264" stroke-width="0.4" fill="none" stroke-dasharray="1.5 1" opacity=".65" filter="url(#glow-map)"/>
+        <path d="M 50 50 Q 50 70 50 82" stroke="#7dd3fc" stroke-width="0.4" fill="none" stroke-dasharray="1.5 1" opacity=".65" filter="url(#glow-map)"/>
+        <path d="M 78 25 Q 50 12 22 25" stroke="rgba(255,255,255,.15)" stroke-width="0.2" fill="none" stroke-dasharray="0.8 0.8"/>
+        <path d="M 78 25 Q 70 55 50 82" stroke="rgba(255,255,255,.15)" stroke-width="0.2" fill="none" stroke-dasharray="0.8 0.8"/>
+        <path d="M 22 25 Q 30 55 50 82" stroke="rgba(255,255,255,.15)" stroke-width="0.2" fill="none" stroke-dasharray="0.8 0.8"/>
+      </svg>
+
+      <div class="node center" style="right:50%;top:50%" data-desc="فلسفة SMOrchestra: شركتك تصير ذكية لما العقل والمحركات والأدوات تتحرك مع بعض — وأنت تملك كلها في الآخر." data-list="عقل ثاني يعرف شركتك برد|محركات مستقلة تشتغل Ops و GTM و Dev|مقعد واحد لتشغيل كل الأدوات|مبني لك، بعدين مسلّم لك">
+        <div class="nk">الأساس · الفلسفة</div>
+        <div class="nt">نظام الشركات الذكي</div>
+        <div class="ne">عقل + محركات + ملكية</div>
+      </div>
+
+      <div class="node" style="--nc:#f97316;right:22%;top:25%" data-desc="عقلك الثاني، مساعدك الذكي، والمقعد الواحد حيث كل أداة تستأجرها أخيراً تشتغل ع بعضها." data-list="عقل ثاني — ما ينسى الكونتكست|مساعد ذكي — يكتب وراجع ويسجل|مسؤول الأدوات — كل تطبيقاتك، مشغّل واحد|مساعد افتراضي — صندوق، مهام، تنبيهات، تنظيف|محلل ذكي — منافس، عروض، أخبار" data-link="/ar/layers/ops">
+        <div class="nk">الطبقة · 01</div>
+        <div class="nt">Ops الذكي</div>
+        <div class="ne">الأساس</div>
+      </div>
+
+      <div class="node" style="--nc:#bef264;right:78%;top:25%" data-desc="محركات مستقلة تبحث عن الطلب وتقفله وتطوّر نفسها — بدون ما تستأجر فريق GTM خمسة أشخاص." data-list="إدارة حملات مستقلة|قمع ويبينار مستقل|محرك مبيعات الإشارات المستقل|محرك المحتوى المستقل|مشغّل الوصول المستقل (WhatsApp و ايميل و LinkedIn)" data-link="/ar/layers/gtm">
+        <div class="nk">الطبقة · 02</div>
+        <div class="nt">GTM الذكي</div>
+        <div class="ne">محرك الإيرادات</div>
+      </div>
+
+      <div class="node" style="--nc:#7dd3fc;right:50%;top:82%" data-desc="فريق هندسة ذكي شخصي. أرسل طلب بلغة عادية، احصل على برمجيات مشغّلة — بدون استأجار مهندسين." data-list="فريق هندسة مستقل عند الطلب|أرسل BRD → اوصل ميزات|فحص مستقل و مراجعة و انشر|VP هندسة ذكي على Telegram|سرعة مؤسس، صفر موظفين" data-link="/ar/layers/dev">
+        <div class="nk">الطبقة · 03</div>
+        <div class="nt">Dev الذكي</div>
+        <div class="ne">قدرة البناء</div>
+      </div>
+
+      <div class="tip" id="tip-map"></div>
+    </div>
+
+    <div class="legend">
+      <div class="lg" style="--lc:#ff6b35"><div class="lk">الفلسفة</div><div class="lt">ذكي، ما تقليد</div><div class="ld">الكل يضيف الذكاء كميزة. نحن نعتبره معمارية. العقل والمحركات والأدوات تشتغل كنظام واحد — أو ما تشتغل.</div></div>
+      <div class="lg" style="--lc:#f97316"><div class="lk">ابدأ هنا</div><div class="lt">Ops أولاً، دايماً</div><div class="ld">العمود الفقري. الفرق بين مؤسس فيه ذكاء وشركة ذكية. معظم الشغل يبدأ هنا — ومعظم الزبائن ما يحتاجون شي ثاني لتضاعف أسبوعهم.</div></div>
+      <div class="lg" style="--lc:#bef264"><div class="lk">خزّن بعدين</div><div class="lt">GTM لما تحتاج pipeline</div><div class="ld">بعد <span dir="ltr">PMF</span>، المؤسس لسه يبيع، استأجار فريق ما ممكن. <span dir="ltr">GTM</span> يثبّت ثلاث محركات — حملات، ويبينار، مبيعات الإشارات — يجيب pipeline بدون الفريق.</div></div>
+      <div class="lg" style="--lc:#7dd3fc"><div class="lk">راكّب آخر</div><div class="lt">Dev لما تحتاج منتج</div><div class="ld">المؤسس اللي كل ما يقول "لو بس أقدر أبني هالميزة." تحصل فريق هندسة على <span dir="ltr">Telegram</span> بدل دورة توظيف ستة أشهر.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VS SECTION ============ -->
+<section class="problem">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">كل خيار ثاني يأخذك للأبد</div>
+      <h2>يستأجرونك القدرة. نحن <span class="accent">ننقل</span> الملكية.</h2>
+      <p class="sub light">جرّبت البدائل. الكل فيه شي واحد: اليوم توقف تدفع، القدرة تختفي. Build-Operate-Transfer هو النموذج اللي يتركك بـ asset بدل إيصال.</p>
+    </div>
+  </div>
+
+  <div style="background:#000;margin-top:16px">
+    <div class="wrap">
+      <div class="vs-grid">
+        <div class="vs reveal" style="--vsc:#ff6b35"><div class="vk">vs. وكالة</div><div class="vt">ادفع للأبد. تملك لا شي.</div><div class="vd">اليوم تتوقف الدفع، الشغل يقف. نحن نقلب: نبني، نشغّل معك، بعدين ننقل — الحسابات والكود والكونفيج والبيانات. تحتفظ بـ retainer خفيف لو بديت. ما لأنك تحتاجه.</div></div>
+        <div class="vs reveal" style="--vsc:#38bdf8"><div class="vk">vs. <span dir="ltr">SaaS</span></div><div class="vt">الأداة ما هي الشغل.</div><div class="vd">تسعة من عشر <span dir="ltr">CRM</span> تُلغى في السنة. ما لأن البرمجيات سيئة — لأن حد ما يشغّلها. نحن نثبّت المشغّل داخل الأداة، مدرب على شركتك. ال<span dir="ltr">CRM</span> يصير أصغر جزء من القيمة.</div></div>
+        <div class="vs reveal" style="--vsc:#bef264"><div class="vk">vs. استشارة</div><div class="vt">ديك 47 سلايد ما تبعت ايميل.</div><div class="vd">جاك ديك strategy deck بـ 47 سلايد قبل. في الدرايف لسه. ديلفرينجنا يبعت ايميلات الساعة 3 فجر، يحرّك pipeline stages، يسجل الكوبي، يجيب التقارير لـ inbox. استراتيجية تشتغل بروحها.</div></div>
+        <div class="vs reveal" style="--vsc:#22c55e"><div class="vk">vs. استأجار</div><div class="vt">ثلاث أشهر. بعدين استقال.</div><div class="vd">Ops الخليج: 15–25 ألف درهم/شهر. فريق marketing: 40–80 ألف. فريق dev: 60–120 ألف. ستة أشهر onboarding. الإبقاء ١٨ شهر لو حظك. <span dir="ltr">OS</span> يثبّت أسرع، أرخص، ما يستقيل في رمضان.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPS DIAGRAM ============ -->
+<section id="ops" class="section dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">الطبقة 01 · الأساس</div>
+      <h2><span class="accent">Ops الذكي.</span> الفريق اللي ما تقدر تستأجره، مثبّت في أسبوعين.</h2>
+      <p class="sub">أنت دايماً تدفع لخمس أدوار. بس تدفع لهم <em>لك</em>. العقل الثاني اللي يذكّر كل قرار. المساعد اللي يكتب ويراجع. مسؤول الأدوات يشغّل <span dir="ltr">ClickUp</span> و <span dir="ltr">CRM</span> و التقويم. المساعد اللي يتابع. المحلل اللي يقرأ السوق. <span dir="ltr">Ops OS</span> يطوي الخمسة في مقعد <span dir="ltr">AI</span> واحد يقرأ البيانات المباشرة، ينفّذ، ويسجل نفسه قبل ما يشحن. هذا ما chatbot. هذا العمود الفقري.</p>
+    </div>
+
+    <div class="diagram reveal" id="d-ops">
+      <svg class="grid" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs><pattern id="g-ops" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M5 0 L0 0 L0 5" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="0.1"/></pattern></defs>
+        <rect width="100" height="100" fill="url(#g-ops)"/>
+      </svg>
+      <svg class="paths" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs><filter id="glow-ops" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="0.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <path d="M 50 14 Q 50 30 50 45" stroke="#7dd3fc" stroke-width="0.35" fill="none" stroke-dasharray="1.2 1" opacity=".6" filter="url(#glow-ops)"/>
+        <path d="M 82 20 Q 66 35 55 48" stroke="#bef264" stroke-width="0.35" fill="none" stroke-dasharray="1.2 1" opacity=".6" filter="url(#glow-ops)"/>
+        <path d="M 18 20 Q 34 35 45 48" stroke="#38bdf8" stroke-width="0.35" fill="none" stroke-dasharray="1.2 1" opacity=".6" filter="url(#glow-ops)"/>
+        <path d="M 86 52 Q 70 50 57 50" stroke="#ff6b35" stroke-width="0.4" fill="none" stroke-dasharray="1.5 1" opacity=".65" filter="url(#glow-ops)"/>
+        <path d="M 14 52 Q 30 50 43 50" stroke="#ff6b35" stroke-width="0.4" fill="none" stroke-dasharray="1.5 1" opacity=".65" filter="url(#glow-ops)"/>
+        <path d="M 72 82 Q 62 65 52 55" stroke="#f59e0b" stroke-width="0.35" fill="none" stroke-dasharray="1.2 1" opacity=".6" filter="url(#glow-ops)"/>
+        <path d="M 28 82 Q 38 65 48 55" stroke="#f59e0b" stroke-width="0.35" fill="none" stroke-dasharray="1.2 1" opacity=".6" filter="url(#glow-ops)"/>
+      </svg>
+
+      <div class="node center" style="right:50%;top:50%" data-desc="مساعد <span dir='ltr'>AI</span> واحد يلعب كل دور ما تستأجره. يقرأ البيانات المباشرة، يشتغل الشغل، ويسجل، ويرد." data-list="يلعب 5 أدوار من مقعد واحد|يقرأ بيانات <span dir='ltr'>CRM</span> + أدوات مباشرة|ينفّذ الأفعال، ما الاقتراحات|مسلّم لك عند النقل — ما مستأجر">
+        <div class="nk">الأساس · العقل</div>
+        <div class="nt">عقل Ops</div>
+        <div class="ne">ال<span dir="ltr">AI</span> اللي يشتغل الشركة</div>
+      </div>
+
+      <div class="node" style="--nc:#38bdf8;right:18%;top:20%" data-desc="ذاكرة ما تنسى شركتك. ال<span dir='ltr'>ICP</span>، الصوت، السعر، الاعتراضات، العروض، الpaybooks — محمّل مرة، يستخدم للأبد." data-list="يتذكّر كل قرار اتخذته|يعرف <span dir='ltr'>ICP</span>، السعر، الموضع|يستدعي الكونتكست فوراً|يدرّب كل <span dir='ltr'>AI</span> جديد زي بعضه|ما في إعادة شرح الشركة" data-link="/ar/layers/ops">
+        <div class="nk">الدور · 01</div>
+        <div class="nt">عقل ثاني</div>
+        <div class="ne">شركتك، متذكّرة</div>
+      </div>
+      <div class="node" style="--nc:#7dd3fc;right:50%;top:14%" data-desc="ذكي يكتب عروض، يراجع سلايدات، يسجل كوبي، يبني bundles حملات — بعدين يرجّع لراجعتك." data-list="يكتب عروض + <span dir='ltr'>SOW</span>|يراجع سلايداتك، الموقع، الايميلات|يسجل الشغل ضد معايير|يبني حملة bundles عند الطلب|حلقة كتابة + تسجيل مدمجة" data-link="/ar/layers/ops">
+        <div class="nk">الدور · 02</div>
+        <div class="nt">مساعد ذكي</div>
+        <div class="ne">يكتب، يراجع، يسجل</div>
+      </div>
+      <div class="node" style="--nc:#bef264;right:82%;top:20%" data-desc="كل أداة شركتك تشتغل عليها — إدارة المشاريع، <span dir='ltr'>CRM</span>، الحملات، التقويم، الفواتير — مشغّل من مقعد واحد بـ <span dir='ltr'>AI</span>." data-list="يشغّل <span dir='ltr'>CRM</span> (<span dir='ltr'>SalesMfast</span> / <span dir='ltr'>GHL</span>)|يشغّل <span dir='ltr'>PM</span> (<span dir='ltr'>ClickUp</span> و <span dir='ltr'>Notion</span> و <span dir='ltr'>Airtable</span>)|يشغّل الحملات (<span dir='ltr'>Instantly</span> و <span dir='ltr'>HeyReach</span>)|يشغّل الـstore (<span dir='ltr'>Shopify</span> و <span dir='ltr'>Stripe</span>)|200+ أفعال، مشغّل واحد" data-link="/ar/layers/ops">
+        <div class="nk">الدور · 03</div>
+        <div class="nt">مسؤول الأدوات الذكي</div>
+        <div class="ne">كل app، مقعد واحد</div>
+      </div>
+
+      <div class="node" style="--nc:#ff6b35;right:14%;top:52%" data-desc="المساعد اللي ما ينام: inbox تriage + مسوّدة الردود، جدولة المهام + تنبيهات التقويم، متابعة المتابعات اللي نسيتها، تنظيف pipeline أسبوعي وشهري." data-list="تصنيف inbox + مسوّدة ردود|جدولة المهام + تنبيهات التقويم|متابعة المتابعات اللي نسيت|تنظيف pipeline أسبوعي وشهري|ال<span dir='ltr'>VA</span> اللي ما ينام" data-link="/ar/layers/ops">
+        <div class="nk">الدور · 04</div>
+        <div class="nt">مساعد ذكي</div>
+        <div class="ne">Inbox و مهام و تنبيهات و تنظيف</div>
+      </div>
+      <div class="node" style="--nc:#ff6b35;right:86%;top:52%" data-desc="ذكاء مجدول. مراقبة المنافسين، تحسين العروض، تتبّع الأخبار، الإشارات الاجتماعية — التقارير تصير inbox بـ pace تحدده." data-list="تحليل تنافسي أسبوعي|معايرة عرض + موضع شهري|مسح إشارات + أخبار يومي|بحث اتجاهات المحتوى + زاوية|تقارير pipeline و أداء على autopilot" data-link="/ar/layers/ops">
+        <div class="nk">الدور · 05</div>
+        <div class="nt">محلل ذكي</div>
+        <div class="ne">ذكاء مجدول</div>
+      </div>
+
+      <div class="node" style="--nc:#f59e0b;right:28%;top:82%" data-desc="أيدين مباشرة في كل أداة تستأجرها — ما copy-paste، ما no-code drag-and-drop. العقل ينفّذ، ما يقترح." data-list="تحكم <span dir='ltr'>API</span> مباشر، 200+ أفعال|<span dir='ltr'>WhatsApp</span> · <span dir='ltr'>SMS</span> · ايميل يُبعث بشكل native|<span dir='ltr'>Pipelines</span> + فواتير تحرّك باسمك|تقويم + حجوزات auto|شغل مشحون، ما مسوّدة" data-link="/ar/layers/ops">
+        <div class="nk">التنفيذ</div>
+        <div class="nt">أيدي الأدوات المباشرة</div>
+        <div class="ne">ما الاقتراحات — الأفعال</div>
+      </div>
+      <div class="node" style="--nc:#f59e0b;right:72%;top:82%" data-desc="ما شي سيء يطلع. كل شي — كوبي، حملة، عرض، بوست — يتسجّل ضد علامتك ومعاييرك قبل ما يشحن." data-list="إنفاذ صوت العلامة|تسجيل الكوبي ضد المعايير|فحص عرض + موضع|حواجز امتثال + نبرة|سجّل، بعدين شحن، كل مرة" data-link="/ar/layers/ops">
+        <div class="nk">الجودة</div>
+        <div class="nt">بوابة الجودة</div>
+        <div class="ne">مسجّل قبل ما يشحن</div>
+      </div>
+
+      <div class="tip" id="tip-ops"></div>
+    </div>
+
+    <div class="legend">
+      <div class="lg" style="--lc:#38bdf8"><div class="lk">حق من</div><div class="lt">أي مؤسس غارق في العمليات</div><div class="ld">عيادات تطارد التذكيرات يدوي، استشاريين عندهم 200 lead في اكسل، مدربين يضيّعون استفسارات <span dir="ltr">WhatsApp</span>، وكالات تنسى تفوتر. لو أنت العنق الضيّق، هذي الطبقة تشيلك من الطريق.</div></div>
+      <div class="lg" style="--lc:#ff6b35"><div class="lk">جاهز في</div><div class="lt">٤–٨ أسابيع</div><div class="ld">نثبّت، ندرّب العقل على شركتك، نربط كل أداة، ونشغّله جنبك لين يثبت نفسه. أغلب زبائنا يوقفون يحتاجوننا خلال شهرين.</div></div>
+      <div class="lg" style="--lc:#22c55e"><div class="lk">التكلفة بعد النقل</div><div class="lt">~٤٧٥ درهم / شهر</div><div class="ld">أقل من عشاء مع زبون. هذا تكلفة تشغيل النظام كامل لمّا يصير حقك. أرخص من <span dir="ltr">VA</span> نص وقت وما يمرض.</div></div>
+      <div class="lg" style="--lc:#bef264"><div class="lk">شنو تخلّي</div><div class="lt">كل شي. للأبد.</div><div class="ld">حساب <span dir="ltr">CRM</span> باسمك. ملفات العقل تقدر تعدّلها. كل أتمتة، كل مهارة، كل ربط، كل بايت بيانات. يوم ننقل، الـretainer خيار — ما سلسلة.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GTM DIAGRAM ============ -->
+<section id="gtm" class="section deep">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow lm">الطبقة 02 · محرك الإيرادات</div>
+      <h2><span class="accent"><span dir="ltr">GTM</span> الذكي.</span> محركات مستقلة تلاقي الطلب وتقفله.</h2>
+      <p class="sub">أنت بعد <span dir="ltr">PMF</span> وما زلت البائع الأول. تقويمك عذاب. فريق <span dir="ltr">GTM</span> من خمسة يصلحك — ما تحصل عليهم، ما تقدر تاخذهم، وما فيك وقت تدرّبهم. <span dir="ltr">GTM OS</span> نصب الفريق كمحركات مستقلة. الحملات تشتغل لحالها. قنوات الويبينار تطلع من برييف واحد. الـoutbound بتاعك يعرف مين يشتري قبل ما هم يعرفوا. وكل asset تسجله ضد علامتك قبل ما يطلع للناس.</p>
+    </div>
+
+    <div class="diagram reveal" id="d-gtm">
+      <svg class="grid" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs><pattern id="g-gtm" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M5 0 L0 0 L0 5" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="0.1"/></pattern></defs>
+        <rect width="100" height="100" fill="url(#g-gtm)"/>
+      </svg>
+      <svg class="paths" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs><filter id="glow-gtm" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="0.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <path d="M 50 50 Q 65 30 80 20" stroke="#ff6b35" stroke-width="0.4" fill="none" stroke-dasharray="1.5 1" opacity=".65" filter="url(#glow-gtm)"/>
+        <path d="M 50 50 Q 35 30 20 20" stroke="#38bdf8" stroke-width="0.4" fill="none" stroke-dasharray="1.5 1" opacity=".65" filter="url(#glow-gtm)"/>
+        <path d="M 50 50 Q 50 68 50 82" stroke="#bef264" stroke-width="0.4" fill="none" stroke-dasharray="1.5 1" opacity=".65" filter="url(#glow-gtm)"/>
+        <path d="M 50 50 Q 70 50 86 52" stroke="#f59e0b" stroke-width="0.35" fill="none" stroke-dasharray="1.2 1" opacity=".6" filter="url(#glow-gtm)"/>
+        <path d="M 50 50 Q 30 50 14 52" stroke="#f59e0b" stroke-width="0.35" fill="none" stroke-dasharray="1.2 1" opacity=".6" filter="url(#glow-gtm)"/>
+      </svg>
+
+      <div class="node center" style="right:50%;top:50%" data-desc="مصفّي ذكاء واحد يشغّل كل محرك مستقل تحت — وسجّل كل مخرجات قبل ما تقيل جمهورك." data-list="يشغّل حملات، ويبينارات، outbound معاً|يقرا <span dir='ltr'>CRM</span> بتاعك + إشارات السوق live|سجّل كل asset ضد علامتك|أنت تراجع — ما تكتب">
+        <div class="nk">Core · الرائد</div>
+        <div class="nt">عقل <span dir="ltr">GTM</span> بتاعك</div>
+        <div class="ne">الذكاء اللي يقفل لك</div>
+      </div>
+
+      <div class="node" style="--nc:#ff6b35;right:80%;top:20%" data-desc="قول له هدف حملة — 'ملي 20 seat في الويبينار'، 'ادفع عرض رمضان'، 'أحيي leads بردة'. يبني البلان، يطلع الأصول، يشغّل القنوات، يقول نتائج أسبوعي." data-list="برييف في → حملة multi-channel بره|جمهور، عرض، رسالة، سيكويل، follow-ups|يشغّل ايميل، <span dir='ltr'>WhatsApp</span>، <span dir='ltr'>LinkedIn</span>، <span dir='ltr'>SMS</span> معاً|مراجعة أداء أسبوعي + توصيات next-step|ما يطلع الا وهو مسجّل" data-link="/ar/layers/gtm">
+        <div class="nk">المحرك · 01</div>
+        <div class="nt">إدارة الحملات المستقلة</div>
+        <div class="ne">برييف في. حملة بره.</div>
+      </div>
+
+      <div class="node" style="--nc:#38bdf8;right:20%;top:20%" data-desc="funnel الويبينار كامل — بنّي من برييف واحد. Slides، scripts، صفحة تسجيل، ايميلات nurture، <span dir='ltr'>LinkedIn DMs</span>، follow-up flow — كتبّين بصوتك، ready نطلع live." data-list="23 شريحة + speaker notes|صفحة تسجيل + <span dir='ltr'>VSL</span>|سيكويل nurture قبل الويبينار|عرض post-webinar + follow-ups|<span dir='ltr'>LinkedIn DM</span> + bundle إطلاق social" data-link="/ar/layers/gtm">
+        <div class="nk">المحرك · 02</div>
+        <div class="nt">funnel الويبينار المستقل</div>
+        <div class="ne">برييف واحد → funnel كامل</div>
+      </div>
+
+      <div class="node" style="--nc:#bef264;right:50%;top:82%" data-desc="Outbound يقرا السوق لك. يلقي مين يشتغّل، يرفع، يطلع، يتألم — بعدين يكتب الرسالة بصوتك. Warm outreach في cold-outreach scale." data-list="يكشط signals fit + intent + trigger|يرص signals في buying urgency|يسرّب leads لـ channel + rep الصح|يكتب رسائل من signals، ما templates|سجّل 'ready now' + 'nurture'" data-link="/ar/solutions/signal-sales-engine">
+        <div class="nk">المحرك · 03</div>
+        <div class="nt">محرك المبيعات بالإشارات المستقل</div>
+        <div class="ne">عرف مين يشتري، أولاً</div>
+      </div>
+
+      <div class="node" style="--nc:#f59e0b;right:14%;top:52%" data-desc="الجهة inbound. موضوع واحد يصير تقويم محتوى 90 يوم — <span dir='ltr'>LinkedIn</span> posts، ايميلات، newsletters، <span dir='ltr'>WhatsApp</span> broadcasts — dual-track عربي + <span dir='ltr'>English</span>، مسجّل ومجدول." data-list="برييف واحد → 50 زاوية <span dir='ltr'>LinkedIn</span>|موضوع واحد → 10 ايميلات + newsletter|خليط <span dir='ltr'>TOFU</span> · <span dir='ltr'>MOFU</span> · <span dir='ltr'>BOFU</span>، متوازن|عربي (<span dir='ltr'>Khaleeji</span>) + <span dir='ltr'>English</span>، native|مسجّل صوت العلامة قبل مجدول" data-link="/ar/layers/gtm">
+        <div class="nk">المحرك · 04</div>
+        <div class="nt">محرك المحتوى المستقل</div>
+        <div class="ne">Inbound يشتغل لحاله</div>
+      </div>
+      <div class="node" style="--nc:#f59e0b;right:86%;top:52%" data-desc="المصغِّر الواحد اللي يشغّل كل أداة <span dir='ltr'>GTM</span> اللي أنت تدفع لها بالفعل — <span dir='ltr'>Instantly</span>, <span dir='ltr'>HeyReach</span>, <span dir='ltr'>Sales Navigator</span>, <span dir='ltr'>WhatsApp</span>, <span dir='ltr'>Clay</span>. ما فيه توظيف متخصص واحد لكل channel." data-list="<span dir='ltr'>Instantly.ai</span> — cold email في scale|<span dir='ltr'>HeyReach</span> — <span dir='ltr'>LinkedIn</span> outreach|<span dir='ltr'>Sales Navigator</span> — signal scraping|<span dir='ltr'>WhatsApp Business</span> + <span dir='ltr'>SMS</span> — warm follow-ups|<span dir='ltr'>Clay</span> — waterfall enrichment، كل channels" data-link="/ar/layers/gtm">
+        <div class="nk">المحرك · 05</div>
+        <div class="nt">مصغِّر الـ Outreach المستقل</div>
+        <div class="ne">كل channel، مقعد واحد</div>
+      </div>
+
+      <div class="tip" id="tip-gtm"></div>
+    </div>
+
+    <div class="legend">
+      <div class="lg" style="--lc:#ff6b35"><div class="lk">حق من</div><div class="lt">مؤسسين لسة يقيلون الـpipeline</div><div class="ld">شركات استشارات، <span dir="ltr">B2B</span> tech، professional services، مدربين يتكبرون في منطقة الخليج. ينفقون 30–80 ألف درهم في الشهر على مسوّقين يحركون الإبرة بالكاد. الـpipeline بتاعك يعتمد عليك تشتغل الشغل — والسقف يقترب.</div></div>
+      <div class="lg" style="--lc:#38bdf8"><div class="lk">حي في</div><div class="lt">8–16 أسابيع</div><div class="ld">معايرة signals، tuning العروض، اختبار wedge يتركب على دورات بيانات. تشوف motion pipeline في الأسبوع اثنين. ترجع returns بـcompound في الأسبوع ثمانية.</div></div>
+      <div class="lg" style="--lc:#22c55e"><div class="lk">شنو تدفع بعد</div><div class="lt">Tools + optional tune-up</div><div class="ld">أدوات بتاعك (<span dir="ltr">Instantly</span>, <span dir="ltr">HeyReach</span>, <span dir="ltr">Clay</span>, <span dir="ltr">Sales Nav</span>) تفضل باسمك. الـretainer خيار يدفع لـ wedge refresh + optimization عرض — لأن أسواق تتحرك وأنت بتبي الحافة update.</div></div>
+      <div class="lg" style="--lc:#bef264"><div class="lk">شنو تخلّي</div><div class="lt">كل محرك، كل playbook</div><div class="ld">منطق detection signals، campaign templates، enrichment workflows، scoring frameworks، sequences، كل channel operator — configured، documented، حقك.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEV DIAGRAM ============ -->
+<section id="dev" class="section dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow cy">الطبقة 03 · قدرة البناء</div>
+      <h2><span class="accent">Dev الذكي.</span> فريق هندسة تراسله على <span dir="ltr">Telegram</span>.</h2>
+      <p class="sub">قلت الجملة مائة مرة: "لو قدرت أبني الـfeature هذا بالذات." توظيف مهندسين رحلة ستة شهور ما تبيها. Outsource لـ agency يعني الـIP بتاعك يحيا في laptop واحد ثاني. <span dir="ltr">Dev OS</span> نصب org software مستقلة تقدر تكلمها بالـplain language — عربي أو <span dir="ltr">English</span>. جيب طلب. تعدّل، تبني، تراجع، تختبر، تدشّن، وترد لما تخلص. الـdeliverable ما هو نصيحة code. هو feature يشتغل في production.</p>
+    </div>
+
+    <div class="diagram reveal" id="d-dev">
+      <svg class="grid" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs><pattern id="g-dev" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M5 0 L0 0 L0 5" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="0.1"/></pattern></defs>
+        <rect width="100" height="100" fill="url(#g-dev)"/>
+      </svg>
+      <svg class="paths" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs><filter id="glow-dev" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="0.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <path d="M 50 50 Q 66 28 82 18" stroke="#38bdf8" stroke-width="0.4" fill="none" stroke-dasharray="1.5 1" opacity=".65" filter="url(#glow-dev)"/>
+        <path d="M 50 50 Q 34 28 18 18" stroke="#bef264" stroke-width="0.4" fill="none" stroke-dasharray="1.5 1" opacity=".65" filter="url(#glow-dev)"/>
+        <path d="M 50 50 Q 70 60 86 70" stroke="#22c55e" stroke-width="0.4" fill="none" stroke-dasharray="1.5 1" opacity=".65" filter="url(#glow-dev)"/>
+        <path d="M 50 50 Q 30 60 14 70" stroke="#f59e0b" stroke-width="0.4" fill="none" stroke-dasharray="1.5 1" opacity=".65" filter="url(#glow-dev)"/>
+        <path d="M 50 50 Q 50 70 50 85" stroke="#ff6b35" stroke-width="0.35" fill="none" stroke-dasharray="1.2 1" opacity=".6" filter="url(#glow-dev)"/>
+      </svg>
+
+      <div class="node center" style="right:50%;top:50%" data-desc="طبقة leadership ذكاء واحدة نسق الـ org engineering كلها. أنت تكلمها. توزّع الشغل. ترد لما تخلص." data-list="تقرا طلباتك بـ plain <span dir='ltr'>English</span> / عربي|تقسمها لـ tickets engineering|توجّه لـ planners، engineers، <span dir='ltr'>QA</span>|ترد shipped features، ما status updates">
+        <div class="nk">Core · البناء</div>
+        <div class="nt">عقل <span dir="ltr">Dev</span> بتاعك</div>
+        <div class="ne"><span dir="ltr">org</span> الهندسة</div>
+      </div>
+
+      <div class="node" style="--nc:#38bdf8;right:82%;top:18%" data-desc="الـ <span dir='ltr'>VP</span> Engineering بتاعك الذكي. يشتغّل org chart، يسند الشغل، ينفذ الـbudget، يوقّع المهندس الصح للمشكلة الصح — وترد عليك في <span dir='ltr'>Telegram</span> مثل رئيس eng حقيقي." data-list="يبني sprint لك|يسند tickets لـ agent الصح|ينفذ budget + timeline hard stops|تمسّك في <span dir='ltr'>Telegram</span> مع updates|بتاعه السؤال 'shipped yet?'" data-link="/ar/layers/dev">
+        <div class="nk">الدور · 01</div>
+        <div class="nt"><span dir="ltr">VP</span> Engineering الذكي بتاعك</div>
+        <div class="ne">في <span dir="ltr">Telegram</span>، 24/7</div>
+      </div>
+      <div class="node" style="--nc:#bef264;right:18%;top:18%" data-desc="فريق الهندسة. Planners، senior engineers، production engineers — كل persona متخصص وموجّه بـ task type. عقل واحد بناء الـ architecture؛ ثاني يشحن code بـ velocity." data-list="Architect + planner personas|Production engineer + executor personas|موجّه بـ complexity + risk|<span dir='ltr'>TDD</span>-mandatory، defensive coding|<span dir='ltr'>PRs</span> تهبط مع reviewer context" data-link="/ar/layers/dev">
+        <div class="nk">الدور · 02</div>
+        <div class="nt">فريق الهندسة المستقل</div>
+        <div class="ne">طلب ticket. اطلع code.</div>
+      </div>
+      <div class="node" style="--nc:#22c55e;right:14%;top:70%" data-desc="كل <span dir='ltr'>PR</span> مراجع ضد خمس quality hats — architecture، security، readability، performance، test coverage — قبل أي شي يصير main. شغل سيء تترجع، ما تدمج." data-list="5-hat <span dir='ltr'>PR</span> review (arch · sec · read · perf · test)|Dead-letter queue يمسك failures|Automated retry + escalation paths|كل merge عنده test attached|ما في human-in-loop لـ clean <span dir='ltr'>PRs</span>" data-link="/ar/layers/dev">
+        <div class="nk">الدور · 03</div>
+        <div class="nt"><span dir="ltr">QA</span> والمراجعة المستقلة</div>
+        <div class="ne">ما شي سيء يصير main</div>
+      </div>
+      <div class="node" style="--nc:#f59e0b;right:86%;top:70%" data-desc="<span dir='ltr'>CI</span>، deployment، post-ship monitoring يتعامل النظام حاله. لما feature يشحن، النظام يقول. لما يكسر، النظام rollback يعمل و bug يفتح مع context." data-list="Auto-deploy من merged <span dir='ltr'>PRs</span>|Post-ship monitoring + alerts|Automated rollback في failure|Bug tickets auto-filed مع context|أنت تقاعد من pipeline" data-link="/ar/layers/dev">
+        <div class="nk">الدور · 04</div>
+        <div class="nt">البناء والـdeploy المستقل</div>
+        <div class="ne">شحّن. راقب. Rollback.</div>
+      </div>
+      <div class="node" style="--nc:#ff6b35;right:50%;top:85%" data-desc="الـinfra خاصتك بتاعك — ثلاث nodes، دايم on. Orchestration hub، build server، client window. Code بتاعك يشتغل servers بتاعك. ما في laptop واحد ثاني." data-list="Orchestration hub — scheduler دايم-on|Build + deploy server — velocity node|Client window — مقعد operator بتاعك|<span dir='ltr'>Tailscale</span>-connected private mesh|<span dir='ltr'>IP</span> بتاعك، servers بتاعك، control بتاعك" data-link="/ar/layers/dev">
+        <div class="nk">الدور · 05</div>
+        <div class="nt">الـinfra <span dir="ltr">Dev</span> الخاصة بتاعك</div>
+        <div class="ne">ثلاث nodes، دايم on</div>
+      </div>
+
+      <div class="tip" id="tip-dev"></div>
+    </div>
+
+    <div class="legend">
+      <div class="lg" style="--lc:#38bdf8"><div class="lk">حق من</div><div class="lt">المؤسس اللي يبي يشحّن</div><div class="ld"><span dir="ltr">SaaS</span> founders، operators ما فيهم technical، commerce brands اللي قول الكلمة دايماً "أنا بس بحتاج الحاجة هذي تبني." اللي اتعاملو quote 80 ألف درهم وستة شهور من agency لشي يقدّر يخذ أسبوع.</div></div>
+      <div class="lg" style="--lc:#ff6b35"><div class="lk">حي في</div><div class="lt">3–6 شهور</div><div class="ld">Software حقيقي بيأخذ دورات حقيقية. أول feature يشحن في أسابيع. <span dir="ltr">Org</span> مستقلة تركب بعدها — أسرع، أرخص، predictable — كل شهر بعده.</div></div>
+      <div class="lg" style="--lc:#22c55e"><div class="lk">شنو تدفع بعد</div><div class="lt">Infra + optional retainer</div><div class="ld">Servers بتاعك، <span dir="ltr">Claude Code</span> accounts بتاعك، tool subs بتاعك — كلهم باسمك. الـretainer optional ويدفع لـ agent upgrades لمّا models جديدة تنزل.</div></div>
+      <div class="lg" style="--lc:#bef264"><div class="lk">شنو تخلّي</div><div class="lt">كل repo، كل node</div><div class="ld">Source code، agent definitions، task pipelines، ops playbooks، <span dir="ltr">GitHub org</span>، server access، <span dir="ltr">Telegram</span> bot، scheduler. لو اختفينا غداً، أنت لسة بتشحّن الجمعة.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Bridge 2 → BOT Model -->
+<div class="bridge">
+  <div class="bridge-inner reveal">
+    <div class="bmk" style="background:var(--cyan)"></div>
+    <p>ثلاث طبقات، مثبّتة. <em>هنا النموذج اللي يضمن إنك فعلاً تملكها.</em></p>
+  </div>
+</div>
+
+<!-- ============ BOT MODEL ============ -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">النموذج · البناء · التشغيل · النقل</div>
+      <h2>بنّيت لك. تشغّل <span class="accent">معك</span>. تملك <span class="accent">أنت</span>.</h2>
+      <p class="sub">كل تعامل عنده تاريخ انتهاء. هذا الكل الفكرة بتاعتها. نحن نبني النظام. نشغّله جنبك لين يثبت نفسه بدون إيدينا على العجلة. بعدين نقل — حسابات، code، configs، playbooks، بيانات. أنت تدفع لـ acceleration، ما dependency. الـ retainer بعد النقل خيار، ما سيناريو رهينة.</p>
+    </div>
+
+    <div class="bot-wrap reveal">
+      <table>
+        <thead><tr><th>المرحلة</th><th><span dir="ltr">Ops OS</span></th><th><span dir="ltr">GTM OS</span></th><th><span dir="ltr">Dev OS</span></th></tr></thead>
+        <tbody>
+          <tr><td>البناء</td><td>4–6 أسابيع</td><td>6–10 أسابيع</td><td>8–12 أسابيع</td></tr>
+          <tr><td>التشغيل</td><td>4–8 أسابيع</td><td>8–16+ أسابيع</td><td>12–24+ أسابيع</td></tr>
+          <tr><td>مؤشر النقل</td><td>أسبوعان تشغيل مستقل</td><td>حملات تقوم لحالها 4+ أسابيع</td><td>3+ <span dir="ltr">BRDs</span> shipped مستقل</td></tr>
+          <tr><td>الـ<span dir="ltr">retainer</span> بعد النقل</td><td>خفيف</td><td>متوسط–عالي</td><td>عالي</td></tr>
+          <tr><td>الاشتراك التقني</td><td><span dir="ltr">Claude</span> + <span dir="ltr">SalesMfast</span> + <span dir="ltr">n8n</span></td><td>+ <span dir="ltr">Instantly</span> · <span dir="ltr">HeyReach</span> · <span dir="ltr">Clay</span> · <span dir="ltr">Sales Nav</span></td><td>+ Server hosting · <span dir="ltr">Claude Code</span> · tools</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Bridge 3 → Proof -->
+<div class="bridge">
+  <div class="bridge-inner reveal">
+    <div class="bmk" style="background:var(--lime)"></div>
+    <p>هذا الـplaybook على الورقة. <em>هنا شنو يبدو في production.</em></p>
+  </div>
+</div>
+
+<!-- ============ PROOF CASES ============ -->
+<section id="proof" class="section deep">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow cy">الإثبات · في الإنتاج</div>
+      <h2>أربع مشاريع. أربع <span class="accent">operating systems</span>. نفس الـplaybook.</h2>
+      <p class="sub">صناعات مختلفة، مدن مختلفة، شكل عملاء مختلف. كل واحد بدايته مؤسس في فوضى. كل واحد يشتغل على <span dir="ltr">AI</span>-Native <span dir="ltr">OS</span> يملكه كلياً. اثنين لسة سرّي لين case studies تطلع. اثنين public بالفعل — وتسرع الخطى.</p>
+    </div>
+
+    <div class="cases">
+      <article class="case reveal" style="--cc:#38bdf8">
+        <div class="proof-vis" aria-hidden="true">
+          <div class="pv-label">تثبيت · Signal → Score → Route</div>
+          <svg viewBox="0 0 600 140" preserveAspectRatio="xMidYMid meet">
+            <defs><marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker></defs>
+            <g fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.85">
+              <rect x="30" y="52" width="80" height="36" rx="0"/>
+              <rect x="150" y="52" width="80" height="36" rx="0"/>
+              <rect x="270" y="22" width="80" height="36" rx="0"/>
+              <rect x="270" y="82" width="80" height="36" rx="0"/>
+              <rect x="390" y="52" width="80" height="36" rx="0"/>
+              <rect x="510" y="52" width="60" height="36" rx="0"/>
+              <path d="M110,70 L150,70" marker-end="url(#a1)"/>
+              <path d="M230,70 L262,40" marker-end="url(#a1)"/>
+              <path d="M230,70 L262,100" marker-end="url(#a1)"/>
+              <path d="M350,40 L388,66" marker-end="url(#a1)"/>
+              <path d="M350,100 L388,74" marker-end="url(#a1)"/>
+              <path d="M470,70 L510,70" marker-end="url(#a1)"/>
+            </g>
+            <g font-family="ui-monospace,monospace" font-size="9" fill="#cfcfcf" text-anchor="middle">
+              <text x="70" y="74">Scorecard</text><text x="190" y="74">AI Score</text>
+              <text x="310" y="44">Nurture</text><text x="310" y="104"><span dir="ltr">WhatsApp</span></text>
+              <text x="430" y="74"><span dir="ltr">CRM</span></text><text x="540" y="74">Book</text>
+            </g>
+          </svg>
+          <div class="pv-tag">حي · الرياض</div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>شركتك بها خمس أدوار شاغرة. كلها أنت.</h1>
-        <p class="subheading">توقف عن استئجار فريقك. ثبّت نظام تشغيل يدير العمل — وامتلكه في النهاية.</p>
-        <div class="hero-stats">
-            <div class="stat">
-                <span class="stat-number">10x</span>
-                <span class="stat-label">أسرع من الفرق التقليدية</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">5</span>
-                <span class="stat-label">أدوار رئيسية مؤتمتة</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">100%</span>
-                <span class="stat-label">تحكم كامل في العمليات</span>
-            </div>
+        <div class="c-body">
+        <div class="ck">Case · 01 · Ops + Inbound</div>
+        <h3>استشاري <span class="accent"><span dir="ltr">ERP</span> وتحويل رقمي</span> مستقل في الرياض.</h3>
+        <p class="c-sub">ثمانية عشر سنة من الخبرة. عميل واحد active. strategy deck بطول والبيت وما فيه نظام واحد built. هو الـbrand، الـdelivery، الـops، الـfinance، والـsales — كل شي معاً. Profile classic: طموح عالي، spine تشغيل صفر. العنق الضيّق كان هو، وهو يعرف.</p>
+        <div class="c-list">
+          <div class="c-li"><span class="c-lab">الألم</span><span>كل prospect جديد يعني ابدا من الصفر. ما <span dir="ltr">CRM</span>. ما intake repeatable. Proposals مكتوبة من الذاكرة الساعة واحد الفجر. ممارسة productized محبوسة في رأسه.</span></div>
+          <div class="c-li"><span class="c-lab">التثبيت</span><span><span dir="ltr">Ops OS</span> مع عقل 2 بتاعه loaded لـ السوق السعودي (<span dir="ltr">ZATCA</span> / <span dir="ltr">PDPL</span> / <span dir="ltr">REGA</span> compliance)، <span dir="ltr">AI coworker</span> لـ audits وproposals، tool admin يشغّل <span dir="ltr">ClickUp</span> و<span dir="ltr">CRM</span>، وباحث يراقب سوق <span dir="ltr">ERP</span> السعودي أسبوعي.</span></div>
+          <div class="c-li"><span class="c-lab">المحرك</span><span>أربع diagnostic scorecards تبدّل lead magnets one-size-fits-all — <span dir="ltr">ERP</span> Readiness، <span dir="ltr">DX</span> Health Check، Project Rescue، Vendor Selection — كل score تُوجّه لـ nurture، ping <span dir="ltr">WhatsApp</span>، أو booking link automatic.</span></div>
+          <div class="c-li"><span class="c-lab">النتيجة</span><span>هو يمشي لكل discovery call مع pre-briefing على score الـprospect بالضبط، dimensions الضعيفة، والـ objections المحتملة. الممارسة productized لسة موجودة — وتشتغل بدونه في الوسط.</span></div>
         </div>
-    </section>
-
-    <!-- Core Concepts -->
-    <section class="cards-container">
-        <div class="card reveal">
-            <div class="card-eyebrow">المرحلة الأولى</div>
-            <h3>البناء</h3>
-            <p>استخدم Claude و Anthropic لتصميم وتطوير نظام التشغيل الخاص بك. ابدأ بالعمليات الأساسية واستكمل من هناك.</p>
+        <div class="c-foot"><span>Layer · Ops + <span dir="ltr">GTM</span> Inbound</span><span>Status · Building</span></div>
         </div>
-        <div class="card reveal">
-            <div class="card-eyebrow">المرحلة الثانية</div>
-            <h3>التشغيل</h3>
-            <p>شغّل النظام عبر فريقك أو بمساعدة فريقنا. راقب الأداء، قم بالتحسينات المستمرة، وسد الثغرات بسرعة.</p>
+      </article>
+
+      <article class="case reveal" style="--cc:#bef264">
+        <div class="proof-vis" aria-hidden="true">
+          <div class="pv-label">تثبيت · Dual-Brand Revenue Loop</div>
+          <svg viewBox="0 0 600 140" preserveAspectRatio="xMidYMid meet">
+            <g fill="none" stroke="#bef264" stroke-width="1.5" opacity="0.85">
+              <circle cx="80" cy="70" r="26"/>
+              <circle cx="520" cy="70" r="26"/>
+              <rect x="210" y="30" width="180" height="26"/>
+              <rect x="210" y="84" width="180" height="26"/>
+              <path d="M106,62 C160,38 170,38 210,43"/>
+              <path d="M106,78 C160,98 170,98 210,97"/>
+              <path d="M390,43 C430,38 440,38 494,62"/>
+              <path d="M390,97 C430,98 440,98 494,78"/>
+              <path d="M300,56 L300,84"/>
+            </g>
+            <g font-family="ui-monospace,monospace" font-size="9" fill="#cfcfcf" text-anchor="middle">
+              <text x="80" y="74">Coaching</text>
+              <text x="520" y="74">Wellness</text>
+              <text x="300" y="46"><span dir="ltr">AI Coworker</span> · <span dir="ltr">CRM</span></text>
+              <text x="300" y="100"><span dir="ltr">WhatsApp</span> Flows</text>
+            </g>
+          </svg>
+          <div class="pv-tag">نقل · دبي</div>
         </div>
-        <div class="card reveal">
-            <div class="card-eyebrow">المرحلة الثالثة</div>
-            <h3>التسليم</h3>
-            <p>انتقل من التشغيل اليدوي إلى الأتمتة الكاملة. امتلك النظام بكامله وحقق الأهداف المالية بأسرع وقت.</p>
+        <div class="c-body">
+        <div class="ck">Case · 02 · Ops + Commerce</div>
+        <h3>علامة دبي <span class="accent">coaching و<span dir="ltr">Shopify</span> wellness</span>.</h3>
+        <p class="c-sub">خطتان عمل تحت صاحب واحد: برامج coaching ومتجر <span dir="ltr">D2C</span> wellness. 500+ contacts متفرقة في notes apps، <span dir="ltr">Instagram DMs</span>، و inbox بتاعها. ما <span dir="ltr">CRM</span>. ما follow-ups. ما نظام. Leads تسقط من الشقوق كل أسبوع. هي الـfounder، المسوّقة، customer service rep، وفulfillment manager — manual كل شي.</p>
+        <div class="c-list">
+          <div class="c-li"><span class="c-lab">الألم</span><span>Leads ما متابعتهم. عملاء ما أعادت engagement. Post-purchase flows ما كانت موجودة. خطتا عمل مع journeys عملاء مختلفة، اثنتين يشتغلان من نفس الفوضى.</span></div>
+          <div class="c-li"><span class="c-lab">التثبيت</span><span><span dir="ltr">Ops OS</span> مع dual pipelines (coaching + wellness)، 500+ contacts imported وsegmented، 8 email sequences حي، 4 <span dir="ltr">Meta</span>-approved <span dir="ltr">WhatsApp</span> templates، <span dir="ltr">Shopify</span> automations لـ cross-sell / upsell / repeat-purchase، و<span dir="ltr">AI coworker</span> يشغّل العلامتين من window واحد.</span></div>
+          <div class="c-li"><span class="c-lab">المحرك</span><span><span dir="ltr">AI</span> assistant بتاعها يحجّم calls، يبعث reminders، يتابع abandoned carts، ويطلق الـnurture الصح بناءً على وين الـlead في. الـresearch analyst بتاعها يقول على content performance و repeat-purchase trends كل الاثنين.</span></div>
+          <div class="c-li"><span class="c-lab">النتيجة</span><span>20 deliverable في 8 أسابيع. تكلفة شهرية run كلي بعد handoff: <strong style="color:#fff">~٤٧٥ درهم</strong>. أقل من <span dir="ltr">VA</span> نص وقت. كل الـbusiness يشتغل من window <span dir="ltr">Cowork</span> واحد — وهي تملك كل piece بتاعه.</span></div>
         </div>
-    </section>
-
-    <!-- The Map Section -->
-    <section class="diagram-section">
-        <h2 class="diagram-title">خريطة النظام</h2>
-        <svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" aria-label="خريطة نظام التشغيل">
-            <!-- Placeholder diagram structure with Arabic labels -->
-            <defs>
-                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#0066ff;stop-opacity:0.3" />
-                    <stop offset="100%" style="stop-color:#0066ff;stop-opacity:0.1" />
-                </linearGradient>
-            </defs>
-
-            <!-- Central nodes -->
-            <circle cx="500" cy="300" r="60" fill="url(#grad1)" stroke="#0066ff" stroke-width="2"/>
-            <text x="500" y="305" text-anchor="middle" class="nt" fill="#ffffff" font-size="14" font-weight="600">نظام التشغيل</text>
-
-            <!-- Layer nodes -->
-            <g class="node" data-link="/ar/layers/ops">
-                <circle cx="250" cy="150" r="50" fill="rgba(0,170,0,0.2)" stroke="#00aa00" stroke-width="2"/>
-                <text x="250" y="155" text-anchor="middle" class="nt" fill="#00aa00">العمليات</text>
-            </g>
-
-            <g class="node" data-link="/ar/layers/gtm">
-                <circle cx="500" cy="100" r="50" fill="rgba(255,153,0,0.2)" stroke="#ff9900" stroke-width="2"/>
-                <text x="500" y="105" text-anchor="middle" class="nt" fill="#ff9900">GTM</text>
-            </g>
-
-            <g class="node" data-link="/ar/layers/dev">
-                <circle cx="750" cy="150" r="50" fill="rgba(102,153,255,0.2)" stroke="#6699ff" stroke-width="2"/>
-                <text x="750" y="155" text-anchor="middle" class="nt" fill="#6699ff">التطوير</text>
-            </g>
-
-            <!-- Connection lines -->
-            <line x1="300" y1="180" x2="470" y2="280" stroke="#333333" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="500" y1="150" x2="500" y2="240" stroke="#333333" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="700" y1="180" x2="530" y2="280" stroke="#333333" stroke-width="2" stroke-dasharray="5,5"/>
-        </svg>
-    </section>
-
-    <!-- Operations Layer -->
-    <section class="diagram-section">
-        <h2 class="diagram-title">طبقة العمليات</h2>
-        <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" aria-label="طبقة العمليات">
-            <!-- Ops nodes -->
-            <g class="node">
-                <rect x="50" y="50" width="150" height="100" fill="rgba(0,170,0,0.15)" stroke="#00aa00" stroke-width="2" rx="4"/>
-                <text x="125" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">إدارة الموارد</text>
-                <text x="125" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">البشرية والمالية</text>
-            </g>
-
-            <g class="node">
-                <rect x="250" y="50" width="150" height="100" fill="rgba(0,170,0,0.15)" stroke="#00aa00" stroke-width="2" rx="4"/>
-                <text x="325" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">المالية والحسابات</text>
-                <text x="325" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">التنبؤ والتحليل</text>
-            </g>
-
-            <g class="node">
-                <rect x="450" y="50" width="150" height="100" fill="rgba(0,170,0,0.15)" stroke="#00aa00" stroke-width="2" rx="4"/>
-                <text x="525" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">العمليات اليومية</text>
-                <text x="525" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">الجودة والامتثال</text>
-            </g>
-
-            <g class="node">
-                <rect x="650" y="50" width="150" height="100" fill="rgba(0,170,0,0.15)" stroke="#00aa00" stroke-width="2" rx="4"/>
-                <text x="725" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">إدارة المخاطر</text>
-                <text x="725" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">الرصد والتعافي</text>
-            </g>
-
-            <!-- Subcomponents -->
-            <g class="node">
-                <circle cx="125" cy="250" r="40" fill="rgba(0,170,0,0.2)" stroke="#00aa00" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="125" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الاستقطاب</text>
-            </g>
-
-            <g class="node">
-                <circle cx="200" cy="250" r="40" fill="rgba(0,170,0,0.2)" stroke="#00aa00" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="200" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الأداء</text>
-            </g>
-
-            <g class="node">
-                <circle cx="325" cy="250" r="40" fill="rgba(0,170,0,0.2)" stroke="#00aa00" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="325" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">المحاسبة</text>
-            </g>
-
-            <g class="node">
-                <circle cx="525" cy="250" r="40" fill="rgba(0,170,0,0.2)" stroke="#00aa00" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="525" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الجودة</text>
-            </g>
-
-            <g class="node">
-                <circle cx="725" cy="250" r="40" fill="rgba(0,170,0,0.2)" stroke="#00aa00" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="725" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">المراقبة</text>
-            </g>
-        </svg>
-    </section>
-
-    <!-- GTM Layer -->
-    <section class="diagram-section">
-        <h2 class="diagram-title">طبقة الذهاب للسوق</h2>
-        <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" aria-label="طبقة الذهاب للسوق">
-            <!-- GTM nodes -->
-            <g class="node">
-                <rect x="50" y="50" width="150" height="100" fill="rgba(255,153,0,0.15)" stroke="#ff9900" stroke-width="2" rx="4"/>
-                <text x="125" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">البحث والتحليل</text>
-                <text x="125" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">السوق والمنافسين</text>
-            </g>
-
-            <g class="node">
-                <rect x="250" y="50" width="150" height="100" fill="rgba(255,153,0,0.15)" stroke="#ff9900" stroke-width="2" rx="4"/>
-                <text x="325" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">استراتيجية المنتج</text>
-                <text x="325" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">التوضع والتميز</text>
-            </g>
-
-            <g class="node">
-                <rect x="450" y="50" width="150" height="100" fill="rgba(255,153,0,0.15)" stroke="#ff9900" stroke-width="2" rx="4"/>
-                <text x="525" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">المبيعات والشراكات</text>
-                <text x="525" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">القنوات والعملاء</text>
-            </g>
-
-            <g class="node">
-                <rect x="650" y="50" width="150" height="100" fill="rgba(255,153,0,0.15)" stroke="#ff9900" stroke-width="2" rx="4"/>
-                <text x="725" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">التسويق والاتصال</text>
-                <text x="725" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">الرسالة والوصول</text>
-            </g>
-
-            <!-- Subcomponents -->
-            <g class="node">
-                <circle cx="125" cy="250" r="40" fill="rgba(255,153,0,0.2)" stroke="#ff9900" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="125" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الفرص</text>
-            </g>
-
-            <g class="node">
-                <circle cx="325" cy="250" r="40" fill="rgba(255,153,0,0.2)" stroke="#ff9900" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="325" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">التوضع</text>
-            </g>
-
-            <g class="node">
-                <circle cx="400" cy="250" r="40" fill="rgba(255,153,0,0.2)" stroke="#ff9900" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="400" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الاتفاقات</text>
-            </g>
-
-            <g class="node">
-                <circle cx="525" cy="250" r="40" fill="rgba(255,153,0,0.2)" stroke="#ff9900" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="525" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الحملات</text>
-            </g>
-
-            <g class="node">
-                <circle cx="725" cy="250" r="40" fill="rgba(255,153,0,0.2)" stroke="#ff9900" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="725" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الارتباط</text>
-            </g>
-        </svg>
-    </section>
-
-    <!-- Development Layer -->
-    <section class="diagram-section">
-        <h2 class="diagram-title">طبقة التطوير</h2>
-        <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" aria-label="طبقة التطوير">
-            <!-- Dev nodes -->
-            <g class="node">
-                <rect x="50" y="50" width="150" height="100" fill="rgba(102,153,255,0.15)" stroke="#6699ff" stroke-width="2" rx="4"/>
-                <text x="125" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">العمارة والتصميم</text>
-                <text x="125" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">النظام والمستقبل</text>
-            </g>
-
-            <g class="node">
-                <rect x="250" y="50" width="150" height="100" fill="rgba(102,153,255,0.15)" stroke="#6699ff" stroke-width="2" rx="4"/>
-                <text x="325" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">التطوير والاختبار</text>
-                <text x="325" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">البناء والتحقق</text>
-            </g>
-
-            <g class="node">
-                <rect x="450" y="50" width="150" height="100" fill="rgba(102,153,255,0.15)" stroke="#6699ff" stroke-width="2" rx="4"/>
-                <text x="525" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">النشر والتسليم</text>
-                <text x="525" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">التجهيز والصيانة</text>
-            </g>
-
-            <g class="node">
-                <rect x="650" y="50" width="150" height="100" fill="rgba(102,153,255,0.15)" stroke="#6699ff" stroke-width="2" rx="4"/>
-                <text x="725" y="85" text-anchor="middle" class="nt" fill="#ffffff" font-weight="600">الدعم والتحسين</text>
-                <text x="725" y="110" text-anchor="middle" class="nt" fill="#999999" font-size="12">المراقبة والتطور</text>
-            </g>
-
-            <!-- Subcomponents -->
-            <g class="node">
-                <circle cx="125" cy="250" r="40" fill="rgba(102,153,255,0.2)" stroke="#6699ff" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="125" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">المواصفات</text>
-            </g>
-
-            <g class="node">
-                <circle cx="325" cy="250" r="40" fill="rgba(102,153,255,0.2)" stroke="#6699ff" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="325" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الكود</text>
-            </g>
-
-            <g class="node">
-                <circle cx="400" cy="250" r="40" fill="rgba(102,153,255,0.2)" stroke="#6699ff" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="400" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الإصدار</text>
-            </g>
-
-            <g class="node">
-                <circle cx="525" cy="250" r="40" fill="rgba(102,153,255,0.2)" stroke="#6699ff" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="525" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">الإطلاق</text>
-            </g>
-
-            <g class="node">
-                <circle cx="725" cy="250" r="40" fill="rgba(102,153,255,0.2)" stroke="#6699ff" stroke-width="1" stroke-dasharray="2,2"/>
-                <text x="725" y="255" text-anchor="middle" class="nt" fill="#ffffff" font-size="11">التحسين</text>
-            </g>
-        </svg>
-    </section>
-
-    <!-- VS Grid Section -->
-    <section class="vs-grid">
-        <div class="vs-grid-header">
-            <h2>لماذا SMOrchestra بدلاً من...</h2>
+        <div class="c-foot"><span>Layer · Ops + Commerce</span><span>Status · نقل</span></div>
         </div>
+      </article>
 
-        <div class="vs-grid-row">
-            <div class="vs-item">
-                <h4>الوكالات</h4>
-                <p>نموذج يومي غالي، فريق خارجي، بلا ملكية</p>
-            </div>
-            <div class="vs-item">
-                <h4>الخدمات المرنة</h4>
-                <p>ساعات بشرية محدودة، تكاليف مستمرة، بدون نظام</p>
-            </div>
-            <div class="vs-item">
-                <h4>التوظيف الداخلي</h4>
-                <p>استثمار كبير، مخاطر عالية، وقت طويل للنتائج</p>
-            </div>
-            <div class="vs-item">
-                <h4>استشارات عامة</h4>
-                <p>توصيات عامة، بلا تنفيذ، بلا ملكية العملية</p>
-            </div>
+      <article class="case reveal" style="--cc:#ff6b35">
+        <div class="proof-vis" aria-hidden="true">
+          <div class="pv-label">تثبيت · Full-Stack Triangle</div>
+          <svg viewBox="0 0 600 140" preserveAspectRatio="xMidYMid meet">
+            <g fill="none" stroke="#ff6b35" stroke-width="1.5" opacity="0.9">
+              <polygon points="300,20 90,118 510,118"/>
+              <line x1="300" y1="20" x2="300" y2="118"/>
+              <line x1="90" y1="118" x2="510" y2="118"/>
+              <circle cx="300" cy="20" r="4" fill="#ff6b35"/>
+              <circle cx="90" cy="118" r="4" fill="#ff6b35"/>
+              <circle cx="510" cy="118" r="4" fill="#ff6b35"/>
+              <circle cx="300" cy="118" r="4" fill="#ff6b35"/>
+              <circle cx="195" cy="70" r="3" fill="#ff6b35" opacity="0.6"/>
+              <circle cx="405" cy="70" r="3" fill="#ff6b35" opacity="0.6"/>
+            </g>
+            <g font-family="ui-monospace,monospace" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">
+              <text x="300" y="14"><span dir="ltr">DEV</span></text>
+              <text x="70" y="134"><span dir="ltr">OPS</span></text>
+              <text x="530" y="134"><span dir="ltr">GTM</span></text>
+            </g>
+            <g font-family="ui-monospace,monospace" font-size="8.5" fill="#cfcfcf" text-anchor="middle">
+              <text x="300" y="134">Founders يشحّن live <span dir="ltr">microSaaS</span></text>
+            </g>
+          </svg>
+          <div class="pv-tag">حي · entrepreneursoasis.me</div>
         </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section style="max-width: 1200px; margin: 4rem auto; padding: 2rem;">
-        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">التحديات الحالية في الشرق الأوسط</h2>
-        <div class="grid-3">
-            <div class="card reveal">
-                <h3 style="color: var(--error);">التكاليف غير المستدامة</h3>
-                <p>الفرق الكبيرة تستنزف الموارد دون مرونة في التكيف مع التغييرات السريعة.</p>
-            </div>
-            <div class="card reveal">
-                <h3 style="color: var(--error);">نقص المهارات والخبرات</h3>
-                <p>البحث عن موهوبين مؤهلين في السوق المحلية يستغرق وقتاً طويلاً وتكاليف عالية.</p>
-            </div>
-            <div class="card reveal">
-                <h3 style="color: var(--error);">المرونة المحدودة</h3>
-                <p>النماذج الثابتة لا تسمح بالسرعة والتكيف الذي تحتاجه الشركات سريعة النمو.</p>
-            </div>
-            <div class="card reveal">
-                <h3 style="color: var(--error);">الامتثال والمخاطر</h3>
-                <p>العمليات اليدوية عرضة للأخطاء، والامتثال التنظيمي معقد وضعيف التنظيم.</p>
-            </div>
-            <div class="card reveal">
-                <h3 style="color: var(--error);">الحد من الابتكار</h3>
-                <p>الفرق مشغولة بالعمل اليومي، ولا وقت للابتكار والنمو الاستراتيجي.</p>
-            </div>
-            <div class="card reveal">
-                <h3 style="color: var(--error);">عدم الملكية</h3>
-                <p>الاعتماد على فريق خارجي يعني خسارة الملكية والتحكم في العمليات الأساسية.</p>
-            </div>
+        <div class="c-body">
+        <div class="ck">Case · 03 · Dev + Ops + <span dir="ltr">GTM</span></div>
+        <h3><a href="https://entrepreneursoasis.me/" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Entrepreneurs Oasis</a> — <span class="accent"><span dir="ltr">microSaaS</span> launchpad</span> لمؤسسين طامحين.</h3>
+        <p class="c-sub">حالة الـtest full-stack. منصة ما بتعلّم مؤسسين كيف يطلعوا — هي تشحّن الـproduct، تدرّبهم عليه، وتسوّقه لهم. ثلاث طبقات <span dir="ltr">OS</span> يشتغلان معاً: <span dir="ltr">AI</span>-Native <span dir="ltr">Dev</span> يبني وينشر <span dir="ltr">microSaaS</span>، <span dir="ltr">AI</span>-Native <span dir="ltr">Ops</span> يشتغّل curriculum وعمليات الأعضاء، <span dir="ltr">AI</span>-Native <span dir="ltr">GTM</span> يملي الـfunnel. الإثبات إنك لمّا تعمّر الثلاث معاً، المؤسس توقّف يكون bottleneck لـ كل function معاً.</p>
+        <div class="c-list">
+          <div class="c-li"><span class="c-lab">الألم</span><span>مؤسسين منطقة الخليج الطامحين يعرفون يبيون يشحّنون product — بس ما عندهم مهندسين، ما عندهم marketing team، وما عندهم ops. Accelerators تقليدية تديهم curriculum. كانوا يحتاجون launchpad يشحّن فعلاً.</span></div>
+          <div class="c-li"><span class="c-lab">التثبيت · <span dir="ltr">Dev</span></span><span><span dir="ltr">AI</span>-Native <span dir="ltr">Dev</span> capability يشحّن multi <span dir="ltr">microSaaS</span> apps end-to-end — spec لـ deploy — بحيث كل cohort member يمشي بـ live product، ما pitch deck. نفس submit-a-request، ship-back-working-software loop يشتغّل الـplatform نفسه.</span></div>
+          <div class="c-li"><span class="c-lab">التثبيت · <span dir="ltr">Ops</span></span><span>عقل 2 بتاعه يحمل كل founder profile، cohort stage، و<span dir="ltr">microSaaS</span> roadmap. <span dir="ltr">AI coworker</span> يشتغّل onboarding، progress tracking، وtraining delivery مستقل. Founders يتعلمون بـ operating — ما بـ watching slides.</span></div>
+          <div class="c-li"><span class="c-lab">التثبيت · <span dir="ltr">GTM</span></span><span>حملات <span dir="ltr">GTM</span> مستقلة تملي cohort pipeline — signal-based outbound، content engine تنشر في عربي و<span dir="ltr">English</span>، webinar funnel تحول aspiring founders لـ أعضاء. الـlaunchpad تسوّق نفسها و<span dir="ltr">team</span> تبني batch الـapps الجايلة.</span></div>
+          <div class="c-li"><span class="c-lab">النتيجة</span><span>منصة تعرّف الـ category في منطقة الخليج لمؤسسين طامحين. كل cohort يشحّن live <span dir="ltr">microSaaS</span> products — built، trained، وmarketed بـ نفس <span dir="ltr">OS</span> اللي المؤسسين يتعلمون installation بتاعها. إثبات full-stack: <strong style="color:#fff"><span dir="ltr">Dev</span> + <span dir="ltr">Ops</span> + <span dir="ltr">GTM</span></strong>، ثلاث طبقات، منصة واحدة حي.</span></div>
         </div>
-    </section>
-
-    <!-- Founder Section -->
-    <section style="max-width: 1000px; margin: 4rem auto; padding: 3rem 2rem; background-color: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--radius-lg);">
-        <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 2rem;">مأمون العموري</h2>
-        <p style="font-size: 1.1rem; color: var(--fg-muted); margin-bottom: 1rem; line-height: 1.8;">
-            بنى مأمون عشرات الشركات والفريق الناجحة عبر أفريقيا والشرق الأوسط وآسيا. عمل مع Anthropic على صياغة استراتيجيات نمو الذكاء الاصطناعي. يؤمن بأن الشركات لا تحتاج إلى فرق ضخمة — بل إلى نظام تشغيل ذكي.
-        </p>
-        <p style="font-size: 1rem; color: var(--fg-muted);">
-            "SMOrchestra ولدت من سنوات من بناء الفرق ورؤية نفس المشاكل تتكرر. الحل بسيط: استبدل الفريق بنظام تشغيل. الملكية الكاملة، التحكم الكامل، النتائج الحقيقية."
-        </p>
-    </section>
-
-    <!-- Fit Gate Section -->
-    <section style="max-width: 1200px; margin: 4rem auto; padding: 3rem 2rem;">
-        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">هل أنت مؤهل لـ SMOrchestra؟</h2>
-        <div class="grid-2">
-            <div class="card" style="border: 2px solid #00aa00;">
-                <h3 style="color: #00aa00;">المؤهلون 🟢</h3>
-                <ul style="list-style: none; font-size: 0.95rem; color: var(--fg-muted); line-height: 1.8;">
-                    <li>✓ قيادة ملتزمة بالرؤية طويلة الأجل</li>
-                    <li>✓ تكوين تشغيلي يحتاج إلى تحسين</li>
-                    <li>✓ موازنة للاستثمار في النظام</li>
-                    <li>✓ جاهزية لتغيير طريقة التفكير</li>
-                    <li>✓ وضوح في مؤشرات النجاح</li>
-                </ul>
-            </div>
-            <div class="card" style="border: 2px solid #ff3333;">
-                <h3 style="color: #ff3333;">غير المؤهلين 🔴</h3>
-                <ul style="list-style: none; font-size: 0.95rem; color: var(--fg-muted); line-height: 1.8;">
-                    <li>✗ البحث عن حل سريع / رخيص</li>
-                    <li>✗ عدم الرغبة في تغيير العمليات</li>
-                    <li>✗ عدم التزام الإدارة العليا</li>
-                    <li>✗ بلا ميزانية للاستثمار</li>
-                    <li>✗ في مرحلة بقاء (ليس نمو)</li>
-                </ul>
-            </div>
+        <div class="c-foot"><span>Layer · Full Stack · <span dir="ltr">Dev</span> + <span dir="ltr">Ops</span> + <span dir="ltr">GTM</span></span><span>Status · حي · <a href="https://entrepreneursoasis.me/" target="_blank" rel="noopener" style="color:inherit">entrepreneursoasis.me</a></span></div>
         </div>
-    </section>
+      </article>
 
-    <!-- Case Studies -->
-    <section id="proof" style="max-width: 1200px; margin: 4rem auto; padding: 3rem 2rem;">
-        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">دراسات الحالات</h2>
-        <div class="grid-2">
-            <div class="card reveal" style="border-left: 4px solid var(--accent);">
-                <h3>سوق إلكترونية إقليمية</h3>
-                <p><strong>التحدي:</strong> نمو 3x مع فريق ثابت الحجم.</p>
-                <p><strong>الحل:</strong> بناء نظام GTM مؤتمت + عمليات محسّنة.</p>
-                <p><strong>النتيجة:</strong> 250% زيادة في الإيرادات، 40% تخفيض التكاليف.</p>
-            </div>
-            <div class="card reveal" style="border-left: 4px solid var(--accent);">
-                <h3>شركة خدمات مالية</h3>
-                <p><strong>التحدي:</strong> امتثال معقد، عمليات يدوية، عدم الملكية الكاملة.</p>
-                <p><strong>الحل:</strong> نظام عمليات موحد + أتمتة العمليات الأساسية.</p>
-                <p><strong>النتيجة:</strong> 99.8% امتثال، 60% توفير التكاليف.</p>
-            </div>
-            <div class="card reveal" style="border-left: 4px solid var(--accent);">
-                <h3>شركة ناشئة SaaS</h3>
-                <p><strong>التحدي:</strong> من فريق 5 أشخاص إلى شركة بـ 100 شخص دون فقدان الرؤية.</p>
-                <p><strong>الحل:</strong> نظام تشغيل موحد قابل للتوسع + إدارة تكاليف واضحة.</p>
-                <p><strong>النتيجة:</strong> نمو 10x بزيادة تكاليف 40% فقط.</p>
-            </div>
-            <div class="card reveal" style="border-left: 4px solid var(--accent);">
-                <h3>مجموعة استثمارية</h3>
-                <p><strong>التحدي:</strong> إدارة محفظة متعددة المستويات بفريق محدود.</p>
-                <p><strong>الحل:</strong> نظام مراقبة موحد + عمليات قياسية لكل الشركات التابعة.</p>
-                <p><strong>النتيجة:</strong> رؤية شاملة في الوقت الفعلي، 50% تحسن في الأداء.</p>
-            </div>
+      <article class="case reveal" style="--cc:#a78bfa">
+        <div class="proof-vis" aria-hidden="true">
+          <div class="pv-label">تثبيت · Dual-Line CX Rails</div>
+          <svg viewBox="0 0 600 140" preserveAspectRatio="xMidYMid meet">
+            <g fill="none" stroke="#a78bfa" stroke-width="1.5" opacity="0.85">
+              <path d="M40,44 L560,44"/>
+              <path d="M40,96 L560,96"/>
+              <path d="M40,44 L40,96" stroke-dasharray="3,3"/>
+              <path d="M560,44 L560,96" stroke-dasharray="3,3"/>
+              <rect x="110" y="32" width="70" height="24"/>
+              <rect x="240" y="32" width="70" height="24"/>
+              <rect x="370" y="32" width="70" height="24"/>
+              <rect x="110" y="84" width="70" height="24"/>
+              <rect x="240" y="84" width="70" height="24"/>
+              <rect x="370" y="84" width="70" height="24"/>
+              <path d="M300,56 L300,84" stroke-dasharray="2,2"/>
+              <path d="M480,56 L480,84" stroke-dasharray="2,2"/>
+            </g>
+            <g font-family="ui-monospace,monospace" font-size="9" fill="#cfcfcf" text-anchor="middle">
+              <text x="18" y="48" text-anchor="start" fill="#a78bfa" font-weight="600"><span dir="ltr">CX</span></text>
+              <text x="18" y="100" text-anchor="start" fill="#a78bfa" font-weight="600"><span dir="ltr">EV</span></text>
+              <text x="145" y="47">Intake</text><text x="275" y="47">Delivery</text><text x="405" y="47">Retention</text>
+              <text x="145" y="99">Pipeline</text><text x="275" y="99"><span dir="ltr">Ops</span></text><text x="405" y="99">Sponsor</text>
+            </g>
+          </svg>
+          <div class="pv-tag">حي · labexperience.cx</div>
         </div>
-    </section>
-
-    <!-- Build-Operate-Transfer Model -->
-    <section style="max-width: 1200px; margin: 4rem auto; padding: 3rem 2rem;">
-        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">نموذج البناء — التشغيل — التسليم</h2>
-        <div style="overflow-x: auto;">
-            <table style="width: 100%; border-collapse: collapse; margin-top: 2rem;">
-                <thead>
-                    <tr style="border-bottom: 2px solid var(--accent);">
-                        <th style="padding: 1rem; text-align: right; font-weight: 700;">المرحلة</th>
-                        <th style="padding: 1rem; text-align: right; font-weight: 700;">المدة</th>
-                        <th style="padding: 1rem; text-align: right; font-weight: 700;">الأنشطة الرئيسية</th>
-                        <th style="padding: 1rem; text-align: right; font-weight: 700;">الملكية</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 1rem; font-weight: 600; color: var(--accent);">البناء</td>
-                        <td style="padding: 1rem;">8-12 أسبوع</td>
-                        <td style="padding: 1rem; color: var(--fg-muted);">تصميم النظام، البناء الأولي، التدريب الأساسي</td>
-                        <td style="padding: 1rem; color: var(--fg-muted);">Anthropic + الفريق</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 1rem; font-weight: 600; color: var(--accent);">التشغيل</td>
-                        <td style="padding: 1rem;">12-24 شهر</td>
-                        <td style="padding: 1rem; color: var(--fg-muted);">التشغيل اليومي، الرصد، التحسينات، التوسع</td>
-                        <td style="padding: 1rem; color: var(--fg-muted);">الفريق مع الدعم</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 1rem; font-weight: 600; color: var(--accent);">التسليم</td>
-                        <td style="padding: 1rem;">مستمر</td>
-                        <td style="padding: 1rem; color: var(--fg-muted);">الأتمتة الكاملة، الملكية الكاملة، الدعم الذاتي</td>
-                        <td style="padding: 1rem; color: var(--fg-muted);">الفريق (بدون الاعتماد الخارجي)</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="c-body">
+        <div class="ck">Case · 04 · <span dir="ltr">Ops</span> + <span dir="ltr">GTM</span></div>
+        <h3><a href="https://labexperience.cx/" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Lab Experience</a> — <span class="accent"><span dir="ltr">CX</span> consulting practice</span> rewired في أسابيع، ما سنين.</h3>
+        <p class="c-sub">شركة <span dir="ltr">CX</span> consulting مع أخت events business — الفنكشنتان يسحب كل واحد الثاني للأسفل لأن <span dir="ltr">ops</span> ما تقدرت تواكب delivery و<span dir="ltr">GTM</span> كان manual end-to-end. Classic trap agency-size: المؤسسين إما يبيعون أو يدلّون، ما الاثنين معاً. <span dir="ltr">AI</span>-Native <span dir="ltr">OS</span> تهدّت switching cost.</p>
+        <div class="c-list">
+          <div class="c-li"><span class="c-lab">الألم</span><span>خطان revenue — consulting engagements وevents — يشاركان نفس فريق overworked. Proposals، project tracking، event ops، client communications، sponsor pipeline — كل manual، كل context-switching، كل يسرق ساعات من الشغل اللي فعلاً يحرّك revenue.</span></div>
+          <div class="c-li"><span class="c-lab">التثبيت · <span dir="ltr">Ops</span></span><span><span dir="ltr">AI</span>-Native <span dir="ltr">Ops</span> installed على الـconsulting arm والـ events arm. عقل 2 loaded مع كل past engagement، كل sponsor، كل event retro — بحيث ما knowledge تمشي لمّا الـfriqu تكبر. <span dir="ltr">AI coworker</span> يكتب proposals، يشتغّل project reviews، يجهّز event <span dir="ltr">ops</span> من window واحد.</span></div>
+          <div class="c-li"><span class="c-lab">التثبيت · <span dir="ltr">GTM</span></span><span>محركات <span dir="ltr">GTM</span> مستقلة على الخطتين: signal-based outreach لـ consulting، content + webinar funnel لـ events، view unified pipeline واحدة. Sponsors وconsulting prospects توقّف تسرب لأن الـ follow-up ما تنام أبداً.</span></div>
+          <div class="c-li"><span class="c-lab">النتيجة</span><span><span dir="ltr">Ops</span> تحوّل في سرعة — أسابيع، ما الـ twelve-to-eighteen-month <span dir="ltr">ERP</span> rollout timeline اللي consultancies تبيع لـ clients بتاعتهم. الشركة اللي تبيع <span dir="ltr">CX</span> transformation لسة يشتغل على <span dir="ltr">CX</span>-grade <span dir="ltr">OS</span> بتاعتها. <strong style="color:#fff">إثبات إن consultants يقدرون يأكلوا طعام بتاعتهم.</strong></span></div>
         </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section style="max-width: 1000px; margin: 4rem auto; padding: 4rem 2rem; text-align: center; background-color: rgba(0, 102, 255, 0.08); border: 1px solid var(--accent); border-radius: var(--radius-lg);">
-        <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem;">استعد لتغيير قواعد اللعبة</h2>
-        <p style="font-size: 1.2rem; color: var(--fg-muted); margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-            لا تقارن نفسك بمنافسك. بنّي نظام تشغيل أفضل من أي فريق يمكنك استئجاره.
-        </p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <button class="button" id="cta-primary">حدد موعد استشارة</button>
-            <button class="button button-secondary">تعرّف على المزيد</button>
+        <div class="c-foot"><span>Layer · <span dir="ltr">Ops</span> + <span dir="ltr">GTM</span> · Services</span><span>Status · حي · <a href="https://labexperience.cx/" target="_blank" rel="noopener" style="color:inherit">labexperience.cx</a></span></div>
         </div>
-    </section>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>نظام التشغيل</h4>
-                <ul>
-                    <li><a href="/ar/layers/ops">العمليات بالذكاء الاصطناعي</a></li>
-                    <li><a href="/ar/layers/gtm">الذهاب إلى السوق بالذكاء الاصطناعي</a></li>
-                    <li><a href="/ar/layers/dev">التطوير بالذكاء الاصطناعي</a></li>
-                    <li><a href="/ar/#proof">حالات الإثبات</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>اعمل معنا</h4>
-                <ul>
-                    <li><a href="/ar/solutions/ai-revenue-os">نظام تشغيل الإيرادات بالذكاء الاصطناعي</a></li>
-                    <li><a href="/ar/solutions/signal-sales-engine">محرك المبيعات بالإشارات</a></li>
-                    <li><a href="/ar/solutions/mena-expansion">التوسع في الشرق الأوسط وشمال أفريقيا</a></li>
-                    <li><a href="/ar/cohorts/">الدفعات</a></li>
-                    <li><a href="/ar/tools/">بطاقات التقييم المجانية</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>تواصل</h4>
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/mamounalamouri/" rel="noopener">لينكدإن · مأمون</a></li>
-                    <li><a href="https://www.linkedin.com/company/smorchestra/" rel="noopener">لينكدإن · الشركة</a></li>
-                    <li><a href="mailto:hello@smorchestra.ai">hello@smorchestra.ai</a></li>
-                    <li><a href="/book">احجز مكالمة</a></li>
-                </ul>
-            </div>
+<!-- Bridge 4 → MENA -->
+<div class="bridge">
+  <div class="bridge-inner reveal">
+    <div class="bmk"></div>
+    <p>هذا الإثبات. <em>هنا ليش الـplaybook مبني لـ السوق دي — ما ترجم فيها.</em></p>
+  </div>
+</div>
+
+<!-- ============ MENA SECTION (light) ============ -->
+<section class="section light">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">ليش منطقة الخليج أولاً</div>
+      <h2 style="color:var(--text-dark)">ما <span class="accent">Western playbook</span> مترجم.</h2>
+      <p class="sub light">كل اللي نثبّت مصمّم لـ السوق اللي موجودة فعلاً هنا — <span dir="ltr">WhatsApp</span>-first، عربي-native، ثقة قبل transaction، وسعر ضد الفريق اللي ما تقدر تحصل عليه (ما ضد consulting rate card من San Francisco).</p>
+    </div>
+
+    <div class="mena-grid">
+      <div class="mena reveal"><div class="mk">Channel reality</div><h4><span dir="ltr">WhatsApp</span> هي العمود الفقري للعمل.</h4><p>عملاؤك ما يبيون lead form بتاعك. يبيونك في <span dir="ltr">WhatsApp</span>. كل محرك نثبّته يعامل الـ<span dir="ltr">WhatsApp</span> كـ channel أساسي — <span dir="ltr">B2B</span> included — لأن التظاهر غير هذا ليش أغلب Western tools تسقط بصمت هنا.</p></div>
+      <div class="mena reveal" style="border-top-color:#38bdf8"><div class="mk" style="color:#38bdf8">Language reality</div><h4>Gulf dialect، ما textbook <span dir="ltr">MSA</span>.</h4><p>ما حد يقفل صفقة في عربي formal. Content بتاعك يطلع في Khaleeji، mixed مع <span dir="ltr">English</span> tech terms بالطريقة اللي فعلاً تكلم عملاء. كتاب native، ما ترجمة. Brand voice بتاعك، ما voice مترجمك.</p></div>
+      <div class="mena reveal" style="border-top-color:#bef264"><div class="mk" style="color:#84cc16">Trust engineering</div><h4>Systematic proof، ما 47 قهوة.</h4><p>ثقافة الخليج تشتري الشخص قبل الـproduct. <span dir="ltr">GTM OS</span> بتحترم هذا — بـ engineering trust signals في كل حملة بدل محاولة shortcut الـ relationship. أنت تقلّص الـ timeline. ما تتخطى الـ handshake.</p></div>
+      <div class="mena reveal"><div class="mk">Talent gap</div><h4>جواب هندسي لـ مشكلة هندسية.</h4><p>مؤسس في San Francisco ينشر role ويجيبه خمسين مرشح qualified في أسبوع. الرياض ما. دبي ما. السقف ما بينغلق هذا الـ decade. <span dir="ltr">AI</span>-Native Business <span dir="ltr">OS</span> يعني توقّف الانتظار ليه ينغلق.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOUNDER ORIGIN ============ -->
+<section class="founder-sec">
+  <div class="wrap">
+    <div class="founder-grid">
+      <div class="founder-photo reveal" role="img" aria-label="مأمون العموري — مؤسس <span dir='ltr'>SMOrchestra</span>">
+        <img src="/assets/mamoun.jpg" alt="صورة مأمون العموري" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;opacity:0;transition:opacity .4s ease;z-index:1" onload="this.style.opacity=1" onerror="this.remove()" loading="lazy"/>
+        <div class="ph-mark">
+          <div>
+            <div class="ph-name">مأمون العموري</div>
+            <div class="ph-sub">مؤسس · <span dir="ltr">SMOrchestra</span></div>
+          </div>
+          <div class="ph-tick"></div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 SMOrchestra · مبني على نظام التشغيل الأصيل للذكاء الاصطناعي · بناء · تشغيل · تسليم</p>
+      </div>
+      <div class="founder-copy reveal">
+        <div class="eyebrow">المصغِّر وراء الـ <span dir="ltr">OS</span></div>
+        <h2>جلست في كل مقعد الـ <span dir="ltr">OS</span> دي تبدّله. <br>هذا كل السبب كانت موجودة.</h2>
+        <p>عشرون زائد سنة عبر نفس الـ stack اللي مؤسسين منطقة الخليج تُباع لهم كـ "transformation" — enterprise sales، <span dir="ltr">RevOps</span>، <span dir="ltr">GTM</span> لـ <span dir="ltr">B2B SaaS</span>، توسع دولي في السعودية والإمارات، وآخراً founder-operator work لـ bets بتاعتي. كنت <span dir="ltr">VP</span> Sales يراقب <span dir="ltr">CRMs</span> فارغة. رئيس <span dir="ltr">GTM</span> نوظّف <span dir="ltr">SDRs</span> ما قدرنا نحتفظ في دبي. مؤسس أقتّل عميل 80 ألف درهم لـ rebuild كنا كلانا نعرف توقّع أربع شهور.</p>
+        <p class="emph">في نقطة ما، بوقّف يكون people problem. الأدوار موجودة. الـ playbooks موجودة. الـ talent — من الجانب الغربي — كثير. اللي ما كان موجود طريقة نثبّت الـ capability دي في business مؤسس من منطقة الخليج بدون أولاً تفوز الـ North American hiring war.</p>
+        <p><span dir="ltr">AI</span>-Native Business <span dir="ltr">OS</span> الجواب يتمنّى شُريت قبل خمسة عشر سنة. إنها طريقتنا أخيراً نوقّف نقول مؤسسين منطقة الخليج فيهم يوظّفوا <span dir="ltr">Riyadh SDR</span> ما موجود، أو يحتفظوا <span dir="ltr">Dubai RevOps</span> lead بـ يتقاعس لـ Careem في ستة شهور. الـ operating system هو التوظيف. الـ transfer يخليه حقك.</p>
+        <div class="founder-stats">
+          <div class="founder-stat"><div class="fsn">20+</div><div class="fsl">سنين في <span dir="ltr">GTM</span>، <span dir="ltr">RevOps</span>، و founder-operator roles عبر منطقة الخليج و global <span dir="ltr">SaaS</span>.</div></div>
+          <div class="founder-stat"><div class="fsn"><span dir="ltr">KSA</span> · <span dir="ltr">UAE</span></div><div class="fsl">Expansion work عبر سوقي الخليج الاثنين <span dir="ltr">OS</span> دي مصمّمة لهم.</div></div>
+          <div class="founder-stat"><div class="fsn">4 حي</div><div class="fsl">Businesses حالياً يشتغلان على <span dir="ltr">AI</span>-Native <span dir="ltr">OS</span> installed، operated، transferred.</div></div>
         </div>
-    </footer>
+        <div class="founder-sig">
+          <a href="https://www.linkedin.com/in/mamounalamouri/" target="_blank" rel="noopener"><span dir="ltr">LinkedIn</span> · مأمون <svg class="i arr" aria-hidden="true"><use href="/assets/icons.svg#arrow-up-right-from-square"/></svg></a>
+          <a href="mailto:mamoun@smorchestra.ai">mamoun@smorchestra.ai <svg class="i arr" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
+          <a href="/ar/book">احجز استشارة معي <svg class="i arr" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Scripts -->
-    <script>
-        // Wire up diagram node clicks
-        function wireDiagram() {
-            const nodes = document.querySelectorAll('.node[data-link]');
-            nodes.forEach(node => {
-                node.addEventListener('click', function() {
-                    const link = this.getAttribute('data-link');
-                    if (link) {
-                        window.location.href = link;
-                    }
-                });
-            });
-        }
+<!-- ============ FIT GATE + ANTI-FRAME ============ -->
+<section class="gate-sec">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center">
+      <div class="eyebrow" style="justify-content:center;display:inline-flex">الجزء الصادق · فحص الـfit</div>
+      <h2>هذا ما <span class="accent">للكل</span>. هنا كيف تعرف.</h2>
+      <p class="sub">بنفضّل تختار نفسك برا في 30 ثانية من عشر أسابيع وين. الـ <span dir="ltr">OS</span> بـ يركب بـ يتركب بـ لو المؤسس مستقل يشغّله — ما بـ يشتريه بـ فقط. اقرا العمودين. لو واحد يحس أصح، أنت لسة فيك جوابك.</p>
+    </div>
 
-        // Intersection Observer for reveal animations
-        function initRevealAnimation() {
-            const revealElements = document.querySelectorAll('.reveal');
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                        revealObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+    <div class="gate-grid">
+      <div class="gate-col reveal" style="--gc:#bef264">
+        <div class="eyebrow" style="color:#bef264">هذا يشتغل لو أنت…</div>
+        <ul class="flist" style="list-style:none;padding:0;margin:18px 0 0">
+          <li style="padding:10px 0;border-bottom:1px solid #1a1a1a;color:#e5e5e5">مؤسس أو operator تعمل خمس وظايف معاً وتخسر في كلهم.</li>
+          <li style="padding:10px 0;border-bottom:1px solid #1a1a1a;color:#e5e5e5">بعد revenue أو قبل revenue مع signal حقيقي — على الأقل عميل واحد يدفع أو wedge واضح.</li>
+          <li style="padding:10px 0;border-bottom:1px solid #1a1a1a;color:#e5e5e5">تشتغل في منطقة الخليج أو تبيع فيها — <span dir="ltr">WhatsApp</span>، dialect، trust-first buying ما نقابل.</li>
+          <li style="padding:10px 0;border-bottom:1px solid #1a1a1a;color:#e5e5e5">مستعد كون في الغرفة 3–6 شهور لمّا نثبّت النظام عليك، ما بـ فقط لك.</li>
+          <li style="padding:10px 0;color:#e5e5e5">جادّ في ملك الـ stack — حسابات، code، configs — end-state، ما rental.</li>
+        </ul>
+      </div>
 
-            revealElements.forEach(el => revealObserver.observe(el));
-        }
+      <div class="gate-col reveal" style="--gc:#ff6b35">
+        <div class="eyebrow" style="color:#ff6b35">تجاوزنا لو أنت…</div>
+        <ul class="flist" style="list-style:none;padding:0;margin:18px 0 0">
+          <li style="padding:10px 0;border-bottom:1px solid #1a1a1a;color:#e5e5e5">تبحث retainer agency أرخص — نحن نشحّن لـ الـ transfer، ما الـ dependency.</li>
+          <li style="padding:10px 0;border-bottom:1px solid #1a1a1a;color:#e5e5e5">Pre-idea مع ما فيه customer signal — نحن نثبّت operating systems، ما نشتغل الـ search business model بتاعك.</li>
+          <li style="padding:10px 0;border-bottom:1px solid #1a1a1a;color:#e5e5e5">متوقّع <span dir="ltr">SaaS</span> مع login، pricing page، و 14-day trial — ما في product نتعامل معاه subscription.</li>
+          <li style="padding:10px 0;border-bottom:1px solid #1a1a1a;color:#e5e5e5">ما تبي تلمس الـ tools — تبي <span dir="ltr">AI</span> يشتغل و أنت ما تعرف شنو يعمل.</li>
+          <li style="padding:10px 0;color:#e5e5e5">تبحث واحد تديها deck وتختفي — هذا build-operate-transfer، ما handoff.</li>
+        </ul>
+      </div>
+    </div>
 
-        // CTA Button Handler
-        document.getElementById('cta-primary').addEventListener('click', function() {
-            window.location.href = 'mailto:hello@smorchestra.ai?subject=استشارة%20SMOrchestra';
-        });
+    <div class="sec-head reveal" style="text-align:center;margin-top:96px">
+      <div class="eyebrow" style="justify-content:center;display:inline-flex">شنو هذا ما</div>
+      <h2>ما <span class="accent"><span dir="ltr">RevOps</span> consultant</span>. ما <span class="accent"><span dir="ltr">SaaS</span></span>. ما <span class="accent">retainer</span>.</h2>
+      <p class="sub">كل category حد يحاول نحطّنا فيه يخلّي الشكل غالط. <span dir="ltr">AI</span>-Native Business <span dir="ltr">OS</span> قاعد في جديد — وهذا كل الفكرة بتاعتها.</p>
+    </div>
 
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', function() {
-            wireDiagram();
-            initRevealAnimation();
-        });
-    </script>
+    <div class="antiframe reveal">
+      <div class="af" style="--af:#ff6b35">
+        <div class="eyebrow" style="color:#ff6b35">ما <span dir="ltr">RevOps</span> consultant</div>
+        <p style="color:#cfcfcf;margin:12px 0 0;font-size:14.5px;line-height:1.6">Consultants يشحّنون slide decks وتريحهم معك في to-do list أكبر. نحن نشحّن systems installed أنت تملك وتشتغل بعد ما نمشي.</p>
+      </div>
+      <div class="af" style="--af:#38bdf8">
+        <div class="eyebrow" style="color:#38bdf8">ما <span dir="ltr">SaaS</span> tool</div>
+        <p style="color:#cfcfcf;margin:12px 0 0;font-size:14.5px;line-height:1.6">ما في login، ما في seat pricing، ما في feature flag gate. الـ tools حقك — <span dir="ltr">Claude</span>، <span dir="ltr">n8n</span>، <span dir="ltr">Supabase</span>، <span dir="ltr">Stripe</span> — كلهم باسمك، حسابات بتاعك، control بتاعك.</p>
+      </div>
+      <div class="af" style="--af:#bef264">
+        <div class="eyebrow" style="color:#bef264">ما agency retainer</div>
+        <p style="color:#cfcfcf;margin:12px 0 0;font-size:14.5px;line-height:1.6">Agencies تفوتّر ساعات ما تشوفها. نحن نفوتّر build، نشغّله جنبك، بعدين نقل. الـ retainer اختياري بعد كدا هو maintenance — ما survival.</p>
+      </div>
+      <div class="af" style="--af:#a78bfa">
+        <div class="eyebrow" style="color:#a78bfa">هنا شنو فعلاً نحن</div>
+        <p style="color:#cfcfcf;margin:12px 0 0;font-size:14.5px;line-height:1.6">فريق build-operate-transfer نثبّت three-layer operating system بتاعك على <span dir="ltr">Claude</span>-native infrastructure — وبعدين نديك الـ keys. مرة واحدة. صح.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bridge 5 → Final CTA -->
+<div class="bridge">
+  <div class="bridge-inner reveal">
+    <div class="bmk" style="background:var(--violet)"></div>
+    <p>شُفت الـ layers، الـ model، الـ proof، الـ fit. <em>لو أنت لسة تقرا، الـ next move هو conversation.</em></p>
+  </div>
+</div>
+
+<!-- ============ FINAL CTA ============ -->
+<section id="book" class="cta-band">
+  <div class="wrap inner">
+    <div class="eyebrow reveal" style="justify-content:center;display:inline-flex">توقف عن استئجار القدرة</div>
+    <h2 class="reveal">توقف عن كونك <span class="accent">خمس وظايف مفتوحة</span>. ثبّت الفريق.</h2>
+    <p class="cta-kicker reveal">كون المؤسس — ما الفريق كامل. خلّنا نثبّت نظام التشغيل حقك.</p>
+    <p class="sub reveal">مكالمة ثلاثين دقيقة. ما في عرض تقديمي، ما في بيع. نخطّط الـ<span dir="ltr">stack</span> حقك، نلقى التسريبات، ونقولك أي طبقة تبدأ فيها — أو لو ما تبدأ أساساً. لو مشيت بـ رسم أوضح لشركتك، المكالمة تستاهل الوقت.</p>
+    <div class="hero-cta reveal">
+      <a href="/ar/book" class="btn btn-primary">احجز استشارة استراتيجية <svg class="i arr" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
+      <a href="mailto:hello@smorchestra.ai" class="btn btn-outline">أرسل لنا <svg class="i arr" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <div class="brand"><span class="brand-mark"><img src="/logo/logo3.png" alt="علامة <span dir='ltr'>SMOrchestra</span>" width="34" height="34" /></span><span dir="ltr">SMOrchestra</span></div>
+      <p>نحن نثبّت الـ team اللي ما قدرت توظّفه. <span dir="ltr">AI</span>-Native Business Operating Systems — built، operated، وtransferred. <span dir="ltr">MENA</span>-native. جاهز لأي مكان.</p>
+      <div class="loc">دبي · الرياض · Remote</div>
+    </div>
+    <div class="foot-col">
+      <div class="fh">الـ <span dir="ltr">OS</span></div>
+      <a href="/ar/layers/ops"><span dir="ltr">AI</span>-Native <span dir="ltr">Ops</span></a>
+      <a href="/ar/layers/gtm"><span dir="ltr">AI</span>-Native <span dir="ltr">GTM</span></a>
+      <a href="/ar/layers/dev"><span dir="ltr">AI</span>-Native <span dir="ltr">Dev</span></a>
+      <a href="/ar/#proof">حالات الإثبات</a>
+    </div>
+    <div class="foot-col">
+      <div class="fh">اشتغل معنا</div>
+      <a href="/ar/solutions/ai-revenue-os"><span dir="ltr">AI</span> Revenue <span dir="ltr">OS</span></a>
+      <a href="/ar/solutions/signal-sales-engine">محرك المبيعات بالإشارات</a>
+      <a href="/ar/solutions/mena-expansion">توسع منطقة الخليج</a>
+      <a href="/ar/cohorts/">Cohorts</a>
+      <a href="/ar/tools/">Scorecards مجاني</a>
+    </div>
+    <div class="foot-col">
+      <div class="fh">اتصل</div>
+      <a href="https://www.linkedin.com/in/mamounalamouri/" rel="noopener"><span dir="ltr">LinkedIn</span> · مأمون</a>
+      <a href="https://www.linkedin.com/company/smorchestra/" rel="noopener"><span dir="ltr">LinkedIn</span> · الشركة</a>
+      <a href="mailto:hello@smorchestra.ai">hello@smorchestra.ai</a>
+      <a href="/ar/book">احجز Call</a>
+    </div>
+  </div>
+  <div class="wrap foot-end">
+    <div>© 2026 <span dir="ltr">SMOrchestra</span> · بُنيت على الـ <span dir="ltr">AI</span>-Native Business <span dir="ltr">OS</span></div>
+    <div>Build · Operate · Transfer</div>
+  </div>
+</footer>
+
+<script>
+function wireDiagram(diagramId, tipId){
+  const diagram = document.getElementById(diagramId);
+  if(!diagram) return;
+  const tip = document.getElementById(tipId);
+  const nodes = diagram.querySelectorAll('.node');
+
+  function showTip(n){
+    const desc = n.dataset.desc || '';
+    const list = (n.dataset.list || '').split('|').filter(Boolean);
+    const color = getComputedStyle(n).getPropertyValue('--nc') || '#ff6b35';
+    tip.style.setProperty('--nc', color.trim());
+    const neEl = n.querySelector('.ne');
+    const title = neEl ? neEl.textContent : '';
+    tip.innerHTML = `
+      <div class="tt">${title}</div>
+      <div class="td">${desc}</div>
+      ${list.length ? `<ul>${list.map(x => `<li>${x}</li>`).join('')}</ul>` : ''}
+    `;
+    const dRect = diagram.getBoundingClientRect();
+    const nRect = n.getBoundingClientRect();
+    const tipW = 280;
+    let left = nRect.left - dRect.left + nRect.width/2 - tipW/2;
+    let top = nRect.top - dRect.top - 12 - tip.offsetHeight;
+    left = Math.max(10, Math.min(dRect.width - tipW - 10, left));
+    if (top < 10) top = nRect.bottom - dRect.top + 14;
+    tip.style.left = left + 'px';
+    tip.style.top = top + 'px';
+    tip.classList.add('on');
+  }
+  function hideTip(){ tip.classList.remove('on') }
+
+  nodes.forEach(n => {
+    n.addEventListener('mouseenter', () => showTip(n));
+    n.addEventListener('mouseleave', hideTip);
+    n.addEventListener('focus', () => showTip(n));
+    n.addEventListener('blur', hideTip);
+    n.setAttribute('tabindex','0');
+    // If the node has a data-link, make it navigable on click + Enter.
+    const link = n.dataset.link;
+    if (link) {
+      n.setAttribute('role','link');
+      n.setAttribute('aria-label', (n.querySelector('.nt')?.textContent || '') + ' — فتح');
+      n.style.cursor = 'pointer';
+      n.addEventListener('click', () => { window.location.href = link; });
+      n.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.location.href = link; }
+      });
+    }
+  });
+}
+wireDiagram('d-map','tip-map');
+wireDiagram('d-ops','tip-ops');
+wireDiagram('d-gtm','tip-gtm');
+wireDiagram('d-dev','tip-dev');
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
 </body>
+</html>
 </html>
