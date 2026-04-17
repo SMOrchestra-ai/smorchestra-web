@@ -1,6 +1,5 @@
 # SMOrchestra — fallback redirects (netlify.toml is source of truth)
-# Keeping a plain _redirects file as a safety net for Netlify + for any
-# static host that reads _redirects but not netlify.toml.
+# Last updated: 2026-04-17 per 08-Website-Changes-v2.md
 
 # Pretty URLs
 /layers/ops                 /layers/ops.html                 200
@@ -8,22 +7,40 @@
 /layers/dev                 /layers/dev.html                 200
 /solutions/ai-revenue-os    /solutions/ai-revenue-os.html    200
 /solutions/signal-sales-engine  /solutions/signal-sales-engine.html  200
-/solutions/mena-expansion   /solutions/mena-expansion.html   200
-/cohorts/gtm-founders       /cohorts/gtm-founders.html       200
-/cohorts/ai-revenue-ops     /cohorts/ai-revenue-ops.html     200
+/solutions/enterprise       /solutions/enterprise.html       200
+/about                      /about.html                      200
+/ar/about                   /ar/about.html                   200
 
-# Legacy GHL slugs → new URLs
-/smorchestra-home-ghl       /layers/gtm                      301
+# Legacy GHL slugs → new URLs (HTML files archived in _archive/ as of 2026-04-17)
+/smorchestra-home-ghl       /                                301
 /the-engine-ghl             /solutions/signal-sales-engine   301
-/the-expansion-ghl          /solutions/mena-expansion        301
+/the-expansion-ghl          /solutions/ai-revenue-os         301
 /ai-revenue-os-landing-page /solutions/ai-revenue-os         301
-/gtmfoundercohort           /cohorts/gtm-founders            301
-/AI-GTM-B2B-Cohort          /cohorts/ai-revenue-ops          301
+/gtmfoundercohort           https://entrepreneursoasis.me/cohorts/gtm-founders  302!
+/AI-GTM-B2B-Cohort          https://entrepreneursoasis.me/cohorts/gtm-founders  302!
+
+# Retired SKU: MENA Expansion is now an attribute of AI-Native Org Install
+/solutions/mena-expansion   /solutions/ai-revenue-os#mena-native  301
+/ar/solutions/mena-expansion /ar/solutions/ai-revenue-os#mena-native  301
+
+# Cohorts migrated to EntrepreneursOasis (EO) brand property
+/cohorts                    https://entrepreneursoasis.me/cohorts            302!
+/cohorts/*                  https://entrepreneursoasis.me/cohorts/:splat     302!
+/ar/cohorts                 https://entrepreneursoasis.me/ar/cohorts         302!
+/ar/cohorts/*               https://entrepreneursoasis.me/ar/cohorts/:splat  302!
 
 # External targets
 /book                       https://api.leadconnectorhq.com/widget/bookings/core-calendar-sales-calls  302!
-/tools/gtm-fitness          https://score.smorchestra.ai/gtm-fitness           302!
-/tools/digital-revenue-score https://score.smorchestra.ai/digital-revenue-score 302!
+/tools/gtm-fitness          https://score.entrepreneursoasis.me/gtm-fitness           302!
+/tools/digital-revenue-score https://score.entrepreneursoasis.me/digital-revenue-score 302!
+/tools/microsaas-readiness  https://score.entrepreneursoasis.me/microsaas-readiness   302!
+/tools/ai-native-readiness  https://score.smorchestra.ai/ai-native-readiness          302!
+/tools/digital-presence     https://score.smorchestra.ai/digital-presence             302!
+
+# EO brand redirects (for any legacy solo-founder inbound that hits SMO first)
+/training                   https://learn.entrepreneursoasis.me              302!
+/community                  https://learn.entrepreneursoasis.me/community    302!
+/microsaas                  https://entrepreneursoasis.me                    302!
 
 # Canonical host
 https://www.smorchestra.ai/*  https://smorchestra.ai/:splat  301!
