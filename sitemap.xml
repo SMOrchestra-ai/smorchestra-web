@@ -49,12 +49,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://smorchestra.ai/solutions/mena-expansion</loc>
-    <lastmod>2026-04-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
   <!-- ======== COHORTS ======== -->
   <url>
@@ -149,15 +143,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/solutions/signal-sales-engine" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/solutions/signal-sales-engine" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/solutions/signal-sales-engine" />
-  </url>
-  <url>
-    <loc>https://smorchestra.ai/ar/solutions/mena-expansion</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/solutions/mena-expansion" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/solutions/mena-expansion" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/solutions/mena-expansion" />
   </url>
   <url>
     <loc>https://smorchestra.ai/ar/cohorts/</loc>
