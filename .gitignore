@@ -26,3 +26,7 @@ the-expansion.jsx
 
 # Local dev-review screenshots (never deploy)
 website-changes/
+
+# Local archive of deleted pages — kept on disk for reference, never deployed
+# (git history preserves them; recover via `git show <commit>^:path`)
+_archive/
