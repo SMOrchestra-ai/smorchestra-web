@@ -30,3 +30,9 @@ website-changes/
 # Local archive of deleted pages — kept on disk for reference, never deployed
 # (git history preserves them; recover via `git show <commit>^:path`)
 _archive/
+
+# Playwright artifacts (CI regenerates)
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
