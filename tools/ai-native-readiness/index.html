@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI-Native Readiness Diagnostic · Free · SMOrchestra Tools</title>
+<meta name="description" content="Board-grade AI-native readiness diagnostic for MENA enterprises. 20 questions across 6 dimensions: Board Mandate, Team Maturity, Tech Stack, Data Governance, Vision 2030 Alignment, Budget Readiness. Free · 8-12 min · no signup gate.">
+<link rel="canonical" href="https://smorchestra.ai/tools/ai-native-readiness/">
+<link rel="alternate" hreflang="en" href="https://smorchestra.ai/tools/ai-native-readiness/">
+<link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/tools/ai-native-readiness/">
+<link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/tools/ai-native-readiness/">
+
+<meta property="og:title" content="AI-Native Readiness Diagnostic · Free · SMOrchestra" />
+<meta property="og:description" content="Board-grade diagnostic for MENA enterprises. 20 questions, 6 dimensions, instant tier routing to private briefing or Tier 3 install." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://smorchestra.ai/tools/ai-native-readiness/" />
+<meta property="og:image" content="https://smorchestra.ai/assets/og/smorchestra-og-default.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AI-Native Readiness Diagnostic",
+  "url": "https://smorchestra.ai/tools/ai-native-readiness/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Executive diagnostic for MENA enterprises with board-level AI mandate. 20 questions across Board Mandate, Team Maturity, Tech Stack, Data Governance, Vision 2030 Alignment, Budget Readiness. For SMO-4 enterprise transformation leaders.",
+  "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "inLanguage": ["en","ar"],
+  "publisher": {"@type":"Organization","name":"SMOrchestra","url":"https://smorchestra.ai/"}
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://plausible.io">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script defer data-domain="smorchestra.ai" src="https://plausible.io/js/script.js"></script>
+
+<style>
+:root{
+  --bg:#000; --bg-alt:#0a0a0a; --card:#141414; --card-lift:#1c1c1c;
+  --border:#262626; --border-lift:#333;
+  --text:#fff; --text-muted:#a3a3a3; --text-dim:#6b6b6b;
+  --accent:#d4af37; --accent-deep:#3d3210; --accent-glow:rgba(212,175,55,0.15);
+  --orange:#ff6b35;
+  --green:#22c55e; --red:#ef4444; --yellow:#eab308;
+  --f:"Inter",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--text);font-family:var(--f);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+.wrap{max-width:880px;margin:0 auto;padding:32px 24px}
+
+.nav{padding:16px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.brand{font-weight:800;font-size:16px;letter-spacing:-0.01em}
+.brand span{color:var(--accent)}
+.nav-right{font-size:13px;color:var(--text-muted)}
+
+.hero{padding:56px 0 40px;text-align:center}
+.eyebrow{display:inline-block;padding:6px 14px;background:var(--accent-glow);border:1px solid var(--accent);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:2px;border-radius:999px;margin-bottom:20px;text-transform:uppercase}
+h1{font-size:clamp(32px,5vw,48px);font-weight:900;line-height:1.1;letter-spacing:-0.03em;margin-bottom:16px}
+h1 span{color:var(--accent)}
+.hero p{font-size:17px;color:var(--text-muted);max-width:640px;margin:0 auto}
+
+.audience-strip{display:flex;justify-content:center;gap:32px;margin-top:32px;flex-wrap:wrap}
+.audience-strip > div{text-align:center}
+.audience-strip .num{color:var(--accent);font-weight:800;font-size:24px;letter-spacing:-0.02em}
+.audience-strip .lbl{color:var(--text-muted);font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-top:4px}
+
+.progress{padding:20px 0;border-bottom:1px solid var(--border);margin-bottom:32px}
+.progress-bar{height:6px;background:var(--card);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),#fcd34d);transition:width .35s ease}
+.progress-label{display:flex;justify-content:space-between;margin-top:10px;font-size:12px;color:var(--text-muted)}
+
+.step{display:none;animation:fadeIn .4s ease}
+.step.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.dimension-label{display:inline-block;padding:4px 12px;background:var(--card);border:1px solid var(--border);color:var(--text-muted);font-size:11px;font-weight:600;letter-spacing:1.5px;border-radius:999px;margin-bottom:12px;text-transform:uppercase}
+.q-num{color:var(--text-dim);font-size:13px;font-weight:600;letter-spacing:1.5px;margin-bottom:8px}
+.question{font-size:22px;font-weight:700;line-height:1.3;margin-bottom:28px;letter-spacing:-0.01em}
+
+.options{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.option{padding:16px 20px;background:var(--card);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s ease;display:flex;align-items:center;gap:14px;text-align:left;width:100%;color:var(--text);font-family:inherit;font-size:15px}
+.option:hover{background:var(--card-lift);border-color:var(--accent)}
+.option.selected{background:var(--accent-deep);border-color:var(--accent);color:var(--text)}
+.option-value{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:2px solid var(--border);display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:var(--text-muted);font-size:13px;transition:all .15s}
+.option.selected .option-value{background:var(--accent);border-color:var(--accent);color:#000}
+
+.actions{display:flex;justify-content:space-between;gap:12px;padding-top:20px;border-top:1px solid var(--border)}
+.btn{padding:12px 24px;border-radius:8px;font-weight:700;font-size:14px;border:none;cursor:pointer;font-family:inherit;transition:all .15s}
+.btn-primary{background:var(--accent);color:#000}
+.btn-primary:hover:not(:disabled){filter:brightness(1.1)}
+.btn-primary:disabled{opacity:.4;cursor:not-allowed}
+.btn-ghost{background:transparent;color:var(--text-muted);border:1px solid var(--border)}
+.btn-ghost:hover{color:var(--text);border-color:var(--text-muted)}
+
+/* RESULT */
+.result{display:none;padding:40px 0}
+.result.active{display:block}
+.score-ring{width:220px;height:220px;margin:0 auto 24px;position:relative}
+.score-ring svg{transform:rotate(-90deg)}
+.score-ring .track{fill:none;stroke:var(--card);stroke-width:12}
+.score-ring .fill{fill:none;stroke-width:12;stroke-linecap:round;transition:stroke-dashoffset 1s ease}
+.score-ring .number{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.score-ring .number .n{font-size:64px;font-weight:900;line-height:1;letter-spacing:-0.04em}
+.score-ring .number .s{font-size:12px;color:var(--text-muted);font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+
+.tier-badge{display:inline-block;padding:8px 20px;border-radius:999px;font-weight:800;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.tier-red{background:rgba(239,68,68,0.15);color:var(--red);border:1px solid var(--red)}
+.tier-yellow{background:rgba(234,179,8,0.15);color:var(--yellow);border:1px solid var(--yellow)}
+.tier-green{background:rgba(34,197,94,0.15);color:var(--green);border:1px solid var(--green)}
+
+.result h2{text-align:center;font-size:clamp(26px,3.5vw,36px);font-weight:800;margin-bottom:16px;letter-spacing:-0.02em}
+.result .recommendation{max-width:600px;margin:0 auto 32px;text-align:center;color:var(--text-muted);font-size:16px;line-height:1.6}
+
+.dimension-breakdown{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;margin:32px 0}
+.dim-row{display:flex;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid var(--border)}
+.dim-row:last-child{border-bottom:none}
+.dim-name{flex:1;font-weight:600;font-size:14px}
+.dim-bar{flex:2;height:8px;background:var(--bg);border-radius:4px;overflow:hidden;max-width:200px}
+.dim-fill{height:100%;border-radius:4px;transition:width .8s ease}
+.dim-score{width:60px;text-align:right;font-weight:700;font-size:14px}
+
+.cta-box{background:linear-gradient(135deg,var(--accent-deep) 0%,rgba(0,0,0,0.4) 100%);border:1px solid var(--accent);border-radius:12px;padding:32px;margin:32px 0;text-align:center}
+.cta-box h3{font-size:22px;font-weight:800;margin-bottom:12px;letter-spacing:-0.01em}
+.cta-box p{color:var(--text-muted);margin-bottom:20px}
+.cta-box .cta-btn{display:inline-block;padding:14px 28px;background:var(--accent);color:#000;border-radius:8px;font-weight:700;font-size:15px}
+
+.footer{padding:32px 24px;border-top:1px solid var(--border);text-align:center;color:var(--text-dim);font-size:13px;margin-top:60px}
+.footer a{color:var(--accent);text-decoration:underline}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/tools/" class="brand">SMOrchestra <span>Tools</span></a>
+  <div class="nav-right">AI-Native Readiness · Free · 8-12 min</div>
+</nav>
+
+<div class="wrap">
+  <div class="hero" id="hero">
+    <div class="eyebrow">FREE · 8-12 MIN · BOARD-GRADE · NO SIGNUP GATE</div>
+    <h1>Is your MENA enterprise <span>AI-native</span>?</h1>
+    <p>20 questions across 6 dimensions: Board Mandate, Team Maturity, Tech Stack, Data Governance, Vision 2030 Alignment, Budget Readiness. Diagnostic for KSA + UAE enterprise CxOs with board-level AI mandate. Instant score + tier-routed next step.</p>
+    <div class="audience-strip">
+      <div><div class="num">20</div><div class="lbl">Questions</div></div>
+      <div><div class="num">6</div><div class="lbl">Dimensions</div></div>
+      <div><div class="num">3</div><div class="lbl">Tiers</div></div>
+      <div><div class="num">SDAIA</div><div class="lbl">+ PDPL anchored</div></div>
+    </div>
+    <button class="btn btn-primary" style="margin-top:32px;padding:14px 32px;font-size:15px" onclick="startQuiz()">Start Diagnostic →</button>
+  </div>
+
+  <div id="quiz" style="display:none">
+    <div class="progress">
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <div class="progress-label">
+        <span id="progress-text">Question 1 of 20</span>
+        <span id="progress-pct">0%</span>
+      </div>
+    </div>
+    <div id="questions-container"></div>
+    <div class="actions">
+      <button class="btn btn-ghost" id="back-btn" onclick="back()">← Back</button>
+      <button class="btn btn-primary" id="next-btn" onclick="next()" disabled>Next →</button>
+    </div>
+  </div>
+
+  <div class="result" id="result">
+    <div class="score-ring">
+      <svg width="220" height="220" viewBox="0 0 220 220">
+        <circle class="track" cx="110" cy="110" r="95"/>
+        <circle class="fill" id="score-fill" cx="110" cy="110" r="95" stroke="url(#grad)" stroke-dasharray="596.9" stroke-dashoffset="596.9"/>
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#d4af37"/>
+            <stop offset="100%" stop-color="#fcd34d"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="number">
+        <div class="n" id="score-num">0</div>
+        <div class="s">OUT OF 100</div>
+      </div>
+    </div>
+
+    <div style="text-align:center">
+      <span class="tier-badge" id="tier-badge">Green</span>
+    </div>
+
+    <h2 id="result-headline">Board-ready.</h2>
+    <p class="recommendation" id="result-recommendation"></p>
+
+    <div class="dimension-breakdown">
+      <div style="font-size:12px;color:var(--text-muted);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px">Dimension Breakdown</div>
+      <div id="dim-breakdown"></div>
+    </div>
+
+    <div class="cta-box" id="cta-box">
+      <h3 id="cta-headline">Request Private Briefing</h3>
+      <p id="cta-desc">90-min closed-door session with Mamoun. Riyadh or Dubai. NDA-protected.</p>
+      <a href="https://smorchestra.ai/strategy-call" class="cta-btn" id="cta-link">Book Briefing →</a>
+    </div>
+
+    <div style="text-align:center;margin-top:24px">
+      <button class="btn btn-ghost" onclick="restart()">Take Again</button>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  Built by <a href="/about.html">Mamoun Alamouri</a> · SMOrchestra · Dubai + Riyadh<br>
+  Part of the <a href="/tools/">4-scorecard suite</a> · Free forever · no signup gate · <a href="/ar/tools/ai-native-readiness/">العربية</a>
+</div>
+
+<script>
+const QUESTIONS = [
+  // BOARD AI MANDATE (3 Qs · 20%)
+  {dim:"BOARD AI MANDATE", num:1, q:"Has your board explicitly approved an AI strategy or transformation initiative in the last 12 months?",
+   opts:[
+     {text:"No board-level conversation about AI yet.",v:1},
+     {text:"Discussed informally · no formal mandate.",v:2},
+     {text:"Approved AI exploration · no committed budget.",v:4},
+     {text:"Formal AI mandate with budget allocation + KPIs.",v:5}
+   ]},
+  {dim:"BOARD AI MANDATE", num:2, q:"Is there a designated executive accountable for AI initiatives reporting to the CEO/board?",
+   opts:[
+     {text:"No · spread across IT, Marketing, Ops.",v:1},
+     {text:"Informal champion · no title authority.",v:2},
+     {text:"Designated VP/Director · part-time scope.",v:4},
+     {text:"C-suite role (CTO/CIO/Chief AI Officer) with AI as primary mandate.",v:5}
+   ]},
+  {dim:"BOARD AI MANDATE", num:3, q:"Are AI initiatives connected to business KPIs the board reviews quarterly?",
+   opts:[
+     {text:"No measurement framework.",v:1},
+     {text:"Tracked internally · not at board level.",v:2},
+     {text:"Reported quarterly · qualitative metrics.",v:4},
+     {text:"Quantitative ROI on AI initiatives reported at every board meeting.",v:5}
+   ]},
+
+  // TEAM MATURITY (3 Qs · 15%)
+  {dim:"TEAM MATURITY", num:4, q:"How many people on your team are actively building or operating AI systems (not just using consumer ChatGPT)?",
+   opts:[
+     {text:"Zero · we're exploring.",v:1},
+     {text:"1-2 · early experiments.",v:2},
+     {text:"3-7 · cross-functional team forming.",v:4},
+     {text:"8+ · dedicated AI/ML team or distributed AI champions across functions.",v:5}
+   ]},
+  {dim:"TEAM MATURITY", num:5, q:"What percentage of your KSA workforce holds technical AI/ML/data certifications or formal training?",
+   opts:[
+     {text:"0% · no formal training program.",v:1},
+     {text:"5-15% · ad-hoc external courses.",v:2},
+     {text:"15-35% · structured internal program.",v:4},
+     {text:"35%+ · ongoing certification + Saudi national talent investment.",v:5}
+   ]},
+  {dim:"TEAM MATURITY", num:6, q:"Does your team include Saudi nationals in technical AI/data roles?",
+   opts:[
+     {text:"0% Saudi nationals in tech AI roles.",v:1},
+     {text:"1-15% · below Saudization tech-sector targets.",v:2},
+     {text:"15-30% · meeting Saudization minimums.",v:4},
+     {text:"30%+ · proactively exceeding · investing in graduate pipeline.",v:5}
+   ]},
+
+  // TECH STACK (4 Qs · 15%)
+  {dim:"TECH STACK", num:7, q:"Where does your AI infrastructure run?",
+   opts:[
+     {text:"All US-cloud · no KSA region option configured.",v:1},
+     {text:"Hybrid · sensitive workloads still in US-cloud.",v:2},
+     {text:"KSA-region (Saudi Cloud · STC · Oracle Riyadh · AWS Bahrain) for new workloads.",v:4},
+     {text:"All workloads in PDPL-compliant KSA region · documented data residency.",v:5}
+   ]},
+  {dim:"TECH STACK", num:8, q:"Have you adopted GenAI tools (Claude · ChatGPT Enterprise · Copilot · vertical AI) at scale?",
+   opts:[
+     {text:"No enterprise GenAI deployment · individual users only.",v:1},
+     {text:"1-2 tools tested · limited rollout.",v:2},
+     {text:"2-4 tools deployed across functions · some production usage.",v:4},
+     {text:"GenAI integrated into core workflows · multi-function · governance in place.",v:5}
+   ]},
+  {dim:"TECH STACK", num:9, q:"Do you have a defined AI agent/automation platform (Claude Agent SDK · LangChain · in-house)?",
+   opts:[
+     {text:"No agent platform · automations in spreadsheets/scripts.",v:1},
+     {text:"Exploring · no production deployment.",v:2},
+     {text:"Deployed for 1-2 use cases · expanding.",v:4},
+     {text:"Multi-agent platform in production · custom skills · MCP integrations.",v:5}
+   ]},
+  {dim:"TECH STACK", num:10, q:"Is there a formal AI governance framework (model approval, risk review, incident response)?",
+   opts:[
+     {text:"No framework.",v:1},
+     {text:"Informal · case-by-case.",v:2},
+     {text:"Documented framework · quarterly review.",v:4},
+     {text:"Comprehensive framework · ISO 42001 or equivalent · third-party audited.",v:5}
+   ]},
+
+  // DATA GOVERNANCE / PDPL (3 Qs · 20%)
+  {dim:"DATA GOVERNANCE / PDPL", num:11, q:"Are you compliant with KSA's Personal Data Protection Law (PDPL · 2023)?",
+   opts:[
+     {text:"Not assessed · no PDPL compliance work done.",v:1},
+     {text:"Initial gap assessment · no remediation yet.",v:2},
+     {text:"Active remediation · 60%+ compliant.",v:4},
+     {text:"Fully compliant · annual audits · DPO designated.",v:5}
+   ]},
+  {dim:"DATA GOVERNANCE / PDPL", num:12, q:"Do you have data residency mapping for personal + sensitive corporate data?",
+   opts:[
+     {text:"No mapping · don't know where data lives.",v:1},
+     {text:"Partial mapping · gaps in coverage.",v:2},
+     {text:"Complete mapping · enforced via tooling.",v:4},
+     {text:"Mapped + enforced + auditable + KSA personal data in KSA region.",v:5}
+   ]},
+  {dim:"DATA GOVERNANCE / PDPL", num:13, q:"Do AI training data + AI inference logs comply with PDPL data-minimization principles?",
+   opts:[
+     {text:"No assessment of AI data flows.",v:1},
+     {text:"Aware of risk · no controls implemented.",v:2},
+     {text:"Controls in place for primary AI systems · gaps in others.",v:4},
+     {text:"All AI systems compliant · model cards · data lineage · regular audits.",v:5}
+   ]},
+
+  // VISION 2030 ALIGNMENT (4 Qs · 20%)
+  {dim:"VISION 2030 ALIGNMENT", num:14, q:"Is your business directly aligned with one or more V2030 sectoral priorities (tourism · entertainment · giga-projects · ICT · health · finance)?",
+   opts:[
+     {text:"No direct V2030 sector alignment.",v:1},
+     {text:"Adjacent · serving V2030 sectors.",v:2},
+     {text:"Direct alignment · 1 sector.",v:4},
+     {text:"Direct alignment · multiple sectors · documented contribution.",v:5}
+   ]},
+  {dim:"VISION 2030 ALIGNMENT", num:15, q:"Are you participating in any KSA AI / digital transformation programs (SDAIA · NEOM · KAUST · MCIT)?",
+   opts:[
+     {text:"No participation or awareness.",v:1},
+     {text:"Aware · not participating.",v:2},
+     {text:"Engaged with 1 program · early stage.",v:4},
+     {text:"Multiple programs · case-study contribution · co-investment.",v:5}
+   ]},
+  {dim:"VISION 2030 ALIGNMENT", num:16, q:"Does your AI strategy explicitly address SDAIA's Generative AI Guidelines (2024 update)?",
+   opts:[
+     {text:"Not aware of SDAIA GenAI guidelines.",v:1},
+     {text:"Aware · no formal alignment.",v:2},
+     {text:"Reviewed · alignment in progress.",v:4},
+     {text:"Fully aligned · documented · third-party verified.",v:5}
+   ]},
+  {dim:"VISION 2030 ALIGNMENT", num:17, q:"Do you have public AI use disclosure (V2030 transparency requirement for B2C touchpoints)?",
+   opts:[
+     {text:"No disclosure mechanism.",v:1},
+     {text:"Inconsistent · case-by-case.",v:2},
+     {text:"Standard disclosure · most B2C touchpoints covered.",v:4},
+     {text:"Comprehensive disclosure · governance approved · auditable.",v:5}
+   ]},
+
+  // BUDGET READINESS (3 Qs · 10%)
+  {dim:"BUDGET READINESS", num:18, q:"What annual budget is allocated to AI initiatives in 2026?",
+   opts:[
+     {text:"No dedicated AI budget.",v:1},
+     {text:"SAR 100k-500k · pilot budget.",v:2},
+     {text:"SAR 500k-2M · scaling phase.",v:4},
+     {text:"SAR 2M+ · enterprise-scale investment.",v:5}
+   ]},
+  {dim:"BUDGET READINESS", num:19, q:"Is the AI budget separate from general IT budget?",
+   opts:[
+     {text:"Bundled with IT · no AI-specific tracking.",v:1},
+     {text:"Carved out within IT budget.",v:2},
+     {text:"Separate cost center · CFO-tracked.",v:4},
+     {text:"Strategic investment program · board-approved · multi-year.",v:5}
+   ]},
+  {dim:"BUDGET READINESS", num:20, q:"Have you allocated budget for AI training + Saudi national talent development?",
+   opts:[
+     {text:"No talent investment budget.",v:1},
+     {text:"General training includes AI · no specific allocation.",v:2},
+     {text:"Dedicated AI talent budget · 5-10% of AI total spend.",v:4},
+     {text:"15%+ of AI budget on talent + Saudization-aligned graduate program.",v:5}
+   ]}
+];
+
+const DIM_WEIGHTS = {
+  "BOARD AI MANDATE":20,
+  "TEAM MATURITY":15,
+  "TECH STACK":15,
+  "DATA GOVERNANCE / PDPL":20,
+  "VISION 2030 ALIGNMENT":20,
+  "BUDGET READINESS":10
+};
+
+const MAX_PER_DIM_RAW = {};
+QUESTIONS.forEach(q=>{
+  MAX_PER_DIM_RAW[q.dim]=(MAX_PER_DIM_RAW[q.dim]||0)+5;
+});
+
+let currentIdx=0;
+let answers={};
+
+function startQuiz(){
+  document.getElementById("hero").style.display="none";
+  document.getElementById("quiz").style.display="block";
+  if(window.plausible) window.plausible("scorecard_started",{props:{magnet:"ai-native-readiness"}});
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const q=QUESTIONS[currentIdx];
+  const container=document.getElementById("questions-container");
+  container.innerHTML=`
+    <div class="step active">
+      <div class="dimension-label">${q.dim}</div>
+      <div class="q-num">QUESTION ${q.num} OF 20</div>
+      <div class="question">${q.q}</div>
+      <div class="options">
+        ${q.opts.map((o,i)=>`<button class="option${answers[currentIdx]===i?' selected':''}" onclick="select(${i})">
+          <span class="option-value">${String.fromCharCode(65+i)}</span>
+          <span>${o.text}</span>
+        </button>`).join("")}
+      </div>
+    </div>
+  `;
+  const pct=((currentIdx)/QUESTIONS.length)*100;
+  document.getElementById("progress-fill").style.width=pct+"%";
+  document.getElementById("progress-text").textContent=`Question ${currentIdx+1} of ${QUESTIONS.length}`;
+  document.getElementById("progress-pct").textContent=Math.round(pct)+"%";
+  document.getElementById("next-btn").disabled=answers[currentIdx]===undefined;
+  document.getElementById("back-btn").style.visibility=currentIdx===0?"hidden":"visible";
+  document.getElementById("next-btn").textContent=currentIdx===QUESTIONS.length-1?"See Diagnostic →":"Next →";
+}
+
+function select(optIdx){
+  answers[currentIdx]=optIdx;
+  renderQuestion();
+}
+
+function next(){
+  if(currentIdx<QUESTIONS.length-1){
+    currentIdx++;
+    renderQuestion();
+  }else{
+    showResult();
+  }
+}
+
+function back(){
+  if(currentIdx>0){
+    currentIdx--;
+    renderQuestion();
+  }
+}
+
+function restart(){
+  currentIdx=0; answers={};
+  document.getElementById("result").classList.remove("active");
+  document.getElementById("hero").style.display="block";
+  document.getElementById("quiz").style.display="none";
+}
+
+function showResult(){
+  const dimRaw={};
+  QUESTIONS.forEach((q,i)=>{
+    dimRaw[q.dim]=(dimRaw[q.dim]||0)+q.opts[answers[i]].v;
+  });
+  const dimPct={};
+  Object.keys(dimRaw).forEach(d=>{
+    dimPct[d]=Math.round((dimRaw[d]/MAX_PER_DIM_RAW[d])*100);
+  });
+  let composite=0;
+  Object.keys(dimPct).forEach(d=>{
+    composite+=(dimPct[d]*DIM_WEIGHTS[d])/100;
+  });
+  composite=Math.round(composite);
+
+  document.getElementById("quiz").style.display="none";
+  document.getElementById("result").classList.add("active");
+
+  document.getElementById("score-num").textContent=composite;
+  const circumference=596.9;
+  const offset=circumference-(composite/100)*circumference;
+  setTimeout(()=>{
+    document.getElementById("score-fill").style.strokeDashoffset=offset;
+  },100);
+
+  let tier,tierClass,headline,rec,ctaHead,ctaDesc,ctaLink;
+  if(composite>=71){
+    tier="GREEN · BOARD-READY"; tierClass="tier-green";
+    headline="Top quartile of MENA enterprises.";
+    rec="Your profile places you in the top 18% of KSA enterprises assessed in 2025-2026. Board mandate, designated CxO, KSA-region tech stack, PDPL compliance, V2030 alignment all present. The path forward is private briefing on AI-Native infrastructure for next-stage expansion: SMOrchestra Tier 4 advisory.";
+    ctaHead="Request Private Briefing · Tier 4";
+    ctaDesc="90-min closed-door session with Mamoun. Riyadh or Dubai. NDA-protected. No sales pitch — strategic conversation. Free for GREEN-tier completers.";
+    ctaLink="https://smorchestra.ai/strategy-call?source=ai-native-readiness-green";
+  }else if(composite>=40){
+    tier="YELLOW · FIXABLE"; tierClass="tier-yellow";
+    headline="Fixable but exposed.";
+    rec="64% of KSA enterprises sit here. You have foundation pieces in place but specific gaps that need closing within 6-12 months. Common YELLOW pattern: budget allocated but PDPL data residency gaps create commercial risk · OR V2030 alignment claimed but not documented to SDAIA standards. SMOrchestra's Tier 3 BOT install scopes a 60-90 day fix specific to your dimension profile.";
+    ctaHead="Book Tier 3 Diagnostic Call · 30 min";
+    ctaDesc="Walk through your audit · scope a Build-Operate-Transfer install for your specific gaps. AED 100-180k install + 12-mo optimization. No pressure to commit on the call.";
+    ctaLink="https://smorchestra.ai/strategy-call?source=ai-native-readiness-yellow";
+  }else{
+    tier="RED · EARLY-STAGE"; tierClass="tier-red";
+    headline="Prerequisites first. Then scale.";
+    rec="The biggest risk for RED-tier enterprises is over-investing in AI before the prerequisites are in place. Focus the next 90 days on: (1) board-level mandate with named accountable executive, (2) DPO designation if 100+ employees, (3) V2030 sectoral contribution documentation. Without these, every AI investment compounds risk rather than value. SMOrchestra's 30-day diagnostic engagement focuses on the prerequisites before any large investment.";
+    ctaHead="Book 30-Day Diagnostic · SAR 35k";
+    ctaDesc="Fixed-price diagnostic engagement focused on the 3 prerequisites. We don't sell you Tier 3 BOT until you're YELLOW-ready.";
+    ctaLink="https://smorchestra.ai/strategy-call?source=ai-native-readiness-red";
+  }
+  document.getElementById("tier-badge").textContent=tier;
+  document.getElementById("tier-badge").className="tier-badge "+tierClass;
+  document.getElementById("result-headline").textContent=headline;
+  document.getElementById("result-recommendation").textContent=rec;
+  document.getElementById("cta-headline").textContent=ctaHead;
+  document.getElementById("cta-desc").textContent=ctaDesc;
+  document.getElementById("cta-link").href=ctaLink;
+
+  const dimDiv=document.getElementById("dim-breakdown");
+  dimDiv.innerHTML=Object.keys(dimPct).map(d=>{
+    const p=dimPct[d];
+    const color=p>=71?"#22c55e":p>=40?"#eab308":"#ef4444";
+    return `<div class="dim-row">
+      <div class="dim-name">${d}</div>
+      <div class="dim-bar"><div class="dim-fill" style="width:0%;background:${color}" data-target="${p}%"></div></div>
+      <div class="dim-score" style="color:${color}">${p}/100</div>
+    </div>`;
+  }).join("");
+  setTimeout(()=>{
+    document.querySelectorAll(".dim-fill").forEach(b=>{
+      b.style.width=b.dataset.target;
+    });
+  },200);
+
+  if(window.plausible) window.plausible("scorecard_completed",{props:{magnet:"ai-native-readiness",tier:tier.split(" ")[0],score:composite}});
+
+  if(window.GHL_WEBHOOK_URL){
+    fetch(window.GHL_WEBHOOK_URL,{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        scorecard:"ai-native-readiness",
+        score:composite,
+        tier:tier.split(" ")[0],
+        dimensions:dimPct,
+        answers:answers,
+        timestamp:new Date().toISOString()
+      })
+    }).catch(()=>{});
+  }
+}
+</script>
+</body>
+</html>
