@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI-Native Readiness · Diagnostic Framework + 90-Day Action Plans | SMOrchestra</title>
+<meta name="description" content="The full diagnostic framework behind the AI-Native Readiness Scorecard. Six dimensions explained, three tier paths detailed, 90-day action plans for GREEN, YELLOW, RED profiles. For MENA enterprises with board-level AI mandate.">
+<link rel="canonical" href="https://smorchestra.ai/reports/ai-native-readiness-framework.html">
+<link rel="alternate" hreflang="en" href="https://smorchestra.ai/reports/ai-native-readiness-framework.html">
+<link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/reports/ai-native-readiness-framework.html">
+<link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/reports/ai-native-readiness-framework.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI-Native Readiness · Diagnostic Framework + 90-Day Action Plans">
+<meta property="og:description" content="The full diagnostic framework behind the Scorecard. 6 dimensions, 3 tier paths, 90-day action plans for each.">
+<meta property="og:url" content="https://smorchestra.ai/reports/ai-native-readiness-framework.html">
+<meta property="og:image" content="https://smorchestra.ai/assets/og/ai-native-readiness-report.png">
+<link rel="icon" type="image/png" href="/logo/logo3.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script defer data-domain="smorchestra.ai" src="https://plausible.io/js/script.js"></script>
+<style>
+:root{
+  --ink:#0f1012; --ink-2:#2a2b2f; --body:#3d3f44; --muted:#6a6d74;
+  --bg:#ffffff; --bg-2:#f7f5f1; --rule:#e5e3dd;
+  --gold:#c8a43d; --gold-deep:#8a6f1f; --gold-wash:#faf5e6;
+  --orange:#ff6b35;
+  --f:"Inter",-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg-2)}
+body{background:var(--bg);color:var(--body);font-family:var(--f);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15.5px}
+.page{max-width:800px;margin:0 auto;padding:56px 56px 72px;background:var(--bg)}
+
+/* Masthead ------------------------------------------- */
+.mast{display:flex;align-items:center;justify-content:space-between;padding-bottom:24px;border-bottom:1px solid var(--rule);margin-bottom:48px}
+.mast-brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--ink);font-size:17px;letter-spacing:-0.01em}
+.mast-brand span{color:var(--orange)}
+.mast-doc{font-size:11px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted)}
+
+/* Typography ----------------------------------------- */
+h1,h2,h3,h4{color:var(--ink);letter-spacing:-0.02em;line-height:1.22}
+h1{font-size:42px;font-weight:900;margin-bottom:16px}
+h2{font-size:26px;font-weight:800;margin:56px 0 18px;padding-top:24px;border-top:1px solid var(--rule)}
+h2 .num{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--gold-deep);font-weight:700;font-size:13px;letter-spacing:2px;display:block;margin-bottom:8px}
+h3{font-size:18px;font-weight:700;color:var(--ink-2);margin:28px 0 8px}
+h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:-0.005em}
+p{margin:0 0 14px}
+p.lead{font-size:18px;color:var(--ink-2);line-height:1.55;margin-bottom:24px}
+strong{color:var(--ink);font-weight:700}
+ul{padding-left:22px;margin:0 0 16px}
+ul li{margin-bottom:8px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px}
+
+/* Hero ---------------------------------------------- */
+.hero-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px}
+.hero-meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:24px;padding-top:20px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted)}
+.hero-meta b{color:var(--ink-2);font-weight:700}
+
+/* Dimension cards ----------------------------------- */
+.dims{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0 28px}
+.dim{padding:18px 20px;background:var(--bg-2);border-left:3px solid var(--gold);border-radius:2px}
+.dim .dk{font-size:10.5px;font-weight:700;letter-spacing:2px;color:var(--gold-deep);text-transform:uppercase;margin-bottom:6px}
+.dim h4{font-size:15px;margin-bottom:6px}
+.dim p{font-size:13.5px;color:var(--body);margin:0;line-height:1.55}
+
+/* Tier blocks --------------------------------------- */
+.tier{margin:22px 0;padding:22px 24px;border-left:4px solid var(--tier-c,var(--gold));background:var(--tier-bg,var(--bg-2));border-radius:2px}
+.tier--green{--tier-c:#16a34a;--tier-bg:#f2f8f4}
+.tier--yellow{--tier-c:#ca8a04;--tier-bg:#fbf7ec}
+.tier--red{--tier-c:#b91c1c;--tier-bg:#fbf1f1}
+.tier .tk{font-size:11px;font-weight:700;letter-spacing:2.5px;color:var(--tier-c);text-transform:uppercase;margin-bottom:8px}
+.tier h3{font-size:19px;color:var(--ink);margin:0 0 8px}
+.tier .tier-meta{font-size:13px;color:var(--muted);margin-bottom:12px}
+.tier p{font-size:14.5px;color:var(--body);margin-bottom:10px}
+.tier ul{font-size:14px}
+
+/* Callout ------------------------------------------- */
+.callout{margin:28px 0;padding:22px 24px;background:var(--gold-wash);border:1px solid var(--gold);border-radius:4px}
+.callout h4{color:var(--gold-deep);font-size:13px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+.callout p:last-child{margin:0}
+
+/* CTA ----------------------------------------------- */
+.cta{margin:48px 0 12px;padding:32px;background:var(--ink);color:#fff;border-radius:4px;text-align:center}
+.cta h3{color:#fff;font-size:22px;margin-bottom:10px;letter-spacing:-0.01em}
+.cta p{color:#c7c8cd;font-size:14.5px;margin-bottom:20px;max-width:540px;margin-left:auto;margin-right:auto}
+.cta .btn{display:inline-block;padding:14px 26px;background:var(--orange);color:#000;font-weight:700;font-size:14px;letter-spacing:0.02em;text-decoration:none;border-radius:3px;transition:transform .1s}
+.cta .btn:hover{transform:translateY(-1px)}
+
+/* Author ------------------------------------------- */
+.author{margin-top:40px;padding:24px;background:var(--bg-2);border-radius:4px;display:flex;gap:18px;align-items:flex-start}
+.author-body{flex:1}
+.author h4{font-size:15px;margin-bottom:4px}
+.author-role{font-size:12.5px;color:var(--muted);margin-bottom:10px}
+.author p{font-size:13.5px;color:var(--body);line-height:1.55;margin:0}
+
+/* Footer ------------------------------------------- */
+.foot{margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.foot a{color:var(--ink-2);text-decoration:underline}
+
+/* Print ------------------------------------------- */
+@media print{
+  @page{size:A4;margin:18mm 16mm}
+  html,body{background:#fff}
+  body{font-size:10.5pt;line-height:1.5}
+  .page{max-width:none;padding:0}
+  .mast{margin-bottom:20pt}
+  h1{font-size:24pt}
+  h2{font-size:15pt;margin-top:22pt;padding-top:10pt}
+  h3{font-size:12.5pt;margin-top:14pt}
+  p.lead{font-size:11.5pt}
+  .dims{gap:8pt;margin-bottom:14pt}
+  .dim{padding:10pt 12pt;page-break-inside:avoid}
+  .tier{padding:12pt 14pt;margin:10pt 0;page-break-inside:avoid}
+  .callout{padding:12pt 14pt;page-break-inside:avoid}
+  .cta{background:#fff;color:var(--ink);border:1.5pt solid var(--ink);padding:16pt}
+  .cta h3,.cta p{color:var(--ink)}
+  .cta .btn{background:#fff;color:var(--ink);border:1.5pt solid var(--ink)}
+  .author{page-break-inside:avoid}
+  .foot{page-break-inside:avoid}
+  h2,h3{page-break-after:avoid}
+  a{color:var(--ink-2);text-decoration:none}
+}
+
+/* Mobile ------------------------------------------ */
+@media (max-width:640px){
+  .page{padding:32px 20px 48px}
+  h1{font-size:30px}
+  h2{font-size:22px}
+  .dims{grid-template-columns:1fr}
+  .cta{padding:22px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="mast">
+  <div class="mast-brand">SM<span>Orchestra</span></div>
+  <div class="mast-doc">Diagnostic Framework · v1 · 2026</div>
+</header>
+
+<section>
+  <div class="hero-eyebrow">AI-Native Readiness · Board-Grade Diagnostic</div>
+  <h1>The framework behind your score — and the 90-day path that matches your tier.</h1>
+  <p class="lead">This is the full framework behind the AI-Native Readiness Scorecard. It explains what the six dimensions measure, why they predict enterprise outcomes for MENA, and gives the specific 90-day action plan for each of the three tiers. Use it as the reference document for your board briefing, your CxO sync, or your next internal quarterly review.</p>
+  <div class="hero-meta">
+    <span><b>Audience:</b> MENA enterprises · 100+ employees · board-level AI mandate</span>
+    <span><b>Markets:</b> KSA · UAE</span>
+    <span><b>Length:</b> ~10-minute read</span>
+  </div>
+</section>
+
+<!-- ==================================================== -->
+<h2><span class="num">01 · The Six Dimensions</span>What the scorecard actually measures</h2>
+
+<p>The diagnostic uses twenty questions across six dimensions. Each dimension is weighted to predict one of the things enterprises in KSA and UAE consistently get wrong when they attempt AI-native transformation at scale. Three dimensions measure governance foundations. Three measure execution readiness. Both halves have to be present before a Tier-4 install makes sense.</p>
+
+<div class="dims">
+
+  <div class="dim">
+    <div class="dk">01 · Governance</div>
+    <h4>Board Mandate</h4>
+    <p>Is there a named executive owner, a documented AI strategy paper, and a board-minuted mandate? Scored highest when the CEO plus one other C-level has signed off on AI-native as a direction, not just a budget line.</p>
+  </div>
+
+  <div class="dim">
+    <div class="dk">02 · People</div>
+    <h4>Team Maturity</h4>
+    <p>Depth of in-house AI/data talent and the organizational literacy to operate AI-native workflows. Includes whether line managers can distinguish RAG from fine-tuning, not just whether data scientists exist.</p>
+  </div>
+
+  <div class="dim">
+    <div class="dk">03 · Infrastructure</div>
+    <h4>Tech Stack</h4>
+    <p>Cloud posture, API maturity, identity/SSO, observability, and the specific KSA-region infrastructure questions (data residency via Riyadh regions) that compliance-gate enterprise deployments.</p>
+  </div>
+
+  <div class="dim">
+    <div class="dk">04 · Compliance</div>
+    <h4>Data Governance</h4>
+    <p>PDPL (KSA) and UAE data protection compliance, DPO designation where the employee-count trigger applies, cross-border transfer policy, and the documented lineage Riyadh auditors request in year-two audits.</p>
+  </div>
+
+  <div class="dim">
+    <div class="dk">05 · Strategy</div>
+    <h4>Vision 2030 Alignment</h4>
+    <p>Documented sectoral contribution to V2030 pillars, SDAIA alignment, and the board-facing narrative that decides whether MCIT, PIF, or strategic-partner conversations happen in year two — or never.</p>
+  </div>
+
+  <div class="dim">
+    <div class="dk">06 · Capital</div>
+    <h4>Budget Readiness</h4>
+    <p>Is capital allocated and committee-approved, not just "available"? Scored highest when Year-1 opex + capex are already ring-fenced and Year-2 scale budget has a trigger defined in writing.</p>
+  </div>
+
+</div>
+
+<div class="callout">
+  <h4>How the score maps to tier</h4>
+  <p><b>71-100 · GREEN.</b> Top quartile of MENA enterprises we've assessed in 2025-2026. Governance foundations present, execution readiness strong, board already aligned. Next step is a Tier-4 private briefing.</p>
+  <p><b>40-70 · YELLOW.</b> Modal band. 64% of KSA enterprises sit here. Foundation pieces present but specific gaps that close in 6-12 months. Next step is a Tier-3 Build-Operate-Transfer install scoped to the specific dimension profile.</p>
+  <p><b>&lt;40 · RED.</b> Early-stage. Enthusiasm exceeds readiness. Over-investing here compounds risk rather than value. Next step is a 30-day diagnostic engagement focused on closing the three prerequisites before any large AI commitment.</p>
+</div>
+
+<!-- ==================================================== -->
+<h2><span class="num">02 · The Three Tier Paths</span>What happens next, by score band</h2>
+
+<section class="tier tier--green">
+  <div class="tk">GREEN · 71-100 · Board-Ready</div>
+  <h3>Top-quartile enterprise. The mandate is real.</h3>
+  <div class="tier-meta">If you scored here — skip the scope-and-assess loop and go direct to strategic conversation.</div>
+  <p><strong>The pattern:</strong> board mandate present, designated CxO, KSA-region infrastructure live, PDPL documented, V2030 narrative documented to SDAIA standard, budget committee-approved. You don't need to validate that AI-native is right for you — you need to decide which infrastructure partner to bet on for the next 18 months.</p>
+  <p><strong>The 90-day action plan:</strong></p>
+  <ul>
+    <li><b>Days 1-14.</b> Private briefing with SMOrchestra (Riyadh or Dubai, NDA-protected, closed-door). Pressure-test your existing roadmap against what we've seen work and fail in comparable enterprises. No sales — strategic conversation.</li>
+    <li><b>Days 15-45.</b> Tier-4 scoping engagement. 2-4 senior SMO operators embed. Define the specific vertical-plugin architecture for your sector. 6-18 month engagement scoped. Pricing starts at AED 500k for the scoping + initial install phase.</li>
+    <li><b>Days 46-90.</b> First plugin in production. Typical first wins: AI-native signal sales engine for the B2B motion, or CXM transformation on the enterprise service line. Measurable pipeline or cost-to-serve impact by day 90.</li>
+  </ul>
+</section>
+
+<section class="tier tier--yellow">
+  <div class="tk">YELLOW · 40-70 · Fixable but Exposed</div>
+  <h3>Foundation pieces present. Specific gaps to close.</h3>
+  <div class="tier-meta">If you scored here — the fastest path is a Tier-3 Build-Operate-Transfer install scoped to your specific profile.</div>
+  <p><strong>Common patterns in this band.</strong> Budget allocated but PDPL data-residency gaps create commercial risk · OR · V2030 alignment claimed but not documented to SDAIA standards · OR · strong technical team without clear AI-native mandate from the board · OR · board mandate present but no designated executive owner accountable for outcome.</p>
+  <p><strong>The 90-day action plan:</strong></p>
+  <ul>
+    <li><b>Days 1-7.</b> 30-minute diagnostic call with SMOrchestra. Walk through your six-dimension breakdown. Identify the two or three gaps closing which would move you to GREEN in 6-12 months. No commitment to buy.</li>
+    <li><b>Days 8-30.</b> Tier-3 Build-Operate-Transfer scoping. 60-day Build + 2-week Operate included. Typical scope: AED 100-180k install fee for one flagship plugin (Signal Sales Engine, CXM, or AI-Native Dev Ops), transferred to your team on day 60.</li>
+    <li><b>Days 31-90.</b> Build phase of the Tier-3 install. Weekly demos. Measurable output by week 6. Full transfer by day 60. 2-week shadowing by day 74. Then you own the plugin outright and run on $297/month via SalesMfast.</li>
+  </ul>
+</section>
+
+<section class="tier tier--red">
+  <div class="tk">RED · under 40 · Early-Stage</div>
+  <h3>Prerequisites first. Then scale.</h3>
+  <div class="tier-meta">If you scored here — the biggest risk is over-investing in AI before the governance foundation is in place.</div>
+  <p><strong>The pattern:</strong> enthusiasm exceeds readiness. Pilots exist but no mandate. Vendors engaged but no DPO. Budget discussed but not committee-approved. Investing in a Tier-4 or even Tier-3 install without closing these gaps first compounds risk. The right move is a fixed-price diagnostic engagement focused on the three prerequisites.</p>
+  <p><strong>The 90-day action plan:</strong></p>
+  <ul>
+    <li><b>Days 1-7.</b> Formal 30-day Diagnostic Engagement with SMOrchestra. Fixed-price: SAR 35,000. No upsell to Tier-3 or Tier-4 on the call — the engagement is explicitly scoped to prerequisites.</li>
+    <li><b>Days 8-30.</b> Three prerequisite deliverables: (1) board-level mandate paper with named accountable executive, (2) DPO designation completed if you're 100+ employees, (3) V2030 sectoral contribution documented to SDAIA standard. These three deliverables are the difference between YELLOW and RED.</li>
+    <li><b>Days 31-90.</b> Re-take the scorecard. If YELLOW: proceed to Tier-3 scoping. If still RED: continue prerequisites — no large AI investment yet. This is the move that compounds over twelve months.</li>
+  </ul>
+</section>
+
+<!-- ==================================================== -->
+<h2><span class="num">03 · Why This Framework Exists</span>The MENA-specific assumptions you won't see elsewhere</h2>
+
+<p>Western AI-readiness frameworks assume <strong>Delaware-incorporated, English-speaking, enterprise SaaS-centric</strong> organizations. They systematically underweight the three things that decide enterprise outcomes in KSA and UAE: <strong>WhatsApp as business spine, Gulf-dialect customer closure, and the compliance layer (PDPL, ZATCA, Saudization, V2030 documentation)</strong>. They overweight what MENA enterprises already have locked in (cloud adoption, cybersecurity budget, CxO titles).</p>
+
+<p>This framework is calibrated against sixty-plus MENA enterprise assessments run in 2025-2026. The dimension weights, tier cutoffs, and 90-day plans reflect what actually predicts the next twelve months of outcome — not what reads well in a McKinsey deck.</p>
+
+<p>The practical consequence: if you've been told you're "AI-native ready" by a Tier-1 consultancy but you scored YELLOW here, the consultancy is probably grading on the Western frame. The board will find out in year two during the V2030 compliance audit. Better to find out now.</p>
+
+<!-- ==================================================== -->
+<h2><span class="num">04 · What a Tier-3 Install Actually Looks Like</span>The Build-Operate-Transfer shape</h2>
+
+<p>For the YELLOW band, the common path is a <strong>Tier-3 Build-Operate-Transfer install</strong>. The shape is the same whether it's a Signal Sales Engine, an AI-Native CMO, or an AI-Native Dev OS plugin.</p>
+
+<ul>
+  <li><b>Days 1-60 · Build.</b> SMO team builds the plugin on your infrastructure, using your accounts, producing artifacts you own (n8n workflows, brain files, scorecards, sequences, configs). Weekly demos. Typical plugin: AED 100-180k fixed fee.</li>
+  <li><b>Day 60 · Transfer.</b> Ownership transfers. Brain files, code, runbooks all signed over. SalesMfast account white-labeled to your brand. Training recordings delivered.</li>
+  <li><b>Days 60-74 · Operate (included).</b> SMO operates alongside your team for 14 more days, at zero additional cost. Your team shadows us operating the plugin in production. This is how the operational muscle transfers, not just the tech.</li>
+  <li><b>Day 74 onward · Your asset.</b> You run it. Post-transfer run cost is $297 per month via SalesMfast (the underlying platform). No lock-in, no mandatory retainer. If you change vendors in year two, you don't rebuild — you keep the plugin.</li>
+</ul>
+
+<p>Tier-3 is where 80% of enterprise engagements sit. Tier-4 is by-invitation, embedded, 6-18 months. The scorecard's GREEN band is the invitation signal.</p>
+
+<!-- ==================================================== -->
+<h2><span class="num">05 · Next Step</span>Book the call that matches your tier</h2>
+
+<div class="cta">
+  <h3>One call. 30 minutes. Scoped to your tier.</h3>
+  <p>Whether you scored GREEN (private briefing), YELLOW (Tier-3 diagnostic), or RED (prerequisites engagement), the next conversation is the same door. Book below and the intake form sends the scope to the right track automatically.</p>
+  <a class="btn" href="https://smorchestra.ai/book?source=ai-native-readiness-framework-pdf">Book a call →</a>
+</div>
+
+<div class="author">
+  <div class="author-body">
+    <h4>Mamoun Alamouri</h4>
+    <div class="author-role">Founder & CEO · SMOrchestra.ai · Based in Dubai</div>
+    <p>Built and sold a B2B SaaS in MENA before founding SMOrchestra. Now runs the AI-native install for enterprises across KSA, UAE, Qatar, Kuwait. YouTube: <a href="https://youtube.com/@MamounAlamouri" style="color:var(--gold-deep)">@MamounAlamouri</a>. Ten AI-native products shipped in April 2026 — the proof that the 60-day Build cadence works at scale.</p>
+  </div>
+</div>
+
+<footer class="foot">
+  <div>© 2026 SMOrchestra.ai · AI-Native Enterprise Install · KSA + UAE</div>
+  <div><a href="https://smorchestra.ai/tools/ai-native-readiness/">Retake the scorecard</a> · <a href="https://smorchestra.ai/about">About</a></div>
+</footer>
+
+</div>
+</body>
+</html>
