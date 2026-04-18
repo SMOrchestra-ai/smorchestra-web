@@ -203,26 +203,26 @@
 
 [[redirects]]
   from = "/tools/gtm-fitness"
-  to = "https://score.smorchestra.ai/gtm-fitness"
+  to = "https://gtm.smorchestra.ai/matrix"
   status = 302
   force = true
 
 [[redirects]]
   from = "/tools/digital-revenue-score"
-  to = "https://score.smorchestra.ai/digital-revenue-score"
+  to = "https://score.smorchestra.ai/RevenueOS"
   status = 302
   force = true
 
 # Arabic mirror — scorecards live on the same English subdomain (no /ar variant yet).
 [[redirects]]
   from = "/ar/tools/gtm-fitness"
-  to = "https://score.smorchestra.ai/gtm-fitness"
+  to = "https://gtm.smorchestra.ai/matrix"
   status = 302
   force = true
 
 [[redirects]]
   from = "/ar/tools/digital-revenue-score"
-  to = "https://score.smorchestra.ai/digital-revenue-score"
+  to = "https://score.smorchestra.ai/RevenueOS"
   status = 302
   force = true
 
