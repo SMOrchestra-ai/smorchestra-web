@@ -1,0 +1,21 @@
+{
+  "name": "SMOrchestra — AI-Native Business OS Install",
+  "short_name": "SMOrchestra",
+  "description": "Install the AI-Native Organization that shipped 10 products in one month. B2B scale-up install for KSA and UAE.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/logo/logo3.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -627,7 +627,11 @@ svg.i.arr{width:0.9em;height:0.9em;margin-inline-start:6px}
     <p class="reveal" style="margin-top:24px;color:#9ca3af;font-size:14px">التحديث القادم: مايو ٢٠٢٦. تابع العدّاد على <a href="https://www.linkedin.com/in/mamounalamouri/" target="_blank" rel="noopener" style="color:#ff6b35;border-bottom:1px solid currentColor"><span dir="ltr">LinkedIn</span></a> أو <a href="https://youtube.com/@MamounAlamouri" target="_blank" rel="noopener" style="color:#ff6b35;border-bottom:1px solid currentColor"><span dir="ltr">YouTube</span></a>.</p>
   </div>
 </section>
-<style>@media(max-width:900px){.section.deep .wrap div[style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:repeat(2,1fr) !important}}</style>
+<style>
+@media(max-width:900px){.section.deep .wrap div[style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:repeat(2,1fr) !important}}
+/* Mobile overflow safety net — prevents any runaway element from breaking layout on narrow viewports. */
+@media(max-width:640px){html,body{overflow-x:clip;max-width:100vw}.wrap,.bot-wrap,section{max-width:100vw;box-sizing:border-box}}
+</style>
 
 <!-- ============ THREE-CARD INTRO · PLUGIN ARCHITECTURE ============ -->
 <section class="section dark" style="padding-top:40px">
@@ -1467,6 +1471,7 @@ const io = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>
 </html>

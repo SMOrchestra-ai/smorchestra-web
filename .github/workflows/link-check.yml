@@ -1,0 +1,58 @@
+name: Link Check
+
+on:
+  pull_request:
+    paths:
+      - "**/*.html"
+      - "_redirects"
+      - "netlify.toml"
+      - "sitemap.xml"
+  push:
+    branches: [main]
+    paths:
+      - "**/*.html"
+      - "_redirects"
+      - "netlify.toml"
+      - "sitemap.xml"
+  schedule:
+    # Weekly sanity check — catches rot in external links (EO subdomain, LinkedIn, etc.)
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run lychee
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # - Only check HTML + the redirects/sitemap configuration files.
+          # - Skip GitHub API (rate-limited, not useful here).
+          # - Accept common success codes including auth-required placeholders
+          #   (LinkedIn returns 999 to unauthenticated crawlers — intentional,
+          #   not a broken link).
+          args: >-
+            --no-progress
+            --max-concurrency 8
+            --timeout 20
+            --retry-wait-time 2
+            --accept 200,204,206,301,302,303,307,308,403,429,999
+            --exclude-loopback
+            --exclude '^mailto:'
+            --exclude 'linkedin\.com'
+            --exclude 'github\.com/SMOrchestra-ai/smorchestra-web'
+            './**/*.html'
+          fail: true
+          format: markdown
+          output: ./lychee-report.md
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lychee-report
+          path: ./lychee-report.md
+          retention-days: 14

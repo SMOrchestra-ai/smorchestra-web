@@ -42,7 +42,7 @@
 :root{
   --bg:#000; --bg-alt:#0a0a0a; --card:#141414; --card-lift:#1c1c1c;
   --border:#262626; --border-lift:#333;
-  --text:#fff; --text-muted:#a3a3a3; --text-dim:#6b6b6b;
+  --text:#fff; --text-muted:#a3a3a3; --text-dim:#8a8a8a;
   --accent:#d4af37; --accent-deep:#3d3210; --accent-glow:rgba(212,175,55,0.15);
   --orange:#ff6b35;
   --green:#22c55e; --red:#ef4444; --yellow:#eab308;
@@ -173,7 +173,7 @@ h1 span{color:var(--accent)}
   </div>
 
   <div id="quiz" style="display:none">
-    <div class="progress">
+    <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Diagnostic progress" id="progress-root">
       <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
       <div class="progress-label">
         <span id="progress-text">Question 1 of 20</span>
@@ -188,8 +188,8 @@ h1 span{color:var(--accent)}
   </div>
 
   <div class="result" id="result">
-    <div class="score-ring">
-      <svg width="220" height="220" viewBox="0 0 220 220">
+    <div class="score-ring" role="img" id="score-ring" aria-label="Score: 0 out of 100">
+      <svg width="220" height="220" viewBox="0 0 220 220" aria-hidden="true" focusable="false">
         <circle class="track" cx="110" cy="110" r="95"/>
         <circle class="fill" id="score-fill" cx="110" cy="110" r="95" stroke="url(#grad)" stroke-dasharray="596.9" stroke-dashoffset="596.9"/>
         <defs>
@@ -243,7 +243,7 @@ h1 span{color:var(--accent)}
 
 <div class="footer">
   Built by <a href="/about.html">Mamoun Alamouri</a> · SMOrchestra · Dubai + Riyadh<br>
-  Part of the <a href="/tools/">4-scorecard suite</a> · Free forever · no signup gate · <a href="/ar/tools/ai-native-readiness/">العربية</a>
+  Part of the <a href="/tools/">SMOrchestra scorecard suite</a> · Free forever · no signup gate · <a href="/ar/tools/ai-native-readiness/">العربية</a>
 </div>
 
 <script>
@@ -445,6 +445,7 @@ function renderQuestion(){
   document.getElementById("progress-fill").style.width=pct+"%";
   document.getElementById("progress-text").textContent=`Question ${currentIdx+1} of ${QUESTIONS.length}`;
   document.getElementById("progress-pct").textContent=Math.round(pct)+"%";
+  document.getElementById("progress-root").setAttribute("aria-valuenow",Math.round(pct));
   document.getElementById("next-btn").disabled=answers[currentIdx]===undefined;
   document.getElementById("back-btn").style.visibility=currentIdx===0?"hidden":"visible";
   document.getElementById("next-btn").textContent=currentIdx===QUESTIONS.length-1?"See Diagnostic →":"Next →";
@@ -497,6 +498,7 @@ function showResult(){
   document.getElementById("result").classList.add("active");
 
   document.getElementById("score-num").textContent=composite;
+  document.getElementById("score-ring").setAttribute("aria-label","Score: "+composite+" out of 100");
   const circumference=596.9;
   const offset=circumference-(composite/100)*circumference;
   setTimeout(()=>{

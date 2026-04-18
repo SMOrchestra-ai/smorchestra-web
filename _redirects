@@ -31,6 +31,12 @@
 
 # External targets
 /book                       https://api.leadconnectorhq.com/widget/bookings/core-calendar-sales-calls  302!
+# /strategy-call is referenced by the AI-Native Readiness scorecard tier CTAs (RED/YELLOW/GREEN).
+# Until a dedicated tier-aware booking page is built, funnel through /book.
+/strategy-call              /book                                                                      302!
+/strategy-call/*            /book                                                                      302!
+/ar/strategy-call           /ar/book                                                                   302!
+/ar/strategy-call/*         /ar/book                                                                   302!
 /tools/gtm-fitness          https://gtm.smorchestra.ai/matrix                        302!
 /tools/digital-revenue-score https://score.smorchestra.ai/RevenueOS                   302!
 # MicroSaaS Readiness: destination on score.entrepreneursoasis.me returns 404 as of 2026-04-18.
