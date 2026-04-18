@@ -8,6 +8,10 @@
   # Static site — no build step required. If/when we move to a generator,
   # set `command = "<build cmd>"` and `publish = "dist"`.
 
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 # ------------------------------------------------------------
 # Headers
 # ------------------------------------------------------------

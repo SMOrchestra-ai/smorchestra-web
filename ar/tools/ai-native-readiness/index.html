@@ -128,6 +128,23 @@ h1 span{color:var(--accent)}
 .cta-box p{color:var(--text-muted);margin-bottom:20px;line-height:1.7}
 .cta-box .cta-btn{display:inline-block;padding:14px 28px;background:var(--accent);color:#000;border-radius:8px;font-weight:700;font-size:15px}
 
+.ec{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;margin:32px 0}
+.ec-tag{display:inline-block;padding:4px 10px;background:var(--accent-glow);color:var(--accent);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:999px;margin-bottom:14px}
+.ec-h{font-size:19px;font-weight:800;color:var(--text);margin-bottom:10px;line-height:1.5}
+.ec-p{color:var(--text-muted);font-size:14.5px;margin-bottom:18px;line-height:1.8}
+.ec-form{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:stretch}
+.ec-input{padding:12px 14px;background:#0a0a0a;border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;min-width:0}
+.ec-input:focus{outline:none;border-color:var(--accent)}
+.ec-input::placeholder{color:var(--text-dim)}
+.ec-btn{padding:12px 20px;background:var(--accent);color:#000;border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;transition:opacity .15s;white-space:nowrap;font-family:inherit}
+.ec-btn:hover{opacity:0.9}
+.ec-btn:disabled{opacity:0.5;cursor:not-allowed}
+.ec-msg{grid-column:1/-1;font-size:13px;color:var(--text-muted);min-height:18px;margin-top:2px}
+.ec-msg.err{color:#ef4444}
+.ec-msg.ok{color:#22c55e}
+.ec.submitted .ec-form{display:none}
+@media (max-width:640px){.ec-form{grid-template-columns:1fr}.ec-btn{width:100%}}
+
 .footer{padding:32px 24px;border-top:1px solid var(--border);text-align:center;color:var(--text-dim);font-size:13px;margin-top:60px;line-height:1.8}
 .footer a{color:var(--accent);text-decoration:underline}
 </style>
@@ -200,6 +217,18 @@ h1 span{color:var(--accent)}
     <div class="dimension-breakdown">
       <div style="font-size:12px;color:var(--text-muted);font-weight:700;margin-bottom:16px;text-align:right">تفصيل الأبعاد الستة</div>
       <div id="dim-breakdown"></div>
+    </div>
+
+    <div class="ec" id="ec">
+      <div class="ec-tag">اختياري · بدون بوابة تسجيل</div>
+      <h3 class="ec-h">تبغى التشخيص الكامل + خطة عمل ٩٠ يوم؟</h3>
+      <p class="ec-p">احصل على نسخة <span dir="ltr">PDF</span> من تقريرك مع خطة عمل محدّدة لبروفايل أبعادك. تُرسل إلى بريدك. بدون متابعة بيعية إلا إذا حجزت مكالمة.</p>
+      <form class="ec-form" id="ec-form" novalidate>
+        <input type="email" class="ec-input" id="ec-email" name="email" placeholder="you@company.com" required autocomplete="email" aria-label="البريد الإلكتروني" dir="ltr">
+        <input type="text" class="ec-input" id="ec-name" name="firstName" placeholder="الاسم الأول (اختياري)" autocomplete="given-name" aria-label="الاسم الأول">
+        <button type="submit" class="ec-btn" id="ec-submit">أرسل لي الـ <span dir="ltr">PDF</span></button>
+        <div class="ec-msg" id="ec-msg" role="status" aria-live="polite"></div>
+      </form>
     </div>
 
     <div class="cta-box" id="cta-box">
@@ -529,19 +558,52 @@ function showResult(){
 
   if(window.plausible) window.plausible("scorecard_completed",{props:{magnet:"ai-native-readiness-ar",tier:tier.split(" ")[0],score:composite}});
 
-  if(window.GHL_WEBHOOK_URL){
-    fetch(window.GHL_WEBHOOK_URL,{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({
-        scorecard:"ai-native-readiness-ar",
-        score:composite,
-        tier:tier.split(" ")[0],
-        dimensions:dimPct,
-        answers:answers,
-        timestamp:new Date().toISOString()
-      })
-    }).catch(()=>{});
+  var ecForm = document.getElementById("ec-form");
+  if (ecForm && !ecForm.dataset.wired) {
+    ecForm.dataset.wired = "1";
+    ecForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      var emailEl = document.getElementById("ec-email");
+      var nameEl = document.getElementById("ec-name");
+      var btn = document.getElementById("ec-submit");
+      var msg = document.getElementById("ec-msg");
+      var email = (emailEl.value || "").trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        msg.textContent = "رجاءً أدخل بريد إلكتروني صحيح.";
+        msg.className = "ec-msg err";
+        return;
+      }
+      btn.disabled = true;
+      msg.textContent = "جاري الإرسال...";
+      msg.className = "ec-msg";
+      fetch("/.netlify/functions/submit-scorecard", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+          email: email,
+          firstName: (nameEl.value || "").trim(),
+          scorecard: "ai-native-readiness",
+          score: composite,
+          tier: tier.split(" ")[0],
+          dimensions: dimPct,
+          answers: answers,
+          locale: "ar",
+          timestamp: new Date().toISOString()
+        })
+      }).then(function(r){
+        if (!r.ok) throw new Error("submit_failed");
+        return r.json();
+      }).then(function(){
+        document.getElementById("ec").classList.add("submitted");
+        msg.textContent = "تم الإرسال. تحقق من بريدك خلال دقائق.";
+        msg.className = "ec-msg ok";
+        if(window.plausible) window.plausible("scorecard_lead_captured",{props:{magnet:"ai-native-readiness-ar",tier:tier.split(" ")[0]}});
+      }).catch(function(){
+        btn.disabled = false;
+        msg.textContent = "صار خطأ. جرّب مرة ثانية أو راسلنا مباشرة: hello@smorchestra.ai";
+        msg.className = "ec-msg err";
+      });
+    });
   }
 }
 </script>
