@@ -33,8 +33,11 @@
 /book                       https://api.leadconnectorhq.com/widget/bookings/core-calendar-sales-calls  302!
 /tools/gtm-fitness          https://gtm.smorchestra.ai/matrix                        302!
 /tools/digital-revenue-score https://score.smorchestra.ai/RevenueOS                   302!
-/tools/microsaas-readiness  https://score.entrepreneursoasis.me/microsaas-readiness   302!
-/tools/ai-native-readiness  https://score.smorchestra.ai/ai-native-readiness          302!
+/tools/microsaas-readiness*  https://score.entrepreneursoasis.me/microsaas-readiness   302!
+/ar/tools/microsaas-readiness*  https://score.entrepreneursoasis.me/ar/microsaas-readiness   302!
+# /tools/ai-native-readiness  ← internalized 2026-04-18 · serves from tools/ai-native-readiness/index.html · do NOT add force redirect here
+# Wildcard above ensures any path variant (trailing slash, /index.html) routes external to EO brand
+# MicroSaaS Readiness lives on Entrepreneurs Oasis (Sprint 5 architecture · do not internalize on SMO)
 /tools/digital-presence     https://score.smorchestra.ai/digital-presence             302!
 
 # EO brand redirects (for any legacy solo-founder inbound that hits SMO first)

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>تقييم جاهزية AI-Native · مجاني · أدوات SMOrchestra</title>
-<meta name="description" content="تشخيص تنفيذي بدرجة المجلس لمؤسسات MENA. ٢٠ سؤال عبر ٦ أبعاد: تفويض المجلس، نضج الفريق، المكدّس التقني، حوكمة البيانات، توافق رؤية ٢٠٣٠، جاهزية الميزانية. مجاني · ٨-١٢ دقيقة · بدون بوابة تسجيل.">
+<meta name="description" content="تشخيص تنفيذي بدرجة المجلس لمؤسسات MENA. ٢٠ سؤال عبر ٦ أبعاد: تفويض المجلس، نضج الفريق، المكدّس التقني، حوكمة البيانات، توافق رؤية ٢٠٣٠، جاهزية الميزانية. مجاني · ٨-١٢ دقيقة · بدون تسجيل.">
 <link rel="canonical" href="https://smorchestra.ai/ar/tools/ai-native-readiness/">
 <link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/tools/ai-native-readiness/">
 <link rel="alternate" hreflang="en" href="https://smorchestra.ai/tools/ai-native-readiness/">
@@ -15,81 +15,535 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://smorchestra.ai/ar/tools/ai-native-readiness/" />
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "تقييم جاهزية AI-Native",
+  "url": "https://smorchestra.ai/ar/tools/ai-native-readiness/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "تشخيص تنفيذي للمؤسسات في MENA عندها تفويض AI من المجلس. ٢٠ سؤال عبر ٦ أبعاد. لقيادات الفئة الرابعة.",
+  "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "inLanguage": ["en","ar"],
+  "publisher": {"@type":"Organization","name":"SMOrchestra","url":"https://smorchestra.ai/"}
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://plausible.io">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script defer data-domain="smorchestra.ai" src="https://plausible.io/js/script.js"></script>
 
 <style>
 :root{
-  --bg:#000; --card:#141414; --border:#262626;
+  --bg:#000; --bg-alt:#0a0a0a; --card:#141414; --card-lift:#1c1c1c;
+  --border:#262626; --border-lift:#333;
   --text:#fff; --text-muted:#a3a3a3; --text-dim:#6b6b6b;
   --accent:#d4af37; --accent-deep:#3d3210; --accent-glow:rgba(212,175,55,0.15);
+  --orange:#ff6b35;
+  --green:#22c55e; --red:#ef4444; --yellow:#eab308;
   --f:"IBM Plex Sans Arabic","Inter",system-ui,-apple-system,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--bg);color:var(--text);font-family:var(--f);line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:760px;margin:0 auto;padding:32px 24px}
+
+.wrap{max-width:880px;margin:0 auto;padding:32px 24px}
+
 .nav{padding:16px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
 .brand{font-weight:800;font-size:16px;letter-spacing:-0.01em}
 .brand span{color:var(--accent)}
-.nav-right{font-size:13px;color:var(--text-muted)}
-.hero{padding:80px 0 60px;text-align:center}
-.eyebrow{display:inline-block;padding:6px 14px;background:var(--accent-glow);border:1px solid var(--accent);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:2px;border-radius:999px;margin-bottom:24px;text-transform:uppercase}
-h1{font-size:clamp(32px,5vw,48px);font-weight:900;line-height:1.2;letter-spacing:-0.02em;margin-bottom:20px}
+.nav-right{font-size:13px;color:var(--text-muted);display:flex;gap:12px;align-items:center}
+.nav-right a{color:var(--accent)}
+
+.hero{padding:56px 0 40px;text-align:center}
+.eyebrow{display:inline-block;padding:6px 14px;background:var(--accent-glow);border:1px solid var(--accent);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:1px;border-radius:999px;margin-bottom:20px}
+h1{font-size:clamp(32px,5vw,48px);font-weight:900;line-height:1.2;letter-spacing:-0.02em;margin-bottom:16px}
 h1 span{color:var(--accent)}
-.hero p{font-size:17px;color:var(--text-muted);max-width:620px;margin:0 auto 32px;line-height:1.8}
-.cta-primary{display:inline-block;padding:16px 32px;background:var(--accent);color:#000;border-radius:8px;font-weight:800;font-size:16px;margin:8px;transition:.15s}
-.cta-primary:hover{filter:brightness(1.1);transform:translateY(-1px)}
-.cta-ghost{display:inline-block;padding:16px 32px;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:8px;font-weight:600;font-size:15px;margin:8px;transition:.15s}
-.cta-ghost:hover{border-color:var(--accent);color:var(--accent)}
-.note{padding:20px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin:32px auto;max-width:560px;color:var(--text-muted);font-size:14px;line-height:1.7;text-align:right}
-.note strong{color:var(--text)}
-.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:32px 0;max-width:720px;margin-left:auto;margin-right:auto}
-.dim{padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:8px;text-align:right}
-.dim-num{color:var(--accent);font-weight:800;font-size:14px}
-.dim-name{font-size:13.5px;color:var(--text);margin-top:4px}
-.footer{padding:32px 24px;border-top:1px solid var(--border);text-align:center;color:var(--text-dim);font-size:13px;margin-top:80px}
+.hero p{font-size:17px;color:var(--text-muted);max-width:680px;margin:0 auto;line-height:1.9}
+
+.audience-strip{display:flex;justify-content:center;gap:32px;margin-top:32px;flex-wrap:wrap}
+.audience-strip > div{text-align:center}
+.audience-strip .num{color:var(--accent);font-weight:800;font-size:24px;letter-spacing:-0.02em;font-family:"Inter",sans-serif}
+.audience-strip .lbl{color:var(--text-muted);font-size:11px;font-weight:600;margin-top:4px}
+
+.progress{padding:20px 0;border-bottom:1px solid var(--border);margin-bottom:32px}
+.progress-bar{height:6px;background:var(--card);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),#fcd34d);transition:width .35s ease}
+.progress-label{display:flex;justify-content:space-between;margin-top:10px;font-size:12px;color:var(--text-muted)}
+
+.step{display:none;animation:fadeIn .4s ease}
+.step.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.dimension-label{display:inline-block;padding:4px 12px;background:var(--card);border:1px solid var(--border);color:var(--text-muted);font-size:12px;font-weight:600;border-radius:999px;margin-bottom:12px}
+.q-num{color:var(--text-dim);font-size:13px;font-weight:600;margin-bottom:8px}
+.question{font-size:22px;font-weight:700;line-height:1.5;margin-bottom:28px;letter-spacing:-0.005em}
+
+.options{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.option{padding:16px 20px;background:var(--card);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s ease;display:flex;align-items:center;gap:14px;text-align:right;width:100%;color:var(--text);font-family:inherit;font-size:15px;line-height:1.6}
+.option:hover{background:var(--card-lift);border-color:var(--accent)}
+.option.selected{background:var(--accent-deep);border-color:var(--accent);color:var(--text)}
+.option-value{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:2px solid var(--border);display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:var(--text-muted);font-size:13px;transition:all .15s;font-family:"Inter",sans-serif}
+.option.selected .option-value{background:var(--accent);border-color:var(--accent);color:#000}
+
+.actions{display:flex;justify-content:space-between;gap:12px;padding-top:20px;border-top:1px solid var(--border);flex-direction:row-reverse}
+.btn{padding:12px 24px;border-radius:8px;font-weight:700;font-size:14px;border:none;cursor:pointer;font-family:inherit;transition:all .15s}
+.btn-primary{background:var(--accent);color:#000}
+.btn-primary:hover:not(:disabled){filter:brightness(1.1)}
+.btn-primary:disabled{opacity:.4;cursor:not-allowed}
+.btn-ghost{background:transparent;color:var(--text-muted);border:1px solid var(--border)}
+.btn-ghost:hover{color:var(--text);border-color:var(--text-muted)}
+
+.result{display:none;padding:40px 0}
+.result.active{display:block}
+.score-ring{width:220px;height:220px;margin:0 auto 24px;position:relative}
+.score-ring svg{transform:rotate(-90deg)}
+.score-ring .track{fill:none;stroke:var(--card);stroke-width:12}
+.score-ring .fill{fill:none;stroke-width:12;stroke-linecap:round;transition:stroke-dashoffset 1s ease}
+.score-ring .number{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.score-ring .number .n{font-size:64px;font-weight:900;line-height:1;letter-spacing:-0.04em;font-family:"Inter",sans-serif}
+.score-ring .number .s{font-size:12px;color:var(--text-muted);font-weight:600;letter-spacing:1px;margin-top:4px}
+
+.tier-badge{display:inline-block;padding:8px 20px;border-radius:999px;font-weight:800;font-size:13px;letter-spacing:1px;margin-bottom:16px}
+.tier-red{background:rgba(239,68,68,0.15);color:var(--red);border:1px solid var(--red)}
+.tier-yellow{background:rgba(234,179,8,0.15);color:var(--yellow);border:1px solid var(--yellow)}
+.tier-green{background:rgba(34,197,94,0.15);color:var(--green);border:1px solid var(--green)}
+
+.result h2{text-align:center;font-size:clamp(26px,3.5vw,36px);font-weight:800;margin-bottom:16px;letter-spacing:-0.02em;line-height:1.4}
+.result .recommendation{max-width:640px;margin:0 auto 32px;text-align:center;color:var(--text-muted);font-size:16px;line-height:1.9}
+
+.dimension-breakdown{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;margin:32px 0}
+.dim-row{display:flex;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid var(--border);flex-direction:row-reverse}
+.dim-row:last-child{border-bottom:none}
+.dim-name{flex:1;font-weight:600;font-size:14px;text-align:right}
+.dim-bar{flex:2;height:8px;background:var(--bg);border-radius:4px;overflow:hidden;max-width:200px}
+.dim-fill{height:100%;border-radius:4px;transition:width .8s ease}
+.dim-score{width:80px;text-align:left;font-weight:700;font-size:14px;font-family:"Inter",sans-serif}
+
+.cta-box{background:linear-gradient(135deg,var(--accent-deep) 0%,rgba(0,0,0,0.4) 100%);border:1px solid var(--accent);border-radius:12px;padding:32px;margin:32px 0;text-align:center}
+.cta-box h3{font-size:22px;font-weight:800;margin-bottom:12px;letter-spacing:-0.01em;line-height:1.4}
+.cta-box p{color:var(--text-muted);margin-bottom:20px;line-height:1.7}
+.cta-box .cta-btn{display:inline-block;padding:14px 28px;background:var(--accent);color:#000;border-radius:8px;font-weight:700;font-size:15px}
+
+.footer{padding:32px 24px;border-top:1px solid var(--border);text-align:center;color:var(--text-dim);font-size:13px;margin-top:60px;line-height:1.8}
 .footer a{color:var(--accent);text-decoration:underline}
 </style>
 </head>
 <body>
 
 <nav class="nav">
-  <a href="/ar/tools/" class="brand"><span>أدوات</span> SMOrchestra</a>
-  <div class="nav-right"><a href="/tools/ai-native-readiness/" style="color:var(--accent)">English</a></div>
+  <a href="/ar/tools/" class="brand">أدوات <span>SMOrchestra</span></a>
+  <div class="nav-right">
+    تقييم جاهزية <span dir="ltr">AI-Native</span> · مجاني · ٨-١٢ دقيقة
+    <span>·</span>
+    <a href="/tools/ai-native-readiness/">English</a>
+  </div>
 </nav>
 
 <div class="wrap">
-  <div class="hero">
-    <div class="eyebrow">مجاني · ٨-١٢ دقيقة · جاهز للمجلس · بدون بوابة تسجيل</div>
-    <h1>هل مؤسستك في <span>MENA</span><br><span>AI-Native</span> فعلاً؟</h1>
-    <p>تشخيص تنفيذي لقيادات الفئة الرابعة. ٢٠ سؤال عبر ٦ أبعاد. مرتكز على <span dir="ltr">SDAIA</span> و <span dir="ltr">PDPL</span> و رؤية ٢٠٣٠. درجة فورية + توجيه لجلسة خاصة (أخضر) أو تثبيت الفئة الثالثة (أصفر) أو تشخيص أولي (أحمر).</p>
+  <div class="hero" id="hero">
+    <div class="eyebrow">مجاني · ٨-١٢ دقيقة · جاهز للمجلس · بدون تسجيل</div>
+    <h1>هل مؤسستك في <span>MENA</span><br><span dir="ltr">AI-Native</span> فعلاً؟</h1>
+    <p>٢٠ سؤال عبر ٦ أبعاد: تفويض المجلس، نضج الفريق، المكدّس التقني، حوكمة البيانات، توافق رؤية ٢٠٣٠، جاهزية الميزانية. تشخيص لقيادات <span dir="ltr">CxO</span> في مؤسسات السعودية والإمارات عندها تفويض <span dir="ltr">AI</span> من المجلس. درجة فورية + توصية تنفيذية.</p>
+    <div class="audience-strip">
+      <div><div class="num">20</div><div class="lbl">سؤال</div></div>
+      <div><div class="num">6</div><div class="lbl">أبعاد</div></div>
+      <div><div class="num">3</div><div class="lbl">فئات</div></div>
+      <div><div class="num"><span dir="ltr">SDAIA</span></div><div class="lbl">+ <span dir="ltr">PDPL</span> مرتكز</div></div>
+    </div>
+    <button class="btn btn-primary" style="margin-top:32px;padding:14px 32px;font-size:15px" onclick="startQuiz()">ابدأ التشخيص ←</button>
+  </div>
 
-    <div class="dims">
-      <div class="dim"><div class="dim-num">٠١</div><div class="dim-name">تفويض المجلس <span dir="ltr">AI</span></div></div>
-      <div class="dim"><div class="dim-num">٠٢</div><div class="dim-name">نضج الفريق</div></div>
-      <div class="dim"><div class="dim-num">٠٣</div><div class="dim-name">المكدّس التقني</div></div>
-      <div class="dim"><div class="dim-num">٠٤</div><div class="dim-name">حوكمة البيانات / <span dir="ltr">PDPL</span></div></div>
-      <div class="dim"><div class="dim-num">٠٥</div><div class="dim-name">توافق رؤية ٢٠٣٠</div></div>
-      <div class="dim"><div class="dim-num">٠٦</div><div class="dim-name">جاهزية الميزانية</div></div>
+  <div id="quiz" style="display:none">
+    <div class="progress">
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <div class="progress-label">
+        <span id="progress-text">السؤال ١ من ٢٠</span>
+        <span id="progress-pct">0%</span>
+      </div>
+    </div>
+    <div id="questions-container"></div>
+    <div class="actions">
+      <button class="btn btn-primary" id="next-btn" onclick="next()" disabled>التالي ←</button>
+      <button class="btn btn-ghost" id="back-btn" onclick="back()">→ السابق</button>
+    </div>
+  </div>
+
+  <div class="result" id="result">
+    <div class="score-ring">
+      <svg width="220" height="220" viewBox="0 0 220 220">
+        <circle class="track" cx="110" cy="110" r="95"/>
+        <circle class="fill" id="score-fill" cx="110" cy="110" r="95" stroke="url(#grad)" stroke-dasharray="596.9" stroke-dashoffset="596.9"/>
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#d4af37"/>
+            <stop offset="100%" stop-color="#fcd34d"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="number">
+        <div class="n" id="score-num">0</div>
+        <div class="s">من ١٠٠</div>
+      </div>
     </div>
 
-    <a href="/tools/ai-native-readiness/" class="cta-primary">خوض التقييم بالإنجليزية ←</a>
-    <a href="/ar/tools/" class="cta-ghost">العودة لجميع الأدوات</a>
+    <div style="text-align:center">
+      <span class="tier-badge" id="tier-badge">أخضر</span>
+    </div>
 
-    <div class="note">
-      <strong>النسخة العربية الكاملة قريباً.</strong><br>
-      الأسئلة التنفيذية محتاجة دقة لغوية مرتفعة، خاصة في المصطلحات التنظيمية (<span dir="ltr">SDAIA · PDPL · Saudization</span>). النسخة العربية الكاملة بالخليجي مع المصطلحات التقنية بالإنجليزية، جاهزة في المرحلة ١.٥ خلال ٤ أسابيع. إذا كنت قياديًا في مؤسسة <span dir="ltr">MENA</span> وتفضل التشخيص بالعربي، تقدر <a href="https://smorchestra.ai/strategy-call?source=ar-ai-native-waitlist" style="color:var(--accent)">تحجز جلسة استشارية ٣٠ دقيقة</a> مع مأمون مباشرة.
+    <h2 id="result-headline">جاهز للمجلس.</h2>
+    <p class="recommendation" id="result-recommendation"></p>
+
+    <div class="dimension-breakdown">
+      <div style="font-size:12px;color:var(--text-muted);font-weight:700;margin-bottom:16px;text-align:right">تفصيل الأبعاد الستة</div>
+      <div id="dim-breakdown"></div>
+    </div>
+
+    <div class="cta-box" id="cta-box">
+      <h3 id="cta-headline">احجز جلسة خاصة · الفئة الرابعة</h3>
+      <p id="cta-desc">٩٠ دقيقة مغلقة مع مأمون. الرياض أو دبي. تحت اتفاقية سرية.</p>
+      <a href="https://smorchestra.ai/strategy-call" class="cta-btn" id="cta-link">احجز الجلسة ←</a>
+    </div>
+
+    <div style="text-align:center;margin-top:24px">
+      <button class="btn btn-ghost" onclick="restart()">سوّ التقييم مرّة ثانية</button>
     </div>
   </div>
 </div>
 
 <div class="footer">
-  بناء <a href="/about.html">مأمون العموري</a> · SMOrchestra · دبي + الرياض<br>
-  جزء من <a href="/ar/tools/">سلسلة الأربع بطاقات تقييم</a> · مجاني للأبد · بدون بوابة تسجيل
+  بناء <a href="/about.html">مأمون العموري</a> · <span dir="ltr">SMOrchestra</span> · دبي + الرياض<br>
+  جزء من <a href="/ar/tools/">سلسلة الأربع بطاقات تقييم</a> · مجاني للأبد · بدون تسجيل
 </div>
 
+<script>
+const QUESTIONS = [
+  // تفويض المجلس (3 · 20%)
+  {dim:"تفويض المجلس", num:1, q:"هل اعتمد مجلس إدارتك رسمياً استراتيجية <span dir=\"ltr\">AI</span> أو مبادرة تحوّل خلال الـ ١٢ شهر الأخيرة؟",
+   opts:[
+     {text:"ما في أي نقاش على مستوى المجلس عن <span dir=\"ltr\">AI</span> لين الحين.",v:1},
+     {text:"نوقش بشكل غير رسمي · ما في تفويض محدد.",v:2},
+     {text:"اعتُمد الاستكشاف · بدون ميزانية ملتزمة.",v:4},
+     {text:"تفويض <span dir=\"ltr\">AI</span> رسمي مع ميزانية مخصصة و<span dir=\"ltr\">KPIs</span>.",v:5}
+   ]},
+  {dim:"تفويض المجلس", num:2, q:"هل فيه تنفيذي محدد مسؤول عن مبادرات <span dir=\"ltr\">AI</span> ويرفع تقاريره للـ <span dir=\"ltr\">CEO</span> أو المجلس؟",
+   opts:[
+     {text:"لا · المسؤولية موزعة بين <span dir=\"ltr\">IT</span> والتسويق والعمليات.",v:1},
+     {text:"نصير غير رسمي · ما عنده صلاحية لقب.",v:2},
+     {text:"<span dir=\"ltr\">VP/Director</span> محدد · نطاق جزئي.",v:4},
+     {text:"دور <span dir=\"ltr\">C-suite</span> (<span dir=\"ltr\">CTO/CIO/Chief AI Officer</span>) الـ <span dir=\"ltr\">AI</span> مهمته الأساسية.",v:5}
+   ]},
+  {dim:"تفويض المجلس", num:3, q:"هل مبادرات <span dir=\"ltr\">AI</span> مربوطة بـ <span dir=\"ltr\">KPIs</span> تجارية يراجعها المجلس ربع سنوياً؟",
+   opts:[
+     {text:"ما في إطار قياس.",v:1},
+     {text:"يتابع داخلياً · مو على مستوى المجلس.",v:2},
+     {text:"يُرفع ربعياً · مقاييس كيفية.",v:4},
+     {text:"<span dir=\"ltr\">ROI</span> كمي لمبادرات <span dir=\"ltr\">AI</span> يُرفع في كل اجتماع مجلس.",v:5}
+   ]},
+
+  // نضج الفريق (3 · 15%)
+  {dim:"نضج الفريق", num:4, q:"كم شخص في فريقك يبني أو يشغّل أنظمة <span dir=\"ltr\">AI</span> فعلياً (مو بس يستخدم <span dir=\"ltr\">ChatGPT</span> الاستهلاكي)؟",
+   opts:[
+     {text:"ولا واحد · لين الحين نستكشف.",v:1},
+     {text:"١-٢ · تجارب أولية.",v:2},
+     {text:"٣-٧ · فريق <span dir=\"ltr\">cross-functional</span> يتشكل.",v:4},
+     {text:"٨+ · فريق <span dir=\"ltr\">AI/ML</span> مكرّس أو أبطال <span dir=\"ltr\">AI</span> موزعين عبر الوظائف.",v:5}
+   ]},
+  {dim:"نضج الفريق", num:5, q:"كم نسبة قوى العمل عندك في السعودية حاصلة على شهادات أو تدريب رسمي في <span dir=\"ltr\">AI/ML/Data</span>؟",
+   opts:[
+     {text:"٠٪ · ما عندنا برنامج تدريب رسمي.",v:1},
+     {text:"٥-١٥٪ · دورات خارجية متفرقة.",v:2},
+     {text:"١٥-٣٥٪ · برنامج داخلي مُهيكل.",v:4},
+     {text:"٣٥٪+ · شهادات مستمرة + استثمار في المواهب السعودية.",v:5}
+   ]},
+  {dim:"نضج الفريق", num:6, q:"هل يشمل فريقك سعوديين في أدوار <span dir=\"ltr\">AI/Data</span> تقنية؟",
+   opts:[
+     {text:"٠٪ سعوديين في أدوار <span dir=\"ltr\">AI</span> التقنية.",v:1},
+     {text:"١-١٥٪ · أقل من مستهدفات السعودة للقطاع التقني.",v:2},
+     {text:"١٥-٣٠٪ · نحقق الحد الأدنى للسعودة.",v:4},
+     {text:"٣٠٪+ · نتجاوز بشكل استباقي · نستثمر في خطوط الخريجين.",v:5}
+   ]},
+
+  // المكدّس التقني (4 · 15%)
+  {dim:"المكدّس التقني", num:7, q:"وين تشتغل بنية <span dir=\"ltr\">AI</span> التحتية عندك؟",
+   opts:[
+     {text:"كلها على سحابة أمريكية · ما في إعداد لمنطقة السعودية.",v:1},
+     {text:"هجين · الأحمال الحساسة لا زالت على السحابة الأمريكية.",v:2},
+     {text:"منطقة السعودية (<span dir=\"ltr\">Saudi Cloud · STC · Oracle Riyadh · AWS Bahrain</span>) للأحمال الجديدة.",v:4},
+     {text:"كل الأحمال في منطقة متوافقة مع <span dir=\"ltr\">PDPL</span> · إقامة بيانات موثّقة.",v:5}
+   ]},
+  {dim:"المكدّس التقني", num:8, q:"هل تبنّيت أدوات <span dir=\"ltr\">GenAI</span> (<span dir=\"ltr\">Claude · ChatGPT Enterprise · Copilot</span> · <span dir=\"ltr\">AI</span> عمودي) على نطاق واسع؟",
+   opts:[
+     {text:"ما في نشر <span dir=\"ltr\">GenAI</span> مؤسسي · مستخدمين فرديين بس.",v:1},
+     {text:"١-٢ أداة مختبرة · انتشار محدود.",v:2},
+     {text:"٢-٤ أدوات منشورة عبر الوظائف · استخدام إنتاجي جزئي.",v:4},
+     {text:"<span dir=\"ltr\">GenAI</span> مدمج في الـ <span dir=\"ltr\">workflows</span> الأساسية · متعدد الوظائف · حوكمة موجودة.",v:5}
+   ]},
+  {dim:"المكدّس التقني", num:9, q:"هل عندك منصة <span dir=\"ltr\">AI agent</span> محددة (<span dir=\"ltr\">Claude Agent SDK · LangChain · in-house</span>)؟",
+   opts:[
+     {text:"ما في منصة <span dir=\"ltr\">agent</span> · أتمتة في شيتات وسكربتات.",v:1},
+     {text:"نستكشف · ما في نشر إنتاجي.",v:2},
+     {text:"منشورة في ١-٢ حالة استخدام · نتوسع.",v:4},
+     {text:"منصة <span dir=\"ltr\">multi-agent</span> إنتاجية · مهارات مخصصة · تكامل <span dir=\"ltr\">MCP</span>.",v:5}
+   ]},
+  {dim:"المكدّس التقني", num:10, q:"هل فيه إطار حوكمة <span dir=\"ltr\">AI</span> رسمي (اعتماد نموذج، مراجعة مخاطر، استجابة حوادث)؟",
+   opts:[
+     {text:"ما في إطار.",v:1},
+     {text:"غير رسمي · كل حالة لوحدها.",v:2},
+     {text:"إطار موثّق · مراجعة ربعية.",v:4},
+     {text:"إطار شامل · <span dir=\"ltr\">ISO 42001</span> أو ما يعادله · مُدقق من طرف ثالث.",v:5}
+   ]},
+
+  // حوكمة البيانات / PDPL (3 · 20%)
+  {dim:"حوكمة البيانات / PDPL", num:11, q:"هل أنت متوافق مع نظام حماية البيانات الشخصية السعودي (<span dir=\"ltr\">PDPL</span> · ٢٠٢٣)؟",
+   opts:[
+     {text:"ما تم التقييم · ما في شغل توافق <span dir=\"ltr\">PDPL</span>.",v:1},
+     {text:"تقييم فجوة أولي · بدون معالجة لين الحين.",v:2},
+     {text:"معالجة فعّالة · ٦٠٪+ متوافق.",v:4},
+     {text:"متوافق بالكامل · تدقيقات سنوية · <span dir=\"ltr\">DPO</span> محدد.",v:5}
+   ]},
+  {dim:"حوكمة البيانات / PDPL", num:12, q:"هل عندك خريطة إقامة بيانات للبيانات الشخصية + البيانات المؤسسية الحساسة؟",
+   opts:[
+     {text:"ما في خريطة · ما نعرف وين البيانات.",v:1},
+     {text:"خريطة جزئية · فجوات في التغطية.",v:2},
+     {text:"خريطة كاملة · مفروضة بأدوات.",v:4},
+     {text:"ممثلة + مفروضة + قابلة للتدقيق + البيانات الشخصية السعودية في منطقة السعودية.",v:5}
+   ]},
+  {dim:"حوكمة البيانات / PDPL", num:13, q:"هل بيانات تدريب <span dir=\"ltr\">AI</span> + سجلات الاستدلال متوافقة مع مبادئ تقليل البيانات في <span dir=\"ltr\">PDPL</span>؟",
+   opts:[
+     {text:"ما في تقييم لتدفقات بيانات <span dir=\"ltr\">AI</span>.",v:1},
+     {text:"واعين بالمخاطر · بدون ضوابط مطبّقة.",v:2},
+     {text:"ضوابط موجودة للأنظمة الأساسية · فجوات في غيرها.",v:4},
+     {text:"كل أنظمة <span dir=\"ltr\">AI</span> متوافقة · <span dir=\"ltr\">model cards</span> · تتبع نسب البيانات · تدقيقات منتظمة.",v:5}
+   ]},
+
+  // توافق رؤية ٢٠٣٠ (4 · 20%)
+  {dim:"توافق رؤية ٢٠٣٠", num:14, q:"هل نشاطك متوافق مباشرة مع وحدة أو أكثر من أولويات رؤية ٢٠٣٠ القطاعية (السياحة · الترفيه · المشاريع العملاقة · <span dir=\"ltr\">ICT</span> · الصحة · المالية)؟",
+   opts:[
+     {text:"ما في توافق قطاعي مباشر مع رؤية ٢٠٣٠.",v:1},
+     {text:"مجاور · نخدم قطاعات رؤية ٢٠٣٠.",v:2},
+     {text:"توافق مباشر · قطاع واحد.",v:4},
+     {text:"توافق مباشر · قطاعات متعددة · مساهمة موثّقة.",v:5}
+   ]},
+  {dim:"توافق رؤية ٢٠٣٠", num:15, q:"هل تشارك في أي من برامج <span dir=\"ltr\">AI</span> أو التحول الرقمي السعودية (<span dir=\"ltr\">SDAIA · NEOM · KAUST · MCIT</span>)؟",
+   opts:[
+     {text:"ما في مشاركة ولا وعي.",v:1},
+     {text:"واعين · ما نشارك.",v:2},
+     {text:"منخرطين ببرنامج واحد · مرحلة مبكرة.",v:4},
+     {text:"برامج متعددة · مساهمة بدراسات حالة · استثمار مشترك.",v:5}
+   ]},
+  {dim:"توافق رؤية ٢٠٣٠", num:16, q:"هل استراتيجية <span dir=\"ltr\">AI</span> عندك تتناول صراحةً إرشادات <span dir=\"ltr\">SDAIA</span> للذكاء التوليدي (تحديث ٢٠٢٤)؟",
+   opts:[
+     {text:"ما نعرف بإرشادات <span dir=\"ltr\">SDAIA</span> للذكاء التوليدي.",v:1},
+     {text:"واعين · ما في توافق رسمي.",v:2},
+     {text:"تم مراجعتها · التوافق قيد التنفيذ.",v:4},
+     {text:"متوافق بالكامل · موثّق · تم التحقق من طرف ثالث.",v:5}
+   ]},
+  {dim:"توافق رؤية ٢٠٣٠", num:17, q:"هل عندك إفصاح عام عن استخدام <span dir=\"ltr\">AI</span> (متطلب شفافية رؤية ٢٠٣٠ لنقاط اللمس <span dir=\"ltr\">B2C</span>)؟",
+   opts:[
+     {text:"ما في آلية إفصاح.",v:1},
+     {text:"غير متناسق · كل حالة لوحدها.",v:2},
+     {text:"إفصاح معياري · معظم نقاط اللمس <span dir=\"ltr\">B2C</span> مغطاة.",v:4},
+     {text:"إفصاح شامل · معتمد من الحوكمة · قابل للتدقيق.",v:5}
+   ]},
+
+  // جاهزية الميزانية (3 · 10%)
+  {dim:"جاهزية الميزانية", num:18, q:"شنو الميزانية السنوية المخصصة لمبادرات <span dir=\"ltr\">AI</span> في ٢٠٢٦؟",
+   opts:[
+     {text:"ما في ميزانية <span dir=\"ltr\">AI</span> مخصصة.",v:1},
+     {text:"<span dir=\"ltr\">SAR</span> ١٠٠ - ٥٠٠ ألف · ميزانية تجريبية.",v:2},
+     {text:"<span dir=\"ltr\">SAR</span> ٥٠٠ألف - ٢ مليون · مرحلة التوسع.",v:4},
+     {text:"<span dir=\"ltr\">SAR</span> ٢ مليون+ · استثمار بحجم المؤسسة.",v:5}
+   ]},
+  {dim:"جاهزية الميزانية", num:19, q:"هل ميزانية <span dir=\"ltr\">AI</span> منفصلة عن ميزانية <span dir=\"ltr\">IT</span> العامة؟",
+   opts:[
+     {text:"مدمجة مع <span dir=\"ltr\">IT</span> · ما في تتبع خاص بـ <span dir=\"ltr\">AI</span>.",v:1},
+     {text:"مخصصة داخل ميزانية <span dir=\"ltr\">IT</span>.",v:2},
+     {text:"مركز تكلفة منفصل · متتبَّع من الـ <span dir=\"ltr\">CFO</span>.",v:4},
+     {text:"برنامج استثمار استراتيجي · معتمد من المجلس · متعدد السنوات.",v:5}
+   ]},
+  {dim:"جاهزية الميزانية", num:20, q:"هل خصصت ميزانية لتدريب <span dir=\"ltr\">AI</span> + تطوير المواهب السعودية الوطنية؟",
+   opts:[
+     {text:"ما في ميزانية استثمار مواهب.",v:1},
+     {text:"ميزانية التدريب العامة تشمل <span dir=\"ltr\">AI</span> · ما في تخصيص محدد.",v:2},
+     {text:"ميزانية مواهب <span dir=\"ltr\">AI</span> مخصصة · ٥-١٠٪ من إجمالي إنفاق <span dir=\"ltr\">AI</span>.",v:4},
+     {text:"١٥٪+ من ميزانية <span dir=\"ltr\">AI</span> على المواهب + برنامج خريجين متوافق مع السعودة.",v:5}
+   ]}
+];
+
+const DIM_WEIGHTS = {
+  "تفويض المجلس":20,
+  "نضج الفريق":15,
+  "المكدّس التقني":15,
+  "حوكمة البيانات / PDPL":20,
+  "توافق رؤية ٢٠٣٠":20,
+  "جاهزية الميزانية":10
+};
+
+const MAX_PER_DIM_RAW = {};
+QUESTIONS.forEach(q=>{
+  MAX_PER_DIM_RAW[q.dim]=(MAX_PER_DIM_RAW[q.dim]||0)+5;
+});
+
+let currentIdx=0;
+let answers={};
+
+function startQuiz(){
+  document.getElementById("hero").style.display="none";
+  document.getElementById("quiz").style.display="block";
+  if(window.plausible) window.plausible("scorecard_started",{props:{magnet:"ai-native-readiness-ar"}});
+  renderQuestion();
+}
+
+function arabicNum(n){
+  return String(n).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+}
+
+function renderQuestion(){
+  const q=QUESTIONS[currentIdx];
+  const container=document.getElementById("questions-container");
+  container.innerHTML=`
+    <div class="step active">
+      <div class="dimension-label">${q.dim}</div>
+      <div class="q-num">السؤال ${arabicNum(q.num)} من ٢٠</div>
+      <div class="question">${q.q}</div>
+      <div class="options">
+        ${q.opts.map((o,i)=>`<button class="option${answers[currentIdx]===i?' selected':''}" onclick="select(${i})">
+          <span class="option-value">${String.fromCharCode(65+i)}</span>
+          <span>${o.text}</span>
+        </button>`).join("")}
+      </div>
+    </div>
+  `;
+  const pct=((currentIdx)/QUESTIONS.length)*100;
+  document.getElementById("progress-fill").style.width=pct+"%";
+  document.getElementById("progress-text").textContent=`السؤال ${arabicNum(currentIdx+1)} من ${arabicNum(QUESTIONS.length)}`;
+  document.getElementById("progress-pct").textContent=Math.round(pct)+"%";
+  document.getElementById("next-btn").disabled=answers[currentIdx]===undefined;
+  document.getElementById("back-btn").style.visibility=currentIdx===0?"hidden":"visible";
+  document.getElementById("next-btn").textContent=currentIdx===QUESTIONS.length-1?"اعرض التشخيص ←":"التالي ←";
+}
+
+function select(optIdx){
+  answers[currentIdx]=optIdx;
+  renderQuestion();
+}
+
+function next(){
+  if(currentIdx<QUESTIONS.length-1){
+    currentIdx++;
+    renderQuestion();
+  }else{
+    showResult();
+  }
+}
+
+function back(){
+  if(currentIdx>0){
+    currentIdx--;
+    renderQuestion();
+  }
+}
+
+function restart(){
+  currentIdx=0; answers={};
+  document.getElementById("result").classList.remove("active");
+  document.getElementById("hero").style.display="block";
+  document.getElementById("quiz").style.display="none";
+}
+
+function showResult(){
+  const dimRaw={};
+  QUESTIONS.forEach((q,i)=>{
+    dimRaw[q.dim]=(dimRaw[q.dim]||0)+q.opts[answers[i]].v;
+  });
+  const dimPct={};
+  Object.keys(dimRaw).forEach(d=>{
+    dimPct[d]=Math.round((dimRaw[d]/MAX_PER_DIM_RAW[d])*100);
+  });
+  let composite=0;
+  Object.keys(dimPct).forEach(d=>{
+    composite+=(dimPct[d]*DIM_WEIGHTS[d])/100;
+  });
+  composite=Math.round(composite);
+
+  document.getElementById("quiz").style.display="none";
+  document.getElementById("result").classList.add("active");
+
+  document.getElementById("score-num").textContent=composite;
+  const circumference=596.9;
+  const offset=circumference-(composite/100)*circumference;
+  setTimeout(()=>{
+    document.getElementById("score-fill").style.strokeDashoffset=offset;
+  },100);
+
+  let tier,tierClass,headline,rec,ctaHead,ctaDesc,ctaLink;
+  if(composite>=71){
+    tier="أخضر · جاهز للمجلس"; tierClass="tier-green";
+    headline="الربع الأعلى من مؤسسات MENA.";
+    rec="ملفك يضعك في أعلى ١٨٪ من المؤسسات السعودية المقيّمة ٢٠٢٥-٢٠٢٦. تفويض المجلس، <span dir=\"ltr\">CxO</span> مخصص، مكدّس في منطقة السعودية، توافق <span dir=\"ltr\">PDPL</span>، وتوافق رؤية ٢٠٣٠ كلها موجودة. الخطوة اللي بعدها جلسة خاصة على بنية <span dir=\"ltr\">AI-Native</span> للمرحلة القادمة من التوسع: استشارات <span dir=\"ltr\">SMOrchestra</span> الفئة الرابعة.";
+    ctaHead="احجز جلسة خاصة · الفئة الرابعة";
+    ctaDesc="٩٠ دقيقة مغلقة مع مأمون. الرياض أو دبي. تحت اتفاقية سرية. ما فيه <span dir=\"ltr\">pitch</span> · نقاش استراتيجي. مجاني للفئة الخضراء.";
+    ctaLink="https://smorchestra.ai/strategy-call?source=ai-native-readiness-green-ar";
+  }else if(composite>=40){
+    tier="أصفر · قابل للإصلاح"; tierClass="tier-yellow";
+    headline="قابل للإصلاح بس معرّض.";
+    rec="٦٤٪ من المؤسسات السعودية تجلس هنا. عندك قطع أساسية بس فيه فجوات محددة تحتاج تسكيرها خلال ٦-١٢ شهر. النمط الشائع: ميزانية مخصصة بس فجوات إقامة بيانات <span dir=\"ltr\">PDPL</span> تخلق مخاطر تجارية · أو توافق رؤية ٢٠٣٠ مُدّعى بس مو موثّق لمعايير <span dir=\"ltr\">SDAIA</span>. تثبيت <span dir=\"ltr\">SMOrchestra</span> الفئة الثالثة يحدد خطة إصلاح ٦٠-٩٠ يوم خاصة بملفك.";
+    ctaHead="احجز مكالمة تشخيص الفئة الثالثة · ٣٠ دقيقة";
+    ctaDesc="نراجع تقييمك · نحدد نطاق تثبيت <span dir=\"ltr\">BOT</span> للفجوات حقتك. <span dir=\"ltr\">AED</span> ١٠٠-١٨٠ ألف للتثبيت + ١٢ شهر تحسين. ما فيه ضغط للالتزام في المكالمة.";
+    ctaLink="https://smorchestra.ai/strategy-call?source=ai-native-readiness-yellow-ar";
+  }else{
+    tier="أحمر · مرحلة مبكرة"; tierClass="tier-red";
+    headline="المتطلبات الأساسية أول. بعدين التوسع.";
+    rec="المخاطرة الكبرى للمؤسسات في الفئة الحمراء هي الاستثمار الزائد في <span dir=\"ltr\">AI</span> قبل ما تكون المتطلبات الأساسية موجودة. ركّز الـ ٩٠ يوم القادمة على: (١) تفويض على مستوى المجلس مع تنفيذي مسؤول مسمّى، (٢) تعيين <span dir=\"ltr\">DPO</span> إذا عندك ١٠٠+ موظف، (٣) توثيق مساهمة رؤية ٢٠٣٠ القطاعية. بدون هذي، كل استثمار <span dir=\"ltr\">AI</span> يضاعف المخاطر بدل القيمة.";
+    ctaHead="احجز تشخيص ٣٠ يوم · SAR ٣٥ ألف";
+    ctaDesc="ارتباط تشخيصي بسعر ثابت مركّز على المتطلبات الثلاثة الأساسية. ما نبيعك تثبيت الفئة الثالثة لين تصير جاهز للفئة الصفراء.";
+    ctaLink="https://smorchestra.ai/strategy-call?source=ai-native-readiness-red-ar";
+  }
+  document.getElementById("tier-badge").innerHTML=tier;
+  document.getElementById("tier-badge").className="tier-badge "+tierClass;
+  document.getElementById("result-headline").textContent=headline;
+  document.getElementById("result-recommendation").innerHTML=rec;
+  document.getElementById("cta-headline").innerHTML=ctaHead;
+  document.getElementById("cta-desc").innerHTML=ctaDesc;
+  document.getElementById("cta-link").href=ctaLink;
+
+  const dimDiv=document.getElementById("dim-breakdown");
+  dimDiv.innerHTML=Object.keys(dimPct).map(d=>{
+    const p=dimPct[d];
+    const color=p>=71?"#22c55e":p>=40?"#eab308":"#ef4444";
+    return `<div class="dim-row">
+      <div class="dim-name">${d}</div>
+      <div class="dim-bar"><div class="dim-fill" style="width:0%;background:${color}" data-target="${p}%"></div></div>
+      <div class="dim-score" style="color:${color}">${p}/100</div>
+    </div>`;
+  }).join("");
+  setTimeout(()=>{
+    document.querySelectorAll(".dim-fill").forEach(b=>{
+      b.style.width=b.dataset.target;
+    });
+  },200);
+
+  if(window.plausible) window.plausible("scorecard_completed",{props:{magnet:"ai-native-readiness-ar",tier:tier.split(" ")[0],score:composite}});
+
+  if(window.GHL_WEBHOOK_URL){
+    fetch(window.GHL_WEBHOOK_URL,{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        scorecard:"ai-native-readiness-ar",
+        score:composite,
+        tier:tier.split(" ")[0],
+        dimensions:dimPct,
+        answers:answers,
+        timestamp:new Date().toISOString()
+      })
+    }).catch(()=>{});
+  }
+}
+</script>
 </body>
 </html>

@@ -102,16 +102,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/tools/" />
   </url>
 
-  <!-- ======== TOOLS · INDIVIDUAL SCORECARDS (internal · static) ======== -->
-  <url>
-    <loc>https://smorchestra.ai/tools/microsaas-readiness/</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/tools/microsaas-readiness/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/tools/microsaas-readiness/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/tools/microsaas-readiness/" />
-  </url>
+  <!-- ======== TOOLS · AI-NATIVE READINESS DIAGNOSTIC (internalized · SMO Tier 4) ======== -->
+  <!-- Note: MicroSaaS Readiness + GTM Fitness + Digital Revenue + Digital Presence all redirect externally via _redirects · they are NOT indexed here to avoid JSON-LD/sitemap contradicting the redirect destinations -->
   <url>
     <loc>https://smorchestra.ai/tools/ai-native-readiness/</loc>
     <lastmod>2026-04-18</lastmod>
@@ -120,15 +112,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/tools/ai-native-readiness/" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/tools/ai-native-readiness/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/tools/ai-native-readiness/" />
-  </url>
-  <url>
-    <loc>https://smorchestra.ai/ar/tools/microsaas-readiness/</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://smorchestra.ai/tools/microsaas-readiness/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://smorchestra.ai/ar/tools/microsaas-readiness/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/tools/microsaas-readiness/" />
   </url>
   <url>
     <loc>https://smorchestra.ai/ar/tools/ai-native-readiness/</loc>
@@ -232,9 +215,10 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://smorchestra.ai/tools/" />
   </url>
 
-  <!-- ======== EXTERNAL: SCORECARDS ON SCORE.ENTREPRENEURSOASIS.ME (proxied via /tools/) ======== -->
-  <!-- These live on the EO score subdomain and are listed in the EO sitemap, not here. -->
-  <!-- /tools/gtm-fitness, /tools/digital-revenue-score, /tools/microsaas-readiness redirect to score.entrepreneursoasis.me -->
-  <!-- /tools/ai-native-readiness redirects to score.smorchestra.ai when live -->
+  <!-- ======== EXTERNAL SCORECARDS (not indexed here · destination owns canonical) ======== -->
+  <!-- /tools/gtm-fitness          → gtm.smorchestra.ai/matrix              (302! force) -->
+  <!-- /tools/digital-revenue-score → score.smorchestra.ai/RevenueOS         (302! force) -->
+  <!-- /tools/microsaas-readiness*  → score.entrepreneursoasis.me            (302! force · EO brand per Sprint 5) -->
+  <!-- /tools/ai-native-readiness   → INTERNALIZED 2026-04-18 · indexed above as smorchestra.ai/tools/ai-native-readiness/ -->
 
 </urlset>
