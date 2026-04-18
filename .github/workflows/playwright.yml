@@ -57,7 +57,10 @@ jobs:
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+          # Key hashes package.json (which pins @playwright/test version)
+          # since we deliberately don't commit a lockfile. Bumping the
+          # Playwright version in package.json busts the cache as intended.
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package.json') }}
 
       - name: Install Playwright browsers
         if: steps.playwright-cache.outputs.cache-hit != 'true'
