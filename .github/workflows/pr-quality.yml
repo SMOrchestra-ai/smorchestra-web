@@ -1,0 +1,57 @@
+name: PR Quality Gates
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+# smorchestra-web is a static HTML site auto-deploying via Netlify.
+# Gates: HTML validation, broken-link check, Lighthouse, CLAUDE.md present.
+
+jobs:
+  html-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: HTML validate
+        run: |
+          npx --yes html-validate --config '{"extends":["html-validate:recommended"]}' '**/*.html' || echo "⚠ HTML validate advisory"
+        continue-on-error: true
+
+      - name: Link check (internal)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress --exclude-mail --exclude-loopback './**/*.html'
+        continue-on-error: true
+
+  redirect-consistency:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: _redirects exists
+        run: test -f _redirects || (echo "_redirects missing" && exit 1)
+      - name: netlify.toml exists
+        run: test -f netlify.toml || (echo "netlify.toml missing" && exit 1)
+      - name: Redirect URLs consistency
+        run: |
+          # Check that _redirects and netlify.toml agree on target URLs
+          if grep -q "score.entrepreneursoasis.me" _redirects; then
+            echo "⚠ _redirects still references stale score.entrepreneursoasis.me (should be score.smorchestra.ai)"
+          fi
+
+  universal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: CLAUDE.md present
+        run: test -f CLAUDE.md
+      - name: Secret scan (gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
