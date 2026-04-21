@@ -150,6 +150,13 @@ h1 span{color:var(--accent)}
 .footer{padding:32px 24px;border-top:1px solid var(--border);text-align:center;color:var(--text-dim);font-size:13px;margin-top:60px}
 .footer a{color:var(--accent);text-decoration:underline}
 </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wf3qp65p57");
+</script>
 </head>
 <body>
 
@@ -573,6 +580,15 @@ function showResult(){
       btn.disabled = true;
       msg.textContent = "Sending...";
       msg.className = "ec-msg";
+      // UTM capture — read query params AND also honour bare ?source=
+      // used in scorecard CTAs (e.g. ?source=ai-native-readiness-framework-email).
+      var _q = new URLSearchParams(location.search);
+      var utm = {
+        source: _q.get("utm_source") || _q.get("source") || "",
+        medium: _q.get("utm_medium") || "",
+        campaign: _q.get("utm_campaign") || "",
+        referrer: document.referrer || ""
+      };
       fetch("/.netlify/functions/submit-scorecard", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -585,6 +601,7 @@ function showResult(){
           dimensions: dimPct,
           answers: answers,
           locale: "en",
+          utm: utm,
           timestamp: new Date().toISOString()
         })
       }).then(function(r){
@@ -604,5 +621,6 @@ function showResult(){
   }
 }
 </script>
+<script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69401bbd4ca1827a26259a90"></script>
 </body>
 </html>
