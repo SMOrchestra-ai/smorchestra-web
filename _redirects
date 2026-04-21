@@ -10,6 +10,10 @@
 /solutions/enterprise       /solutions/enterprise.html       200
 /about                      /about.html                      200
 /ar/about                   /ar/about.html                   200
+/book                       /book.html                       200
+/ar/book                    /ar/book.html                    200
+/contact                    /contact.html                    200
+/ar/contact                 /ar/contact.html                 200
 
 # Legacy GHL slugs → new URLs (HTML files archived in _archive/ as of 2026-04-17)
 /smorchestra-home-ghl       /                                301
@@ -30,9 +34,10 @@
 /ar/cohorts/*               https://entrepreneursoasis.me/ar/cohorts/:splat  302!
 
 # External targets
-/book                       https://api.leadconnectorhq.com/widget/bookings/core-calendar-sales-calls  302!
-# /strategy-call is referenced by the AI-Native Readiness scorecard tier CTAs (RED/YELLOW/GREEN).
-# Until a dedicated tier-aware booking page is built, funnel through /book.
+# /book + /ar/book now serve local Pre-Call Qualifier form pages (rewrites above).
+# The form's post-submit action forwards qualified leads to the GHL calendar.
+# /strategy-call is referenced by the AI-Native Readiness scorecard tier CTAs (RED/YELLOW/GREEN)
+# and continues to chain through to /book (now the form page, not the external calendar).
 /strategy-call              /book                                                                      302!
 /strategy-call/*            /book                                                                      302!
 /ar/strategy-call           /ar/book                                                                   302!
