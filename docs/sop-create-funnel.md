@@ -1,375 +1,305 @@
-# SOP — Create a Funnel (Landing + Form + Thank-You + Workflow)
+# SOP — Ship a Funnel (Dynamic Recipe)
 
 **Owner:** Lana Al-Kurd
-**Last updated:** 2026-04-22
-**Applies to:** SMOrchestra-ai/smorchestra-web
-**Scope:** The repeatable pattern for shipping a standalone funnel on `smorchestra.ai/test/*` (or promoted to `/` later). Covers everything from GHL form config to post-submit workflow.
+**Applies to:** `SMOrchestra-ai/smorchestra-web`
+**Use this when:** you have a landing page + one or more GHL forms, and you want them wired together on `/test/*` or promoted to production.
 
 ---
 
-## What a "funnel" means here
+## How to use this SOP
 
-A funnel in this repo is a **3-page + 1-workflow unit**:
+This is a **copy-paste workflow**, not a theoretical guide. You (Lana) hand an operator (dev / Claude) the **Inputs** listed in §1, the operator runs the **Steps** in §2, and you verify the **Outputs** in §3.
 
-```
-   (Landing page)              (Form)                    (Thank-you)
-   /test/<name>       →        GHL iframe        →       /test/thank-you
-   ─ hero + CTAs              ─ modal OR inline         ─ confirmation
-   ─ dark theme               ─ captures contact        ─ zero CTAs
-   ─ multiple CTAs
-                                     │
-                                     ▼
-                            (GHL Workflow fires on tag)
-                            ─ notify Mamoun + team
-                            ─ apply contact tags
-                            ─ optional: send email
-                            ─ optional: add to sequence
-```
-
-**Reference implementation:** `/test/signal-gtm` (already shipped) — use it as the copy-paste template for any new funnel.
+If any input in §1 is missing, the build cannot proceed — don't start.
 
 ---
 
-## Naming + path conventions
+## 1. Inputs you must provide
 
-| Piece | Where | Naming rule |
-|---|---|---|
-| Landing page file | `test/<slug>.html` | kebab-case, matches funnel topic (`signal-gtm`, `enterprise-audit`, `mena-readiness`) |
-| Thank-you page | `test/thank-you.html` (shared) OR `test/thank-you-<slug>.html` (if custom copy needed) | prefer shared unless a specific funnel needs different copy |
-| Pretty URL rewrite | `_redirects` | `/test/<slug>` → `/test/<slug>.html` (200, not 301) |
-| GHL form | GHL → Sites → Forms | `Funnel · <Slug> · EN` (and `· AR` for bilingual) — so form lists stay grouped |
-| GHL workflow | GHL → Automations → Workflows | `Funnel · <Slug> · Submission Handler` — same prefix as the form |
+Fill this template and paste it into the handoff (Telegram / PR comment / chat). Every field is required unless marked optional.
 
-Keep `/test/*` for preview/unreleased funnels. When a funnel is approved, rename (see §8).
+```
+FUNNEL HANDOFF
+──────────────
+
+Funnel slug (kebab-case):     e.g. signal-gtm, mena-readiness, enterprise-audit
+Short description:            one sentence — what does this funnel sell?
+Languages:                    EN / AR / both
+
+Landing page source:          [one of]
+  (a) Attached HTML file: <paste full HTML or file path>
+  (b) Reuse existing template: /test/signal-gtm
+  (c) Build from scratch — supply hero copy below
+
+Hero copy (only for option c):
+  Badge eyebrow:              e.g. "SIGNAL-BASED GTM FOR MENA"
+  Headline:                   with <span class="accent"></span> on the emphasis word
+  Subtitle:                   2-3 sentences
+  Primary CTA label:          e.g. "Book Your Signal Audit"
+  Qualifier line:             e.g. "For B2B SaaS doing $1M+ ARR targeting MENA"
+
+Form embed(s):
+  Primary form iframe:        [paste the full <iframe>...</iframe><script>...</script> snippet]
+  AR form (if bilingual):     [paste — or "N/A"]
+  Form placement:             modal  /  inline  /  both (modal on landing + inline secondary page)
+
+Secondary page (optional):    e.g. /test/questionnaire for an inline-form version
+  Form embed for it:          [paste]
+
+Thank-you page:
+  (a) Reuse /test/thank-you   — default, sparse, no CTAs
+  (b) Custom copy:            [paste headline + body]
+
+On-submit redirect URL:       usually https://smorchestra.ai/test/thank-you
+                              (or deploy-preview URL during testing)
+
+GHL workflow — needed?        yes  /  no  (default: yes)
+  Notification recipients:    default: mamoun@smorchestra.ai + hello@smorchestra.ai
+  Confirmation email:         send to contact?  yes / no. If yes, paste subject + body.
+  Branching:                  none / by-company-size / by-tier / other (describe)
+  End-state tag:              default: workflow:<slug>-handled
+
+Promotion path (optional):    stays on /test/<slug>? or promote to /<slug>?
+                              (affects noindex meta + nav linking)
+```
+
+**If any of the above is "I don't know":** stop and decide first. Don't build around ambiguity.
 
 ---
 
-## 1. Build the GHL form
+## 2. Steps the operator runs
 
-Before any HTML work.
+Steps are numbered so you can quote "stuck at §2.4" in a message instead of re-describing the problem.
 
-### 1.1 Create the form
+### 2.1 Validate inputs
 
-1. `salesmfast.smorchestra.ai` → **Sites → Forms → + Add Form → Start from Scratch**
-2. Name it `Funnel · <Slug> · EN` (e.g. `Funnel · Signal GTM · EN`)
-3. Fields — match the funnel's qualifier logic. For signal-gtm the minimum is:
-   - First name (required)
-   - Last name (required)
-   - Email (required)
-   - Company (required)
-   - Company size — dropdown (1-10 / 11-50 / 51-200 / 200+)
-   - Role/title
-   - Free-text "What are you trying to solve?"
-4. Remove the default SMS-consent checkboxes (not relevant to this funnel).
+- [ ] All §1 required fields present
+- [ ] Form iframe has `data-form-id="..."` — extract the ID (used as iframe HTML id + as the sentinel for the modal JS)
+- [ ] If bilingual, both form IDs are distinct
+- [ ] Landing page HTML (if provided) isn't malware (quick scan: no `eval(`, no obfuscated base64, no unexpected remote script tags)
 
-### 1.2 Form actions (every funnel)
+### 2.2 Create the landing page file
 
-**Settings → Actions:**
+- [ ] Path: `test/<slug>.html`
+- [ ] Source depends on input choice:
+  - Option (a) — user-supplied HTML: save it **verbatim** first, then layer modifications in §2.5
+  - Option (b) — reuse `test/signal-gtm.html`: `cp test/signal-gtm.html test/<slug>.html` then search-and-replace per §2.5
+  - Option (c) — from scratch: use `test/signal-gtm.html` as the skeleton, replace hero/problem/pricing/FAQ content with the supplied copy
+- [ ] Add `<meta name="robots" content="noindex, nofollow">` if staying on `/test/*`
 
-- **Add Tag (static):** `funnel:<slug>` (e.g. `funnel:signal-gtm`)
-- **Add Tag (static):** `source:<slug>-landing` (traceable attribution)
-- **Conditional tags** (if the form has a "company size" or similar qualifier dropdown): add a tag like `size:1-10`, `size:11-50`, etc. The workflow uses these for branching.
+### 2.3 Add pretty URL to `_redirects`
 
-### 1.3 Form styling (every funnel, to match the dark site)
-
-**Styles → Form:**
-- Form width: 100% (container handles the max-width)
-- Background: transparent
-- Border radius: 8px
-- Corner radius inputs: 6px
-
-**Styles → Input Field:**
-- Font color: `#101828`
-- Border: 1px `#D0D5DD`
-- Background: `#FFFFFF` (keep form inputs light — the modal wraps them in a dark frame)
-
-**Styles → Submit Button:**
-- Background: `#FF6600` (accent)
-- Hover: `#CC5200`
-- Text: `#000000`
-- Font weight: 700
-
-### 1.4 On-submit redirect
-
-**Settings → On Submit → Redirect URL:**
-```
-https://smorchestra.ai/test/thank-you
-```
-(or `https://deploy-preview-<N>--smorchestra.netlify.app/test/thank-you` during preview testing)
-
-> **If the same form is reused on multiple pages (e.g. `/contact` AND `/test/questionnaire`):** setting a redirect applies site-wide. If you need a per-funnel thank-you, **duplicate the form in GHL** instead of reusing it. Keep one "production" copy with no redirect (shows inline confirmation) and one "funnel" copy with the redirect.
-
-### 1.5 Grab the embed snippet
-
-**Integrate → Copy Embed Code.** Paste it into the repo in §2.
-
----
-
-## 2. Build the landing page (`test/<slug>.html`)
-
-Copy `test/signal-gtm.html` as a starting template. It already includes:
-
-- Dark theme (black background, orange `#FF6600` accent)
-- Inter font loaded from Google Fonts
-- Sticky nav with "Back to site" link
-- Hero, stats bar, problem, how-it-works, signals, channels, results, pricing, qualifier, FAQ, final CTA, footer — in that order
-- **Signal-audit modal wiring** (lazy iframe swap + `form_embed.js` injection on first open + Esc/backdrop/× close + sessionStorage-safe)
-- `noindex, nofollow` meta (preview only)
-
-### 2.1 Customize for the new funnel
-
-Search-and-replace the following strings in your new `test/<slug>.html`:
-
-| Replace | With |
-|---|---|
-| `Signal Audit` | The CTA label your funnel uses (e.g. `Readiness Audit`) |
-| `Book Your Signal Audit` | The primary CTA button text |
-| `lC6liig4VJnwRjhEalVB` (iframe form ID) | Your new form's ID from §1.5 |
-| `Test 1` (data-form-name) | Your form name from §1.1 |
-| Hero headline + subtitle | Funnel-specific copy |
-| Stats, problem cards, signals, pricing | Funnel-specific content |
-| `<title>` + meta description | Funnel-specific SEO |
-
-### 2.2 Modal vs inline — pick one pattern
-
-**Modal** (recommended for landing pages with many CTAs):
-- All `.btn-primary` and `.nav-cta` open the modal
-- iframe is lazy-loaded (starts at `about:blank`, swaps to real URL on first open)
-- Keeps the landing page fast and scannable
-
-**Inline** (better for pages where the form IS the primary content, e.g. `/test/questionnaire`):
-- iframe sits in a `<section>` directly on the page, above the fold
-- No JS required beyond `form_embed.js`
-
-Never mix both on the same page.
-
-### 2.3 Add the pretty URL
-
-`_redirects` (after the existing `/test/*` lines):
+In the `Test/preview pages` block, append:
 
 ```
 /test/<slug>    /test/<slug>.html    200
 ```
 
----
+If a secondary page was supplied (§1), add its line too.
 
-## 3. Build/reuse the thank-you page
+### 2.4 Wire the form(s)
 
-If the shared thank-you (`test/thank-you.html`) is fine — done. Skip to §4.
+**Decide placement first based on §1 "Form placement":**
 
-If you need custom thank-you copy (e.g. different reply-time promise, specific next-step instructions), copy `test/thank-you.html` to `test/thank-you-<slug>.html` and update:
+#### If "modal" — on the landing page:
 
-- `<title>`
-- Eyebrow text
-- H1
-- Lede paragraph
+- [ ] Add the modal DOM (backdrop + card + header + iframe container) right before `</body>` — copy the `#signal-audit-modal` block from `test/signal-gtm.html` lines ~1650-1682 and swap the `data-form-id` + `data-real-src` + `title` for the new form
+- [ ] Add the modal CSS rules (`.sm-modal*` classes) to the page's `<style>` block
+- [ ] Rewire the CTA buttons: find the `ctaButtons.forEach((btn) => btn.addEventListener('click', …))` block and point it at the new modal's open function. Keep the lazy iframe swap + `loadGhlEmbedScriptOnce()` helpers — they belong with the modal, not the form
+- [ ] iframe starts as `src="about:blank"` with `data-real-src="<actual GHL URL>"` — the modal JS swaps on first open
+- [ ] **DO NOT** add `loading="lazy"` to the iframe — GHL's `form_embed.js` handshake fails on lazy iframes (bug we hit on the newsletter rollout)
 
-Keep the same visual language (checkmark, dark theme, orange accent, zero CTAs). Then update the GHL form's redirect URL (§1.4) to point at the slug-specific URL and add a `_redirects` line for it.
+#### If "inline" — build a secondary page:
 
----
+- [ ] New file `test/<slug>-<secondary-name>.html` (e.g. `test/signal-gtm-questionnaire.html`)
+- [ ] Use `test/questionnaire.html` as the template — hero + `<section class="form-section">` wrapping the iframe in a `.form-shell` container
+- [ ] Paste the iframe verbatim from §1 (including `form_embed.js` script tag right before `</body>`)
+- [ ] Add the pretty URL line in `_redirects`
 
-## 4. GHL workflow — fires when the form is submitted
+#### If "both" — landing has a modal, secondary page has inline:
 
-**This is the step Lana most often forgets. Do not ship a funnel without it.**
+- [ ] Do the modal work on the landing page
+- [ ] Do the inline work on the secondary page
+- [ ] Verify the two pages use **either the same form or intentionally different forms** (see §2.7 on form duplication)
 
-### 4.1 Create the workflow
+### 2.5 Customize page copy (only for options b/c of §1)
 
-1. GHL → **Automations → Workflows → + Create Workflow → Start from scratch**
-2. Name: `Funnel · <Slug> · Submission Handler`
+Search-and-replace in `test/<slug>.html`:
 
-### 4.2 Trigger
+| Replace | With | Notes |
+|---|---|---|
+| `Signal Audit` | The CTA label from §1 | every occurrence — button text, modal header, aria-label |
+| `Book Your Signal Audit` | Primary CTA text from §1 | only inside `.btn-primary` text |
+| `lC6liig4VJnwRjhEalVB` | New form ID from §2.1 | every occurrence — iframe id, data-layout-iframe-id, data-form-id, data-real-src |
+| `Test 1` | `data-form-name` from the new iframe | usually `Funnel · <Slug>` |
+| Hero headline | From §1 | preserve `<span class="accent">` markup |
+| Hero subtitle | From §1 | |
+| Qualifier line | From §1 | |
+| `<title>` | `<Funnel Display Name> — SMOrchestra` | |
+| Meta description | 1 sentence describing the funnel | |
 
-- **Trigger type:** `Contact Tag`
-- **Filter — Tag added:** `funnel:<slug>` (the tag you set in §1.2)
+For option (a) where user supplied the full HTML, do this pass only if the HTML doesn't already match — usually option (a) is already customized.
 
-The workflow fires the moment GHL applies the funnel tag — i.e. right after form submission.
+### 2.6 Decide on the thank-you page
 
-### 4.3 Wait step
+- If "Reuse `/test/thank-you`" — done, no new file needed
+- If "Custom copy" — `cp test/thank-you.html test/thank-you-<slug>.html`, update title + eyebrow + H1 + lede to match §1. Add `/test/thank-you-<slug>` line to `_redirects`
 
-Add `Wait · 30 seconds` immediately after the trigger. This lets every tag the form writes (`source:*`, `size:*`, any conditional topic tags) finish attaching before the workflow branches. Without this you can hit race conditions.
+### 2.7 Form-in-GHL handoff (Lana does this in GHL, not the operator)
 
-### 4.4 Internal notification (always)
+This is the **manual** side — the operator can't touch GHL. Write these steps into the PR body so Lana has a checklist:
 
-**Action: Send Internal Notification / Email Team**
+- [ ] Open the form(s) in GHL (form ID(s) from §2.1)
+- [ ] **Settings → On Submit → Redirect URL:** set to the URL from §1 "On-submit redirect"
+- [ ] **Settings → Actions → Add Tag:** static tag `funnel:<slug>`
+- [ ] **Settings → Actions → Add Tag:** static tag `source:<slug>-landing` (or whatever traceable attribution matches the funnel)
+- [ ] If the form has a qualifier dropdown (company size, tier, topic), add **Conditional Tags** mapping each dropdown value to a tag (e.g. `size:1-10`, `size:11-50`, `topic:enterprise-tier-4`). The workflow uses these for branching.
+- [ ] Save + Publish the form
 
-- **To:** `mamoun@smorchestra.ai`, `hello@smorchestra.ai`
-- **Subject:** `[Funnel · <Slug>] New submission from {{contact.first_name}} {{contact.last_name}}`
-- **Body:** include every merge field you care about:
-  ```
-  Company: {{contact.company_name}}
-  Email: {{contact.email}}
-  Role: {{contact.custom_field.role}}
-  Size: {{contact.custom_field.company_size}}
-  Problem: {{contact.custom_field.problem}}
+**Duplication check:** if this form is ALSO used on a different funnel or `/contact`, duplicate the form before setting the redirect — otherwise you'll change behavior site-wide. Rule of thumb: one form = one funnel.
 
-  Contact: https://salesmfast.smorchestra.ai/v2/location/UNw9DraGO3eyEa5l4lkJ/contacts/detail/{{contact.id}}
-  ```
+### 2.8 Build the GHL workflow (§1 said "yes")
 
-### 4.5 Contact confirmation email (optional but recommended)
+Lana does this in GHL. Operator writes the spec into the PR body:
 
-**Action: Send Email**
+- [ ] **Automations → Workflows → + Create Workflow → Start from scratch**
+- [ ] Name: `Funnel · <Slug> · Submission Handler`
+- [ ] **Trigger:** `Contact Tag` with filter `Tag added = funnel:<slug>`
+- [ ] **Wait 30 seconds** (lets every tag finish attaching before branching)
+- [ ] **Send Internal Notification:**
+  - To: recipients from §1 (default `mamoun@smorchestra.ai`, `hello@smorchestra.ai`)
+  - Subject: `[Funnel · <Slug>] New submission from {{contact.first_name}} {{contact.last_name}}`
+  - Body: include key merge fields + link to contact in GHL UI
+- [ ] If §1 requested a confirmation email: **Send Email** action to `{{contact.email}}` with the supplied subject + body
+- [ ] If §1 requested branching: **If/Else** on the qualifier tag (e.g. `size:*`), route per §1 description
+- [ ] **Add Tag** (final, in every branch): `workflow:<slug>-handled`
+- [ ] **Save + Publish** — the toggle top-right must read "Published" (green). Draft = nothing fires. This is the #1 silent failure mode.
 
-- **From:** `Mamoun Alamouri <mamoun@smorchestra.ai>`
-- **To:** `{{contact.email}}`
-- **Subject:** depends on the funnel. For signal-gtm: `Got your Signal Audit request — Mamoun`
-- **Body (signal-gtm example):**
-  ```
-  Hi {{contact.first_name}},
-
-  Got your questionnaire. Quick look:
-
-  ─ Company: {{contact.company_name}}
-  ─ Size: {{contact.custom_field.company_size}}
-
-  I'll review this today and reply within 24 hours with either
-  (a) a 30-minute Signal Audit slot, or (b) a note saying we're not
-  a fit right now and why.
-
-  If it's more urgent, just reply to this email with a number and
-  I'll call.
-
-  — Mamoun
-  SMOrchestra.ai · Dubai
-  ```
-
-### 4.6 Branching (optional — tier/size routing)
-
-If the form has a company-size or qualifier dropdown (§1.2 conditional tags), add an `If/Else` after §4.5:
-
-- **Branch A — Enterprise:** `size:51-200` or `size:200+` → also add tag `routing:mamoun-direct` → notification goes to Mamoun only (not the team alias)
-- **Branch B — SMB:** `size:1-10` or `size:11-50` → tag `routing:team` → notification goes to `hello@` (team handles first pass)
-- **Branch C — Unknown/no size:** tag `routing:review` → Mamoun reviews manually
-
-### 4.7 End-state tag
-
-Final action in every branch:
-
-- **Add Tag:** `workflow:<slug>-handled` (so you can query "how many funnel submissions did we process?" later)
-
-### 4.8 Save + Publish
-
-**⚠️ Workflows in Draft do NOT fire.** Toggle to **Published** (green) in the top right. If you see "Draft" (grey), nothing happens on submission — you will silently lose every lead.
-
----
-
-## 5. Test end-to-end (before handing to Mamoun)
-
-### 5.1 Local
+### 2.9 Local smoke test
 
 ```bash
 # With netlify dev running on :8888
 http://localhost:8888/test/<slug>
 ```
 
-1. Land on the page.
-2. Click every `.btn-primary` and `.nav-cta` — confirm modal opens (or inline form is visible).
-3. Submit with a test email (`lana+funnel-<slug>-test@smorchestra.com`).
-4. Confirm redirect to `/test/thank-you` works.
+- [ ] Page renders, no console errors
+- [ ] Every CTA (modal open OR inline visible) works
+- [ ] Form submits successfully with a test email (e.g. `lana+funnel-<slug>-test@smorchestra.com`)
+- [ ] Redirect goes to the configured thank-you URL
 
-### 5.2 Deploy Preview
+### 2.10 Push + PR
 
-Push the branch → Netlify builds `deploy-preview-<N>--smorchestra.netlify.app`.
-
-Repeat steps above on the preview URL. This is the URL you give Mamoun for review.
-
-### 5.3 GHL side
-
-After a test submission:
-
-1. GHL → **Contacts** → find `lana+funnel-<slug>-test@smorchestra.com`
-2. Verify tags present:
-   - `funnel:<slug>` ✓
-   - `source:<slug>-landing` ✓
-   - `size:*` (if qualifier used) ✓
-   - `workflow:<slug>-handled` (after ~90 s) ✓
-3. Verify the internal notification hit `mamoun@` + `hello@`
-4. Verify the contact-confirmation email reached the test inbox (check Spam folder the first time — GHL outbound often starts there until the sending domain is warmed)
-5. GHL → **Automations → Workflows → [your workflow] → Stats**: execution count should be ≥1 with no failures
-
-If any step fails, the workflow's **Execution Log** (GHL shows it under Stats → click the run) tells you which action choked.
+- [ ] Branch: `human/lana/<TASK-ID>-funnel-<slug>` (requires a Linear ticket per `CLAUDE.md`)
+- [ ] Commits grouped by topic (one for landing, one for redirects, one for docs if you touched them)
+- [ ] PR body includes the §2.7 + §2.8 checklists so Mamoun can verify Lana completed the GHL side
+- [ ] Wait for Deploy Preview to go green
+- [ ] Test the Deploy Preview URL end-to-end (§2.9 again, but on `deploy-preview-N--smorchestra.netlify.app`)
+- [ ] Post PR URL in Telegram to Mamoun
 
 ---
 
-## 6. Hand off to Mamoun
+## 3. Outputs you verify before approval
 
-When ready to merge:
+### 3.1 Repo changes
 
-1. Push the branch (branch naming per `CLAUDE.md`: `human/lana/SSE-XXX-funnel-<slug>` — requires a Linear ticket)
-2. Open a PR against `main` with this checklist in the body:
-   - [ ] Form created in GHL and published
-   - [ ] Landing page renders on Deploy Preview
-   - [ ] Thank-you redirect works
-   - [ ] Workflow is **Published** (not Draft) and fires on test submission
-   - [ ] Internal notification received at `mamoun@` + `hello@`
-   - [ ] Contact-confirmation email delivered (not in Spam)
-   - [ ] `noindex` meta on landing page (if under `/test/`)
-3. Post the PR URL in Telegram to Mamoun
-4. Wait for his review + merge. **Do not self-approve** (CLAUDE.md hard rule).
+- [ ] `test/<slug>.html` exists, renders on Deploy Preview
+- [ ] `_redirects` has the new pretty-URL line(s)
+- [ ] No absolute URLs to `smorchestra.ai` in same-site CTAs (use relative `/book`, `/contact`, etc. — breaks Deploy Preview testing otherwise)
+- [ ] `noindex, nofollow` meta present if under `/test/*`
 
----
+### 3.2 GHL side (Lana checks manually)
 
-## 7. Specific workflow — Signal GTM (`/test/signal-gtm`)
+- [ ] Form published (not Draft)
+- [ ] Form has `funnel:<slug>` + `source:<slug>-landing` tags configured in Actions
+- [ ] On-submit redirect URL matches the new thank-you page
+- [ ] Workflow published (not Draft) — top-right toggle is green
+- [ ] Workflow Stats page shows ≥1 execution after a test submission with no failures
 
-Parameters for the workflow that should be built right now.
+### 3.3 End-to-end on Deploy Preview
 
-| Setting | Value |
-|---|---|
-| GHL form | `Test 1` (ID `lC6liig4VJnwRjhEalVB`) |
-| Landing page | `test/signal-gtm.html` at `/test/signal-gtm` |
-| Thank-you | shared `/test/thank-you` |
-| Workflow name | `Funnel · Signal GTM · Submission Handler` |
-| Trigger tag | `funnel:signal-gtm` |
-| Sender email | `mamoun@smorchestra.ai` |
-| Internal notify | `mamoun@smorchestra.ai`, `hello@smorchestra.ai` |
-| Confirmation email body | §4.5 template above |
-| End-state tag | `workflow:signal-gtm-handled` |
-
-**First action Lana must take in GHL right after reading this SOP:**
-1. Open Test 1 form → Settings → Actions → **add tag `funnel:signal-gtm`** (currently missing)
-2. Settings → On Submit → Redirect URL → **set `https://smorchestra.ai/test/thank-you`**
-3. Build the workflow per §4
-4. Publish the workflow
-
-Without step 1, the workflow's trigger will never fire. Without step 2, the visitor lands on a blank post-submit state.
+- [ ] Submit a test form with a real inbox you control
+- [ ] Contact appears in GHL with expected tags (`funnel:<slug>`, `source:*`, any qualifier tags, eventually `workflow:<slug>-handled`)
+- [ ] Internal notification hit `mamoun@` + `hello@` (check both)
+- [ ] Confirmation email arrived at test inbox (check Spam folder first time — GHL outbound often starts there)
 
 ---
 
-## 8. Promoting a funnel out of `/test/`
+## 4. Concrete example — Signal-GTM funnel (already built)
 
-When a funnel is validated and ready for production (linked from main nav, indexed by Google):
-
-1. Move the file: `test/<slug>.html` → `<slug>.html` (or `solutions/<slug>.html`)
-2. Remove the `noindex, nofollow` meta
-3. Update `_redirects`: remove the `/test/<slug>` line, add `/<slug> → /<slug>.html 200`
-4. Update the GHL form's on-submit redirect to the new URL
-5. Update the GHL workflow's internal notification / confirmation email copy (remove any "preview" language)
-6. Link the funnel from the main nav + relevant footer columns
-7. Decide: keep `/test/<slug>` as a 301 → new path (preserves any shared links), or let it 404
-
----
-
-## Common mistakes (avoid)
-
-- **Workflow left in Draft.** Leads submit, tags apply, nothing else happens. Nobody notices until a stakeholder asks why replies never went out.
-- **Reusing a production form without duplicating.** You set a redirect on Contact Form EN to test a funnel thank-you, and suddenly `/contact` on production also redirects. Always duplicate before diverging.
-- **Missing the `funnel:<slug>` tag.** Without it the workflow trigger matches nothing. Easy to forget because GHL form Actions are in a different tab from Workflow triggers.
-- **Forgetting `loading="lazy"` on inline iframes is harmful here.** GHL's `form_embed.js` handshake fails on lazy iframes (they stay blank). We hit this on the newsletter rollout. On `/test/*` pages we don't use `loading="lazy"` on GHL iframes — keep it that way.
-- **Hard-coded absolute URLs in CTAs.** We hit this when a "Book a Strategy Call" button used `https://smorchestra.ai/book` — on Deploy Preview it bounced users out of the preview to production (which served the old behavior). Always use relative paths (`/book`) in the same-site CTAs.
-
----
-
-## Quick reference — files this SOP creates
-
-For each funnel named `<slug>`:
+This is how the template gets filled in practice. Use it as a reference when writing your §1 for a new funnel.
 
 ```
-test/<slug>.html                 ← the landing page
-test/thank-you.html              ← shared confirmation (exists already)
-_redirects                       ← pretty URL additions (2-3 lines)
-docs/sop-create-funnel.md        ← this file (one-off)
+FUNNEL HANDOFF — signal-gtm
+───────────────────────────
+
+Funnel slug:                  signal-gtm
+Description:                  Signal-based GTM for B2B scaleups entering MENA
+Languages:                    EN only (for v1)
+
+Landing page source:          (a) Attached HTML file — ~/Downloads/smorchestra-signal-gtm-landing.html
+Form embed:
+  Primary:                    <iframe src="https://media.smorchestra.com/widget/form/lC6liig4VJnwRjhEalVB" …
+  AR:                         N/A
+  Placement:                  modal (all 5 .btn-primary + .nav-cta on the landing open it)
+
+Secondary page:               /test/questionnaire (inline Contact Form EN — 5hDy247t9I72C2xsLyX5)
+
+Thank-you page:               (a) Reuse /test/thank-you
+
+On-submit redirect URL:       https://smorchestra.ai/test/thank-you
+
+GHL workflow:                 yes
+  Notifications:              mamoun@smorchestra.ai, hello@smorchestra.ai
+  Confirmation email:         yes. Subject: "Got your Signal Audit request — Mamoun"
+                              Body: per §2.8 template
+  Branching:                  by-company-size — Enterprise (51+) → routing:mamoun-direct,
+                              SMB (<50) → routing:team, unknown → routing:review
+  End-state tag:              workflow:signal-gtm-handled
+
+Promotion path:               stays on /test/signal-gtm until Mamoun validates the positioning
 ```
 
-In GHL:
-- 1 Form per language (usually just EN at preview stage)
-- 1 Workflow
-- Tags: `funnel:<slug>`, `source:<slug>-landing`, `workflow:<slug>-handled`
+Resulting repo paths (all already shipped):
+
+- `test/signal-gtm.html` — landing with modal
+- `test/questionnaire.html` — secondary inline page
+- `test/thank-you.html` — shared confirmation
+- `_redirects` — 3 new lines under `Test/preview pages`
+
+Resulting GHL state (Lana still needs to do):
+
+- Form `Test 1` (`lC6liig4VJnwRjhEalVB`): add `funnel:signal-gtm` tag + set redirect
+- Form `Contact Form - EN` (`5hDy247t9I72C2xsLyX5`): **duplicate** first (it's shared with `/contact`), then configure the dup for the funnel
+- Workflow `Funnel · Signal GTM · Submission Handler`: build + publish
+
+---
+
+## 5. Common failure modes (quote these in handoffs to save time)
+
+- **F1 — Workflow left in Draft.** Tags apply, nothing else happens. Test submissions look successful but no notifications, no emails, no end-state tag.
+- **F2 — Reusing a production form without duplicating.** Setting a redirect on `Contact Form - EN` for a funnel also changes `/contact` behavior site-wide. Always duplicate before diverging.
+- **F3 — Missing the `funnel:<slug>` tag.** Workflow trigger matches nothing. Silent failure — no error anywhere.
+- **F4 — `loading="lazy"` on GHL iframe.** Handshake fails, iframe stays blank. Remove the attribute (never add it).
+- **F5 — Absolute-URL CTA.** `href="https://smorchestra.ai/book"` on a Deploy Preview bounces users out of the preview back to production. Use relative paths (`/book`).
+- **F6 — Ambiguity in §1.** If "I don't know" is the answer to any required input, the funnel can't ship. Decide first.
+
+---
+
+## 6. When inputs change mid-build
+
+If Lana hands off the inputs in §1 and then changes them while the operator is mid-build:
+
+- **Copy/positioning changes** → fine, operator updates §2.5
+- **Form change (new iframe)** → operator re-does §2.4 (small change; the lazy-swap helpers don't change, only the IDs and URLs)
+- **Placement change (modal ↔ inline)** → effectively a new build; discard the current branch work on the relevant page and redo §2.4 under the new pattern
+- **Slug change** → rename the file (`test/<old>.html` → `test/<new>.html`), update `_redirects` line, update GHL form redirect URL, update workflow name. Easy if caught early, painful after merge.
+
+---
+
+## 7. Reference files in this repo
+
+- `test/signal-gtm.html` — reference "modal on landing" implementation
+- `test/questionnaire.html` — reference "inline form page" implementation
+- `test/thank-you.html` — shared confirmation page
+- `_redirects` — pretty-URL routing, Test/preview block
+- `docs/sop-create-funnel.md` — this file
