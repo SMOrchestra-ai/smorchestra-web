@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMOrchestra.ai - Signal-Based GTM for MENA B2B</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #000000;
+            --bg-alt: #0A0A0A;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --accent: #FF6600;
+            --accent-hover: #CC5200;
+            --accent-light: #FFF3E6;
+            --accent-glow: rgba(255, 102, 0, 0.15);
+            --text: #FFFFFF;
+            --text-muted: #A3A3A3;
+            --text-dark: #171717;
+            --text-dark-muted: #525252;
+            --border: rgba(255, 255, 255, 0.08);
+            --font: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font);
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.125rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span.sm {
+            color: var(--text);
+        }
+
+        .logo span.orchestra {
+            color: var(--accent);
+        }
+
+        .logo span.ai {
+            color: var(--text-muted);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background-color: var(--accent);
+            color: var(--text-dark);
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background-color: var(--text);
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        .hero h1 .sm-accent {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--text-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(255, 102, 0, 0.3);
+        }
+
+        .btn-ghost {
+            background-color: transparent;
+            color: var(--text);
+            border: 1.5px solid var(--border);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background-color: rgba(255, 102, 0, 0.08);
+        }
+
+        .hero-qualifier {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            max-width: 600px;
+        }
+
+        /* STATS BAR */
+        .stats {
+            padding: 3rem 2rem;
+            background-color: var(--bg-alt);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* PROBLEM SECTION */
+        .problem {
+            padding: 6rem 2rem;
+            background-color: var(--text);
+            color: var(--text-dark);
+        }
+
+        .problem-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-header .badge {
+            color: var(--text-dark);
+            background-color: rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.12);
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 800;
+            margin-top: 1rem;
+            line-height: 1.2;
+            max-width: 600px;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            padding: 2rem;
+            background-color: #F9FAFB;
+            border-radius: 0.5rem;
+            border-left: 4px solid #EF4444;
+        }
+
+        .problem-card .number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #FEE2E2;
+            border-radius: 50%;
+            color: #EF4444;
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .problem-card p {
+            color: var(--text-dark-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* HOW IT WORKS */
+        .how-it-works {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
+            color: var(--text);
+        }
+
+        .how-it-works-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .how-it-works .section-header .badge {
+            color: var(--accent);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            padding: 2rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            background-color: rgba(255, 102, 0, 0.08);
+            border-color: var(--accent);
+        }
+
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background-color: var(--accent-glow);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .step-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .step-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* SIGNALS SECTION */
+        .signals {
+            padding: 6rem 2rem;
+            background-color: var(--text);
+            color: var(--text-dark);
+        }
+
+        .signals-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .signals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .signal-card {
+            padding: 2rem;
+            background-color: #FAFAFA;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .signal-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .signal-card h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .signal-card p {
+            color: var(--text-dark-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* CHANNELS SECTION */
+        .channels {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
+            color: var(--text);
+        }
+
+        .channels-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .channels .section-header .badge {
+            color: var(--accent);
+        }
+
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .channel-card {
+            padding: 2rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-top: 4px solid;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .channel-card.linkedin {
+            border-top-color: #0A66C2;
+        }
+
+        .channel-card.email {
+            border-top-color: #3B82F6;
+        }
+
+        .channel-card.whatsapp {
+            border-top-color: #25D366;
+        }
+
+        .channel-card:hover {
+            background-color: rgba(255, 102, 0, 0.08);
+        }
+
+        .channel-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .channel-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .channel-card li {
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .channel-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* RESULTS SECTION */
+        .results {
+            padding: 6rem 2rem;
+            background-color: var(--text);
+            color: var(--text-dark);
+        }
+
+        .results-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .result-card {
+            padding: 2rem;
+            background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
+            border-radius: 0.5rem;
+            text-align: center;
+            border: 1px solid #E5E7EB;
+        }
+
+        .result-card h3 {
+            font-size: 2rem;
+            color: var(--accent);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-card p {
+            color: var(--text-dark-muted);
+            font-size: 0.95rem;
+        }
+
+        .case-study {
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: #F3F4F6;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .case-study h4 {
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .case-study p {
+            color: var(--text-dark-muted);
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+
+        /* PRICING SECTION */
+        .pricing {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
+            color: var(--text);
+        }
+
+        .pricing-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .pricing .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .pricing .section-header .badge {
+            color: var(--accent);
+            justify-content: center;
+        }
+
+        .pricing-card {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 3rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-amount {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            align-items: baseline;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-amount .primary {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .pricing-amount .secondary {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+        }
+
+        .pricing-term {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+
+        .pricing-cta {
+            width: 100%;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /* QUALIFIER SECTION */
+        .qualifier {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
+            color: var(--text);
+        }
+
+        .qualifier-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .qualifier-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .qualifier-header h2 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .qualifier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .qualifier-column h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .qualifier-column.yes h3 {
+            color: #10B981;
+        }
+
+        .qualifier-column.no h3 {
+            color: #EF4444;
+        }
+
+        .qualifier-item {
+            padding: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .qualifier-item::before {
+            position: absolute;
+            left: 0;
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+
+        .qualifier-column.yes .qualifier-item::before {
+            content: '✓';
+            color: #10B981;
+        }
+
+        .qualifier-column.no .qualifier-item::before {
+            content: '✕';
+            color: #EF4444;
+        }
+
+        /* FAQ SECTION */
+        .faq {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
+            color: var(--text);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq .section-header .badge {
+            color: var(--accent);
+            justify-content: center;
+        }
+
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .accordion-item {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background-color: var(--bg-card);
+            border: none;
+            width: 100%;
+            font-family: var(--font);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: rgba(255, 102, 0, 0.08);
+        }
+
+        .accordion-item.open .accordion-header {
+            background-color: rgba(255, 102, 0, 0.12);
+        }
+
+        .accordion-toggle {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+            font-weight: 800;
+        }
+
+        .accordion-item.open .accordion-toggle {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-item.open .accordion-content {
+            max-height: 500px;
+        }
+
+        .accordion-text {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
+            color: var(--text);
+            text-align: center;
+        }
+
+        .final-cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .final-cta-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .final-cta-contact {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .final-cta-contact a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .final-cta-contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 3rem 2rem 1rem;
+            background-color: var(--bg-alt);
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h4 {
+            color: var(--text);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-column p {
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: #666;
+        }
+
+        /* ANIMATIONS */
+        .sm-animate {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .sm-visible {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sm-animate:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .sm-animate:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .sm-animate:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .sm-animate:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        .sm-animate:nth-child(6) {
+            animation-delay: 0.5s;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                padding: 4rem 1.5rem;
+                margin-top: 60px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .problem {
+                padding: 4rem 1.5rem;
+            }
+
+            .how-it-works {
+                padding: 4rem 1.5rem;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .signals {
+                padding: 4rem 1.5rem;
+            }
+
+            .signals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .channels {
+                padding: 4rem 1.5rem;
+            }
+
+            .channels-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .results {
+                padding: 4rem 1.5rem;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing {
+                padding: 4rem 1.5rem;
+            }
+
+            .pricing-card {
+                padding: 1.5rem;
+            }
+
+            .qualifier {
+                padding: 4rem 1.5rem;
+            }
+
+            .qualifier-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .faq {
+                padding: 4rem 1.5rem;
+            }
+
+            .final-cta {
+                padding: 4rem 1.5rem;
+            }
+
+            footer {
+                padding: 2rem 1.5rem 1rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .pricing-card {
+                padding: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="sm">SM</span><span class="orchestra">Orchestra</span><span class="ai">.ai</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#how">How It Works</a></li>
+                <li><a href="#signals">Signals</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+            <button class="nav-cta">Book Signal Audit</button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-container sm-animate">
+            <div class="badge">SIGNAL-BASED GTM FOR MENA</div>
+            <h1>Stop Guessing.<br>Start Detecting.<br>Close Faster in the <span class="sm-accent">Gulf</span>.</h1>
+            <p class="hero-subtitle">We build signal-driven revenue engines for B2B scaleups entering or scaling in MENA. No coffee meetings. No SDR armies. Just systematic proof of competence at the exact moment intent surfaces.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Book Your Signal Audit</button>
+                <button class="btn btn-ghost">See How It Works</button>
+            </div>
+            <div class="hero-qualifier">For B2B SaaS Doing $1M+ ARR Targeting MENA Markets</div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item sm-animate">
+                <h3>3-5x</h3>
+                <p>Response Rate</p>
+            </div>
+            <div class="stat-item sm-animate">
+                <h3>20%</h3>
+                <p>Meeting Rate</p>
+            </div>
+            <div class="stat-item sm-animate">
+                <h3>40%</h3>
+                <p>Cost Reduction</p>
+            </div>
+            <div class="stat-item sm-animate">
+                <h3>90 Days</h3>
+                <p>To Measurable ROI</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section class="problem">
+        <div class="problem-container">
+            <div class="section-header sm-animate">
+                <div class="badge">THE PROBLEM</div>
+                <h2>Western GTM Playbooks Crash on Arrival</h2>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card sm-animate">
+                    <div class="number">01</div>
+                    <h3>Intent Is Hidden</h3>
+                    <p>No form fills, no demo requests. Buying happens through trust networks.</p>
+                </div>
+                <div class="problem-card sm-animate">
+                    <div class="number">02</div>
+                    <h3>Silence ≠ No</h3>
+                    <p>Gulf buyers go silent for weeks, then buy. SDRs mark them dead.</p>
+                </div>
+                <div class="problem-card sm-animate">
+                    <div class="number">03</div>
+                    <h3>Relationships Tax Growth</h3>
+                    <p>47 coffee meetings to close one deal. Burns $200K+ before first ARR.</p>
+                </div>
+                <div class="problem-card sm-animate">
+                    <div class="number">04</div>
+                    <h3>Tools Don't Interpret</h3>
+                    <p>Clay detects. Nobody translates signals into culturally-calibrated action.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works" id="how">
+        <div class="how-it-works-container">
+            <div class="section-header sm-animate">
+                <div class="badge">HOW IT WORKS</div>
+                <h2>A Signal Nervous System, Not Another Tool</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card sm-animate">
+                    <div class="step-icon">🔍</div>
+                    <div class="step-number">Step 01</div>
+                    <h3>Detect</h3>
+                    <p>We monitor LinkedIn, hiring, funding, expansion, events</p>
+                </div>
+                <div class="step-card sm-animate">
+                    <div class="step-icon">🧠</div>
+                    <div class="step-number">Step 02</div>
+                    <h3>Interpret</h3>
+                    <p>Fit gate, buyer anxiety, trust gap, urgency scoring</p>
+                </div>
+                <div class="step-card sm-animate">
+                    <div class="step-icon">🚀</div>
+                    <div class="step-number">Step 03</div>
+                    <h3>Execute</h3>
+                    <p>Multi-channel: LinkedIn, email, WhatsApp — orchestrated, not blasted</p>
+                </div>
+                <div class="step-card sm-animate">
+                    <div class="step-icon">📈</div>
+                    <div class="step-number">Step 04</div>
+                    <h3>Learn</h3>
+                    <p>Which signals convert, which wedges work, what's noise. System compounds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGNALS SECTION -->
+    <section class="signals" id="signals">
+        <div class="signals-container">
+            <div class="section-header sm-animate">
+                <div class="badge">SIGNALS WE DETECT</div>
+                <h2>We See What SDRs Miss</h2>
+            </div>
+            <div class="signals-grid">
+                <div class="signal-card sm-animate">
+                    <h3>Hiring Signals</h3>
+                    <p>New leadership hires, department expansions, role creations that signal buying intent</p>
+                </div>
+                <div class="signal-card sm-animate">
+                    <h3>Funding Rounds</h3>
+                    <p>Series A/B announcements, capital raises that unlock budget and urgency</p>
+                </div>
+                <div class="signal-card sm-animate">
+                    <h3>Expansion Indicators</h3>
+                    <p>New office openings, market entries, region launches in UAE, Saudi, etc</p>
+                </div>
+                <div class="signal-card sm-animate">
+                    <h3>Tech Stack Changes</h3>
+                    <p>New tools added, old systems replaced, API integrations announced</p>
+                </div>
+                <div class="signal-card sm-animate">
+                    <h3>Founder Content Activity</h3>
+                    <p>LinkedIn posts about pain points, panel discussions, webinar appearances</p>
+                </div>
+                <div class="signal-card sm-animate">
+                    <h3>Event Attendance</h3>
+                    <p>Conferences, tradeshows, networking events with decision-makers present</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHANNELS SECTION -->
+    <section class="channels">
+        <div class="channels-container">
+            <div class="section-header sm-animate">
+                <div class="badge">MULTI-CHANNEL EXECUTION</div>
+                <h2>Three Channels. One Coordinated Motion.</h2>
+            </div>
+            <div class="channels-grid">
+                <div class="channel-card linkedin sm-animate">
+                    <h3>LinkedIn</h3>
+                    <ul>
+                        <li>Connection sequences</li>
+                        <li>Engagement signals</li>
+                        <li>Conversation starters</li>
+                        <li>Profile views as trust signals</li>
+                    </ul>
+                </div>
+                <div class="channel-card email sm-animate">
+                    <h3>Email</h3>
+                    <ul>
+                        <li>Cold sequences via Instantly</li>
+                        <li>Warm nurture via GHL</li>
+                        <li>A/B tested wedges</li>
+                        <li>Deliverability optimized</li>
+                    </ul>
+                </div>
+                <div class="channel-card whatsapp sm-animate">
+                    <h3>WhatsApp</h3>
+                    <ul>
+                        <li>Arabic-first conversational AI</li>
+                        <li>Follow-up automation</li>
+                        <li>Meeting booking</li>
+                        <li>Voice note integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section class="results" id="results">
+        <div class="results-container">
+            <div class="section-header sm-animate">
+                <div class="badge">RESULTS</div>
+                <h2>The Proof Is in the Pipeline</h2>
+            </div>
+            <div class="results-grid">
+                <div class="result-card sm-animate">
+                    <h3>3-5x</h3>
+                    <p>Response Rate vs SDR average</p>
+                </div>
+                <div class="result-card sm-animate">
+                    <h3>20%</h3>
+                    <p>Meeting conversion rate</p>
+                </div>
+                <div class="result-card sm-animate">
+                    <h3>40%</h3>
+                    <p>Cost reduction vs in-house SDR</p>
+                </div>
+                <div class="result-card sm-animate">
+                    <h3>90 Days</h3>
+                    <p>To measurable ROI</p>
+                </div>
+            </div>
+            <div class="case-study sm-animate">
+                <h4>Real Example: Fintech Scaleup, Dubai</h4>
+                <p><strong>Starting point:</strong> $2M ARR, 6 months in MENA, SDR burning $80K/mo with 2% meeting rate.</p>
+                <p><strong>After 90 days:</strong> 18 qualified meetings from signal-based outreach. 4 advanced to pilots. Estimated $800K pipeline.</p>
+                <p><strong>Result:</strong> Cut SDR spend to $35K/mo. Running automated signal system 24/7. System compounds—better signals each month.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing" id="pricing">
+        <div class="pricing-container">
+            <div class="section-header">
+                <div class="badge">INVESTMENT</div>
+                <h2>The Engine</h2>
+            </div>
+            <div class="pricing-card sm-animate">
+                <div class="pricing-header">
+                    <h3>Complete Signal Engine</h3>
+                </div>
+                <div class="pricing-amount">
+                    <span class="secondary">Setup</span>
+                    <span class="primary">$2,500</span>
+                    <span class="secondary">+</span>
+                    <span class="primary">$3,500</span>
+                    <span class="secondary">/mo</span>
+                </div>
+                <div class="pricing-term">90-day minimum commitment</div>
+                <ul class="pricing-features">
+                    <li>Signal detection setup</li>
+                    <li>ICP & wedge mapping</li>
+                    <li>Multi-channel campaign orchestration</li>
+                    <li>Weekly optimization</li>
+                    <li>Monthly performance reviews</li>
+                    <li>Dedicated strategist</li>
+                    <li>Custom reporting dashboard</li>
+                    <li>Slack/WhatsApp support</li>
+                </ul>
+                <div class="pricing-cta">
+                    <button class="btn btn-primary">Book Your Signal Audit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUALIFIER SECTION -->
+    <section class="qualifier">
+        <div class="qualifier-container">
+            <div class="qualifier-header sm-animate">
+                <h2>Is The Engine Right For You?</h2>
+            </div>
+            <div class="qualifier-grid">
+                <div class="qualifier-column yes sm-animate">
+                    <h3>This Is For You If...</h3>
+                    <div class="qualifier-item">B2B SaaS with $1M+ ARR</div>
+                    <div class="qualifier-item">Entering or scaling in MENA</div>
+                    <div class="qualifier-item">Product-market fit established</div>
+                    <div class="qualifier-item">Ready to invest in systematic GTM</div>
+                    <div class="qualifier-item">Tired of burning cash on SDR armies</div>
+                </div>
+                <div class="qualifier-column no sm-animate">
+                    <h3>This Is NOT For You If...</h3>
+                    <div class="qualifier-item">Pre-product or pre-revenue</div>
+                    <div class="qualifier-item">Local retail or B2C</div>
+                    <div class="qualifier-item">Looking for cheap VA replacement</div>
+                    <div class="qualifier-item">No budget for proper GTM</div>
+                    <div class="qualifier-item">Happy with 47 coffee meetings per deal</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq">
+        <div class="faq-container">
+            <div class="section-header sm-animate">
+                <div class="badge">COMMON QUESTIONS</div>
+                <h2>FAQ</h2>
+            </div>
+            <div class="accordion sm-animate">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>How fast do we see results?</span>
+                        <span class="accordion-toggle">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            Closed loop proof in 90 days. First signals in week 1, first meetings in week 3-4. You'll see the system working within 30 days with clear pipeline visibility.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Do you replace our sales team?</span>
+                        <span class="accordion-toggle">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            No. We give them qualified signals so they stop wasting time on cold leads. Your team closes. We do the systematic detection and multi-channel execution. Think of us as force multiplier, not replacement.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Why MENA-specific?</span>
+                        <span class="accordion-toggle">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            Because intent is hidden here. Western playbooks assume visible demand signals (form fills, demo requests). We read the silence. Gulf buyers operate differently—trust networks, longer evaluation cycles, cultural nuance. Generic tools miss this entirely.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>What if we already use Clay/Apollo?</span>
+                        <span class="accordion-toggle">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            Great. Those tools detect signals. We interpret them in regional context and execute across channels. Clay gives you hiring data. We turn that into a culturally-calibrated sequence that actually converts in the Gulf.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>What's the minimum commitment?</span>
+                        <span class="accordion-toggle">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            90 days. Enough to prove the loop and compound the learning. No 12-month lock-ins. After 90 days, you can expand, stay flat, or pause. We're confident the system works.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Can you work with our existing CRM?</span>
+                        <span class="accordion-toggle">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            Yes. We integrate with HubSpot, Salesforce, and any CRM via n8n orchestration. Your data stays in your system. We connect detection → interpretation → execution → feedback loop directly into your workflow.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="final-cta-container sm-animate">
+            <h2>Ready to Build Your Revenue Engine?</h2>
+            <p class="final-cta-subtitle">30-minute Signal Audit. No commitment. We'll show you the signals you're missing and the pipeline that's sitting silent right now.</p>
+            <button class="btn btn-primary">Book Your Signal Audit</button>
+            <div class="final-cta-contact">
+                <div><a href="mailto:mamoun@smorchestra.ai">mamoun@smorchestra.ai</a> | Dubai, UAE</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>SMOrchestra.ai</h4>
+                <p>Signal-based revenue engines for B2B scaleups in MENA. Built by founders, for founders.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <a href="#how">How It Works</a>
+                <a href="#signals">Signals</a>
+                <a href="#results">Results</a>
+                <a href="#pricing">Pricing</a>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <a href="mailto:mamoun@smorchestra.ai">mamoun@smorchestra.ai</a>
+                <p>Dubai, UAE</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SMOrchestra.ai. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // INTERSECTION OBSERVER FOR ANIMATIONS
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('sm-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.sm-animate').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // ACCORDION FUNCTIONALITY
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach((header) => {
+            header.addEventListener('click', () => {
+                const accordionItem = header.parentElement;
+                const isOpen = accordionItem.classList.contains('open');
+
+                // Close all other accordion items
+                document.querySelectorAll('.accordion-item').forEach((item) => {
+                    item.classList.remove('open');
+                });
+
+                // Toggle current item
+                if (!isOpen) {
+                    accordionItem.classList.add('open');
+                }
+            });
+        });
+
+        // SMOOTH SCROLL FOR NAVIGATION LINKS
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // CTA BUTTON ACTIONS
+        const ctaButtons = document.querySelectorAll('.nav-cta, .btn-primary');
+        ctaButtons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                // In production, this would open a modal or redirect to booking page
+                alert('Redirecting to Signal Audit booking page...');
+            });
+        });
+
+        // MOBILE HAMBURGER MENU
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // STAGGER ANIMATION DELAYS
+        const animateElements = document.querySelectorAll('.sm-animate');
+        animateElements.forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.1}s`;
+        });
+    </script>
+</body>
+</html>

@@ -15,6 +15,9 @@
 /contact                    /contact.html                    200
 /ar/contact                 /ar/contact.html                 200
 
+# Test/preview pages — not linked from nav, used for stakeholder previews
+/test/signal-gtm            /test/signal-gtm.html            200
+
 # Legacy GHL slugs → new URLs (HTML files archived in _archive/ as of 2026-04-17)
 /smorchestra-home-ghl       /                                301
 /the-engine-ghl             /solutions/signal-sales-engine   301
