@@ -1116,6 +1116,121 @@
                 padding: 1.25rem;
             }
         }
+
+        /* SIGNAL-AUDIT MODAL (GHL form embed) */
+        .sm-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .sm-modal.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .sm-modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.78);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        .sm-modal-card {
+            position: relative;
+            max-width: 600px;
+            width: calc(100% - 32px);
+            max-height: calc(100vh - 48px);
+            margin: 24px auto;
+            background: #0A0A0A;
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--accent);
+            border-radius: 0.5rem;
+            box-shadow: 0 24px 72px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transform: translateY(12px);
+            transition: transform 0.2s ease;
+        }
+
+        .sm-modal.open .sm-modal-card {
+            transform: translateY(0);
+        }
+
+        .sm-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sm-modal-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .sm-modal-title {
+            margin-top: 0.25rem;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .sm-modal-close {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 22px;
+            line-height: 1;
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+
+        .sm-modal-close:hover {
+            color: var(--text);
+        }
+
+        .sm-modal-body {
+            padding: 0.75rem;
+            overflow: auto;
+            flex: 1;
+            min-height: 480px;
+        }
+
+        .sm-modal-body iframe {
+            display: block;
+            width: 100%;
+            min-height: 460px;
+            border: none;
+            background: transparent;
+            border-radius: 0.25rem;
+        }
+
+        @media (max-width: 480px) {
+            .sm-modal-card {
+                max-height: calc(100vh - 24px);
+                margin: 12px auto;
+            }
+            .sm-modal-body {
+                min-height: 420px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1506,6 +1621,35 @@
         </div>
     </section>
 
+    <!-- SIGNAL-AUDIT MODAL (GHL form embed) -->
+    <div class="sm-modal" id="signal-audit-modal" role="dialog" aria-modal="true" aria-labelledby="signal-audit-modal-title" aria-hidden="true">
+        <div class="sm-modal-backdrop" data-sm-close="1"></div>
+        <div class="sm-modal-card">
+            <div class="sm-modal-header">
+                <div>
+                    <div class="sm-modal-eyebrow">Signal Audit · 30 min</div>
+                    <div class="sm-modal-title" id="signal-audit-modal-title">Tell us about your GTM</div>
+                </div>
+                <button type="button" class="sm-modal-close" data-sm-close="1" aria-label="Close">×</button>
+            </div>
+            <div class="sm-modal-body">
+                <iframe
+                    src="about:blank"
+                    data-real-src="https://media.smorchestra.com/widget/form/lC6liig4VJnwRjhEalVB"
+                    id="inline-lC6liig4VJnwRjhEalVB"
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-activation-type="alwaysActivated"
+                    data-deactivation-type="neverDeactivate"
+                    data-form-name="Test 1 "
+                    data-height="434"
+                    data-layout-iframe-id="inline-lC6liig4VJnwRjhEalVB"
+                    data-form-id="lC6liig4VJnwRjhEalVB"
+                    title="Signal Audit booking form"></iframe>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <footer>
         <div class="footer-container">
@@ -1584,13 +1728,59 @@
             });
         });
 
-        // CTA BUTTON ACTIONS
+        // SIGNAL-AUDIT MODAL — open/close + lazy iframe src swap + focus + keyboard
+        const signalAuditModal = document.getElementById('signal-audit-modal');
+        const signalAuditIframe = signalAuditModal.querySelector('iframe');
+        let ghlEmbedScriptLoaded = false;
+
+        function loadGhlEmbedScriptOnce() {
+            if (ghlEmbedScriptLoaded) return;
+            ghlEmbedScriptLoaded = true;
+            const s = document.createElement('script');
+            s.src = 'https://media.smorchestra.com/js/form_embed.js';
+            s.async = true;
+            document.body.appendChild(s);
+        }
+
+        function openSignalAuditModal() {
+            // First open: swap about:blank for the real GHL URL so the form
+            // doesn't load until the modal is used. After that, the iframe
+            // stays loaded and reopens instantly.
+            const realSrc = signalAuditIframe.getAttribute('data-real-src');
+            if (signalAuditIframe.getAttribute('src') === 'about:blank' && realSrc) {
+                signalAuditIframe.setAttribute('src', realSrc);
+                loadGhlEmbedScriptOnce();
+            }
+            signalAuditModal.classList.add('open');
+            signalAuditModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSignalAuditModal() {
+            signalAuditModal.classList.remove('open');
+            signalAuditModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        // CTA BUTTON ACTIONS — open the Signal Audit modal
         const ctaButtons = document.querySelectorAll('.nav-cta, .btn-primary');
         ctaButtons.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                // In production, this would open a modal or redirect to booking page
-                alert('Redirecting to Signal Audit booking page...');
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openSignalAuditModal();
             });
+        });
+
+        // Close on backdrop / × button
+        signalAuditModal.querySelectorAll('[data-sm-close]').forEach((el) => {
+            el.addEventListener('click', closeSignalAuditModal);
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && signalAuditModal.classList.contains('open')) {
+                closeSignalAuditModal();
+            }
         });
 
         // MOBILE HAMBURGER MENU
