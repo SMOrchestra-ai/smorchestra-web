@@ -182,7 +182,7 @@ When you add a new spoke or pillar:
 ## 7. Known gaps (post-W3)
 
 - Proper favicon set (`.ico`, 16/32/180) instead of the `logo3.png` fallback.
-- `/book` redirect target: **wired to `core-calendar-sales-calls` in the `UNw9DraGO3eyEa5l4lkJ` team location** (2026-04-15). Swap only if the team introduces a dedicated "Strategy Call — SMOrchestra" calendar later.
+- `/book` + `/ar/book` now serve local Pre-Call Qualifier form pages (`book.html` / `ar/book.html`, 2026-04-20). The GHL form's "After submit" action forwards qualified leads to SMOrchestra's own calendar widget: `https://media.smorchestra.com/widget/booking/3QV2chBXjKpkQya7UcSM` (location `UNw9DraGO3eyEa5l4lkJ`, SMOrchestra subaccount). The old EO-calendar 302 (`api.leadconnectorhq.com/widget/bookings/core-calendar-sales-calls`) has been removed from `netlify.toml` + `_redirects`.
 - Scorecard subdomain apps (`score.smorchestra.ai/gtm-fitness`, `/digital-revenue-score`) — the marketing site links to them and the sitemap lists them, but the webapps live on the VPS independently.
 
 **Closed in W1–W3 (2026-04-15):**

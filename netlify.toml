@@ -166,14 +166,11 @@
 # ------------------------------------------------------------
 # External targets: booking + scorecards
 # ------------------------------------------------------------
-# /book proxies to the GHL calendar URL (update when final slug is set).
-# Use 302 while the calendar is being tuned; flip to 301 once stable.
-
-[[redirects]]
-  from = "/book"
-  to = "https://api.leadconnectorhq.com/widget/bookings/core-calendar-sales-calls"
-  status = 302
-  force = true
+# /book + /ar/book now serve local Pre-Call Qualifier form pages
+# (see book.html / ar/book.html). The form's own "after submit" action
+# forwards the qualified lead to the GHL booking calendar. Netlify's
+# pretty-URL handling resolves /book → book.html automatically; explicit
+# 200-rewrite pairs live in _redirects.
 
 # Scorecards live on a subdomain (score.smorchestra.ai) served from the VPS.
 # These aliases make marketing URLs clean without moving infra.
