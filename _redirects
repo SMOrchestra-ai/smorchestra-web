@@ -19,6 +19,7 @@
 /test/signal-gtm            /test/signal-gtm.html            200
 /test/questionnaire         /test/questionnaire.html         200
 /test/thank-you             /test/thank-you.html             200
+/thanks                     /test/thank-you.html             200
 
 # Legacy GHL slugs → new URLs (HTML files archived in _archive/ as of 2026-04-17)
 /smorchestra-home-ghl       /                                301
