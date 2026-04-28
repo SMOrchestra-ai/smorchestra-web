@@ -124,6 +124,36 @@
             margin: 0 auto;
         }
 
+        .cta-back {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.85rem 1.6rem;
+            background: var(--accent);
+            color: #000;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .cta-back:hover {
+            background: #CC5200;
+            transform: translateY(-2px);
+        }
+
+        .meta-line {
+            margin-top: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .meta-line[hidden] {
+            display: none;
+        }
+
         /* FOOTER */
         footer {
             padding: 1.5rem 2rem;
@@ -165,11 +195,55 @@
             <div class="eyebrow">Received · Routing now</div>
             <h1>Thanks — <span class="accent">got it.</span></h1>
             <p class="lede">We'll review your answers and reply within 24 hours. Enterprise briefings route directly to Mamoun; everything else goes to the team.</p>
+            <p class="meta-line" hidden data-meta-line>
+                You joined the <span data-campaign></span> waitlist · <span data-offer></span>
+            </p>
+            <a href="/" class="cta-back" data-cta-back>Back to home</a>
         </div>
     </main>
 
     <footer>
         © 2026 SMOrchestra.ai
     </footer>
+
+    <script>
+        (function () {
+            const ctaMap = {
+                'cohort': '/cohort-resources',
+                'training': '/training-overview',
+                'marketing-transformation': '/case-studies',
+                'ai-native-ops-system': '/layers/ops'
+            };
+
+            const params = new URLSearchParams(window.location.search);
+            const wl = params.get('wl');
+            const campaign = params.get('campaign');
+            const offer = params.get('offer');
+
+            if (wl && ctaMap[wl]) {
+                const cta = document.querySelector('[data-cta-back]');
+                if (cta) cta.setAttribute('href', ctaMap[wl]);
+            }
+
+            if (campaign) {
+                document.querySelectorAll('[data-campaign]').forEach(el => el.textContent = campaign);
+            }
+            if (offer) {
+                document.querySelectorAll('[data-offer]').forEach(el => el.textContent = offer);
+            }
+            if (wl && (campaign || offer)) {
+                const meta = document.querySelector('[data-meta-line]');
+                if (meta) meta.hidden = false;
+            }
+
+            if (wl && typeof window.gtag === 'function') {
+                window.gtag('event', 'waitlist_signup', {
+                    waitlist: wl,
+                    campaign: campaign || '',
+                    offer: offer || ''
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
