@@ -70,3 +70,4 @@
 
 # Canonical host
 https://www.smorchestra.ai/*  https://smorchestra.ai/:splat  301!
+https://www.smorchestra.com/*  https://smorchestra.com/:splat  301!

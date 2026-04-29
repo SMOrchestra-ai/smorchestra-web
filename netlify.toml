@@ -210,6 +210,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://www.smorchestra.com/*"
+  to = "https://smorchestra.com/:splat"
+  status = 301
+  force = true
+
 # ------------------------------------------------------------
 # Forms — not used (GHL handles form capture directly via iframe/script).
 # Leaving Netlify Forms disabled intentionally.
