@@ -152,8 +152,6 @@ h4{font-size:18px;font-weight:700}
 .nav-links{display:flex;gap:32px;align-items:center;font-size:14px;font-weight:500;color:#fff}
 .nav-links a.on{color:var(--orange)}
 .nav-links a:hover{color:var(--orange)}
-.lang-switch{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--text-dim);padding:6px 10px;border:1px solid #262626;margin-right:14px;transition:.15s}
-.lang-switch:hover{color:#fff;border-color:#fff}
 .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:var(--orange);color:#000;font-weight:700;font-size:14px;transition:transform .2s,filter .2s}
 .nav-cta:hover{filter:brightness(1.1);transform:translateY(-1px)}
 @media (max-width:880px){.nav-links{display:none}}
@@ -296,17 +294,17 @@ svg.i.arr{width:0.9em;height:0.9em;margin-right:6px}
 <!-- ============ NAV ============ -->
 <nav class="nav">
   <div class="wrap nav-inner">
-    <a href="/ar/" class="brand"><span class="brand-mark"><img src="/logo/logo3.png" alt="علامة SMOrchestra" width="34" height="34" /></span>SMOrchestra</a>
+    <a href="/ar/" class="brand"><span class="brand-mark"><img src="/logo/logo3.png" alt="شعار SMOrchestra" width="34" height="34"/></span>SMOrchestra</a>
     <div class="nav-links">
-      <a href="/ar/layers/ops" class="on">العمليات</a>
-      <a href="/ar/layers/gtm">GTM</a>
-      <a href="/ar/layers/dev">Dev</a>
       <a href="/ar/solutions/">الحلول</a>
-      <a href="/ar/about.html">عن المؤسس</a>
+      <a href="/ar/layers/ops.html" class="on">العمليات</a>
+      <a href="/ar/layers/gtm.html">التسويق</a>
+      <a href="/ar/layers/dev.html">التطوير</a>
       <a href="/ar/tools/">الأدوات</a>
+      <a href="/ar/about.html">عن المؤسس</a>
     </div>
-    <a href="/layers/ops" class="lang-switch" hreflang="en">EN</a>
-    <a href="/ar/book" class="nav-cta">احجز مكالمة <svg class="i" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
+    <a href="/layers/ops.html" class="nav-lang" hreflang="en" lang="en" aria-label="English">EN</a>
+    <a href="/ar/book" class="nav-cta">احجز استشارة <svg class="i" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
   </div>
 </nav>
 

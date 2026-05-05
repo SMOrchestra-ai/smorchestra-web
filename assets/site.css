@@ -127,6 +127,29 @@ button {
   gap: 8px;
   transition: 0.15s;
 }
+.nav-lang {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  letter-spacing: 0.02em;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+:root[dir="ltr"] .nav-lang {
+  margin-inline-end: 10px;
+}
+:root[dir="rtl"] .nav-lang {
+  margin-inline-start: 10px;
+}
+.nav-lang:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.28);
+}
 
 /* Mobile nav collapse — the hamburger is injected by /assets/nav.js */
 @media (max-width: 880px) {
