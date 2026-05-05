@@ -37,7 +37,6 @@
           "{body." +
           OPEN_CLASS +
           " .nav-links a{padding:6px 0;font-size:16px}}",
-        ".nav{position:relative}",
       ].join("\n");
       var style = document.createElement("style");
       style.id = "smo-nav-css";
