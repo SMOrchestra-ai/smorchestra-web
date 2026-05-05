@@ -79,6 +79,11 @@ nav.nav {
 }
 nav.nav .nav-inner {
   display: flex;
+  /* dir="rtl" on <html> already reverses flex children visually for
+   * Arabic — pages must NOT also apply flex-direction:row-reverse or
+   * the bar gets double-reversed. Force row so any per-page override
+   * is neutralized. */
+  flex-direction: row !important;
   align-items: center;
   justify-content: space-between;
   /* The nav-inner element also carries the `.wrap` class, but per-page
@@ -90,6 +95,9 @@ nav.nav .nav-inner {
   padding: 18px clamp(20px, 4vw, 48px) !important;
   gap: 24px;
   box-sizing: border-box;
+}
+nav.nav .nav-links {
+  flex-direction: row !important;
 }
 nav.nav .brand {
   display: flex;
